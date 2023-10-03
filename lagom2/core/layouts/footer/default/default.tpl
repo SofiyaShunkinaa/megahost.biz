@@ -1,31 +1,4 @@
-    {$rsFooter.primary.2.name = "Abilities"}
-    {$rsFooter.primary.1.children.100.name = "VPS"}
-    {$rsFooter.primary.1.children.101.name = "VPN серверы"}
-    {$rsFooter.primary.1.children.102.name = "Выделенные серверы"}
-    {$rsFooter.primary.1.children.103.name = "Виртуальный хостинг"}
-    {$rsFooter.primary.1.children.104.name = "Бюджетные IPv6 VPS"}
-    {$rsFooter.primary.1.children.105.name = ""}
 
-    {$rsFooter.primary.2.children.100.name="MacOS VPS сервер"}
-    {$rsFooter.primary.2.children.101.name="Windows VPS сервер"}
-    {$rsFooter.primary.2.children.102.name="VPS для трейредов"}
-    {$rsFooter.primary.2.children.103.name="VPN сервер"}
-    {$rsFooter.primary.2.children.104.name="Сервер для телеграм бота"}
-    {$rsFooter.primary.2.children.105.name="Сервер для телеграм бота"}
-    {$rsFooter.primary.2.children.106.name="Тестовый период"}
-    {$rsFooter.primary.2.children.107.name="Бесплатное администрирование"}
-   
-    {$rsFooter.primary.3.name = "Extra"}
-    {$rsFooter.primary.6.name = "Support"}
-    {$rsFooter.primary.6.children.101.name = "Связаться с нами"}
-    {$rsFooter.primary.6.children.102.name = "Создать тикет"}
-
-    {$rsFooter.primary.3.children.100.name = "База знаний"}
-    {$rsFooter.primary.3.children.200.name = "Реферальная программа"}
-    {$rsFooter.primary.3.children.300.name = "Панель клиента"}
-    {$rsFooter.primary.3.children.400.name = "Блог"}
-
-    {$rsFooter.social.6.predefined_icon=""}
 
   
     {include file="$template/includes/common/layouts-vars.tpl"}
@@ -89,26 +62,7 @@
                         </div>
                     {/if}
                     
-                    <div class="footer-company">
-                        {if $rsFooter.social}
-                            <ul class="footer-company-socials footer-nav footer-nav-h">
-                                {foreach from=$rsFooter.social item=$footerLink}
-                                    <li class="{if $footerLink.style != "icon"}footer-social-wide{/if}">
-                                        <a class="{$footerLink.custom_classes}" href="{$footerLink.url}" {if isset($footerLink.name) && $footerLink.name} alt="{$footerLink.name}"{/if} {if isset($footerLink.target_blank) && $footerLink.target_blank}target="_blank"{/if}>
-                                            {if isset($footerLink.icon) && $footerLink.icon}
-                                                <i class="{$footerLink.icon}"></i>
-                                            {elseif isset($footerLink.predefined_icon) && $footerLink.predefined_icon}
-                                                {$footerLink.predefined_icon}
-                                            {/if}
-                                            {if isset($footerLink.name) && $footerLink.name}
-                                                <span>{$footerLink.name}</span>
-                                            {/if}
-                                        </a>
-                                    </li>
-                                {/foreach}
-                            </ul>
-                        {/if}
-                    </div>  
+                    
                 </div>
             </div>
             {/if}
@@ -216,5 +170,6 @@
     <script src="{$WEB_ROOT}/templates/{$template}/assets/js/lagom-app.js?v={$RSThemes['templateVersion']}"></script>
     <script src="{$WEB_ROOT}/templates/{$template}/assets/js/whmcs-custom.min.js?v={$RSThemes['templateVersion']}"></script>
     <script src="{$WEB_ROOT}/templates/{$template}/assets/js/tooltip.js"></script>
+    <script src="{$WEB_ROOT}/templates/{$template}/assets/js/slider.js"></script>
 </body>
 </html>

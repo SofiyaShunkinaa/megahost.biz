@@ -47,7 +47,7 @@
     {/if}
     {if ((isset($skipMainBody) && !$skipMainBody) || !isset($skipMainBody)) && !$isOnePageOrder}
     <div class="main-body{if $appMainBodyClasses} {$appMainBodyClasses}{/if}">
-        <div class="container {if isset($skipMainBodyContainer) && $skipMainBodyContainer}-fluid without-padding{/if}">
+        <div class=" {if isset($skipMainBodyContainer) && $skipMainBodyContainer}-fluid without-padding{/if}">
             {if !$skipAppNav && $lagomClientAlerts->default}
                 <div class="custom-alerts">
                     {$lagomClientAlerts->default}
