@@ -1,14 +1,27 @@
- const title = document.querySelector('.title-country');
- const tooltip = document.querySelector('.tooltip');
+const title = document.querySelector('.title-country');
+const tooltip = document.querySelector('.tooltip');
 const tooltipImg = document.querySelector('.flag-country');
 const countries = document.querySelectorAll('.country');
+let currentDroppable = null;
 
 countries.forEach(country =>{
     country.addEventListener('mousemove', function(e){
-        title.innerText = this.dataset.title;
-        tooltip.style.top = e.pageX + 'px';
-        tooltip.style.left = e.pageY + 'px';
-        tooltipImg.src=this.dataset.flag;
+      let shiftX = e.clientX - tooltip.getBoundingClientRect().left;
+      let shiftY = e.clientY - tooltip.getBoundingClientRect().top;
+        
+      tooltip.hidden = true;
+      let elemBelow = document.elementFromPoint(e.clientX, event.clientY);
+      tooltip.hidden = false;
+
+      if (!elemBelow) return;
+
+      title.innerText = this.dataset.title;
+      tooltip.style.top = e.pageY - shiftY + 'px';
+      tooltip.style.left = e.pageX - shiftX + 'px';
+      tooltipImg.src=this.dataset.flag;
+
+      
+
     });
 
     country.addEventListener('mouseenter', function(){

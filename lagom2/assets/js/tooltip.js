@@ -1,14 +1,26 @@
- const title = document.querySelector('.title-country');
- const tooltip = document.querySelector('.tooltip');
+const title = document.querySelector('.title-country');
+const tooltip = document.querySelector('.tooltip');
 const tooltipImg = document.querySelector('.flag-country');
 const countries = document.querySelectorAll('.country');
+let currentDroppable = null;
 
 countries.forEach(country =>{
     country.addEventListener('mousemove', function(e){
-        title.innerText = this.dataset.title;
-        tooltip.style.top = e.pageX + 'px';
-        tooltip.style.left = e.pageY + 'px';
-        tooltipImg.src=this.dataset.flag;
+      let shiftX = e.clientX - tooltip.getBoundingClientRect().left;
+      let shiftY = e.clientY - tooltip.getBoundingClientRect().top;
+        
+      tooltip.hidden = true;
+      let elemBelow = document.elementFromPoint(e.clientX, event.clientY);
+      tooltip.hidden = false;
+
+      if (!elemBelow) return;
+
+      title.innerText = this.dataset.title;
+      tooltip.style.top = e.pageY - shiftY + 'px';
+      tooltip.style.left = e.pageX - shiftX + 'px';
+      tooltipImg.src=this.dataset.flag;
+
+
     });
 
     country.addEventListener('mouseenter', function(){
@@ -101,6 +113,7 @@ countries.forEach(country =>{
    
  //   };
 
+ // header
  $(function() {
     let header = $('.app-nav-menu');
      
@@ -112,3 +125,106 @@ countries.forEach(country =>{
       }
     });
    });
+
+//slider
+const sliderCustom = document.querySelector('.slider-custom');
+const progress = document.querySelector('.slider-progress');
+
+let isDragging = false;
+let startPosition = 0;
+let currentTranslate = 0;
+let prevTranslate = 0;
+let animationID = 0;
+
+sliderCustom.addEventListener('mousedown', startDragging);
+sliderCustom.addEventListener('touchstart', startDragging);
+sliderCustom.addEventListener('mouseup', stopDragging);
+sliderCustom.addEventListener('touchend', stopDragging);
+sliderCustom.addEventListener('mouseleave', stopDragging);
+sliderCustom.addEventListener('mousemove', drag);
+sliderCustom.addEventListener('touchmove', drag);
+
+function startDragging(e) {
+  e.preventDefault();
+
+  if (e.type === 'touchstart') {
+    startPosition = e.touches[0].clientX;
+  } else {
+    startPosition = e.clientX;
+    sliderCustom.style.cursor = 'grabbing';
+  }
+
+  isDragging = true;
+  animationID = requestAnimationFrame(animation);
+}
+
+function drag(e) {
+  if (isDragging) {
+    let currentPosition = 0;
+
+    if (e.type === 'touchmove') {
+      currentPosition = e.touches[0].clientX;
+    } else {
+      currentPosition = e.clientX;
+    }
+
+    currentTranslate = prevTranslate + currentPosition - startPosition;
+
+    // Ограничиваем перемещение слайдов в пределах первого и последнего слайда
+    const slideWidth = sliderCustom.clientWidth / 5;
+    const maxTranslate = slideWidth * 2;
+    const minTranslate = -slideWidth * 2;
+
+    if (currentTranslate > maxTranslate) {
+      currentTranslate = maxTranslate;
+    } else if (currentTranslate < minTranslate) {
+      currentTranslate = minTranslate;
+    }
+    if(currentTranslate>0){
+        currentTranslate=0;
+    }
+  }
+}
+
+function stopDragging() {
+  cancelAnimationFrame(animationID);
+  isDragging = false;
+  const slideWidth = sliderCustom.clientWidth / 5;
+  const slideIndex = Math.round(currentTranslate / slideWidth);
+
+  currentTranslate = slideIndex * slideWidth;
+  prevTranslate = currentTranslate;
+
+  sliderCustom.style.transform = `translateX(${currentTranslate}px)`;
+  sliderCustom.style.cursor = 'grab';
+}
+
+function animation() {
+  sliderCustom.style.transform = `translateX(${currentTranslate}px)`;
+
+  if (isDragging) {
+    requestAnimationFrame(animation);
+  }
+}
+
+//buttons
+document.addEventListener('DOMContentLoaded', function() {
+  const buttons = document.querySelectorAll('.switcher__item');
+  const currentPage = window.location.pathname; // Получаем текущий URL страницы
+
+  // Проходимся по кнопкам и устанавливаем обработчик события для каждой кнопки
+  buttons.forEach(button => {
+      const key = button.getAttribute('data-key');
+      const buttonLink = key === 'login' ? '/index.php?rp=/login' : '/register.php';
+
+      // Устанавливаем обработчик события для нажатия на кнопку
+      button.addEventListener('click', function() {
+          window.location.href = buttonLink;
+      });
+
+      // Проверяем, является ли кнопка активной, и применяем стили
+      if (buttonLink === $currentPage) {
+          button.classList.add('active-button'); 
+      }
+  });
+});
