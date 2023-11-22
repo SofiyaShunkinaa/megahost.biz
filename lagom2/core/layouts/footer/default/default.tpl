@@ -16,7 +16,24 @@
         <div class="main-footer{if $RSThemes['footer-layouts']['vars']['type'] == 'extended'} main-footer-extended{/if}{if $RSThemes['footer-layouts']['vars']['footerClass']} {$RSThemes['footer-layouts']['vars']['footerClass']}{/if}">
             {if $RSThemes['footer-layouts']['vars']['type'] == 'extended'}
             <div class="footer-top">
+            
+            <div class="container container-footer-separator">
+            <div class="separator">
+        <svg xmlns="http://www.w3.org/2000/svg" width="1292" height="2" viewBox="0 0 1292 2" fill="none">
+    <path d="M1 1L1291 0.999887" stroke="url(#paint0_linear_379_27252)" stroke-linecap="round"/>
+    <defs>
+        <linearGradient id="paint0_linear_379_27252" x1="1" y1="1.49912" x2="1291" y2="1.49418" gradientUnits="userSpaceOnUse">
+        <stop stop-color="#B871CF"/>
+        <stop offset="1" stop-color="#8392D5"/>
+        </linearGradient>
+    </defs>
+    </svg>
+    </div>
+    </div>
                 <div class="container">
+
+                    
+
                     {if $rsFooter.primary}
                         <div class="footer-site-map">
                             <div class="row">

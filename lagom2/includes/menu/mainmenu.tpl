@@ -9,6 +9,8 @@
             <ul class="menu menu-primary" data-nav>
                 {include file="$template/includes/navbar.tpl" navbar=$primaryNavbar navtype="primary"}
             </ul>
+            {include file="$template/includes/common/language-chooser-dropdown.tpl"}
+            {include file="$template/includes/common/currency-dropdown.tpl"}
         </div>
     </div>
 {/if}

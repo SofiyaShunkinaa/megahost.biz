@@ -9,8 +9,6 @@
                 </a>
             </li>
         {/if}
-            {include file="$template/includes/common/language-chooser-dropdown.tpl"}
-            {include file="$template/includes/common/currency-dropdown.tpl"}    
-        
+        {include file="$template/includes/navbar.tpl" navbar=$secondaryNavbar}
     </ul>
 {/if}    

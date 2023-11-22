@@ -1,6 +1,6 @@
 {if file_exists("templates/$template/includes/overwrites/sidebar.tpl")}
     {include file="{$template}/includes/overwrites/sidebar.tpl"}
-{else}
+{else}{*
     {foreach $sidebar as $item}
         <div menuItemName="{$item->getName()}" class="panel panel-sidebar{if $item->getName() == "Client Details" && $sidebarAccountBoxStyle} panel-sidebar-{$sidebarAccountBoxStyle}{/if} {if $item->getClass()}{$item->getClass()}{/if}{if $item->getExtra('mobileSelect') and $item->hasChildren()} hidden-sm hidden-xs{/if}"{if $item->getAttribute('id')} id="{$item->getAttribute('id')}"{/if}>
             <div class="panel-heading">
@@ -97,7 +97,7 @@
                 </div>
             {/if}
         </div>
-        {* {if $item->getExtra('mobileSelect') and $item->hasChildren()}
+         {if $item->getExtra('mobileSelect') and $item->hasChildren()}
             <div class="panel hidden-lg hidden-md {if $item->getClass()}{$item->getClass()}{else}panel-default{/if}"{if $item->getAttribute('id')} id="{$item->getAttribute('id')}"{/if}>
                 <div class="panel-heading">
                     <h5 class="panel-title">
@@ -124,6 +124,6 @@
                     </div>
                 {/if}
             </div>
-        {/if} *}
-    {/foreach}
+        {/if} 
+    {/foreach}*}
 {/if}

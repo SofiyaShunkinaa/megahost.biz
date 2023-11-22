@@ -72,6 +72,8 @@
                 {include file="$template/includes/linkedaccounts.tpl" customFeedback=true linkContext="login"}
                 {/if}
             </div>
+
+            
             {if $condlinks.allowClientRegistration}
             {*<div class="login-footer">
                 <div class="text-light">{$rslang->trans('social.not_member')} <a href="{$WEB_ROOT}/register.php" tabindex="5" >{$LANG.orderForm.createAccount}</a></div>

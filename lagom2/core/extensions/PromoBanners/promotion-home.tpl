@@ -1,7 +1,7 @@
 {assign var=sliderCounter value=false}
-{assign var=home value=['title'=>'Быстрые <b>VPS</b> сервера с NVMe SSD дисками']}
-{$LANG.home_subtitle="Бесплатное администрирование и тестовый период"}
-{$LANG.home_action="Выбрать услугу"}
+{*assign var=home value=['title'=>'Быстрые <b>VPS</b> сервера с NVMe SSD дисками']*}
+{*$LANG.home_subtitle="Бесплатное администрирование и тестовый период"*}
+{*$LANG.home_action="Выбрать услугу"*}
 
 {foreach from=$homepage->getPromotionBanner() item=slide key=k name=slideLoop}
     {if ($slide->slide_begin_time <= $smarty.now && $slide->slide_end_time >= $smarty.now) || ($slide->slide_begin_time eq 0 && $slide->slide_end_time eq 0) || ($slide->slide_begin_time <= $smarty.now && !$slide->slide_end_time)}
@@ -36,7 +36,7 @@
     </style>
     <div data-promo-slider {if $autoslideBannerDisable} class="autoPromoDisable"{/if}>
         <div class="site-banner site-slider site-slider-custom banner banner-sides">
-            <div class="container">
+            <div class="container container-top--hompage">
                 <div class="slider-wrapper">
                     <div class="slider-slides" data-promo-slider-wrapper>
                         {foreach from=$homepage->getPromotionBanner() item=slide key=key_slide}

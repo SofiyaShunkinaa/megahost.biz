@@ -1,3 +1,36 @@
+{$LANG.Blog.top.title="Блог"}
+{$LANG.KB.top.title="База знаний"}
+{assign var=BlogSwitcher value=[
+    [
+        'name' => 'Все',
+        'key' => 'all'
+    ],
+    [
+        'name' => 'DDoS',
+        'key' => 'ddos'
+    ],
+    [
+        'name' => 'Хостинг',
+        'key' => 'hosting'
+    ],
+    [
+        'name' => 'Нововсти',
+        'key' => 'news'
+    ],
+    [
+        'name' => 'VNP',
+        'key' => 'vpn'
+    ],
+    [
+        'name' => 'VPS',
+        'key' => 'VPS'
+    ],
+    [
+        'name' => 'Выделенные сервера',
+        'key' => 'shared'
+    ]
+]}
+
 {if file_exists("templates/$template/core/layouts/main-menu/{$RSThemes.layouts.name}/header.tpl")}
     {include file="{$template}/core/layouts/main-menu/{$RSThemes.layouts.name}/header.tpl"}
 {/if}
@@ -25,6 +58,7 @@
         {include file="$template/includes/menu/mainmenu.tpl"}
     </div>
 {/if}
+
 {include file="$template/includes/network-issues-notifications.tpl"}
 <div class="app-main {if $isOnePageOrder}app-main-order{/if}">
     {include file="$template/includes/validateuser.tpl"}
@@ -53,10 +87,32 @@
                     {$lagomClientAlerts->default}
                 </div>
             {/if}
-            {if !$inShoppingCart}<div class="main-grid container-dashboard">{/if}
+            <div class="container">
+                <div class="section-header header-blog">
+                    <h1 class="section-title">{$LANG.Blog.top.title}</h1>
+
+                    <div class="switcher-wrapper">
+                        <div class="switcher news-switcher sw-black">
+                            {foreach from=$BlogSwitcher item=sw}
+                                {if file_exists("templates/$template/core/pages/homepage/modern/shared/switcher.tpl")}
+                                        {include file="$template/core/pages/homepage/modern/shared/switcher.tpl"}
+                                    {/if}
+                            {/foreach}   
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-header header-kb">
+                    <h1 class="section-title">{$LANG.KB.top.title}</h1>
+                </div>
+
+                
+            </div>
+
+            {if !$inShoppingCart}<div class="main-grid container-dashboard container-faq">{/if}
                 {* Main grid with sidebar *}
                 {if !$skipMainSidebar}
-                <div class="main-sidebar {if $sidebarOnRight} main-sidebar-right {/if}">
+                {* <div class="main-sidebar {if $sidebarOnRight} main-sidebar-right {/if}">
                     {if $RSThemes['addonSettings']['sticky_sidebars'] == "true"}<div class="sidebar-sticky">{/if}
                         <div class="sidebar sidebar-primary">
                             {include file="$template/includes/sidebar.tpl" sidebar=$primarySidebar}
@@ -68,7 +124,7 @@
                             {include file="$template/includes/sidebar/sidebar-promo.tpl"}
                         </div>
                         {if $RSThemes['addonSettings']['sticky_sidebars'] == "true"}</div>{/if}
-                </div>
+                </div>*}
                 <div class="main-content {if $mainContentClasses}{$mainContentClasses}{/if} {if $RSThemes.addonSettings.show_status_icon == 'displayed' && in_array($templatefile, $iconsPages)}status-icons-enabled{/if}">
                     {* Main grid without sidebar *}
                     {elseif (!isset($skipMainBodyContainer) || !$skipMainBodyContainer) && !$inShoppingCart}

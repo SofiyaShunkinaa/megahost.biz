@@ -1,4 +1,4 @@
-{if file_exists("templates/$template/includes/overwrites/breadcrumb.tpl")}
+{if file_exists("templates/$template/includes/overwrites/breadcrumb1.tpl")}
     {include file="{$template}/includes/overwrites/breadcrumb.tpl"}  
 {else}    
     <ol class="breadcrumb">
@@ -11,4 +11,3 @@
         {/foreach}
     </ol>
 {/if}
-{debug}

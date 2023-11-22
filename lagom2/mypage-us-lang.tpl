@@ -1,0 +1,1 @@
+<h1>This is mypage-us-lang</h1>

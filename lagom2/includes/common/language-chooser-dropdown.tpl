@@ -1,3 +1,20 @@
+{assign var=NewLngs value=[
+    [
+        'locale' => "ru_RU",
+        'language' => "russian",
+        'languageCode' => "ru",
+        'countryCode' => "RU",
+        'localisedName' => "RU"
+    ],
+    [
+        'locale' => "en_GB",
+        'language' => "english",
+        'languageCode' => "en",
+        'countryCode' => "GB",
+        'localisedName' => "ENG"
+    ]
+]}
+
 {if file_exists("templates/$template/includes/common/overwrites/language-chooser-dropdown.tpl")}
      {include file="{$template}/includes/common/overwrites/language-chooser-dropdown.tpl"}  
 {else}
@@ -12,13 +29,13 @@
         <input type="hidden" data-language-select-value value="{$activeLocale.localisedName}">
         <input type="hidden" data-language-select-backlink value="{$currentpagelinkback}{$divChar}">
         <input type="hidden" data-language-select-lang value="{$LANG['upgradeService']['select']}">
-        <div class="dropdown-header input-group align-center">
+        {*<div class="dropdown-header input-group align-center">
             <i class="input-group-icon lm lm-search"></i>
             <input class="form-control" placeholder="{$LANG.search}..." type="text" data-language-select-search>
         </div>
-        <div class="nav-divider"></div>
-        <div class="dropdown-menu-items has-scroll" data-language-select-list>
-        {foreach $locales as $locale}
+        <div class="nav-divider"></div>*}
+        <div class="dropdown-menu-items" data-language-select-list>
+        {foreach $NewLngs as $locale}
             <div class="dropdown-menu-item {if $activeLocale.language == $locale.language}active{/if}" data-value="{$locale.language}" data-language="{$locale.localisedName}">
                 {if $pageType == "website" && $currentpagelinkback|strstr:"cmsid"}
                     {$url = "?"|explode:$currentpagelinkback}
@@ -28,7 +45,6 @@
                     {$stringToReplace = ""}
                 {/if}
                 <a href="{$currentpagelinkback|replace:$stringToReplace:""}{$divChar}language={$locale.language}">
-                    <span class="language-flag {$locale.language}"></span>
                     <span class="language-text">{$locale.localisedName}</span>
                 </a>
             </div>

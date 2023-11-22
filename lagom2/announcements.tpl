@@ -1,3 +1,64 @@
+{$LANG.Blog.section.title="Статьи"}
+
+{assign var=BlogNews value=[
+    [
+        'title' => 'DDoS-атаки и методы защиты от них',
+        'tag' => '#DDos',
+        'date' => '1 июля 2023',
+        'img' => 'img1.png'
+    ],
+    [
+        'title' => 'Перенос сайта MODX на новый хостинг в 2023 году',
+        'tag' => '#Хостиг',
+        'date' => '30 мая 2023',
+        'img' => 'img2.png'
+    ],
+    [
+        'title' => '5 способов получить бесплатный домен',
+        'tag' => '#Хостиг',
+        'date' => '26 мая 2023',
+        'img' => 'img3.png'
+    ],
+    [
+        'title' => 'Реферальная программа стала ещё привлекательнее',
+        'tag' => '#Новости',
+        'date' => '17 мая 2023',
+        'img' => 'img4.png'
+    ],
+    [
+        'title' => 'Получайте уведомления об услугах в Telegram и Viber',
+        'tag' => '#Новости',
+        'date' => '20 мая 2023',
+        'img' => 'img5.png'
+    ],
+    [
+        'title' => 'Новый способ оплаты для международных карт',
+        'tag' => '#Новости',
+        'date' => '17 мая 2023',
+        'img' => 'img6.png'
+    ],
+    [
+        'title' => '5 способов получить бесплатный домен',
+        'tag' => '#Хостинг',
+        'date' => '26 мая 2023',
+        'img' => 'img7.png'
+    ],
+    [
+        'title' => 'Реферальная программа стала еще привлекательнее',
+        'tag' => '#Новости',
+        'date' => '17 мая 2023',
+        'img' => 'img8.png'
+    ],
+    [
+        'title' => 'Перенос сайта MODX на новый хостинг в 2023 году',
+        'tag' => '#Хостинг',
+        'date' => '30 мая 2023',
+        'img' => 'img9.png'
+    ]
+]}
+
+
+
 {if isset($RSThemes['pages'][$templatefile]) && file_exists($RSThemes['pages'][$templatefile]['fullPath'])}
     {include file=$RSThemes['pages'][$templatefile]['fullPath']}
 {else}
@@ -14,8 +75,43 @@
             }(document, 'script', 'facebook-jssdk'));
         </script>
     {/if}
-    {if $announcements}
-        <div class="announcements-list list-group list-group-lg">
+
+
+    {if $BlogNews}
+
+        <div class="news-section">
+
+            <h2 class="section-title">{$LANG.Blog.section.title}</h2>
+
+            <div class="ns-grid">
+                {$num=1}
+                {foreach from=$BlogNews item=news}
+                    <div class="ns-grid__item col-4 ">
+                        <div class="news-img">
+                            <a href="#">
+                                <img src="templates/{$template}/assets/img/blog/img{$num++}.png">
+                            </a>
+                        </div>
+                        <div class="news-sub">
+                            <div class="news-sub__tag">
+                                <span>{$news.tag}</span>
+                            </div>
+
+                            <div class="news-sub__date">
+                                <span>{$news.date}</span>
+                            </div>
+                        </div>
+                        <div class="news-title">
+                            <a href="#">
+                                <span>{$news.title}</span>
+                            </a>    
+                        </div>
+                    </div>
+                {/foreach}
+
+            </div>
+        </div>
+        {*<div class="announcements-list list-group list-group-lg">
         {foreach from=$announcements item=announcement}
             <div class="list-group-item list-group-item-link" data-lagom-href="{routePath('announcement-view', $announcement.id, $announcement.urlfriendlytitle)}">
                 <span class="announcement-date"><i class="ls ls-calendar"></i>{$carbon->createFromTimestamp($announcement.timestamp)->format('jS M Y')}</span>
@@ -55,7 +151,7 @@
                 </div>
             </div>
         {/foreach}
-        
+        *}
         <ul class="pagination">
             {foreach $pagination as $item}
             <li {if $item.active}class="active"{/if}>
@@ -63,6 +159,7 @@
             </li>
             {/foreach}
         </ul>
+        
        
     </div>
     {else}

@@ -65,6 +65,17 @@
     ]
 ]}
 
+{assign var=SwitcherButtons value=[
+    [
+        'name' => 'USD',
+        'key' => 'usd'
+    ],
+    [
+        'name' => 'RUB',
+        'key' => 'rub'
+    ]
+]}
+
 
 {$LANG.map_title="Сервера в 25 странах"}
 {$LANG.products_title="Популярные продукты"}
@@ -304,21 +315,23 @@
         <div class="container container-products">
             <h2 class="section-title">{$LANG.products_title}</h2>
             
-            <div class="section-switcher switcher-products">
-                    <label class="switcher">
-                        <input type="checkbox">
-                            <span class="slider-round">
-                                <span class="switcher-desc switcher-desc-left">{$LANG.switcherProducts_left}</span>
-                                <span class="switcher-desc switcher-desc-right">{$LANG.switcherProducts_right}</span>
-                            </span>
-                    </label>
+            
+            <div class="switcher-wrapper">
+                <div class="products-switcher switcher">
+                    {foreach from=$SwitcherButtons item=sw}
+                        {if file_exists("templates/$template/core/pages/homepage/modern/shared/switcher.tpl")}
+                                        {include file="$template/core/pages/homepage/modern/shared/switcher.tpl"}
+                                    {/if}
+                    {/foreach}
+
                 </div>
+            </div>
 
             <div class="section-content">
-                <div class="row row-lg row-eq-height row-eq-height-sm">
+                <div class="row row-lg row-eq-height row-eq-height-sm ">
                     {foreach from=$productGroupId key=k item=product}
                         {if $homepage->productGroup($product.gid)->product}
-                            <div class="col-3">
+                            <div class="col-3 ">
                                 <div class="package package-lg">
                                     <h3 class="package-title">{$homepage->productGroup($product.gid)->product->productGroup->name}</h3>
                                     <p class="package-desc">{$homepage->productGroup($product.gid)->product->productGroup->headline}</p>
@@ -447,7 +460,7 @@
     {/if}        
     {if $RSThemes['pages'][$templatefile]['config']['showFeatures'] == '1'}
     <div class="site-section{if $secondarySectionStyle == 'secondary'} section-secondary section-advantages{else if $secondarySectionStyle == 'primary'} section-primary{/if}">
-        <div class="container">
+        <div class="container-fluid">
             <h2 class="section-title">{$LANG.adv_title}</h2>
 
             <div class="section-content section-grid">
@@ -1078,7 +1091,7 @@ z"/>
                     
                 </div>
 
-                <div class="tooltip">
+                <div class="tooltip" >
                     <div class="tooltip__title">
                         <div class="flag" width="34" height="24">
                             <img class="flag-country" src="#" alt="country_flag">
