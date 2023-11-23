@@ -228,6 +228,7 @@
                 {if !$item->hasChildren() && $item->getName() == "Recent News"}
                 
                     <div class="panel-body">
+                    
                         <div class="no-data">
                             <div class="no-data-icon">
                                 {include file="$template/includes/common/svg-icon.tpl" icon="article"} 

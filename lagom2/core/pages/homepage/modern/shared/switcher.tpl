@@ -1,6 +1,11 @@
 {assign var=currencies value=[
     [
-
+        'name' => 'USD',
+        'key' => 'usd'
+    ],
+    [
+        'name' => 'RUB',
+        'key' => 'rub'
     ]
 ]}
 {if $currentUrl|strstr:"?"}

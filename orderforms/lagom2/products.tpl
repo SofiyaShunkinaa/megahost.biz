@@ -22,6 +22,17 @@
 
 {$LANG.package_buy="Купить в один клик"}
 
+{assign var=ProductsCurrency value=[
+    [
+        'name' => 'USD',
+        'key' => 'usd'
+    ],
+    [
+        'name' => 'RUB',
+        'key' => 'rub'
+    ]
+]}
+
 
 
 {if isset($RSThemes['pages'][$templatefile]) && file_exists($RSThemes['pages'][$templatefile]['fullPath'])}
@@ -104,10 +115,10 @@
                         <div class="main-controls--right">
                             <div class="switcher-wrapper">
                                 <div class="products-switcher switcher">
-                                    {foreach from=$KbButtons item=sw}
+                                    {foreach from=$ProductsCurrency item=sw}
                                         {if file_exists("templates/$template/core/pages/homepage/modern/shared/switcher.tpl")}
-                                                {include file="$template/core/pages/homepage/modern/shared/switcher.tpl"}
-                                            {/if}
+                                        {include file="$template/core/pages/homepage/modern/shared/switcher.tpl"}
+                                    {/if}
                                     {/foreach}
                                 </div>
                             </div>

@@ -3,6 +3,8 @@
     {include file="{$template}/includes/overwrites/navbar-new.tpl"}
 {else}
 
+    
+
     {foreach $navbar as $item}
         {if $item->getUri() == $currentUrl && isset($navtype) && $navtype == "primary" && !$item->getClass()|strstr:"nav-item-btn"}
             {assign var="activeGroup" value=$item->getName()}
@@ -86,7 +88,7 @@
                         {elseif $item->getLabel() && $item->getLabel() != ""} 
                             <span class="item-text">{$LANG.myaccount}</span>
                         {/if}
-                    {elseif $item->getLabel() && $item->getLabel() != ""} {*it deletes names*}
+                    {elseif $item->getLabel() && $item->getLabel() != ""} 
                         <span class="item-text">{$item->getLabel()}</span>
                     {/if}
                     {if $item->hasBadge()}{$item->getBadge()}{/if}
@@ -142,11 +144,13 @@
                             {if $childItem->hasFooterHtml()}
                                 {$childItem->getFooterHtml()}
                             {/if}
+                            
                         </li>
                         {/if}
                     {/foreach}
                 </ul>
             {/if}
+            
         </li>
     {/foreach}
 {/if}

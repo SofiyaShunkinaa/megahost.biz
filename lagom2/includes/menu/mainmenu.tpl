@@ -6,8 +6,12 @@
             {if $RSThemes.layouts.vars.type == "condensed"}
                 {include file="$template/includes/common/logo.tpl" ignoreMobileVersion="true"}
             {/if}
+
             <ul class="menu menu-primary" data-nav>
+                
+
                 {include file="$template/includes/navbar.tpl" navbar=$primaryNavbar navtype="primary"}
+                
             </ul>
             {include file="$template/includes/common/language-chooser-dropdown.tpl"}
             {include file="$template/includes/common/currency-dropdown.tpl"}
