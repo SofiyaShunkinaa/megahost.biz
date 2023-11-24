@@ -15,6 +15,7 @@
     ]
 ]}
 
+{debug}
 
 
 {if file_exists("templates/$template/includes/common/overwrites/language-chooser-dropdown.tpl")}
@@ -48,7 +49,6 @@
                     {$stringToReplace = ""}
                 {/if}
                 <a href="{$currentpagelinkback|replace:$stringToReplace:""}{$divChar}language={$locale.language}">
-                    {*<span class="language-flag {$locale.language}"></span>*}
                     <span class="language-text">{$locale.localisedName}</span>
                 </a>
             </div>
