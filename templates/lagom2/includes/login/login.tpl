@@ -47,8 +47,8 @@
 
                             {foreach from=$LogButtons item=sw}
                                 {if file_exists("templates/$template/core/pages/homepage/modern/shared/switcher.tpl")}
-                                                {include file="$template/core/pages/homepage/modern/shared/switcher.tpl"}
-                                            {/if}
+                                    {include file="$template/core/pages/homepage/modern/shared/switcher.tpl"}
+                                {/if}
                             {/foreach}
 
                         </div>

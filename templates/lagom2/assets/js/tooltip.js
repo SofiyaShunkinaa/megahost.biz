@@ -2,25 +2,15 @@ const title = document.querySelector('.title-country');
 const tooltip = document.querySelector('.tooltip');
 const tooltipImg = document.querySelector('.flag-country');
 const countries = document.querySelectorAll('.country');
-let currentDroppable = null;
+
 
 countries.forEach(country =>{
     country.addEventListener('mousemove', function(e){
-      let shiftX = e.clientX - tooltip.getBoundingClientRect().left;
-      let shiftY = e.clientY - tooltip.getBoundingClientRect().top;
-        
-      tooltip.hidden = true;
-      let elemBelow = document.elementFromPoint(e.clientX, event.clientY);
-      tooltip.hidden = false;
-
-      if (!elemBelow) return;
-
-      title.innerText = this.dataset.title;
-      tooltip.style.top = e.pageY - shiftY + 'px';
-      tooltip.style.left = e.pageX - shiftX + 'px';
-      tooltipImg.src=this.dataset.flag;
-
       
+      title.innerText = this.dataset.title;
+      tooltip.style.top = (e.pageY - 3220) + 'px';
+      tooltip.style.left = (e.pageX - 40) + 'px';
+      tooltipImg.src=this.dataset.flag;
 
     });
 
@@ -32,7 +22,6 @@ countries.forEach(country =>{
         tooltip.style.display = "none";
     });
 })
-//clienX clientY? learn js - drag and drop
 
 
 // tooltip.mousemove = function(event) { 
@@ -171,7 +160,6 @@ function drag(e) {
 
     currentTranslate = prevTranslate + currentPosition - startPosition;
 
-    // Ограничиваем перемещение слайдов в пределах первого и последнего слайда
     const slideWidth = sliderCustom.clientWidth / 5;
     const maxTranslate = slideWidth * 2;
     const minTranslate = -slideWidth * 2;
@@ -207,24 +195,22 @@ function animation() {
     requestAnimationFrame(animation);
   }
 }
+console.log('hi')
 
 //buttons
 document.addEventListener('DOMContentLoaded', function() {
   const buttons = document.querySelectorAll('.switcher__item');
-  const currentPage = window.location.pathname; // Получаем текущий URL страницы
+  const currentPage = window.location.pathname;
 
-  // Проходимся по кнопкам и устанавливаем обработчик события для каждой кнопки
   buttons.forEach(button => {
       const key = button.getAttribute('data-key');
       const buttonLink = key === 'login' ? '/index.php?rp=/login' : '/register.php';
-
-      // Устанавливаем обработчик события для нажатия на кнопку
+      
       button.addEventListener('click', function() {
           window.location.href = buttonLink;
       });
-
-      // Проверяем, является ли кнопка активной, и применяем стили
-      if (buttonLink === $currentPage) {
+      
+      if (buttonLink === currentPage) {
           button.classList.add('active-button'); 
       }
   });

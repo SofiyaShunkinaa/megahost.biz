@@ -97,7 +97,7 @@
 {$question=""}
 {$question_key=""}
 
-
+{debug}
 
 
 {if $secondarySectionStyle == 'primary' ||  $secondarySectionStyle == 'secondary'}

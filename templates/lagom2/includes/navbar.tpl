@@ -58,8 +58,8 @@
                         {elseif $item->hasHeadingHtml()}
                             {$item->getHeadingHtml()}
                         {/if}
-                    {elseif $item->hasIcon() && $item->getName() != 'Account'}
-                        <i class="{$item->getIcon()}"></i>
+                        {elseif $item->hasIcon() && $item->getName() != 'Account'}
+                            <i class="{$item->getIcon()}"></i>
                     {elseif $item->hasHeadingHtml() && $item->getName() != 'Account'}
                         {$item->getHeadingHtml()}
                     {/if}
