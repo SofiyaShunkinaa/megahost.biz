@@ -1,40 +1,85 @@
-{$LANG.VPNServer.title = "Сервер VPN"}
-{$LANG.VPNServer.statistics.desc1 = "Дата-центры в"}
-{$LANG.VPNServer.statistics.desc2 = "Протоколы"}
-{$LANG.VPNServer.statistics.sub1 = "  странах"}
-{$LANG.VPNServer.statistics.sub2 = "OpenVPN, PPTP, L2TP/IPsec, WireGuard, Socks 5 прокси"}
-{$LANG.VPNServer.grid.title = "Тарифные планы"}
-{$LANG.VPNServer.list.title = "В каждый план включено"}
+{if ($language == 'english')}
+    
+    {$LANG.VPNServer.title = "VPN Server"}
+    {$LANG.VPNServer.statistics.desc1 = "Data Centers in"}
+    {$LANG.VPNServer.statistics.desc2 = "Protocols"}
+    {$LANG.VPNServer.statistics.sub1 = "  countries"}
+    {$LANG.VPNServer.statistics.sub2 = "OpenVPN, PPTP, L2TP/IPsec, WireGuard, Socks 5 Proxy"}
+    {$LANG.VPNServer.grid.title = "Tariff Plans"}
+    {$LANG.VPNServer.list.title = "Included in Each Plan"}
 
-{$LANG.VPNServer.list1.1 = "Совместимость с Windows, Linux, macOS, iOS, Android, роутерами, smart TV и другим устройствами "}
-{$LANG.VPNServer.list1.2 = "Отсутствие логов"}
+    {$LANG.VPNServer.list1.1 = "Compatibility with Windows, Linux, macOS, iOS, Android, routers, smart TVs, and other devices"}
+    {$LANG.VPNServer.list1.2 = "No Logs"}
 
-{$LANG.VPNServer.list2.1 = "Протоколы OpenVPN, PPTP, L2TP/IPsec, WireGuard, Socks 5 прокси"}
-{$LANG.VPNServer.list2.2 = "Выделенные IPv4 адреса, возможность бесплатно добавить IPv6 адреса"}
+    {$LANG.VPNServer.list2.1 = "Protocols: OpenVPN, PPTP, L2TP/IPsec, WireGuard, Socks 5 Proxy"}
+    {$LANG.VPNServer.list2.2 = "Dedicated IPv4 addresses, option to add IPv6 addresses for free"}
 
-{$LANG.package_buy="Купить в один клик"}
+    {$LANG.package_buy="Buy in One Click"}
 
-{assign var=breadcrumb value=[
-    [
-        'link'=>"/index.php",
-        'label'=>"Main"
-    ],
-    [
-        'link'=>"/vpn-server.php",
-        'label'=>"VPN Server"
-    ]
-]}
 
-{assign var=VpnButtonsL value=[
-    [
-        'name' => 'Одинарный',
-        'key' => 'single'
-    ],
-    [
-        'name' => 'Двойной',
-        'key' => 'double'
-    ]
-]}
+    {assign var=breadcrumb value=[
+        [
+            'link'=>"/index.php",
+            'label'=>"Main"
+        ],
+        [
+            'link'=>"/vpn-server.php",
+            'label'=>"VPN Server"
+        ]
+    ]}
+
+        {assign var=VpnButtonsL value=[
+        [
+            'name' => 'Single',
+            'key' => 'single'
+        ],
+        [
+            'name' => 'Double',
+            'key' => 'double'
+        ]
+    ]}
+
+{else}
+
+    {$LANG.VPNServer.title = "Сервер VPN"}
+    {$LANG.VPNServer.statistics.desc1 = "Дата-центры в"}
+    {$LANG.VPNServer.statistics.desc2 = "Протоколы"}
+    {$LANG.VPNServer.statistics.sub1 = "  странах"}
+    {$LANG.VPNServer.statistics.sub2 = "OpenVPN, PPTP, L2TP/IPsec, WireGuard, Socks 5 прокси"}
+    {$LANG.VPNServer.grid.title = "Тарифные планы"}
+    {$LANG.VPNServer.list.title = "В каждый план включено"}
+
+    {$LANG.VPNServer.list1.1 = "Совместимость с Windows, Linux, macOS, iOS, Android, роутерами, smart TV и другим устройствами "}
+    {$LANG.VPNServer.list1.2 = "Отсутствие логов"}
+
+    {$LANG.VPNServer.list2.1 = "Протоколы OpenVPN, PPTP, L2TP/IPsec, WireGuard, Socks 5 прокси"}
+    {$LANG.VPNServer.list2.2 = "Выделенные IPv4 адреса, возможность бесплатно добавить IPv6 адреса"}
+
+    {$LANG.package_buy="Купить в один клик"}
+
+        {assign var=breadcrumb value=[
+        [
+            'link'=>"/index.php",
+            'label'=>"Главная"
+        ],
+        [
+            'link'=>"/vpn-server.php",
+            'label'=>"Сервер VPNr"
+        ]
+    ]}
+
+        {assign var=VpnButtonsL value=[
+        [
+            'name' => 'Одинарный',
+            'key' => 'single'
+        ],
+        [
+            'name' => 'Двойной',
+            'key' => 'double'
+        ]
+    ]}
+
+{/if}
 
 {assign var=VpnButtonsR value=[
     [

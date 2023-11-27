@@ -1,26 +1,54 @@
-{$LANG.Products.title = "Облачные VPS на NVME дисках"}
-{$LANG.Products.statistics.desc1 = "Дата-центры в"}
-{$LANG.Products.statistics.desc2 = "Более"}
-{$LANG.Products.statistics.desc3 = "Трафик"}
-{$LANG.Products.statistics.sub1 = "  странах"}
-{$LANG.Products.statistics.sub2 = "  тарифных планов"}
-{$LANG.Products.statistics.sub3 = "Безлимитный"}
-{$LANG.Products.grid.title = "Тарифные планы"}
-{$LANG.Products.list.title = "В каждый план включено"}
+{if ($language == 'english')}
+    {$LANG.Products.title = "Cloud VPS on NVMe Drives"}
+    {$LANG.Products.statistics.desc1 = "Data Centers in"}
+    {$LANG.Products.statistics.desc2 = "Over"}
+    {$LANG.Products.statistics.desc3 = "Traffic"}
+    {$LANG.Products.statistics.sub1 = "  countries"}
+    {$LANG.Products.statistics.sub2 = "  tariff plans"}
+    {$LANG.Products.statistics.sub3 = "Unlimited"}
+    {$LANG.Products.grid.title = "Tariff Plans"}
+    {$LANG.Products.list.title = "Included in Each Plan"}
 
-{$LANG.Products.list1.1 = "Бесплатное UNIX администрирование"}
-{$LANG.Products.list1.2 = "Любые операционные системы"}
-{$LANG.Products.list1.3 = "Бесплатно перенесем ваши проекты"}
-{$LANG.Products.list1.4 = "Высокопроизводительные сервера"}
-{$LANG.Products.list1.5 = "Безлимитный трафик"}
+    {$LANG.Products.list1.1 = "Free UNIX Administration"}
+    {$LANG.Products.list1.2 = "Any Operating Systems"}
+    {$LANG.Products.list1.3 = "Free Migration of Your Projects"}
+    {$LANG.Products.list1.4 = "High-Performance Servers"}
+    {$LANG.Products.list1.5 = "Unlimited Traffic"}
+    
+    {$LANG.package_buy="Buy in one click"}
 
-{$LANG.Products.list2.1 = "Возможность бесплатно добавить IPv6-адреса"}
-{$LANG.Products.list2.2 = "Регулярный мониторинг и обновление ПО"}
-{$LANG.Products.list2.3 = "Индивидуальный подход к каждому"}
-{$LANG.Products.list2.4 = "Скидки при оплате от 3 месяцев"}
-{$LANG.Products.list2.5 = "Бесплатный тестовый период до 3 дней"}
+    {$LANG.Products.list2.1 = "Option to Add IPv6 Addresses for Free"}
+    {$LANG.Products.list2.2 = "Regular Monitoring and Software Updates"}
+    {$LANG.Products.list2.3 = "Individual Approach to Each Client"}
+    {$LANG.Products.list2.4 = "Discounts for Payments of 3 Months or More"}
+    {$LANG.Products.list2.5 = "Free Trial Period Up to 3 Days"}
 
-{$LANG.package_buy="Купить в один клик"}
+{else}
+    {$LANG.Products.title = "Облачные VPS на NVME дисках"}
+    {$LANG.Products.statistics.desc1 = "Дата-центры в"}
+    {$LANG.Products.statistics.desc2 = "Более"}
+    {$LANG.Products.statistics.desc3 = "Трафик"}
+    {$LANG.Products.statistics.sub1 = "  странах"}
+    {$LANG.Products.statistics.sub2 = "  тарифных планов"}
+    {$LANG.Products.statistics.sub3 = "Безлимитный"}
+    {$LANG.Products.grid.title = "Тарифные планы"}
+    {$LANG.Products.list.title = "В каждый план включено"}
+
+    {$LANG.Products.list1.1 = "Бесплатное UNIX администрирование"}
+    {$LANG.Products.list1.2 = "Любые операционные системы"}
+    {$LANG.Products.list1.3 = "Бесплатно перенесем ваши проекты"}
+    {$LANG.Products.list1.4 = "Высокопроизводительные сервера"}
+    {$LANG.Products.list1.5 = "Безлимитный трафик"}
+
+    {$LANG.Products.list2.1 = "Возможность бесплатно добавить IPv6-адреса"}
+    {$LANG.Products.list2.2 = "Регулярный мониторинг и обновление ПО"}
+    {$LANG.Products.list2.3 = "Индивидуальный подход к каждому"}
+    {$LANG.Products.list2.4 = "Скидки при оплате от 3 месяцев"}
+    {$LANG.Products.list2.5 = "Бесплатный тестовый период до 3 дней"}
+
+    {$LANG.package_buy="Купить в один клик"}
+
+{/if}
 
 {assign var=ProductsCurrency value=[
     [

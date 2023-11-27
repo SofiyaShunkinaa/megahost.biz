@@ -913,6 +913,11 @@ details[open] .summary-icon{
   .page-clientregister .separator svg{
     width: 100%;
   }
+
+  .package-actions{
+    display: flex;
+    flex-direction: column;
+  }
   
 @media (min-width:992px){
   .app-main{

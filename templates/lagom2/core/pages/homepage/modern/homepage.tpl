@@ -65,35 +65,64 @@
         ]
     ]}
 
+    {$LANG.map_title="Servers in 25 countries"}
+    {$LANG.products_title="Popular Products"}
+    {$LANG.adv_title="Our Advantages"}
+    {$LANG.review_title="Customer Reviews"}
+    {$LANG.faq_title="Frequently Asked Questions"}
+    {$LANG.perMonthShort="mo."}
+    {$LANG.package_adv="Free UNIX Administration"}
+    {$LANG.package_buy="Buy in one click"}
+    
 
-{assign var=SwitcherButtons value=[
-    [
-        'name' => 'USD',
-        'key' => 'usd'
-    ],
-    [
-        'name' => 'RUB',
-        'key' => 'rub'
-    ]
-]}
+    {$LANG.tooltip_li1="VPS"}
+    {$LANG.tooltip_li2="VPN"}
+    {$LANG.tooltip_li3="Virtual hosting"}
+    {$LANG.tooltip_li4="Dedicated servers"}
+    {$LANG.tooltip_li5="Budget IPv6 VPS"}
+
+    {if $RSThemes['pages'][$templatefile]['config']['showTestimonials'] == '1'}
+    {assign var=testimonials value=[
+        [
+            'author'=> 'Sonia Stephens',
+            'avatar' => '5stars.svg',
+            'website'=> 'VPS Hosting',
+            'description' => 'I have been using VPS for my website for the last 6 months and am very satisfied with the service. The uptime has been excellent, and the performance is outstanding. I would definitely recommend VPS to anyone looking for reliable and affordable hosting.'
+        ],
+        [
+            'author'=> 'John Doe',
+            'avatar' => '4stars.svg',
+            'website'=> 'Dedicated Server',
+            'description' => 'As a developer, I use VPS to host my applications. I like the flexibility and control that VPS gives me. I can easily scale resources up or down as needed, and I never worry about downtime. I highly recommend VPS to any developer.'
+        ],
+        [
+            'author'=> 'Alexandra Chapman',
+            'avatar' => '5stars.svg',
+            'website'=> 'Shared Hosting',
+            'description' => 'I would definitely recommend this service and VPS to any small business owner.'
+        ],
+        [
+            'author'=> 'James Bond',
+            'avatar' => '5stars.svg',
+            'website'=> 'VPS Hosting',
+            'description' => 'I have been using VPS for my website for the last 6 months and am very satisfied with the service. The uptime has been excellent, and the performance is outstanding. I would definitely recommend VPS to anyone looking for reliable and affordable hosting.'
+        ],
+        [
+            'author'=> 'Alice Smith',
+            'avatar' => '4stars.svg',
+            'website'=> 'Dedicated Server',
+            'description' => 'As a developer, I use VPS to host my applications. I like the flexibility and control that VPS gives me. I can easily scale resources up or down as needed, and I never worry about downtime. I highly recommend VPS to any developer.'
+        ],
+        [
+            'author'=> 'Emily Turner',
+            'avatar' => '5stars.svg',
+            'website'=> 'Shared Hosting',
+            'description' => 'I would definitely recommend this service and VPS to any small business owner.'
+        ]
+    ]}
+{/if}
 
 
-{$LANG.map_title="Сервера в 25 странах"}
-{$LANG.products_title="Популярные продукты"}
-{$LANG.adv_title="Наши преимущества"}
-{$LANG.review_title="Отзывы наших клиентов"}
-{$LANG.faq_title="Часто задаваемые вопросы"}
-{$LANG.perMonthShort="мес."}
-{$LANG.package_adv="бесплатное UNIX администрирование"}
-{$LANG.package_buy="Купить в один клик"}
-{$LANG.switcherProducts_left="USD"}
-{$LANG.switcherProducts_right="RUB"}
-
-{$LANG.tooltip_li1="VPS"}
-{$LANG.tooltip_li2="VPN"}
-{$LANG.tooltip_li3="Virtual hosting"}
-{$LANG.tooltip_li4="Dedicated servers"}
-{$LANG.tooltip_li5="Budget IPv6 VPS"}
 
 {else}
     {$Advantages.protection.title="Бесплатная защита от DDos-атак"}
@@ -161,8 +190,75 @@
             'text_p3' => '<b>Windows:</b> Операционная система Windows также может быть установлена на VPS-хостинге. Windows Server предлагает множество возможностей для хостинга веб-сайтов и приложений, а также совместим с различными технологиями Microsoft.'
         ]
     ]}
+
+    {$LANG.map_title="Сервера в 25 странах"}
+    {$LANG.products_title="Популярные продукты"}
+    {$LANG.adv_title="Наши преимущества"}
+    {$LANG.review_title="Отзывы наших клиентов"}
+    {$LANG.faq_title="Часто задаваемые вопросы"}
+    {$LANG.perMonthShort="мес."}
+    {$LANG.package_adv="бесплатное UNIX администрирование"}
+    {$LANG.package_buy="Купить в один клик"}
+
+    {$LANG.tooltip_li1="VPS"}
+    {$LANG.tooltip_li2="VPN"}
+    {$LANG.tooltip_li3="Виртуальный хостинг"}
+    {$LANG.tooltip_li4="Выделенные серверы"}
+    {$LANG.tooltip_li5="Бюджетные IPv6 VPS"}
+
+    {if $RSThemes['pages'][$templatefile]['config']['showTestimonials'] == '1'}
+{assign var=testimonials value=[
+[
+    'author'=> 'Sonia Stephens',
+    'avatar' => '5stars.svg',
+    'website'=> 'VPS Хостинг',
+    'description' => 'Я использую VPS для своего сайта в течение последних 6 месяцев и очень доволен сервисом. Время безотказной работы было отличным, а производительность — превосходной. Я бы определённо рекомендовал VPS всем, кто ищет надёжный и доступный хостинг.'
+],
+[
+    'author'=> 'John Doe',
+    'avatar' => '4stars.svg',
+    'website'=> 'Выделенный сервер',
+    'description' => 'Я разработчик и использую VPS для размещения своих приложений. Мне нравится гибкость и контроль, которые даёт мне VPS. Я могу легко увеличивать или уменьшать ресурсы по мере необходимости, и я никогда не беспокоюсь о простое. Я настоятельно рекомендую VPS любому разработчику.'
+],
+[
+    'author'=> 'Alexandra Chapman',
+    'avatar' => '5stars.svg',
+    'website'=> 'Shared хостинг',
+    'description' => 'Я бы определённо рекомендовал данный сервис и VPS любому владельцу малого бизнеса.'
+],
+[
+    'author'=> 'James Bond',
+    'avatar' => '5stars.svg',
+    'website'=> 'VPS Хостинг',
+    'description' => 'Я использую VPS для своего сайта в течение последних 6 месяцев и очень доволен сервисом. Время безотказной работы было отличным, а производительность — превосходной. Я бы определённо рекомендовал VPS всем, кто ищет надёжный и доступный хостинг.'
+],
+[
+    'author'=> 'Alice Smith',
+    'avatar' => '4stars.svg',
+    'website'=> 'Выделенный сервер',
+    'description' => 'Я разработчик и использую VPS для размещения своих приложений. Мне нравится гибкость и контроль, которые даёт мне VPS. Я могу легко увеличивать или уменьшать ресурсы по мере необходимости, и я никогда не беспокоюсь о простое. Я настоятельно рекомендую VPS любому разработчику.'
+],
+[
+    'author'=> 'Emily Turner',
+    'avatar' => '5stars.svg',
+    'website'=> 'Shared хостинг',
+    'description' => 'Я бы определённо рекомендовал данный сервис и VPS любому владельцу малого бизнеса.'
+]
+]}
+{/if}
+    
 {/if}
 
+{assign var=SwitcherButtons value=[
+    [
+        'name' => 'USD',
+        'key' => 'usd'
+    ],
+    [
+        'name' => 'RUB',
+        'key' => 'rub'
+    ]
+]}
 
 {$question=""}
 {$question_key=""}
@@ -210,53 +306,6 @@
     {/if}
 {/foreach}
 {/if}
-
-{* =====================================
-
- TESTIMONIALS
- Add new testimonials simply by adding new array records below
-
- ======================================= *}
- 
-{if $RSThemes['pages'][$templatefile]['config']['showTestimonials'] == '1'}
-{assign var=testimonials value=[
-[
-    'author'=> 'Sonia Stephens',
-    'avatar' => '5stars.svg',
-    'website'=> 'VPS Хостинг',
-    'description' => 'Я использую VPS для своего сайта в течение последних 6 месяцев и очень доволен сервисом. Время безотказной работы было отличным, а производительность — превосходной. Я бы определённо рекомендовал VPS всем, кто ищет надёжный и доступный хостинг.'
-],
-[
-    'author'=> 'John Doe',
-    'avatar' => '4stars.svg',
-    'website'=> 'Выделенный сервер',
-    'description' => 'Я разработчик и использую VPS для размещения своих приложений. Мне нравится гибкость и контроль, которые даёт мне VPS. Я могу легко увеличивать или уменьшать ресурсы по мере необходимости, и я никогда не беспокоюсь о простое. Я настоятельно рекомендую VPS любому разработчику.'
-],
-[
-    'author'=> 'Alexandra Chapman',
-    'avatar' => '5stars.svg',
-    'website'=> 'Shared хостинг',
-    'description' => 'Я бы определённо рекомендовал данный сервис и VPS любому владельцу малого бизнеса.'
-],
-[
-    'author'=> 'James Bond',
-    'avatar' => '5stars.svg',
-    'website'=> 'VPS Хостинг',
-    'description' => 'Я использую VPS для своего сайта в течение последних 6 месяцев и очень доволен сервисом. Время безотказной работы было отличным, а производительность — превосходной. Я бы определённо рекомендовал VPS всем, кто ищет надёжный и доступный хостинг.'
-],
-[
-    'author'=> 'Alice Smith',
-    'avatar' => '4stars.svg',
-    'website'=> 'Выделенный сервер',
-    'description' => 'Я разработчик и использую VPS для размещения своих приложений. Мне нравится гибкость и контроль, которые даёт мне VPS. Я могу легко увеличивать или уменьшать ресурсы по мере необходимости, и я никогда не беспокоюсь о простое. Я настоятельно рекомендую VPS любому разработчику.'
-],
-[
-    'author'=> 'Emily Turner',
-    'avatar' => '5stars.svg',
-    'website'=> 'Shared хостинг',
-    'description' => 'Я бы определённо рекомендовал данный сервис и VPS любому владельцу малого бизнеса.'
-]
-]}
 
 {assign var=Countries value=[
 [
@@ -335,7 +384,7 @@
     'name'=>'usa'
 ]
 ]}
- {/if}
+ 
 
 <div class="site site-index">
     {if $homepage->getPromotionExtensionStatus()}

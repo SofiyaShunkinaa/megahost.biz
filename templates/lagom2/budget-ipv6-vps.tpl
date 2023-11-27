@@ -1,3 +1,65 @@
+
+{$LANG.BudgetIpv.title = "Budget IPv6 VPS"}
+{$LANG.BudgetIpv.statistics.desc1 = "Locations"}
+{$LANG.BudgetIpv.statistics.desc2 = "Protection"}
+
+{$LANG.BudgetIpv.statistics.sub1 = " countries"}
+{$LANG.BudgetIpv.statistics.sub2 = "from DDoS attacks"}
+
+{$LANG.BudgetIpv.grid.title = "Tariff Plans"}
+{$LANG.BudgetIpv.list.title = "Included in Each Plan"}
+
+{$LANG.BudgetIpv.list1.1 = "Free SSL Certificate"}
+{$LANG.BudgetIpv.list1.2 = "PHP 5.6–8.1, Perl 5.3, Cron"}
+{$LANG.BudgetIpv.list1.3 = "NVMe SSD Drives"}
+{$LANG.BudgetIpv.list1.4 = "Ioncube Loader"}
+{$LANG.BudgetIpv.list1.5 = "POP3, IMAP, SMTP"}
+
+{$LANG.BudgetIpv.list2.1 = "Support for Popular CMS: Wordpress, Joomla, Drupal, Bitrix, Tilda, OpenCart, etc."}
+{$LANG.BudgetIpv.list2.2 = "Free Trial Period Up to 7 Days"}
+{$LANG.BudgetIpv.list2.3 = "Discounts for Payments of 3 Months or More"}
+{$LANG.BudgetIpv.list2.4 = "phpMyAdmin, Webmail"}
+{$LANG.BudgetIpv.list2.5 = "ImageMagick"}
+{$LANG.BudgetIpv.list2.6 = "FTP, SFTP Access"}
+
+{$LANG.package_buy="Buy in One Click"}
+
+
+{$LANG.package_buy="Buy in One Click"}
+
+
+{assign var=breadcrumb value=[
+    [
+        'link'=>"/index.php",
+        'label'=>"Main"
+    ],
+    [
+        'link'=>"/budget-ipv6-vps.php",
+        'label'=>"Budget IPv6 VPS"
+    ]
+]}
+
+{assign var=DSButtonsPeriod value=[
+        [
+            'name' => '1 mo.',
+            'key' => '1mnth'
+        ],
+        [
+            'name' => '3 mo.',
+            'key' => '3mnth'
+        ],
+        [
+            'name' => '6 mo.',
+            'key' => '6mnth'
+        ],
+        [
+            'name' => '1 year',
+            'key' => '1year'
+        ]
+    ]}
+
+{else}
+
 {$LANG.BudgetIpv.title = "Бюджетные IPv6 VPS"}
 {$LANG.BudgetIpv.statistics.desc1 = "Локации"}
 {$LANG.BudgetIpv.statistics.desc2 = "Защита"}
@@ -23,28 +85,6 @@
 
 {$LANG.package_buy="Купить в один клик"}
 
-{assign var=breadcrumb value=[
-    [
-        'link'=>"/index.php",
-        'label'=>"Main"
-    ],
-    [
-        'link'=>"/dedicated-servers.php",
-        'label'=>"Dedicated servers"
-    ]
-]}
-
-{assign var=DSButtonsCurrency value=[
-    [
-        'name' => 'USD',
-        'key' => 'usd'
-    ],
-    [
-        'name' => 'RUB',
-        'key' => 'rub'
-    ]
-]}
-
 {assign var=DSButtonsPeriod value=[
     [
         'name' => '1 мес.',
@@ -63,6 +103,31 @@
         'key' => '1year'
     ]
 ]}
+
+{assign var=breadcrumb value=[
+    [
+        'link'=>"/index.php",
+        'label'=>"Главная"
+    ],
+    [
+        'link'=>"/budget-ipv6-vps.php",
+        'label'=>"Бюджетные IPv6 VPS"
+    ]
+]}
+
+{/if}
+
+{assign var=DSButtonsCurrency value=[
+    [
+        'name' => 'USD',
+        'key' => 'usd'
+    ],
+    [
+        'name' => 'RUB',
+        'key' => 'rub'
+    ]
+]}
+
 
 <div class="container">
         <div class="main-header">

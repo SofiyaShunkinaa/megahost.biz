@@ -1,3 +1,56 @@
+{if ($language == 'english')}    
+    
+    {$LANG.DServer.title = "Dedicated Servers"}
+    {$LANG.DServer.statistics.desc1 = "Data Centers in"}
+    {$LANG.DServer.statistics.desc2 = "Protocols"}
+    {$LANG.DServer.statistics.desc3 = "Traffic"}
+    {$LANG.DServer.statistics.sub1 = "  countries"}
+    {$LANG.DServer.statistics.sub2 = " tariff plans"}
+    {$LANG.DServer.statistics.sub3 = " Unlimited"}
+    {$LANG.DServer.grid.title = "Tariff Plans"}
+    {$LANG.DServer.list.title = "Included in Each Plan"}
+
+    {$LANG.DServer.list1.1 = "Compatibility with Windows, Linux, macOS, iOS, Android, routers, smart TVs, and other devices"}
+    {$LANG.DServer.list1.2 = "No Logs"}
+
+    {$LANG.DServer.list2.1 = "Protocols: OpenVPN, PPTP, L2TP/IPsec, WireGuard, Socks 5 Proxy"}
+    {$LANG.DServer.list2.2 = "Dedicated IPv4 addresses, option to add IPv6 addresses for free"}
+
+    {$LANG.package_buy="Buy in One Click"}
+
+
+    {assign var=breadcrumb value=[
+        [
+            'link'=>"/index.php",
+            'label'=>"Main"
+        ],
+        [
+            'link'=>"/dedicated-servers.php",
+            'label'=>"Dedicated servers"
+        ]
+    ]}
+
+    {assign var=DSButtonsPeriod value=[
+        [
+            'name' => '1 mo.',
+            'key' => '1mnth'
+        ],
+        [
+            'name' => '3 mo.',
+            'key' => '3mnth'
+        ],
+        [
+            'name' => '6 mo.',
+            'key' => '6mnth'
+        ],
+        [
+            'name' => '1 year',
+            'key' => '1year'
+        ]
+    ]}
+
+    {else}
+
     {$LANG.DServer.title = "Выделенные сервера"}
     {$LANG.DServer.statistics.desc1 = "Дата-центры в"}
     {$LANG.DServer.statistics.desc2 = "Протоколы"}
@@ -19,22 +72,11 @@
     {assign var=breadcrumb value=[
         [
             'link'=>"/index.php",
-            'label'=>"Main"
+            'label'=>"Главная"
         ],
         [
             'link'=>"/dedicated-servers.php",
-            'label'=>"Dedicated servers"
-        ]
-    ]}
-
-    {assign var=DSButtonsCurrency value=[
-        [
-            'name' => 'USD',
-            'key' => 'usd'
-        ],
-        [
-            'name' => 'RUB',
-            'key' => 'rub'
+            'label'=>"Выделенные сервера"
         ]
     ]}
 
@@ -54,6 +96,19 @@
         [
             'name' => '1 год',
             'key' => '1year'
+        ]
+    ]}
+
+    {/if}
+
+    {assign var=DSButtonsCurrency value=[
+        [
+            'name' => 'USD',
+            'key' => 'usd'
+        ],
+        [
+            'name' => 'RUB',
+            'key' => 'rub'
         ]
     ]}
 
