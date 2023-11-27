@@ -1,13 +1,26 @@
-{assign var=LogButtons value=[
-    [
-        'name' => 'Вход',
-        'key' => 'login'
-    ],
-    [
-        'name' => 'Регистрация',
-        'key' => 'registration'
-    ]
-]}
+{if ($language == 'english')}
+    {assign var=LogButtons value=[
+        [
+            'name' => 'Login',
+            'key' => 'login'
+        ],
+        [
+            'name' => 'Registration',
+            'key' => 'registration'
+        ]
+    ]}
+{else}
+    {assign var=LogButtons value=[
+        [
+            'name' => 'Вход',
+            'key' => 'login'
+        ],
+        [
+            'name' => 'Регистрация',
+            'key' => 'registration'
+        ]
+    ]}  
+    {/if}  
 
 
 {if file_exists("templates/$template/includes/login/overwrites/login.tpl")}

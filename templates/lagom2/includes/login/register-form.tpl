@@ -1,4 +1,29 @@
-{assign var=RegButtons value=[
+{if ($language == 'english')}
+    {assign var=RegButtons value=[
+        [
+            'name' => 'Login',
+            'key' => 'login'
+        ],
+        [
+            'name' => 'Registration',
+            'key' => 'registration'
+        ]
+    ]}
+
+    {assign var=currencies value=[
+        [
+            'code' => 'USD',
+            'id' => 'usd',
+            'default' => true
+        ],
+        [
+            'code' => 'RUB',
+            'id' => 'rub',
+            'default' => false
+        ]
+    ]}
+{else}
+    {assign var=RegButtons value=[
     [
         'name' => 'Вход',
         'key' => 'login'
@@ -21,8 +46,9 @@
         'default' => false
     ]
 ]}
+{/if}
 
-
+{debug}
 
 {if file_exists("templates/$template/includes/login/overwrites/register-form.tpl")}
      {include file="{$template}/includes/login/overwrites/register-form.tpl"}  
