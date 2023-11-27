@@ -1,69 +1,70 @@
+{if ($language == 'english')}
+    {$Advantages.protection.title="Free DDoS Attacks Protection"}
+    {$homeSubTitle="Free Administration and Trial Period"}
+    {$Advantages.protection.subtitle="Protection against DDoS attacks is free for all clients; it automatically detects most types of DDoS attacks and filters incoming traffic to the server."}
+    {$Advantages.support.title="Support"}
+    {$Advantages.support.subtitle="Individual approach to each client and strict adherence to undertaken commitments."}
+    {$Advantages.admin.title="Free Administration"}
+    {$Advantages.admin.subtitle="Monitoring of VPS server, installation of additional software, and its updates."}
+    {$Advantages.transfer.title="Free Migration"}
+    {$Advantages.transfer.subtitle="When ordering the service, we will assist with the migration of your projects for free."}
+    {$Advantages.test.title="Trial Period"}
+    {$Advantages.test.subtitle="We provide our clients with up to 3 days of VPS testing and up to 7 days of virtual hosting testing."}
+    {$Advantages.server.title="High-Performance Servers"}
+    {$Advantages.server.subtitle="Based on Intel Xeon processors, NVMe SSD disks, hard disks combined in hardware RAID10, protection against DDoS attacks."}
 
-{$Advantages.protection.title="Бесплатная защита от DDos-атак"}
-{$homeSubTitle="Бесплатное администрирование и тестовый период"}
-{$Advantages.protection.subtitle="Защита от DDoS-атак бесплатна для всех клиентов, она автоматически обнаруживает большинство типов DDoS-атак и фильтрует входящий трафик на сервер."}
-{$Advantages.support.title="Поддержка"}
-{$Advantages.support.subtitle="Индивидуальный подход к каждому клиенту и неукоснительное выполнение взятых на себя обязательств."}
-{$Advantages.admin.title="Бесплатное администрирование"}
-{$Advantages.admin.subtitle="Мониторинг VPS сервера, установка дополнительного ПО и его обновление."}
-{$Advantages.transfer.title="Бесплатный переезд"}
-{$Advantages.transfer.subtitle="При заказе сервиса мы бесплатно поможем с миграцией ваших проектов."}
-{$Advantages.test.title="Тестовый период"}
-{$Advantages.test.subtitle="Предоставляем нашим клиентам до 3 дней теста VPS и до 7 дней теста виртуального хостинга."}
-{$Advantages.server.title="Высокопроизводительные сервера"}
-{$Advantages.server.subtitle="На базе процессоров Intel Xeon,NVMe SSD диски, жесткие диски объединенные в аппаратный RAID10, защита от DDoS атак."}
+    {assign var=Questions value=[
 
-{assign var=Questions value=[
+        [
+            'title' => 'What is VPS hosting?',
+            'text_p1' => '<b>MacOS:</b> MacOS is an operating system developed by Apple and can be installed on VPS hosting. MacOS offers extensive capabilities for developing and running applications for Apple platforms.',
+            'text_p2' => '<b>Linux:</b> Linux is a free and open-source operating system widely used in the hosting world. There are many Linux distributions, such as Ubuntu, CentOS, Debian, and others, that can be installed on VPS hosting.',
+            'text_p3' => '<b>Windows:</b> The Windows operating system can also be installed on VPS hosting. Windows Server offers many possibilities for hosting websites and applications, and it is compatible with various Microsoft technologies.'
+        ],
 
-    [
-        'title' => 'Что такое VPS- хостинг?',
-        'text_p1' => '<b>MacOS:</b> MacOS является операционной системой, разработанной компанией Apple, и может быть установлена на VPS-хостинге. MacOS предлагает широкие возможности для разработки и запуска приложений под Apple-платформы. ',
-        'text_p2' => '<b>Linux:</b> Linux - это свободная и открытая операционная система, которая широко используется в мире хостинга. Существует множество дистрибутивов Linux, таких как Ubuntu, CentOS, Debian и другие, которые могут быть установлены на VPS-хостинге. ',
-        'text_p3' => '<b>Windows:</b> Операционная система Windows также может быть установлена на VPS-хостинге. Windows Server предлагает множество возможностей для хостинга веб-сайтов и приложений, а также совместим с различными технологиями Microsoft.'
-    ],
+        [
+            'title' => 'What are the advantages of VPS hosting over regular hosting?',
+            'text_p1' => '<b>MacOS:</b> MacOS is an operating system developed by Apple and can be installed on VPS hosting. MacOS offers extensive capabilities for developing and running applications for Apple platforms.',
+            'text_p2' => '<b>Linux:</b> Linux is a free and open-source operating system widely used in the hosting world. There are many Linux distributions, such as Ubuntu, CentOS, Debian, and others, that can be installed on VPS hosting.',
+            'text_p3' => '<b>Windows:</b> The Windows operating system can also be installed on VPS hosting. Windows Server offers many possibilities for hosting websites and applications, and it is compatible with various Microsoft technologies.'
+    
+        ],
 
-    [
-        'title' => 'Какие преимущества VPS-хостинга перед обычным хостингом?',
-        'text_p1' => '<b>MacOS:</b> MacOS является операционной системой, разработанной компанией Apple, и может быть установлена на VPS-хостинге. MacOS предлагает широкие возможности для разработки и запуска приложений под Apple-платформы. ',
-        'text_p2' => '<b>Linux:</b> Linux - это свободная и открытая операционная система, которая широко используется в мире хостинга. Существует множество дистрибутивов Linux, таких как Ubuntu, CentOS, Debian и другие, которые могут быть установлены на VPS-хостинге. ',
-        'text_p3' => '<b>Windows:</b> Операционная система Windows также может быть установлена на VPS-хостинге. Windows Server предлагает множество возможностей для хостинга веб-сайтов и приложений, а также совместим с различными технологиями Microsoft.'
-   
-    ],
+        [
+            'title' => 'Can I host multiple websites on VPS?',
+            'text_p1' => '<b>MacOS:</b> MacOS is an operating system developed by Apple and can be installed on VPS hosting. MacOS offers extensive capabilities for developing and running applications for Apple platforms.',
+            'text_p2' => '<b>Linux:</b> Linux is a free and open-source operating system widely used in the hosting world. There are many Linux distributions, such as Ubuntu, CentOS, Debian, and others, that can be installed on VPS hosting.',
+            'text_p3' => '<b>Windows:</b> The Windows operating system can also be installed on VPS hosting. Windows Server offers many possibilities for hosting websites and applications, and it is compatible with various Microsoft technologies.'
+    
+        ],
+        [
+            'title' => 'Are there any restrictions on installing software on VPS hosting?',
+            'text_p1' => '<b>MacOS:</b> MacOS is an operating system developed by Apple and can be installed on VPS hosting. MacOS offers extensive capabilities for developing and running applications for Apple platforms.',
+            'text_p2' => '<b>Linux:</b> Linux is a free and open-source operating system widely used in the hosting world. There are many Linux distributions, such as Ubuntu, CentOS, Debian, and others, that can be installed on VPS hosting.',
+            'text_p3' => '<b>Windows:</b> The Windows operating system can also be installed on VPS hosting. Windows Server offers many possibilities for hosting websites and applications, and it is compatible with various Microsoft technologies.'
+    
+        ],
+        [
+            'title' => 'What type of VPS hosting do you provide?',
+            'text_p1' => '<b>MacOS:</b> MacOS is an operating system developed by Apple and can be installed on VPS hosting. MacOS offers extensive capabilities for developing and running applications for Apple platforms.',
+            'text_p2' => '<b>Linux:</b> Linux is a free and open-source operating system widely used in the hosting world. There are many Linux distributions, such as Ubuntu, CentOS, Debian, and others, that can be installed on VPS hosting.',
+            'text_p3' => '<b>Windows:</b> The Windows operating system can also be installed on VPS hosting. Windows Server offers many possibilities for hosting websites and applications, and it is compatible with various Microsoft technologies.'
+    
+        ],
+        [
+            'title' => 'Can VPS hosting be scaled?',
+            'text_p1' => '<b>MacOS:</b> MacOS is an operating system developed by Apple and can be installed on VPS hosting. MacOS offers extensive capabilities for developing and running applications for Apple platforms.',
+            'text_p2' => '<b>Linux:</b> Linux is a free and open-source operating system widely used in the hosting world. There are many Linux distributions, such as Ubuntu, CentOS, Debian, and others, that can be installed on VPS hosting.',
+            'text_p3' => '<b>Windows:</b> The Windows operating system can also be installed on VPS hosting. Windows Server offers many possibilities for hosting websites and applications, and it is compatible with various Microsoft technologies.'
+        ],
+        [
+            'title' => 'Do you support 2FA authentication?',
+            'text_p1' => '<b>MacOS:</b> MacOS is an operating system developed by Apple and can be installed on VPS hosting. MacOS offers extensive capabilities for developing and running applications for Apple platforms.',
+            'text_p2' => '<b>Linux:</b> Linux is a free and open-source operating system widely used in the hosting world. There are many Linux distributions, such as Ubuntu, CentOS, Debian, and others, that can be installed on VPS hosting.',
+            'text_p3' => '<b>Windows:</b> The Windows operating system can also be installed on VPS hosting. Windows Server offers many possibilities for hosting websites and applications, and it is compatible with various Microsoft technologies.'
+        ]
+    ]}
 
-    [
-        'title' => 'Могу ли я разместить несколько сайтов на VPS?',
-        'text_p1' => '<b>MacOS:</b> MacOS является операционной системой, разработанной компанией Apple, и может быть установлена на VPS-хостинге. MacOS предлагает широкие возможности для разработки и запуска приложений под Apple-платформы. ',
-        'text_p2' => '<b>Linux:</b> Linux - это свободная и открытая операционная система, которая широко используется в мире хостинга. Существует множество дистрибутивов Linux, таких как Ubuntu, CentOS, Debian и другие, которые могут быть установлены на VPS-хостинге. ',
-        'text_p3' => '<b>Windows:</b> Операционная система Windows также может быть установлена на VPS-хостинге. Windows Server предлагает множество возможностей для хостинга веб-сайтов и приложений, а также совместим с различными технологиями Microsoft.'
-   
-    ],
-    [
-        'title' => 'Есть ли какие-то ограничения по установке программного обеспечение на VPS-хостинге?',
-        'text_p1' => '<b>MacOS:</b> MacOS является операционной системой, разработанной компанией Apple, и может быть установлена на VPS-хостинге. MacOS предлагает широкие возможности для разработки и запуска приложений под Apple-платформы. ',
-        'text_p2' => '<b>Linux:</b> Linux - это свободная и открытая операционная система, которая широко используется в мире хостинга. Существует множество дистрибутивов Linux, таких как Ubuntu, CentOS, Debian и другие, которые могут быть установлены на VPS-хостинге. ',
-        'text_p3' => '<b>Windows:</b> Операционная система Windows также может быть установлена на VPS-хостинге. Windows Server предлагает множество возможностей для хостинга веб-сайтов и приложений, а также совместим с различными технологиями Microsoft.'
-   
-    ],
-    [
-        'title' => 'Какой тип VPS хостинга вы предоставляете?',
-        'text_p1' => '<b>MacOS:</b> MacOS является операционной системой, разработанной компанией Apple, и может быть установлена на VPS-хостинге. MacOS предлагает широкие возможности для разработки и запуска приложений под Apple-платформы. ',
-        'text_p2' => '<b>Linux:</b> Linux - это свободная и открытая операционная система, которая широко используется в мире хостинга. Существует множество дистрибутивов Linux, таких как Ubuntu, CentOS, Debian и другие, которые могут быть установлены на VPS-хостинге. ',
-        'text_p3' => '<b>Windows:</b> Операционная система Windows также может быть установлена на VPS-хостинге. Windows Server предлагает множество возможностей для хостинга веб-сайтов и приложений, а также совместим с различными технологиями Microsoft.'
-   
-    ],
-    [
-        'title' => 'Можно ли масштабировать VPS-хостинг?',
-        'text_p1' => '<b>MacOS:</b> MacOS является операционной системой, разработанной компанией Apple, и может быть установлена на VPS-хостинге. MacOS предлагает широкие возможности для разработки и запуска приложений под Apple-платформы. ',
-        'text_p2' => '<b>Linux:</b> Linux - это свободная и открытая операционная система, которая широко используется в мире хостинга. Существует множество дистрибутивов Linux, таких как Ubuntu, CentOS, Debian и другие, которые могут быть установлены на VPS-хостинге. ',
-        'text_p3' => '<b>Windows:</b> Операционная система Windows также может быть установлена на VPS-хостинге. Windows Server предлагает множество возможностей для хостинга веб-сайтов и приложений, а также совместим с различными технологиями Microsoft.'
-    ],
-    [
-        'title' => 'Поддерживаете ли вы 2FA авторизацию?',
-        'text_p1' => '<b>MacOS:</b> MacOS является операционной системой, разработанной компанией Apple, и может быть установлена на VPS-хостинге. MacOS предлагает широкие возможности для разработки и запуска приложений под Apple-платформы. ',
-        'text_p2' => '<b>Linux:</b> Linux - это свободная и открытая операционная система, которая широко используется в мире хостинга. Существует множество дистрибутивов Linux, таких как Ubuntu, CentOS, Debian и другие, которые могут быть установлены на VPS-хостинге. ',
-        'text_p3' => '<b>Windows:</b> Операционная система Windows также может быть установлена на VPS-хостинге. Windows Server предлагает множество возможностей для хостинга веб-сайтов и приложений, а также совместим с различными технологиями Microsoft.'
-    ]
-]}
 
 {assign var=SwitcherButtons value=[
     [
@@ -93,6 +94,75 @@
 {$LANG.tooltip_li3="Virtual hosting"}
 {$LANG.tooltip_li4="Dedicated servers"}
 {$LANG.tooltip_li5="Budget IPv6 VPS"}
+
+{else}
+    {$Advantages.protection.title="Бесплатная защита от DDos-атак"}
+    {$homeSubTitle="Бесплатное администрирование и тестовый период"}
+    {$Advantages.protection.subtitle="Защита от DDoS-атак бесплатна для всех клиентов, она автоматически обнаруживает большинство типов DDoS-атак и фильтрует входящий трафик на сервер."}
+    {$Advantages.support.title="Поддержка"}
+    {$Advantages.support.subtitle="Индивидуальный подход к каждому клиенту и неукоснительное выполнение взятых на себя обязательств."}
+    {$Advantages.admin.title="Бесплатное администрирование"}
+    {$Advantages.admin.subtitle="Мониторинг VPS сервера, установка дополнительного ПО и его обновление."}
+    {$Advantages.transfer.title="Бесплатный переезд"}
+    {$Advantages.transfer.subtitle="При заказе сервиса мы бесплатно поможем с миграцией ваших проектов."}
+    {$Advantages.test.title="Тестовый период"}
+    {$Advantages.test.subtitle="Предоставляем нашим клиентам до 3 дней теста VPS и до 7 дней теста виртуального хостинга."}
+    {$Advantages.server.title="Высокопроизводительные сервера"}
+    {$Advantages.server.subtitle="На базе процессоров Intel Xeon,NVMe SSD диски, жесткие диски объединенные в аппаратный RAID10, защита от DDoS атак."}
+
+    {assign var=Questions value=[
+
+        [
+            'title' => 'Что такое VPS- хостинг?',
+            'text_p1' => '<b>MacOS:</b> MacOS является операционной системой, разработанной компанией Apple, и может быть установлена на VPS-хостинге. MacOS предлагает широкие возможности для разработки и запуска приложений под Apple-платформы. ',
+            'text_p2' => '<b>Linux:</b> Linux - это свободная и открытая операционная система, которая широко используется в мире хостинга. Существует множество дистрибутивов Linux, таких как Ubuntu, CentOS, Debian и другие, которые могут быть установлены на VPS-хостинге. ',
+            'text_p3' => '<b>Windows:</b> Операционная система Windows также может быть установлена на VPS-хостинге. Windows Server предлагает множество возможностей для хостинга веб-сайтов и приложений, а также совместим с различными технологиями Microsoft.'
+        ],
+
+        [
+            'title' => 'Какие преимущества VPS-хостинга перед обычным хостингом?',
+            'text_p1' => '<b>MacOS:</b> MacOS является операционной системой, разработанной компанией Apple, и может быть установлена на VPS-хостинге. MacOS предлагает широкие возможности для разработки и запуска приложений под Apple-платформы. ',
+            'text_p2' => '<b>Linux:</b> Linux - это свободная и открытая операционная система, которая широко используется в мире хостинга. Существует множество дистрибутивов Linux, таких как Ubuntu, CentOS, Debian и другие, которые могут быть установлены на VPS-хостинге. ',
+            'text_p3' => '<b>Windows:</b> Операционная система Windows также может быть установлена на VPS-хостинге. Windows Server предлагает множество возможностей для хостинга веб-сайтов и приложений, а также совместим с различными технологиями Microsoft.'
+    
+        ],
+
+        [
+            'title' => 'Могу ли я разместить несколько сайтов на VPS?',
+            'text_p1' => '<b>MacOS:</b> MacOS является операционной системой, разработанной компанией Apple, и может быть установлена на VPS-хостинге. MacOS предлагает широкие возможности для разработки и запуска приложений под Apple-платформы. ',
+            'text_p2' => '<b>Linux:</b> Linux - это свободная и открытая операционная система, которая широко используется в мире хостинга. Существует множество дистрибутивов Linux, таких как Ubuntu, CentOS, Debian и другие, которые могут быть установлены на VPS-хостинге. ',
+            'text_p3' => '<b>Windows:</b> Операционная система Windows также может быть установлена на VPS-хостинге. Windows Server предлагает множество возможностей для хостинга веб-сайтов и приложений, а также совместим с различными технологиями Microsoft.'
+    
+        ],
+        [
+            'title' => 'Есть ли какие-то ограничения по установке программного обеспечение на VPS-хостинге?',
+            'text_p1' => '<b>MacOS:</b> MacOS является операционной системой, разработанной компанией Apple, и может быть установлена на VPS-хостинге. MacOS предлагает широкие возможности для разработки и запуска приложений под Apple-платформы. ',
+            'text_p2' => '<b>Linux:</b> Linux - это свободная и открытая операционная система, которая широко используется в мире хостинга. Существует множество дистрибутивов Linux, таких как Ubuntu, CentOS, Debian и другие, которые могут быть установлены на VPS-хостинге. ',
+            'text_p3' => '<b>Windows:</b> Операционная система Windows также может быть установлена на VPS-хостинге. Windows Server предлагает множество возможностей для хостинга веб-сайтов и приложений, а также совместим с различными технологиями Microsoft.'
+    
+        ],
+        [
+            'title' => 'Какой тип VPS хостинга вы предоставляете?',
+            'text_p1' => '<b>MacOS:</b> MacOS является операционной системой, разработанной компанией Apple, и может быть установлена на VPS-хостинге. MacOS предлагает широкие возможности для разработки и запуска приложений под Apple-платформы. ',
+            'text_p2' => '<b>Linux:</b> Linux - это свободная и открытая операционная система, которая широко используется в мире хостинга. Существует множество дистрибутивов Linux, таких как Ubuntu, CentOS, Debian и другие, которые могут быть установлены на VPS-хостинге. ',
+            'text_p3' => '<b>Windows:</b> Операционная система Windows также может быть установлена на VPS-хостинге. Windows Server предлагает множество возможностей для хостинга веб-сайтов и приложений, а также совместим с различными технологиями Microsoft.'
+    
+        ],
+        [
+            'title' => 'Можно ли масштабировать VPS-хостинг?',
+            'text_p1' => '<b>MacOS:</b> MacOS является операционной системой, разработанной компанией Apple, и может быть установлена на VPS-хостинге. MacOS предлагает широкие возможности для разработки и запуска приложений под Apple-платформы. ',
+            'text_p2' => '<b>Linux:</b> Linux - это свободная и открытая операционная система, которая широко используется в мире хостинга. Существует множество дистрибутивов Linux, таких как Ubuntu, CentOS, Debian и другие, которые могут быть установлены на VPS-хостинге. ',
+            'text_p3' => '<b>Windows:</b> Операционная система Windows также может быть установлена на VPS-хостинге. Windows Server предлагает множество возможностей для хостинга веб-сайтов и приложений, а также совместим с различными технологиями Microsoft.'
+        ],
+        [
+            'title' => 'Поддерживаете ли вы 2FA авторизацию?',
+            'text_p1' => '<b>MacOS:</b> MacOS является операционной системой, разработанной компанией Apple, и может быть установлена на VPS-хостинге. MacOS предлагает широкие возможности для разработки и запуска приложений под Apple-платформы. ',
+            'text_p2' => '<b>Linux:</b> Linux - это свободная и открытая операционная система, которая широко используется в мире хостинга. Существует множество дистрибутивов Linux, таких как Ubuntu, CentOS, Debian и другие, которые могут быть установлены на VPS-хостинге. ',
+            'text_p3' => '<b>Windows:</b> Операционная система Windows также может быть установлена на VPS-хостинге. Windows Server предлагает множество возможностей для хостинга веб-сайтов и приложений, а также совместим с различными технологиями Microsoft.'
+        ]
+    ]}
+{/if}
+
 
 {$question=""}
 {$question_key=""}
