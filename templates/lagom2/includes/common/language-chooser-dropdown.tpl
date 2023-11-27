@@ -15,8 +15,6 @@
     ]
 ]}
 
-{debug}
-
 
 {if file_exists("templates/$template/includes/common/overwrites/language-chooser-dropdown.tpl")}
      {include file="{$template}/includes/common/overwrites/language-chooser-dropdown.tpl"}  

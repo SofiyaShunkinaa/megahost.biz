@@ -29,7 +29,6 @@
                 {if $linkableProviders}
                     <div class="providerLinkingFeedback"></div>
                 {/if}
-                <form class="login-form" method="post" action="{routePath('login-validate')}" role="form">
                     {*<div class="form-switcher">
                     <label class="switcher">
                         <input type="checkbox">
@@ -54,6 +53,7 @@
                         </div>
                     </div>
                 </div>
+                <form class="login-form" method="post" action="{routePath('login-validate')}" role="form">
 
                     <div class="form-group">
                         <label for="inputEmail">{$LANG.clientareaemail}</label>
@@ -103,4 +103,24 @@
         </div>
         {include file="$template/includes/login/language-chooser.tpl" type="login"}   
     </div>
-{/if}    
+     
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+        const buttons = document.querySelectorAll('.switcher__item');
+        const currentPage = window.location.pathname;
+
+        buttons.forEach(button => {
+            const key = button.getAttribute('data-key');
+            const buttonLink = key === 'login' ? '/index.php?rp=/login' : '/register.php';
+            
+            button.addEventListener('click', function() {
+                window.location.href = buttonLink;
+            });
+            
+            if (key === "login") {
+                button.classList.add('active-button'); 
+            }
+        });
+        });
+    </script>
+{/if}
