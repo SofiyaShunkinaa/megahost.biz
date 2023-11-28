@@ -1,3 +1,67 @@
+{if ($language == 'english')}    
+
+{$LANG.Blog.section.title="Articles"}
+
+{assign var=BlogNews value=[
+    [
+        'title' => 'DDoS Attacks and Methods of Protection Against Them',
+        'tag' => '#DDoS',
+        'date' => 'July 1, 2023',
+        'img' => 'img1.png'
+    ],
+    [
+        'title' => 'Moving MODX Website to a New Hosting in 2023',
+        'tag' => '#Hosting',
+        'date' => 'May 30, 2023',
+        'img' => 'img2.png'
+    ],
+    [
+        'title' => '5 Ways to Get a Free Domain',
+        'tag' => '#Hosting',
+        'date' => 'May 26, 2023',
+        'img' => 'img3.png'
+    ],
+    [
+        'title' => 'Referral Program Became Even More Attractive',
+        'tag' => '#News',
+        'date' => 'May 17, 2023',
+        'img' => 'img4.png'
+    ],
+    [
+        'title' => 'Receive Notifications about Services on Telegram and Viber',
+        'tag' => '#News',
+        'date' => 'May 20, 2023',
+        'img' => 'img5.png'
+    ],
+    [
+        'title' => 'New Payment Method for International Cards',
+        'tag' => '#News',
+        'date' => 'May 17, 2023',
+        'img' => 'img6.png'
+    ],
+    [
+        'title' => '5 Ways to Get a Free Domain',
+        'tag' => '#Hosting',
+        'date' => 'May 26, 2023',
+        'img' => 'img7.png'
+    ],
+    [
+        'title' => 'Referral Program Became Even More Attractive',
+        'tag' => '#News',
+        'date' => 'May 17, 2023',
+        'img' => 'img8.png'
+    ],
+    [
+        'title' => 'Moving MODX Website to a New Hosting in 2023',
+        'tag' => '#Hosting',
+        'date' => 'May 30, 2023',
+        'img' => 'img9.png'
+    ]
+]}
+
+
+{else}
+
 {$LANG.Blog.section.title="Статьи"}
 
 {assign var=BlogNews value=[
@@ -57,7 +121,7 @@
     ]
 ]}
 
-
+{/if}
 
 {if isset($RSThemes['pages'][$templatefile]) && file_exists($RSThemes['pages'][$templatefile]['fullPath'])}
     {include file=$RSThemes['pages'][$templatefile]['fullPath']}

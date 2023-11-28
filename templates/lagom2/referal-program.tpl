@@ -1,7 +1,36 @@
+{if ($language == 'english')}    
+
 {assign var=breadcrumb value=[
     [
         'link'=>"/index.php",
         'label'=>"Main"
+    ]
+]}
+
+{assign var=Referal value=[
+    [
+        'img'=>"people.png",
+        'title'=>"We Don't Lose Your People",
+        'text'=>"With the help of cookies, we track visitors who come through your referral link. If the first order is placed within 90 days, it will be counted."
+    ],
+    [
+        'img'=>"payments.png",
+        'title'=>"Payouts",
+        'text'=>"We pay a commission for every order made through your affiliate link, from the first to the last payment made by the user. The minimum payout amount is $100 or 8,000 ₽."
+    ]
+]}
+
+{$LANG.Referal.main.title="Opportunities of Our Products"}
+{$LANG.Referal.main.subtitle="Explore additional features of our products"}
+{$LANG.Referal.main.action="Activate Program"}
+{$LANG.Referal.content.title="How It Works?"}
+
+{else}
+
+{assign var=breadcrumb value=[
+    [
+        'link'=>"/index.php",
+        'label'=>"Главная"
     ]
 ]}
 
@@ -23,6 +52,8 @@
 {$LANG.Referal.main.action="Активировать программу"}
 {$LANG.Referal.content.title="Как это работает?"}
 
+
+{/if}
 <div class="main-header">
     <div class="container container-promotion">
         <div class="banner-content">
