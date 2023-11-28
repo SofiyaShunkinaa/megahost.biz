@@ -665,7 +665,7 @@ details[open] .summary-icon{
     display: none;
   }
 
-  .page-login .container-footer-separator, .page-vpn-server .container-footer-separator, .page-dedicated-servers .container-footer-separator{
+  .page-login .container-footer-separator, .page-vpn-server .container-footer-separator, .page-dedicated-servers .container-footer-separator, .page-contact .container-footer-separator{
     display: block;
   }
 
@@ -917,6 +917,21 @@ details[open] .summary-icon{
   .package-actions{
     display: flex;
     flex-direction: column;
+  }
+
+  .page-contact .form-control, input[type=password]:not(.form-control), input[type=text]:not(.form-control), select:not(.form-control){
+    border-color: var(--a-white);
+  }
+
+  .page-contact .app-main{
+    background-image: url(../img/contact.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-position-y: 150px;
+  }
+
+  .page-contact {
+
   }
   
 @media (min-width:992px){
