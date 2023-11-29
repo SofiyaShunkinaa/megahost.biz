@@ -23,6 +23,25 @@
     {$LANG.Products.list2.4 = "Discounts for Payments of 3 Months or More"}
     {$LANG.Products.list2.5 = "Free Trial Period Up to 3 Days"}
 
+    {assign var=VPSButtonsPeriod value=[
+        [
+            'name' => '1 mo.',
+            'key' => '1mnth'
+        ],
+        [
+            'name' => '3 mo.',
+            'key' => '3mnth'
+        ],
+        [
+            'name' => '6 mo.',
+            'key' => '6mnth'
+        ],
+        [
+            'name' => '1 year',
+            'key' => '1year'
+        ]
+    ]}
+
 {else}
     {$LANG.Products.title = "Облачные VPS на NVME дисках"}
     {$LANG.Products.statistics.desc1 = "Дата-центры в"}
@@ -48,6 +67,25 @@
 
     {$LANG.package_buy="Купить в один клик"}
 
+    {assign var=VPSButtonsPeriod value=[
+    [
+        'name' => '1 мес.',
+        'key' => '1mnth'
+    ],
+    [
+        'name' => '3 мес.',
+        'key' => '3mnth'
+    ],
+    [
+        'name' => '6 мес.',
+        'key' => '6mnth'
+    ],
+    [
+        'name' => '1 год',
+        'key' => '1year'
+    ]
+]}
+
 {/if}
 
 {assign var=ProductsCurrency value=[
@@ -60,6 +98,7 @@
         'key' => 'rub'
     ]
 ]}
+
 
 
 
@@ -153,10 +192,10 @@
 
                             <div class="switcher-wrapper">
                                 <div class="kb-switcher switcher">
-                                    {foreach from=$KbButtons item=button}
-                                        {if file_exists("templates/$template/core/pages/homepage/$homepageTemplate/shared/switcher.tpl")}
-                                            {include file="$template/core/pages/homepage/$homepageTemplate/shared/switcher.tpl"}
-                                        {/if}
+                                    {foreach from=$VPSButtonsPeriod item=sw}
+                                        {if file_exists("templates/$template/core/pages/homepage/modern/shared/switcher.tpl")}
+                                        {include file="$template/core/pages/homepage/modern/shared/switcher.tpl"}
+                                    {/if}
                                     {/foreach}
                                 </div>
                             </div>
