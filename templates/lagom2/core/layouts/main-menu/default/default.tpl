@@ -131,7 +131,7 @@
                     <h1 class="section-title">{$LANG.Blog.top.title}</h1>
 
                     <div class="switcher-wrapper">
-                        <div class="switcher news-switcher sw-black">
+                        <div class="switcher news-switcher sw-white">
                             {foreach from=$BlogSwitcher item=sw}
                                 {if file_exists("templates/$template/core/pages/homepage/modern/shared/switcher.tpl")}
                                         {include file="$template/core/pages/homepage/modern/shared/switcher.tpl"}
