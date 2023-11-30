@@ -21,7 +21,7 @@
         'key' => 'windows'
     ],
     [
-        'name' => 'trading',
+        'name' => 'Trading',
         'key' => 'trading'
     ],
     [
@@ -333,7 +333,7 @@
         <div class="container">
         
             <h2 class="section-title">{$LANG.Opportunities.unix.title}</h2>
-                
+        </div>        
             <div class="section-content section-unix">
                 <div class="unix-grid">
                     {foreach from=$UNIX item=block}
@@ -350,7 +350,7 @@
                 </div>
             </div>
         
-        </div>    
+           
     </div>
 
 </div>
