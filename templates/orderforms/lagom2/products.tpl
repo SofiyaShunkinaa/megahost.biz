@@ -99,7 +99,7 @@
     ]
 ]}
 
-
+{debug}
 
 
 {if isset($RSThemes['pages'][$templatefile]) && file_exists($RSThemes['pages'][$templatefile]['fullPath'])}
@@ -155,13 +155,7 @@
             <div class="container">
                 <h2 class="section-title">{$LANG.Products.grid.title}</h2>
                 <div class="main-grid{if $mainGrid} {$mainGrid}{/if}">
-                    {*{if $RSThemes['pages'][$templatefile]['config']['hideSidebar'] != '1'}
-                        <div class="main-sidebar hidden-xs hidden-sm hidden-md {if $sidebarOnRight || $RSThemes['layouts']['name'] == 'left-nav-wide'} main-sidebar-right {/if}">
-                            {if $RSThemes['addonSettings']['sticky_sidebars'] == "true"}<div class="sidebar-sticky">{/if}
-                                {include file="orderforms/$carttpl/sidebar-categories.tpl"}
-                            {if $RSThemes['addonSettings']['sticky_sidebars'] == "true"}</div>{/if}
-                        </div>
-                    {/if}*}
+                    
                     <div class="main-content{if $mainContentClasses} {$mainContentClasses}{/if}">
                     <div class="main-controls">
                         <div class="main-controls--left">
