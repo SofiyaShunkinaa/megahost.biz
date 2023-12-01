@@ -120,7 +120,6 @@ details[open] .summary-icon{
 }
 
 .world-map__wrapper{
-  max-width: 1290px;
   position: relative;
 }
 
@@ -954,6 +953,10 @@ details[open] .summary-icon{
   .header_fixed{
     margin-top: -54px;
   }
+
+  .world-map__wrapper{
+    max-width: 1290px;
+  }
 }
 
 @media (max-width:1276px){
@@ -1033,11 +1036,9 @@ details[open] .summary-icon{
     .separator svg{
         width: 95%;
     }
-    .world-map__wrapper{
-      max-width: 960px;
-    }
+    
     .world-map__wrapper img, .world-map__wrapper svg{
-      width: 100%;
+      width: auto;
     }
 
     .page-user-logged{
@@ -1179,9 +1180,7 @@ details[open] .summary-icon{
     .site.site-index .site-banner .banner-content{
       padding-top: 80px;
     }
-    .world-map__wrapper{
-      max-width: 728px;
-    }
+    
 /* 
     .container-top--hompage{
       margin: 0;

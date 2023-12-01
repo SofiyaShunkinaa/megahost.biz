@@ -84,27 +84,32 @@
     [
         'title'=>"VPS Servers with macOS",
         'desc'=>"Use Xcode and other Apple software without limitations. Install any software for MacOS and work as if on a regular Mac. Develop software for MacOS, iOS, compile your code using <b>Xcode, Xamarin, Visual Studio</b>, and other applications for macOS.",
-        'img'=>"op-card1.png"
+        'img'=>"op-card1.png",
+        'value'=>"macOS"
     ],
     [
         'title'=>"VPS Servers with Windows",
         'desc'=>"Transfer your programs and connect to your virtual workplace remotely, anytime, from any device. Install the necessary software and work as if on a regular computer with the Windows operating system.",
-        'img'=>"op-card2.png"
+        'img'=>"op-card2.png",
+        'value'=>"windows"
     ],
     [
         'title'=>"VPS for Traders",
         'desc'=>"Work with exchanges and trading platforms, launch trading terminals, analyzers, and trading bots on a 24/7 basis. The ability to connect remotely, as well as from smartphones and other devices, without being tied to a specific location, ensuring uninterrupted 24/7 operation.",
-        'img'=>"op-card3.png"
+        'img'=>"op-card3.png",
+        'value'=>"trading"
     ],
     [
         'title'=>"Servers for Telegram Bots",
         'desc'=>"Our servers are adapted for hosting Telegram bots. As with our other products, we provide full root access to install all the necessary software for the bot, such as Python, NodeJS, etc. You can turn to our specialists for help in deploying and configuring your bots, installing PytelegrambotAPI, Airogram, Django, Flask, Docker, and other necessary software.",
-        'img'=>"op-card4.png"
+        'img'=>"op-card4.png",
+        'value'=>"telegram"
     ],
     [
         'title'=>"DDoS Protection",
         'desc'=>"Help protect servers from DDoS attacks. DDoS attack protection is a security solution that helps eliminate such attacks on your server. We strive to detect and mitigate the effects of attacks at the network level before they can reach the target system.",
-        'img'=>"op-card5.png"
+        'img'=>"op-card5.png",
+        'value'=>"DDoS"
     ]
 ]}
 
@@ -192,31 +197,38 @@
     [
         'title'=>"VPS сервера с macOS",
         'desc'=>"Пользуйтесь Xcode, и другим ПО от Apple, без ограничений. Устанавливайте любое програмное обеспечение для MacOS и работайте как на обычном Mac.<br>Разрабатывайте ПО под MacOS, iOS, компилируйте ваш код используя <b>Xcode, Xamarin, Visual Studio</b> и другие приложения для macOS.",
-        'img'=>"op-card1.png"
+        'img'=>"op-card1.png",
+        'key' => 'macOS'
     ],
     [
         'title'=>"VPS сервера с Windows",
         'desc'=>"Перенесите ваши программы и подключайтесь к вашему виртуальному рабочему месту удалённо, в любое время, с любых устройств. Устанавливаете необходимое ПО и работаете как на обычном компьютере с операционной системой Windows.",
-        'img'=>"op-card2.png"
+        'img'=>"op-card2.png",
+        'value'=>"windows"
     ],
     [
         'title'=>"VPS для трейдеров",
         'desc'=>"Работайте с биржами и торговыми площадками, запускайте торговые <b>терминалы, анализаторы, и торговых ботов</b> на круглосуточной основе. Возможность подключения удалённо, а так же со смартфонов и других устройств, без привязки к конкретному месту, обеспечивая бесперебойную круглосуточную работу",
-        'img'=>"op-card3.png"
+        'img'=>"op-card3.png",
+        'value'=>"trading"
     ],
     [
         'title'=>"Сервера для Телеграм бота",
         'desc'=>"Наши серверы адаптированы под хостинг телеграм ботов. Как и в случае с другими нашими продуктами, мы предоставляем полный root-доступ для возможности установки всего необходимого ПО для работы бота, такое как Python, NodeJS и др. Вы можете обратиться к нашим специалистам для оказания помощи в развертывании и настроек Ваших ботов, установки PytelegrambotAPI, Airogram, Django, Flask, Docker и другого необходимого ПО.",
-        'img'=>"op-card4.png"
+        'img'=>"op-card4.png",
+        'value'=>"telegram"
     ],
     [
         'title'=>"DDoS защита",
         'desc'=>"Поможем защитить сервера от DDoS атак. Защита от DDoS-атак — это решение безопасности, которое помогает устранить такой тип атак на ваш сервер. Стараемся обнаруживать и смягчать последствий атак на сетевом уровне, прежде чем они смогут достичь целевой системы.",
-        'img'=>"op-card5.png"
+        'img'=>"op-card5.png",
+        'value'=>"DDoS"
     ]
 ]}
 
 {/if}
+
+
 <div class="main-header">
     <div class="container">
         <div class="banner-content">
@@ -254,6 +266,7 @@
     <div class="container-fluid">
         <div class="container-op-cards">
         {foreach from=$OpportunitiesCard item=card}
+        {if $card.value==$smarty.get.selected}
             <div class="op-card-item">
                 <div class="content--general">
                 
@@ -277,6 +290,7 @@
                     </div>
                 </div>
             </div>
+            {/if}
         {/foreach}
         </div>
     </div>
@@ -354,3 +368,35 @@
     </div>
 
 </div>
+
+<script>
+
+     function getParameterByName(name, url) {
+      if (!url) url = window.location.href;
+      name = name.replace(/[\[\]]/g, "\\$&");
+      var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+          results = regex.exec(url);
+      if (!results) return null;
+      if (!results[2]) return '';
+      return decodeURIComponent(results[2].replace(/\+/g, " "));
+   }
+
+   var selectedItem = getParameterByName('selected');
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const buttons = document.querySelectorAll('.switcher__item');
+
+        buttons.forEach(button => {
+            const key = button.getAttribute('data-key');
+            const buttonLink = '/opportunities.php?selected=';
+            
+            button.addEventListener('click', function() {
+                window.location.href = buttonLink+key;
+            });
+            
+            if (key === selectedItem) {
+                button.classList.add('active-button'); 
+            }
+        });
+        });
+</script>
