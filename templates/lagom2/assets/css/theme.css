@@ -939,6 +939,12 @@ details[open] .summary-icon{
     display: flex;
     justify-content: center;
   }
+  .container-404{
+    width: 1072px;
+    height: 619px;
+    flex-shrink: 0;
+    background-image: url(../img/404.png);
+  }
   
 @media (min-width:992px){
   .app-main{
