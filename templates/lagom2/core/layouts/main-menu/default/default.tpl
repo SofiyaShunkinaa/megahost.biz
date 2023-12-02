@@ -148,7 +148,7 @@
                 
             </div>
 
-            {if !$inShoppingCart}<div class="main-grid container-dashboard container-faq">{/if}
+            {if !$inShoppingCart}<div class="main-grid">{/if}
                 {* Main grid with sidebar *}
                 {if !$skipMainSidebar}
                 {* <div class="main-sidebar {if $sidebarOnRight} main-sidebar-right {/if}">
