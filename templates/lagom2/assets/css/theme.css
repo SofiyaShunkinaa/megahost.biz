@@ -149,7 +149,7 @@ details[open] .summary-icon{
 
 .tooltip{
   width: 266px;
-  height: 260px;
+  height: auto;
   background-repeat: no-repeat;
   background-size: contain;
   padding: 30px 32px 0 32px;
@@ -998,6 +998,10 @@ details[open] .summary-icon{
     .u-block--php{
       grid-column: 4/7;
       grid-row: 8/9;
+    }
+
+    .tooltip{
+      display: none !important;
     }
 } 
 
