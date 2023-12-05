@@ -948,6 +948,11 @@ details[open] .summary-icon{
     background-size: cover;
   }
   
+  .error-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 @media (min-width:992px){
   .app-main{
     padding-top: 120px;

@@ -8,11 +8,11 @@
     {include file="{$template}/error/overwrites/page-not-found.tpl"}  
 {else} 
     <div class="container-fluid container-404">
-        <div class="404-title">
+        <div class="error-title">
             <span class="error-page-title">404</span>
         </div>
 
-        <div class="404-content">
+        <div class="error-content">
             <h3>{$LANG.NotFound.Title}</h3> 
             <p>{$LANG.NotFound.Subtitle}</p>
             <div class="error-page-actions"> 
