@@ -332,7 +332,7 @@
                 </div>
 
                 <div class="content-info__action">
-                    <a href="{$rsFooter.primary.4.children.100.url}" class="btn btn-lg btn-primary btn-package" data-target="incoming">{$LANG.Opportunities.trail.action}</a>
+                    <a href="#" class="btn btn-lg btn-primary btn-package" data-target="incoming">{$LANG.Opportunities.trail.action}</a>
                 </div>
             </div>
 
