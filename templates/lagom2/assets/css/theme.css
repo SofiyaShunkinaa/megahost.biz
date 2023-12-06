@@ -1302,7 +1302,7 @@ details[open] .summary-icon{
     }
 
     .error-page-actions a{
-      width: 100%;
       flex: 1;
+      width: 100%;
     }
 }
