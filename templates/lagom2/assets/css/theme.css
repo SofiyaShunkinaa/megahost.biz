@@ -1295,6 +1295,7 @@ details[open] .summary-icon{
 
     .error-page p{
       font-size: 14px;
+      max-width: 275px;
     }
 
     .error-page-actions{
