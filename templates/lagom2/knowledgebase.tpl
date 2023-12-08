@@ -136,8 +136,9 @@
 {if isset($RSThemes['pages'][$templatefile]) && file_exists($RSThemes['pages'][$templatefile]['fullPath'])}
     {include file=$RSThemes['pages'][$templatefile]['fullPath']}
 {else}
-    <div class="container container-faq">
+<div class="container-faq">
 
+    <div class="container container-kb">
         <div class="kb-title">
             <h2 class="section-title">{$LANG.KB.main.title}</h2>
         </div>
@@ -203,6 +204,7 @@
                 </div>
             {/if}*}
         </div>
+    </div>
     </div>
     {if $kbmostviews}
         
