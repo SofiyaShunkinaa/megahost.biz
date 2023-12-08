@@ -142,7 +142,7 @@
 
 
     {if $BlogNews}
-
+    <div class="container-faq">
         <div class="news-section">
 
             <h2 class="section-title">{$LANG.Blog.section.title}</h2>
@@ -234,4 +234,5 @@
             <h6 class="message-title">{$LANG.noannouncements}</h6>
         </div>
     {/if}
+    </div>
 {/if}    

@@ -136,7 +136,7 @@
 {if isset($RSThemes['pages'][$templatefile]) && file_exists($RSThemes['pages'][$templatefile]['fullPath'])}
     {include file=$RSThemes['pages'][$templatefile]['fullPath']}
 {else}
-    <div class="container">
+    <div class="container container-faq">
 
         <div class="kb-title">
             <h2 class="section-title">{$LANG.KB.main.title}</h2>
