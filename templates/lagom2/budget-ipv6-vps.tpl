@@ -233,7 +233,6 @@
                         <li>{$LANG.BudgetIpv.list2.4}</li>
                         <li>{$LANG.BudgetIpv.list2.5}</li>
                         <li>{$LANG.BudgetIpv.list2.6}</li>
-                        
                     </ul>
                 </div>
             </div>

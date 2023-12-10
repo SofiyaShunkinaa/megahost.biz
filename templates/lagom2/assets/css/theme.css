@@ -425,6 +425,7 @@ details[open] .summary-icon{
 
   .page-knowledgebase .container-faq{
     padding: 0;
+    padding-bottom: 100px;
   }
 
   .search-group{
