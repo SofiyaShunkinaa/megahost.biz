@@ -68,11 +68,18 @@
 {assign var=SwitcherButtons value=[
     [
         'name' => 'USD',
-        'key' => 'usd'
+        'key' => 'usd',
+        'id' => 1
     ],
     [
         'name' => 'RUB',
-        'key' => 'rub'
+        'key' => 'rub',
+        'id' => 2
+    ],
+    [
+        'name' => 'EUR',
+        'key' => 'eur',
+        'id' => 3
     ]
 ]}
 
@@ -316,12 +323,10 @@
             
             <div class="switcher-wrapper">
                 <div class="products-switcher switcher">
-                    {foreach from=$SwitcherButtons item=sw}
                         {if file_exists("templates/$template/core/pages/homepage/modern/shared/switcher.tpl")}
                                         {include file="$template/core/pages/homepage/modern/shared/switcher.tpl"}
                                     {/if}
-                    {/foreach}
-
+                    
                 </div>
             </div>
 

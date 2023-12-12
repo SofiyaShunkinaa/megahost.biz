@@ -1,6 +1,18 @@
 {assign var=currencies value=[
     [
-
+        'name' => 'USD',
+        'key' => 'usd',
+        'id' => 1
+    ],
+    [
+        'name' => 'RUB',
+        'key' => 'rub',
+        'id' => 2
+    ],
+    [
+        'name' => 'EUR',
+        'key' => 'eur',
+        'id' => 3
     ]
 ]}
 {if $currentUrl|strstr:"?"}
@@ -11,8 +23,8 @@
     {$divChar = "?"}
 {/if}
 
-    {foreach $currencies as $currency}
-        <button class="switcher__item btn btn-switcher {if ($activeCurrency.id == $currency.id)}active{/if}" data-key="{$sw.key}">
+    {foreach $currencies as $sw}
+        <button class="switcher__item btn btn-switcher {if ($activeCurrency.id == $sw.id)}active{/if}" data-key="{$sw.key}">
             {$sw.name}
         </button>
     {/foreach}
