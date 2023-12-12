@@ -207,7 +207,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
   buttons.forEach(button => {
       const key = button.getAttribute('data-key');
-      const buttonLink = key === 'login' ? '/index.php?rp=/login' : '/register.php';
+      var buttonLink = '/index.php?rp=/login';
+
+      switch(key){
+        case "usd":
+          buttonLink = '/index.php?currency=1';
+          break;
+        case "rub":
+          buttonLink = '/index.php?currency=2';
+          break;
+        case "eur":
+          buttonLink = '/index.php?currency=3';
+          break; 
+      }
       
       button.addEventListener('click', function() {
           window.location.href = buttonLink;

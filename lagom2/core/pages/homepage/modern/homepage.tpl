@@ -323,10 +323,9 @@
             
             <div class="switcher-wrapper">
                 <div class="products-switcher switcher">
-                        {if file_exists("templates/$template/core/pages/homepage/modern/shared/switcher.tpl")}
-                                        {include file="$template/core/pages/homepage/modern/shared/switcher.tpl"}
-                                    {/if}
-                    
+                    {if file_exists("templates/$template/core/pages/homepage/modern/shared/switcher.tpl")}
+                        {include file="$template/core/pages/homepage/modern/shared/switcher.tpl"}
+                    {/if}
                 </div>
             </div>
 

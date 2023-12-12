@@ -1,4 +1,4 @@
-{assign var=currencies value=[
+{assign var=currenciesSwitcher value=[
     [
         'name' => 'USD',
         'key' => 'usd',
@@ -15,6 +15,9 @@
         'id' => 3
     ]
 ]}
+
+
+
 {if $currentUrl|strstr:"?"}
     {$currentpagelinkback = rtrim($currentpagelinkback, '&amp;')}
     {$divChar = "&amp;"}
@@ -23,8 +26,10 @@
     {$divChar = "?"}
 {/if}
 
-    {foreach $currencies as $sw}
+    {foreach $currenciesSwitcher as $sw}
         <button class="switcher__item btn btn-switcher {if ($activeCurrency.id == $sw.id)}active{/if}" data-key="{$sw.key}">
             {$sw.name}
         </button>
     {/foreach}
+
+{debug}

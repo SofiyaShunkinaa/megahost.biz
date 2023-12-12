@@ -441,15 +441,17 @@ details[open] .summary-icon{
   }
 
   .sw-black button{
-    color: var(--a-white);
+    color: var(--a-bg);
   }
 
   .switcher-wrapper{
     margin-bottom: 30px;
   }
 
-  .sw-black .active-button{
+  .sw-black .active{
     background: var(--a-bg);
+    color: var(--a-white) !important;
+    font-weight: 600 !important;
   }
 
   .sw-white .active-button{

@@ -515,7 +515,7 @@
 {$question=""}
 {$question_key=""}
 
-{debug}
+
 
 
 {if $secondarySectionStyle == 'primary' ||  $secondarySectionStyle == 'secondary'}
@@ -614,12 +614,12 @@
             
             
             <div class="switcher-wrapper">
-                <div class="products-switcher switcher">
-                    {foreach from=$SwitcherButtons item=sw}
+                <div class="products-switcher switcher sw-black">
+                    
                         {if file_exists("templates/$template/core/pages/homepage/modern/shared/switcher.tpl")}
                                         {include file="$template/core/pages/homepage/modern/shared/switcher.tpl"}
                                     {/if}
-                    {/foreach}
+                    
 
                 </div>
             </div>
