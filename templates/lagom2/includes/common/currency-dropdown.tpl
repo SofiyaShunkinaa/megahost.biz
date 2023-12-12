@@ -2,18 +2,26 @@
     [
         'id' => '1',
         'code' => 'USD',
-        prefix => "$",
-        suffix => " USD",
-        format => 2,  
-        rate => "1.00000"
+        'prefix' => "$",
+        'suffix' => " USD",
+        'format' => 2,  
+        'rate' => "1.00000"
     ],
     [
         'id' => '2',
         'code' => 'RUB',
-        prefix => "₽",
-        suffix => " RUB",
-        format => 2,
-        rate => "92.542"
+        'prefix' => "₽",
+        'suffix' => " RUB",
+        'format' => 2,
+        'rate' => "92.542"
+    ],
+    [
+        'id' => '3',
+        'code' => 'EUR',
+        'prefix' => "€",
+        'suffix' => " EUR",
+        'format' => 3,
+        'rate' => "0.9285"
     ]
 ]}
 

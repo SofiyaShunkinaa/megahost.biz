@@ -693,7 +693,7 @@
                                                     {$formatedPrice = $homepage->productGroup($product.gid)->price}
                                                 {else}
                                                     
-                                                    {$formatedPrice = formatCurrency($homepage->productGroup($product.gid)->real_price)|replace:'$':''|replace:'USD':'$'|replace:'.00':''}
+                                                    {$formatedPrice = formatCurrency($homepage->productGroup($product.gid)->real_price)}
                                                     
                                                     
                                                     
