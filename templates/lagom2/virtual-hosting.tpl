@@ -35,37 +35,7 @@
     ]
 ]}
 
-{assign var=DSButtonsCurrency value=[
-    [
-        'name' => 'USD',
-        'key' => 'usd'
-    ],
-    [
-        'name' => 'RUB',
-        'key' => 'rub'
-    ]
-]}
 
-    {assign var=DSButtonsPeriod value=[
-        [
-            'name' => '1 mo.',
-            'key' => '1mnth'
-        ],
-        [
-            'name' => '3 mo.',
-            'key' => '3mnth'
-        ],
-        [
-            'name' => '6 mo.',
-            'key' => '6mnth'
-        ],
-        [
-            'name' => '1 year',
-            'key' => '1year'
-        ]
-    ]}
-
-{debug}
 {else}
 
         {$LANG.VHosting.title = "Виртуальный хостинг"}
@@ -103,24 +73,7 @@
     ]
 ]}
 
-{assign var=DSButtonsPeriod value=[
-    [
-        'name' => '1 мес.',
-        'key' => '1mnth'
-    ],
-    [
-        'name' => '3 мес.',
-        'key' => '3mnth'
-    ],
-    [
-        'name' => '6 мес.',
-        'key' => '6mnth'
-    ],
-    [
-        'name' => '1 год',
-        'key' => '1year'
-    ]
-]}
+
 {/if}
 
 <div class="container">
@@ -170,21 +123,21 @@
                         <div class="main-controls--right">
                             <div class="switcher-wrapper">
                                 <div class="products-switcher switcher">
-                                    {foreach from=$DSButtonsCurrency item=sw}
-                                        {if file_exists("templates/$template/core/pages/homepage/modern/shared/switcher.tpl")}
-                                                {include file="$template/core/pages/homepage/modern/shared/switcher.tpl"}
+                                    
+                                        {if file_exists("templates/$template/core/pages/homepage/modern/shared/switchers/currency.tpl")}
+                                                {include file="$template/core/pages/homepage/modern/shared/switchers/currency.tpl"}
                                             {/if}
-                                    {/foreach}
+                                   
                                 </div>
                             </div>
 
                             <div class="switcher-wrapper">
                                 <div class="products-switcher switcher">
-                                    {foreach from=$DSButtonsPeriod item=sw}
-                                        {if file_exists("templates/$template/core/pages/homepage/modern/shared/switcher.tpl")}
-                                                {include file="$template/core/pages/homepage/modern/shared/switcher.tpl"}
+                                    
+                                        {if file_exists("templates/$template/core/pages/homepage/modern/shared/switchers/period.tpl")}
+                                                {include file="$template/core/pages/homepage/modern/shared/switchers/period.tpl"}
                                             {/if}
-                                    {/foreach}
+                                   
                                 </div>
                             </div>
                         </div>

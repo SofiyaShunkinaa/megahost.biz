@@ -1,28 +1,3 @@
-{if ($language == 'english')}
-    {assign var=LogButtons value=[
-        [
-            'name' => 'Login',
-            'key' => 'login'
-        ],
-        [
-            'name' => 'Registration',
-            'key' => 'registration'
-        ]
-    ]}
-{else}
-    {assign var=LogButtons value=[
-        [
-            'name' => 'Вход',
-            'key' => 'login'
-        ],
-        [
-            'name' => 'Регистрация',
-            'key' => 'registration'
-        ]
-    ]}  
-    {/if}  
-
-
 {if file_exists("templates/$template/includes/login/overwrites/login.tpl")}
     {include file="{$template}/includes/login/overwrites/login.tpl"}  
 {else}
@@ -49,8 +24,8 @@
                         <div class="switcher kb-switcher sw-white">
 
                             
-                                {if file_exists("templates/$template/core/pages/homepage/modern/shared/switcher.tpl")}
-                                    {include file="$template/core/pages/homepage/modern/shared/switcher.tpl"}
+                                {if file_exists("templates/$template/core/pages/homepage/modern/shared/switchers/login.tpl")}
+                                    {include file="$template/core/pages/homepage/modern/shared/switchers/login.tpl"}
                                 {/if}
                             
 
