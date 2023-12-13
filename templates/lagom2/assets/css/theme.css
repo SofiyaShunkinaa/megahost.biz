@@ -449,7 +449,7 @@ details[open] .summary-icon{
   }
 
   .sw-black .active{
-    background: var(--a-bg);
+    background: var(--a-bg) !important;
     color: var(--a-white) !important;
     font-weight: 600 !important;
   }
