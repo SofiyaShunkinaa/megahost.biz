@@ -42,26 +42,17 @@
                 {if $linkableProviders}
                     <div class="providerLinkingFeedback"></div>
                 {/if}
-                    {*<div class="form-switcher">
-                    <label class="switcher">
-                        <input type="checkbox">
-                            <span class="slider-round">
-                                <span class="switcher-desc switcher-desc-left">{$LANG.switcherLogin_left}</span>
-                                <span class="switcher-desc switcher-desc-right">{$LANG.switcherLogin_right}</span>
-                            </span>
-                    </label>
                     
-                </div>*}
 
                 <div class="form-switcher">
                     <div class="switcher-wrapper">
                         <div class="switcher kb-switcher sw-white">
 
-                            {foreach from=$LogButtons item=sw}
+                            
                                 {if file_exists("templates/$template/core/pages/homepage/modern/shared/switcher.tpl")}
                                     {include file="$template/core/pages/homepage/modern/shared/switcher.tpl"}
                                 {/if}
-                            {/foreach}
+                            
 
                         </div>
                     </div>
