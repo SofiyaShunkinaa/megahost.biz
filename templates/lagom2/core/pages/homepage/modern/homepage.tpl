@@ -616,8 +616,8 @@
             <div class="switcher-wrapper">
                 <div class="products-switcher switcher sw-black">
                     
-                        {if file_exists("templates/$template/core/pages/homepage/modern/shared/switcher.tpl")}
-                                        {include file="$template/core/pages/homepage/modern/shared/switcher.tpl"}
+                        {if file_exists("templates/$template/core/pages/homepage/modern/shared/switchers/currency.tpl")}
+                                        {include file="$template/core/pages/homepage/modern/shared/switchers/currency.tpl"}
                                     {/if}
                     
 
