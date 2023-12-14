@@ -257,12 +257,15 @@ details[open] .summary-icon{
   .dropdown-menu{
     border-radius: 16px;
     border: 1px solid rgba(255, 255, 255, 0.50);
-    background-color: rgba(9, 9, 9, 0.20) ;
-    backdrop-filter: blur(18px);
+    background-color: rgba(9, 9, 9, 0.20);
     padding: 16px;
     color:var(--a-white);
     margin-top: 8px;
     width: 286px;
+    -webkit-backdrop-filter: blur(18px);
+    backdrop-filter: blur(18px);          
+    -o-backdrop-filter: blur(18px);       
+    -ms-backdrop-filter: blur(18px);
   }
   .menu-primary .btn{
     border: 1px solid var(--main-border-color);
