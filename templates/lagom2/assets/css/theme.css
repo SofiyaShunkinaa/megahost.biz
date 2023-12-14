@@ -1318,3 +1318,15 @@ details[open] .summary-icon{
       width: 100%;
     }
 }
+
+@media (min-width:1680px) {
+  .page-homepage{
+    background-position-x: 1000px;
+  }
+}
+
+@media (min-width:2000px) {
+  .page-homepage{
+    background-position-x: 1400px;
+  }
+}
