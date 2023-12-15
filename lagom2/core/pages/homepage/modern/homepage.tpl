@@ -374,25 +374,25 @@
 
                                                 {$formatedPrice|replace:" ":""|replace:$WHMCSCurrency.suffix:" `$WHMCSCurrency.suffix`"}
 
-                                                <span class="price-cycle">
-                                                    {if $display_billing_monthly_price}
+                                            <span class="price-cycle">
+                                                {if $display_billing_monthly_price}
+                                                    {$LANG.orderpaymenttermmonthly}
+                                                {else}
+                                                    {if $billingCycleName eq "monthly"}
                                                         {$LANG.orderpaymenttermmonthly}
-                                                    {else}
-                                                        {if $billingCycleName eq "monthly"}
-                                                            {$LANG.orderpaymenttermmonthly}
-                                                        {elseif $billingCycleName eq "quarterly"}
-                                                            {$LANG.orderpaymenttermquarterly}
-                                                        {elseif $billingCycleName eq "semiannually"}
-                                                            {$LANG.orderpaymenttermsemiannually}
-                                                        {elseif $billingCycleName eq "annually"}
-                                                            {$LANG.orderpaymenttermannually}
-                                                        {elseif $billingCycleName eq "biennially"}
-                                                            {$LANG.orderpaymenttermbiennially}
-                                                        {elseif $billingCycleName eq "triennially"}
-                                                            {$LANG.orderpaymenttermtriennially}
-                                                        {/if}
-                                                    {/if}    
-                                                </span>
+                                                    {elseif $billingCycleName eq "quarterly"}
+                                                        {$LANG.orderpaymenttermquarterly}
+                                                    {elseif $billingCycleName eq "semiannually"}
+                                                        {$LANG.orderpaymenttermsemiannually}
+                                                    {elseif $billingCycleName eq "annually"}
+                                                        {$LANG.orderpaymenttermannually}
+                                                    {elseif $billingCycleName eq "biennially"}
+                                                        {$LANG.orderpaymenttermbiennially}
+                                                    {elseif $billingCycleName eq "triennially"}
+                                                        {$LANG.orderpaymenttermtriennially}
+                                                    {/if}
+                                                {/if}    
+                                            </span>
                                             {else}
                                                 {if $display_billing_monthly_price}
                                                     {$formatedPrice = $homepage->productGroup($product.gid)->price}
@@ -410,7 +410,7 @@
                                                         {$LANG.orderpaymenttermonetime}
                                                     </span>
                                                 {else}       {*этого не проискходит*}
-                                                    <span class="price-cycle">
+                                                    {<span class="price-cycle">
                                                         {if $display_billing_monthly_price}
                                                             {$LANG.orderpaymenttermmonthly}
                                                         {else}
@@ -428,7 +428,7 @@
                                                                 {$LANG.orderpaymenttermtriennially}
                                                             {/if}
                                                         {/if}                                                        
-                                                    </span>
+                                                    </span>}
                                                 {/if}
                                             {/if}
                                         </div>
