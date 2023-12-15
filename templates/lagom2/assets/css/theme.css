@@ -80,7 +80,7 @@ transition:var(--btn-transition)}@media (prefers-reduced-motion:reduce){.btn,inp
     font-weight: 400;
 }
 .actions__buy{
-  color: var(--a-purple-dark) !important;
+  color: var(--a-white) !important;
   text-decoration-line: underline !important;
 }
 h2{margin-bottom: 50px;}
