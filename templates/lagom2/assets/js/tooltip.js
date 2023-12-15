@@ -1,6 +1,5 @@
-console.log(navigator.language);
-console.log(navigator.userLanguage); 
-console.log(locale); 
+const screenWidth = window.screen.width;
+console.log(screenWidth);
 const title = document.querySelector('.title-country');
 const tooltip = document.querySelector('.tooltip');
 const tooltipImg = document.querySelector('.flag-country');
@@ -119,83 +118,84 @@ countries.forEach(country =>{
 //   }
 // }
 
+if (screenWidth<1440){
+  const sliderCustom = document.querySelector('.slider-custom');
+  const progress = document.querySelector('.slider-progress');
+  let isDragging = false;
+  let startPosition = 0;
+  let currentTranslate = 0;
+  let prevTranslate = 0;
+  let animationID = 0;
 
-const sliderCustom = document.querySelector('.slider-custom');
-const progress = document.querySelector('.slider-progress');
-let isDragging = false;
-let startPosition = 0;
-let currentTranslate = 0;
-let prevTranslate = 0;
-let animationID = 0;
+  sliderCustom.addEventListener('mousedown', startDragging);
+  sliderCustom.addEventListener('touchstart', startDragging, { passive: true });
+  sliderCustom.addEventListener('mouseup', stopDragging);
+  sliderCustom.addEventListener('touchend', stopDragging);
+  sliderCustom.addEventListener('mouseleave', stopDragging);
+  sliderCustom.addEventListener('mousemove', drag);
+  sliderCustom.addEventListener('touchmove', drag, { passive: true });
 
-sliderCustom.addEventListener('mousedown', startDragging);
-sliderCustom.addEventListener('touchstart', startDragging, { passive: true });
-sliderCustom.addEventListener('mouseup', stopDragging);
-sliderCustom.addEventListener('touchend', stopDragging);
-sliderCustom.addEventListener('mouseleave', stopDragging);
-sliderCustom.addEventListener('mousemove', drag);
-sliderCustom.addEventListener('touchmove', drag, { passive: true });
+  function startDragging(e) {
+    e.preventDefault();
 
-function startDragging(e) {
-  e.preventDefault();
-
-  if (e.type === 'touchstart') {
-    startPosition = e.touches[0].clientX;
-  } else {
-    startPosition = e.clientX;
-    sliderCustom.style.cursor = 'grabbing';
-  }
-
-  isDragging = true;
-  animationID = requestAnimationFrame(animation);
-}
-
-function drag(e) {
-  if (isDragging) {
-    let currentPosition = 0;
-
-    if (e.type === 'touchmove') {
-      currentPosition = e.touches[0].clientX;
+    if (e.type === 'touchstart') {
+      startPosition = e.touches[0].clientX;
     } else {
-      currentPosition = e.clientX;
+      startPosition = e.clientX;
+      sliderCustom.style.cursor = 'grabbing';
     }
 
-    currentTranslate = prevTranslate + currentPosition - startPosition;
+    isDragging = true;
+    animationID = requestAnimationFrame(animation);
+  }
 
-    const slideWidth = sliderCustom.clientWidth / 5;
-    const maxTranslate = slideWidth * 2;
-    const minTranslate = -slideWidth * 2;
+  function drag(e) {
+    if (isDragging) {
+      let currentPosition = 0;
 
-    if (currentTranslate > maxTranslate) {
-      currentTranslate = maxTranslate;
-    } else if (currentTranslate < minTranslate) {
-      currentTranslate = minTranslate;
-    }
+      if (e.type === 'touchmove') {
+        currentPosition = e.touches[0].clientX;
+      } else {
+        currentPosition = e.clientX;
+      }
 
-    if (currentTranslate > 0) {
-      currentTranslate = 0;
+      currentTranslate = prevTranslate + currentPosition - startPosition;
+
+      const slideWidth = sliderCustom.clientWidth / 5;
+      const maxTranslate = slideWidth * 2;
+      const minTranslate = -slideWidth * 2;
+
+      if (currentTranslate > maxTranslate) {
+        currentTranslate = maxTranslate;
+      } else if (currentTranslate < minTranslate) {
+        currentTranslate = minTranslate;
+      }
+
+      if (currentTranslate > 0) {
+        currentTranslate = 0;
+      }
     }
   }
-}
 
-function stopDragging() {
-  cancelAnimationFrame(animationID);
-  isDragging = false;
-  const slideWidth = sliderCustom.clientWidth / 5;
-  const slideIndex = Math.round(currentTranslate / slideWidth);
+  function stopDragging() {
+    cancelAnimationFrame(animationID);
+    isDragging = false;
+    const slideWidth = sliderCustom.clientWidth / 5;
+    const slideIndex = Math.round(currentTranslate / slideWidth);
 
-  currentTranslate = slideIndex * slideWidth;
-  prevTranslate = currentTranslate;
+    currentTranslate = slideIndex * slideWidth;
+    prevTranslate = currentTranslate;
 
-  sliderCustom.style.transform = `translateX(${currentTranslate}px)`;
-  sliderCustom.style.cursor = 'grab';
-}
+    sliderCustom.style.transform = `translateX(${currentTranslate}px)`;
+    sliderCustom.style.cursor = 'grab';
+  }
 
-function animation() {
-  sliderCustom.style.transform = `translateX(${currentTranslate}px)`;
+  function animation() {
+    sliderCustom.style.transform = `translateX(${currentTranslate}px)`;
 
-  if (isDragging) {
-    requestAnimationFrame(animation);
+    if (isDragging) {
+      requestAnimationFrame(animation);
+    }
   }
 }
 
