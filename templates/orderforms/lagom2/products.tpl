@@ -99,7 +99,7 @@
     ]
 ]}
 
-{debug}
+
 
 
 {if isset($RSThemes['pages'][$templatefile]) && file_exists($RSThemes['pages'][$templatefile]['fullPath'])}

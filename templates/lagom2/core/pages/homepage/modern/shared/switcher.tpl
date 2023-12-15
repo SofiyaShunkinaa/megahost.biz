@@ -32,5 +32,5 @@
         </button>
     {/foreach}
 
-{debug}
+
 

@@ -38,4 +38,3 @@
         </button>
     {/foreach}
 
-{debug}

@@ -32,4 +32,4 @@
         </button>
     {/foreach}
 
-{debug}
+
