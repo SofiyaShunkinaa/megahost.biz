@@ -81,16 +81,6 @@
 
 {/if}
 
-{assign var=VpnButtonsR value=[
-    [
-        'name' => 'USD',
-        'key' => 'usd'
-    ],
-    [
-        'name' => 'RUB',
-        'key' => 'rub'
-    ]
-]}
 
 <div class="container">
         <div class="main-header">
@@ -144,27 +134,28 @@
                                     {lang key='orderForm.selectCategory'}
                                 </div>
                             {/if}
-
-                            <div class="switcher-wrapper">
-                                <div class="products-switcher switcher">
-                                    {foreach from=$VpnButtonsL item=sw}
-                                        {if file_exists("templates/$template/core/pages/homepage/modern/shared/switcher.tpl")}
-                                                {include file="$template/core/pages/homepage/modern/shared/switcher.tpl"}
+<div class="switcher-wrapper">
+                                <div class="products-switcher switcher sw-black">
+                              
+                                        {if file_exists("templates/$template/core/pages/homepage/modern/shared/switchers/plan.tpl")}
+                                                {include file="$template/core/pages/homepage/modern/shared/switchers/plan.tpl"}
                                             {/if}
-                                    {/foreach}
+                    
                                 </div>
                             </div>
+
+                           
 
                         </div>
 
                         <div class="main-controls--right">
-                            <div class="switcher-wrapper">
-                                <div class="products-switcher switcher">
-                                    {foreach from=$VpnButtonsR item=sw}
-                                        {if file_exists("templates/$template/core/pages/homepage/modern/shared/switcher.tpl")}
-                                                {include file="$template/core/pages/homepage/modern/shared/switcher.tpl"}
+                             <div class="switcher-wrapper">
+                                <div class="products-switcher switcher sw-black">
+                          
+                                        {if file_exists("templates/$template/core/pages/homepage/modern/shared/switchers/currency.tpl")}
+                                                {include file="$template/core/pages/homepage/modern/shared/switchers/currency.tpl"}
                                             {/if}
-                                    {/foreach}
+                    
                                 </div>
                             </div>
                             </div>

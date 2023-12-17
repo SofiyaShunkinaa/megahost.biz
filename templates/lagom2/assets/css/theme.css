@@ -961,6 +961,10 @@ details[open] .summary-icon{
     margin-left: 230px;
     margin-top: 40px;
   }
+
+  .main-controls--left{
+    display: flex;
+  }
 @media (min-width:992px){
   .app-main{
     padding-top: 120px;
