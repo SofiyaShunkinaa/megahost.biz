@@ -965,6 +965,10 @@ details[open] .summary-icon{
   .main-controls--left{
     display: flex;
   }
+
+  .page-virtual-hosting .main-controls{
+    justify-content: right;
+  }
 @media (min-width:992px){
   .app-main{
     padding-top: 120px;
