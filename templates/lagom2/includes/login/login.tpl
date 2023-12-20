@@ -1,4 +1,4 @@
-{if file_exists("templates/$template/includes/login/overwrites/login.tpl")}
+    {if file_exists("templates/$template/includes/login/overwrites/login.tpl")}
     {include file="{$template}/includes/login/overwrites/login.tpl"}  
 {else}
     {include file="$template/includes/common/layouts-vars.tpl"}
