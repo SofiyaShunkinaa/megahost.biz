@@ -249,6 +249,8 @@
 ]
 ]}
 
+{$LANG.startingat="at"}
+
 {else}
     {$Advantages.protection.title="Бесплатная защита от DDos-атак"}
     {$homeSubTitle="Бесплатное администрирование и тестовый период"}
@@ -498,6 +500,9 @@
 
 ]
 ]}
+
+{$LANG.startingat="от"}
+
     
 {/if}
 
@@ -560,7 +565,7 @@
 {/foreach}
 
 {/if}
-
+{debug}
 
  
 
@@ -693,7 +698,7 @@
                                                     {$formatedPrice = $homepage->productGroup($product.gid)->price}
                                                 {else}
                                                     
-                                                    {$formatedPrice = formatCurrency($homepage->productGroup($product.gid)->real_price)}
+                                                    {$formatedPrice = formatCurrency($homepage->productGroup($product.gid)->real_price)|replace:'.00':''|replace:'$':''|replace:'€':''|replace:'₽':''|replace:'USD':'$'|replace:'RUB':'₽'|replace:'EUR':'€'}
                                                     
                                                     
                                                     
@@ -704,37 +709,12 @@
                                                     <span class="price-cycle">
                                                         {$LANG.orderpaymenttermonetime}
                                                     </span>
-                                                {else}       {*этого не проискходит*}
-                                                    <span class="price-cycle">
-                                                        {if $display_billing_monthly_price}
-                                                            {$LANG.orderpaymenttermmonthly}
-                                                        {else}
-                                                            {if $homepage->productGroup($product.gid)->cycle eq "monthly"}
-                                                                {$LANG.orderpaymenttermmonthly}
-                                                            {elseif $homepage->productGroup($product.gid)->cycle eq "quarterly"}
-                                                                {$LANG.orderpaymenttermquarterly}
-                                                            {elseif $homepage->productGroup($product.gid)->cycle eq "semiannually"}
-                                                                {$LANG.orderpaymenttermsemiannually}
-                                                            {elseif $homepage->productGroup($product.gid)->cycle eq "annually"}
-                                                                {$LANG.orderpaymenttermannually}
-                                                            {elseif $homepage->productGroup($product.gid)->cycle eq "biennially"}
-                                                                {$LANG.orderpaymenttermbiennially}
-                                                            {elseif $homepage->productGroup($product.gid)->cycle eq "triennially"}
-                                                                {$LANG.orderpaymenttermtriennially}
-                                                            {/if}
-                                                        {/if}                                                        
-                                                    </span>
+                                                
                                                 {/if}
                                             {/if}
                                         </div>
 
                                         <div class="package-monthly pck-price__item--secondary">{$LANG.perMonthShort}</div>
-                                        {* {if $homepage->productGroup($product.gid)->discount}
-                                            <div class="price-save">
-                                                <span class="line-through">{$homepage->productGroup($product.gid)->discount_price_before}</span>
-                                                <span class="label label-faded label-info">Save {$homepage->productGroup($product.gid)->discount_percentage}%</span>
-                                            </div>
-                                        {/if} *}
                                     </div>
 
                                     <div class="package-desc">
