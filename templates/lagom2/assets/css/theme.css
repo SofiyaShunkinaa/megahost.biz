@@ -75,14 +75,17 @@ transition:var(--btn-transition)}@media (prefers-reduced-motion:reduce){.btn,inp
     font-style: normal;
     font-weight: 400;
 }
+
 .package-desc{color: var(--a-blue-2); font-size: 16px;
     font-style: normal;
     font-weight: 400;
 }
+
 .actions__buy{
   color: var(--a-white) !important;
   text-decoration-line: underline !important;
 }
+
 h2{margin-bottom: 50px;}
 
 .section-questions summary{
