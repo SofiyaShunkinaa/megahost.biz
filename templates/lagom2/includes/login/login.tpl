@@ -17,21 +17,19 @@
                 {if $linkableProviders}
                     <div class="providerLinkingFeedback"></div>
                 {/if}
-                    
 
                 <div class="form-switcher">
                     <div class="switcher-wrapper">
                         <div class="switcher kb-switcher sw-white">
-
                             
                                 {if file_exists("templates/$template/core/pages/homepage/modern/shared/switchers/login.tpl")}
                                     {include file="$template/core/pages/homepage/modern/shared/switchers/login.tpl"}
                                 {/if}
-                            
 
                         </div>
                     </div>
                 </div>
+
                 <form class="login-form" method="post" action="{routePath('login-validate')}" role="form">
 
                     <div class="form-group">
@@ -77,32 +75,26 @@
         {include file="$template/includes/login/language-chooser.tpl" type="login"}   
     </div>
 
-//     <script>
-//         document.addEventListener('DOMContentLoaded', function() {
-//     const buttons = document.querySelectorAll('.switcher__item');
-//     const currentPage = window.location.pathname;
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+        const buttons = document.querySelectorAll('.switcher__item');
 
-//     buttons.forEach(button => {
-//         const key = button.getAttribute('data-key');
-      
-//         const buttonLink = key == 'registration' ? '/register.php' : '/index.php?rp=/login';
-        
-        
-//         button.addEventListener('click', function() {
-//             event.preventDefault();
-//           window.location.href = buttonLink;
-//             alert(window.location.href+'  Button clicked!')
+        buttons.forEach(button => {
+            const key = button.getAttribute('data-key');
+            const buttonLink = key === 'registration' ? '/register.php' : '/index.php?rp=/login';
 
-//         });
+            button.addEventListener('click', function() {
+                window.location.href = buttonLink;
+            });
+            
+            const currentPathWithQuery = window.location.pathname + window.location.search;
+            if (buttonLink === currentPathWithQuery) {
+                button.classList.add('active-button');
+            }
+        });
+        });
 
-//         const currentPathWithQuery = window.location.pathname + window.location.search;
-//         if (buttonLink === currentPathWithQuery) {
-//             button.classList.add('active-button');
-//         }
-//     });
-// });
-
-//     </script>
+    </script>
      
     
 {/if}
