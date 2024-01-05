@@ -258,9 +258,8 @@
         
         
         button.addEventListener('click', function() {
-            event.preventDefault();
-          window.location.href = 'ojnoojmiomj';
-            alert(window.location.href + '  Button clicked!')
+          window.location.href = buttonLink;
+          alert(window.location.href + '  Button clicked!')
 
         });
 
