@@ -208,23 +208,3 @@ function animation() {
 }
 
 //buttons
-document.addEventListener('DOMContentLoaded', function() {
-  const buttons = document.querySelectorAll('.switcher__item');
-  const currentPage = window.location.pathname; // Получаем текущий URL страницы
-
-  // Проходимся по кнопкам и устанавливаем обработчик события для каждой кнопки
-  buttons.forEach(button => {
-      const key = button.getAttribute('data-key');
-      const buttonLink = key === 'login' ? '/index.php?rp=/login' : '/register.php';
-
-      // Устанавливаем обработчик события для нажатия на кнопку
-      button.addEventListener('click', function() {
-          window.location.href = buttonLink;
-      });
-
-      // Проверяем, является ли кнопка активной, и применяем стили
-      if (buttonLink === $currentPage) {
-          button.classList.add('active-button'); 
-      }
-  });
-});
