@@ -8,6 +8,11 @@
         'code' => 'RUB',
         'id' => 'rub',
         'default' => false
+    ],
+    [
+        'code' => 'EUR',
+        'id' => 'eur',
+        'default' => false
     ]
 ]}
 
