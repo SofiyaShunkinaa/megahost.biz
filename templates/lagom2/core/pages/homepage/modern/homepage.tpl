@@ -635,7 +635,25 @@
                         {if $homepage->productGroup($product.gid)->product}
                             <div class="col-3 slide-custom">
                                 <div class="package package-lg">
-                                    <h3 class="package-title">{$homepage->productGroup($product.gid)->product->productGroup->name}</h3>
+                                    <h3 class="package-title">
+                                        {if $homepage->productGroup($product.gid)->product->productGroup->name == "VPS в России" && $language == 'english'}
+                                        VPS in Russia
+                                        {elseif $homepage->productGroup($product.gid)->product->productGroup->name == "VPS в Германии" && $language == 'english'}
+                                        VPS in Germany
+                                        {elseif $homepage->productGroup($product.gid)->product->productGroup->name == "VPS в Канаде" && $language == 'english'}
+                                        VPS in Canada
+                                        {elseif $homepage->productGroup($product.gid)->product->productGroup->name == "VPS во Франции" && $language == 'english'}
+                                        VPS in France
+                                        {elseif $homepage->productGroup($product.gid)->product->productGroup->name == "VPS в России" && $language == 'russian'}
+                                        VPS в России
+                                        {elseif $homepage->productGroup($product.gid)->product->productGroup->name == "VPS в Германии" && $language == 'russian'}
+                                        VPS в Германии
+                                        {elseif $homepage->productGroup($product.gid)->product->productGroup->name == "VPS в Канаде" && $language == 'russian'}
+                                        VPS в Канаде
+                                        {elseif $homepage->productGroup($product.gid)->product->productGroup->name == "VPS во Франции" && $language == 'russian'}
+                                        VPS во Франции
+                                        {/if}
+                                    </h3>
                                     <p class="package-desc">{$homepage->productGroup($product.gid)->product->productGroup->headline}</p>
                                     <div class="package-price">
                                         <div class="package-starting-from pck-price__item--secondary">{$LANG.startingat}</div>
