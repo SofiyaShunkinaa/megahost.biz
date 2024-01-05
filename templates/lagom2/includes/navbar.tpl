@@ -89,7 +89,45 @@
                             <span class="item-text">{$LANG.myaccount}</span>
                         {/if}
                     {elseif $item->getLabel() && $item->getLabel() != ""} 
-                        <span class="item-text">{$item->getLabel()}</span>
+                        {if $item->getLabel()=="English"}
+                            <span class="item-text item-text--navbar">ENG</span>
+                            <div class="dropdown-arrow">
+                            <svg width="8" height="4" viewBox="0 0 8 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M7.5 0.5L4 3.5L0.5 0.5" stroke="#FBFBFB" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+                        </div>
+                        {elseif $item->getLabel()=="USD"}
+                            <span class="item-text item-text--navbar">USD</span>
+                                <div class="dropdown-arrow">
+                                <svg width="8" height="4" viewBox="0 0 8 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M7.5 0.5L4 3.5L0.5 0.5" stroke="#FBFBFB" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+                            </div>
+                        {elseif $item->getLabel()=="Русский"}
+                        <span class="item-text item-text--navbar">RU</span>
+                            <div class="dropdown-arrow">
+                            <svg width="8" height="4" viewBox="0 0 8 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M7.5 0.5L4 3.5L0.5 0.5" stroke="#FBFBFB" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+                        </div>
+                        {elseif $item->getLabel()=="RUB"}
+                        <span class="item-text item-text--navbar">RUB</span>
+                            <div class="dropdown-arrow">
+                            <svg width="8" height="4" viewBox="0 0 8 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M7.5 0.5L4 3.5L0.5 0.5" stroke="#FBFBFB" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+                        </div>
+                        {elseif $item->getLabel()=="EUR"}
+                        <span class="item-text item-text--navbar">EUR</span>
+                            <div class="dropdown-arrow">
+                            <svg width="8" height="4" viewBox="0 0 8 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M7.5 0.5L4 3.5L0.5 0.5" stroke="#FBFBFB" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+                        </div>
+                        {else}
+                            <span class="item-text">{$item->getLabel()}</span>
+                        {/if}
+                        
                     {/if}
                     {if $item->hasBadge()}{$item->getBadge()}{/if}
                     {if ($item->hasChildren() || $item->getAttribute('languageDropdown') || $item->getAttribute('currencyDropdown')) && !$item->getAttribute('notificationDropdown')}{/if} {*menu items 4ps*}
