@@ -201,32 +201,35 @@ if (screenWidth<1440){
 
 
 //buttons
-document.addEventListener('DOMContentLoaded', function() {
-  const buttons = document.querySelectorAll('.switcher__item');
-  const currentPage = window.location.pathname;
+if(window.location.pathname === "/index.php"){
+  document.addEventListener('DOMContentLoaded', function() {
+    const buttons = document.querySelectorAll('.switcher__item');
+    const currentPage = '';
 
-  buttons.forEach(button => {
-      const key = button.getAttribute('data-key');
-      var buttonLink = '/index.php?rp=/login';
+    buttons.forEach(button => {
+        const key = button.getAttribute('data-key');
+        var buttonLink = '';
 
-      switch(key){
-        case "usd":
-          buttonLink = '/index.php?currency=1';
-          break;
-        case "rub":
-          buttonLink = '/index.php?currency=2';
-          break;
-        case "eur":
-          buttonLink = '/index.php?currency=3';
-          break; 
-      }
-      
-      button.addEventListener('click', function() {
-          window.location.href = buttonLink;
-      });
-      
-      if (buttonLink === currentPage) {
-          button.classList.add('active-button'); 
-      }
+        switch(key){
+          case "usd":
+            buttonLink = '/index.php?currency=1';
+            break;
+          case "rub":
+            buttonLink = '/index.php?currency=2';
+            break;
+          case "eur":
+            buttonLink = '/index.php?currency=3';
+            break;
+          
+        }
+        
+        button.addEventListener('click', function() {
+            window.location.href = buttonLink;
+        });
+        
+        if (buttonLink === currentPage) {
+            button.classList.add('active-button'); 
+        }
+    });
   });
-});
+}
