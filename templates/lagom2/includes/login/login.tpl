@@ -72,16 +72,37 @@
                 {include file="$template/includes/linkedaccounts.tpl" customFeedback=true linkContext="login"}
                 {/if}
             </div>
-
             
-            {if $condlinks.allowClientRegistration}
-            {*<div class="login-footer">
-                <div class="text-light">{$rslang->trans('social.not_member')} <a href="{$WEB_ROOT}/register.php" tabindex="5" >{$LANG.orderForm.createAccount}</a></div>
-            </div>*}
-            {/if}
         </div>
         {include file="$template/includes/login/language-chooser.tpl" type="login"}   
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    const buttons = document.querySelectorAll('.switcher__item');
+    const currentPage = window.location.pathname;
+
+    buttons.forEach(button => {
+        const key = button.getAttribute('data-key');
+      
+        const buttonLink = key == 'registration' ? '/register.php' : '/index.php?rp=/login';
+        
+        
+        button.addEventListener('click', function() {
+            event.preventDefault();
+          window.location.href = buttonLink;
+            alert(window.location.href+'  Button clicked!')
+
+        });
+
+        const currentPathWithQuery = window.location.pathname + window.location.search;
+        if (buttonLink === currentPathWithQuery) {
+            button.classList.add('active-button');
+        }
+    });
+});
+
+    </script>
      
     
 {/if}

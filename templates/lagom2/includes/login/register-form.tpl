@@ -241,26 +241,30 @@
         </div>
     </form>
     {/if}
-
-
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-        const buttons = document.querySelectorAll('.switcher__item');
-        const currentPage = window.location.pathname;
+    const buttons = document.querySelectorAll('.switcher__item');
+    const currentPage = window.location.pathname;
 
-        buttons.forEach(button => {
-            const key = button.getAttribute('data-key');
-            const buttonLink = key === 'registration' ? '/register.php' : '/index.php?rp=/login';
-            
-            button.addEventListener('click', function() {
-                window.location.href = buttonLink;
-            });
+    buttons.forEach(button => {
+        const key = button.getAttribute('data-key');
+      
+        const buttonLink = key == 'registration' ? '/register.php' : '/index.php?rp=/login';
+        
+        
+        button.addEventListener('click', function() {
+            event.preventDefault();
+          window.location.href = 'ojnoojmiomj';
+            alert(window.location.href + '  Button clicked!')
 
-            
-            if (key === "registration") {
-                button.classList.add('active-button'); 
-            }
         });
-        });
-    </script>    
+
+        const currentPathWithQuery = window.location.pathname + window.location.search;
+        if (buttonLink === currentPathWithQuery) {
+            button.classList.add('active-button');
+        }
+    });
+});
+
+    </script>
 {/if}
