@@ -77,32 +77,32 @@
         {include file="$template/includes/login/language-chooser.tpl" type="login"}   
     </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-    const buttons = document.querySelectorAll('.switcher__item');
-    const currentPage = window.location.pathname;
+//     <script>
+//         document.addEventListener('DOMContentLoaded', function() {
+//     const buttons = document.querySelectorAll('.switcher__item');
+//     const currentPage = window.location.pathname;
 
-    buttons.forEach(button => {
-        const key = button.getAttribute('data-key');
+//     buttons.forEach(button => {
+//         const key = button.getAttribute('data-key');
       
-        const buttonLink = key == 'registration' ? '/register.php' : '/index.php?rp=/login';
+//         const buttonLink = key == 'registration' ? '/register.php' : '/index.php?rp=/login';
         
         
-        button.addEventListener('click', function() {
-            event.preventDefault();
-          window.location.href = buttonLink;
-            alert(window.location.href+'  Button clicked!')
+//         button.addEventListener('click', function() {
+//             event.preventDefault();
+//           window.location.href = buttonLink;
+//             alert(window.location.href+'  Button clicked!')
 
-        });
+//         });
 
-        const currentPathWithQuery = window.location.pathname + window.location.search;
-        if (buttonLink === currentPathWithQuery) {
-            button.classList.add('active-button');
-        }
-    });
-});
+//         const currentPathWithQuery = window.location.pathname + window.location.search;
+//         if (buttonLink === currentPathWithQuery) {
+//             button.classList.add('active-button');
+//         }
+//     });
+// });
 
-    </script>
+//     </script>
      
     
 {/if}
