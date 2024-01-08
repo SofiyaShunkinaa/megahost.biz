@@ -663,9 +663,15 @@ details[open] .summary-icon{
     justify-content: space-between;
   }
 
-  .main-controls--right{
+  .main-controls--right, .main-controls--left{
     display: flex;
     column-gap: 20px;
+  }
+
+  .btn-speedtest{
+    padding: 12px;
+    border: 1px solid var(--main-border-color);
+    font-weight: 600;
   }
 
   .container-footer-separator{
