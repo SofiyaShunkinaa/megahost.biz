@@ -163,6 +163,12 @@
                                 {$LANG.speedtest}
                             </button>
 
+                            <div class="popup">
+                                <div class="popup-container">
+                                
+                                </div>
+                            </div>
+
                         </div>
 
                         <div class="main-controls--right">
