@@ -156,8 +156,8 @@
 
                             <button class="btn btn-default btn-speedtest">
                             
-                                {if file_exists("templates/$template/lagom2/assets/img/icons/speedtest.svg")}
-                                    {include file="templates/$template/lagom2/assets/img/icons/speedtest.svg"}
+                                {if file_exists("templates/$template/assets/img/icons/speedtest.svg")}
+                                    {include file="templates/$template/assets/img/icons/speedtest.svg"}
                                 {/if}
 
                                 {$LANG.speedtest}
