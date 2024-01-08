@@ -15,7 +15,7 @@
     {$LANG.VPNServer.list2.2 = "Dedicated IPv4 addresses, option to add IPv6 addresses for free"}
 
     {$LANG.package_buy="Buy in One Click"}
-
+    {$LANG.speedtest="Speed test"}
 
     {assign var=breadcrumb value=[
         [
@@ -56,6 +56,7 @@
     {$LANG.VPNServer.list2.2 = "Выделенные IPv4 адреса, возможность бесплатно добавить IPv6 адреса"}
 
     {$LANG.package_buy="Купить в один клик"}
+    {$LANG.speedtest="Проверить скорость"}
 
         {assign var=breadcrumb value=[
         [
@@ -147,24 +148,29 @@
 
                             <div class="switcher-wrapper">
                                 <div class="products-switcher switcher">
-                                    {foreach from=$VpnButtonsL item=sw}
-                                        {if file_exists("templates/$template/core/pages/homepage/modern/shared/switcher.tpl")}
-                                                {include file="$template/core/pages/homepage/modern/shared/switcher.tpl"}
+                                        {if file_exists("templates/$template/core/pages/homepage/modern/shared/switchers/plan.tpl")}
+                                                {include file="$template/core/pages/homepage/modern/shared/switchers/plan.tpl"}
                                             {/if}
-                                    {/foreach}
                                 </div>
                             </div>
+
+                            <button class="btn btn-default btn-speedtest">
+                            
+                                {if file_exists("templates/$template/lagom2/assets/img/icons/speedtest.svg")}
+                                    {include file="templates/$template/lagom2/assets/img/icons/speedtest.svg"}
+                                {/if}
+
+                                {$LANG.speedtest}
+                            </button>
 
                         </div>
 
                         <div class="main-controls--right">
                             <div class="switcher-wrapper">
                                 <div class="products-switcher switcher">
-                                    {foreach from=$VpnButtonsR item=sw}
                                         {if file_exists("templates/$template/core/pages/homepage/modern/shared/switcher.tpl")}
-                                                {include file="$template/core/pages/homepage/modern/shared/switcher.tpl"}
+                                                {include file="templates/$template/core/pages/homepage/modern/shared/switcher.tpl"}
                                             {/if}
-                                    {/foreach}
                                 </div>
                             </div>
                             </div>
