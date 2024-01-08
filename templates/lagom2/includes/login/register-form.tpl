@@ -246,29 +246,5 @@
         </div>
     </form>
     {/if}
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-    const buttons = document.querySelectorAll('.switcher__item');
-    const currentPage = window.location.pathname;
-
-    buttons.forEach(button => {
-        const key = button.getAttribute('data-key');
-      
-        const buttonLink = key == 'registration' ? '/register.php' : '/index.php?rp=/login';
-        
-        
-        button.addEventListener('click', function() {
-          window.location.href = buttonLink;
-          alert(window.location.href + '  Button clicked!')
-
-        });
-
-        const currentPathWithQuery = window.location.pathname + window.location.search;
-        if (buttonLink === currentPathWithQuery) {
-            button.classList.add('active-button');
-        }
-    });
-});
-
-    </script>
+    
 {/if}

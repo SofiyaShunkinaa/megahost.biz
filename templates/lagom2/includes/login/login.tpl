@@ -75,26 +75,7 @@
         {include file="$template/includes/login/language-chooser.tpl" type="login"}   
     </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-        const buttons = document.querySelectorAll('.switcher__item');
-
-        buttons.forEach(button => {
-            const key = button.getAttribute('data-key');
-            const buttonLink = key === 'registration' ? '/register.php' : '/index.php?rp=/login';
-
-            button.addEventListener('click', function() {
-                window.location.href = buttonLink;
-            });
-            
-            const currentPathWithQuery = window.location.pathname + window.location.search;
-            if (buttonLink === currentPathWithQuery) {
-                button.classList.add('active-button');
-            }
-        });
-        });
-
-    </script>
+    
      
     
 {/if}
