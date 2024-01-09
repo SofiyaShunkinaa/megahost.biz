@@ -17,7 +17,7 @@
     {$LANG.package_buy="Buy in One Click"}
     {$LANG.speedtest="Speed test"}
 
-    {$LANG.Speedtest.Title="bhukik"}
+    {$LANG.Speedtest.Title="VPN speed test"}
 
     {assign var=breadcrumb value=[
         [
@@ -60,7 +60,7 @@
     {$LANG.package_buy="Купить в один клик"}
     {$LANG.speedtest="Проверить скорость"}
 
- 
+    {$LANG.Speedtest.Title="Тест скорости VPN"}
     
 
 
@@ -88,9 +88,12 @@
 
 {/if}
 
-{$LANG.Speedtest.Ping="Ping"}
-{$LANG.Speedtest.Download="Download"}
-{$LANG.Speedtest.Speed="Speed"}
+{$LANG.Speedtest.Ping.Text="Ping"}
+{$LANG.Speedtest.Download.Text="Download"}
+{$LANG.Speedtest.Speed.Text="Speed"}
+{$LANG.Speedtest.Ping.Units="ms"}
+{$LANG.Speedtest.Download.Units="Mbps"}
+{$LANG.Speedtest.Speed.Units="Speed"}
 
 {assign var=VpnButtonsR value=[
     [
@@ -192,9 +195,82 @@
 
                                         <div clss="popup-desc">
                                         
-                                        <div class="popup-desc-1"></div>
-                                        <div class="popup-desc-2"></div>
-                                        <div class="popup-desc-3"></div>
+                                            <div class="popup-desc-ping">
+
+                                                <div class="p-desc--left">
+                                                    <div class="p-desc__icon">
+                                                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M14 23.3327C19.1547 23.3327 23.3333 19.154 23.3333 13.9993C23.3333 8.84469 19.1547 4.66602 14 4.66602" stroke="#AAAAAA" stroke-width="1.5" stroke-linecap="round"/>
+<path d="M4.66732 14H16.334M16.334 14L12.834 10.5M16.334 14L12.834 17.5" stroke="#AAAAAA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+                                                    </div>
+
+                                                    <div class="p-desc__text">
+                                                    {$LANG.Speedtest.Ping.Text}
+                                                    </div>
+
+                                                    <div class="p-desc__unit">
+                                                    {$LANG.Speedtest.Ping.Units}
+                                                    </div>
+                                                </div>
+
+                                                <div class="p-desc--right">
+                                                    <div class="p-desc__value" data-item="ping"></div>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="popup-desc-download">
+                                            
+                                            <div class="p-desc--left">
+                                                    <div class="p-desc__icon">
+                                                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M4.66732 14C4.66732 19.1547 8.84599 23.3333 14.0006 23.3333C19.1553 23.3333 23.334 19.1547 23.334 14" stroke="#8192D4" stroke-width="1.5" stroke-linecap="round"/>
+<path d="M14 4.66732L14 16.334M14 16.334L17.5 12.834M14 16.334L10.5 12.834" stroke="#8192D4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+                                                    </div>
+
+                                                    <div class="p-desc__text">
+                                                        {$LANG.Speedtest.Download.Text}
+                                                    </div>
+
+                                                    <div class="p-desc__unit">
+                                                    {$LANG.Speedtest.Download.Units}
+                                                    </div>
+                                                </div>
+
+                                                <div class="p-desc--right">
+                                                    <div class="p-desc__value" data-item="ping"></div>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="popup-desc-speed">
+                                            
+                                            <div class="p-desc--left">
+                                                    <div class="p-desc__icon">
+                                                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M4.66732 14C4.66732 19.1547 8.84599 23.3333 14.0006 23.3333C19.1553 23.3333 23.334 19.1547 23.334 14" stroke="#B34DD0" stroke-width="1.5" stroke-linecap="round"/>
+<path d="M14 16.3327L14 4.66602M14 4.66602L17.5 8.16602M14 4.66602L10.5 8.16602" stroke="#B34DD0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+                                                    </div>
+
+                                                    <div class="p-desc__text">
+                                                        {$LANG.Speedtest.Speed.Text}
+                                                    </div>
+
+                                                    <div class="p-desc__unit">
+                                                    {$LANG.Speedtest.Speed.Units}
+                                                    </div>
+                                                </div>
+
+                                                <div class="p-desc--right">
+                                                    <div class="p-desc__value" data-item="ping"></div>
+                                                </div>
+                                            
+                                            </div>
                                         
                                         </div>
                                     </div>
