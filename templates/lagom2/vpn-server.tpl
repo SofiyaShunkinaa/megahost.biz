@@ -17,6 +17,8 @@
     {$LANG.package_buy="Buy in One Click"}
     {$LANG.speedtest="Speed test"}
 
+    {$LANG.speedtest.title="Speed test"}
+
     {assign var=breadcrumb value=[
         [
             'link'=>"/index.php",
@@ -58,6 +60,10 @@
     {$LANG.package_buy="Купить в один клик"}
     {$LANG.speedtest="Проверить скорость"}
 
+    {$LANG.speedtest.title="Тест скорости VPN"}
+    
+
+
         {assign var=breadcrumb value=[
         [
             'link'=>"/index.php",
@@ -92,6 +98,10 @@
         'key' => 'rub'
     ]
 ]}
+
+{$LANG.speedtest.ping="Ping"}
+{$LANG.speedtest.download="Download"}
+{$LANG.speedtest.speed="Speed"}
 
 <div class="container">
         <div class="main-header">
