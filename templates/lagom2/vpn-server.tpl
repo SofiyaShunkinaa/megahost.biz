@@ -163,9 +163,20 @@
                                 {$LANG.speedtest}
                             </button>
 
-                            <div class="popup">
+                            <div class="popup-speedtest">
                                 <div class="popup-container">
-                                
+                                    <div class="popup-article">
+                                        <div class="popup-title"><div>
+
+                                        <div clss="popup-desc"></div>
+                                    </div>
+
+                                    <div class="popup-speedometer"></div>
+
+                                    <div class="popup-graphic"></div>
+
+                                    <div class="popup-btn"></div>
+
                                 </div>
                             </div>
 
