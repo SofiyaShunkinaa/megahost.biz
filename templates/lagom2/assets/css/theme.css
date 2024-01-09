@@ -647,8 +647,6 @@ details[open] .summary-icon{
     display: flex;
     flex-direction: column;
     gap: 8px;
-    column-gap: 10px;
-    border-radius: 8px;
   }
 
   .dropdown-menu-right .dropdown-menu-item{
@@ -675,6 +673,8 @@ details[open] .summary-icon{
     border: 1px solid var(--main-border-color);
     font-weight: 600;
     height: 48px;
+    column-gap: 10px;
+    border-radius: 8px;
   }
 
   .container-footer-separator{
