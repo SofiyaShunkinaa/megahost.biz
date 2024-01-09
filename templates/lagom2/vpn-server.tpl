@@ -18,6 +18,8 @@
     {$LANG.speedtest="Speed test"}
 
     {$LANG.Speedtest.Title="VPN speed test"}
+    {$LANG.Speedtest.Button="Stop test"}
+
 
     {assign var=breadcrumb value=[
         [
@@ -61,6 +63,7 @@
     {$LANG.speedtest="Проверить скорость"}
 
     {$LANG.Speedtest.Title="Тест скорости VPN"}
+    {$LANG.Speedtest.Button="Завершить тест"}
     
 
 
@@ -279,7 +282,9 @@
 
                                     <div class="popup-graphic"></div>
 
-                                    <div class="popup-btn"></div>
+                                    <div class="popup-btn">
+                                    <button class="btn btn-package btn-primary">{$LANG.Speedtest.Button}</button>
+                                    </div>
 
                                 </div>
                             </div>
