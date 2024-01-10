@@ -1002,7 +1002,42 @@ details[open] .summary-icon{
     display: flex;
     flex-direction: column;
     column-gap: 50px;
-    
+    background-color: var(--a-bg);
+    border-radius: 30px;
+    align-items: center;
+  }
+
+  .popup-title{
+    gap: 16px;
+    color: var(--a-white);
+    font-weight: 700;
+    font-size: 24px;
+  }
+
+  .popup-desc{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .p-desc__text{
+    color: white;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+  }
+
+  .p-desc__unit{
+    color: var(--a-grey);
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+  }
+
+  .p-desc__value{
+    color: #F8F8FA;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
   }
 
 @media (min-width:992px){
