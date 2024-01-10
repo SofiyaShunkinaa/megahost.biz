@@ -991,6 +991,20 @@ details[open] .summary-icon{
     color: var(--a-white);
   }
 
+  .popup-speedtest{
+    position: fixed;
+    top: 0px;
+    background-color: rgba(28, 28, 28, 0.70);
+  }
+
+  .popup-container{
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    column-gap: 50px;
+    
+  }
+
 @media (min-width:992px){
   .app-main{
     padding-top: 120px;
