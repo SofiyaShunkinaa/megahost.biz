@@ -180,7 +180,52 @@
                                 {$LANG.speedtest}
                             </button>
 
-                            <div class="popup-speedtest">
+                            
+
+                        </div>
+
+                        <div class="main-controls--right">
+                            <div class="switcher-wrapper">
+                                <div class="products-switcher switcher">
+                                        {if file_exists("templates/$template/core/pages/homepage/modern/shared/switcher.tpl")}
+                                                {include file="templates/$template/core/pages/homepage/modern/shared/switcher.tpl"}
+                                            {/if}
+                                </div>
+                            </div>
+                            </div>
+                            </div>
+                            </div>
+                            </div>
+                            </div>
+                            </div>
+
+<div class="container container-products-list">
+            <h2 class="section-title title-inculded">{$LANG.VPNServer.list.title}</h2>
+
+            <div class="section-lists">
+                <div class="section-lists__list-1">
+                    <ul>
+                        <li>{$LANG.VPNServer.list1.1}</li>
+                        <li>{$LANG.VPNServer.list1.2}</li>
+                        
+                    </ul>
+                </div>
+
+                <div class="section-lists__list-2">
+                    <ul>
+                        <li>{$LANG.VPNServer.list2.1}</li>
+                        <li>{$LANG.VPNServer.list2.2}</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="popup-speedtest">
+
+            <div class="popup-speedtest__main-window">
+
                                 <div class="popup-container">
                                     <div class="popup-article">
                                         <div class="popup-title"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -289,41 +334,15 @@
                                 </div>
                             </div>
 
-                        </div>
-
-                        <div class="main-controls--right">
-                            <div class="switcher-wrapper">
-                                <div class="products-switcher switcher">
-                                        {if file_exists("templates/$template/core/pages/homepage/modern/shared/switcher.tpl")}
-                                                {include file="templates/$template/core/pages/homepage/modern/shared/switcher.tpl"}
-                                            {/if}
-                                </div>
-                            </div>
-                            </div>
-                            </div>
-                            </div>
-                            </div>
-                            </div>
-                            </div>
-
-<div class="container container-products-list">
-            <h2 class="section-title title-inculded">{$LANG.VPNServer.list.title}</h2>
-
-            <div class="section-lists">
-                <div class="section-lists__list-1">
-                    <ul>
-                        <li>{$LANG.VPNServer.list1.1}</li>
-                        <li>{$LANG.VPNServer.list1.2}</li>
-                        
-                    </ul>
+        <div class="popup-speedtest__exit">
+            <a href="" >
+                <div class="cross-exit_popup">
+                    <div class="cross-exit_popup__line"></div>
+                    <div class="cross-exit_popup__line"></div>
                 </div>
 
-                <div class="section-lists__list-2">
-                    <ul>
-                        <li>{$LANG.VPNServer.list2.1}</li>
-                        <li>{$LANG.VPNServer.list2.2}</li>
-                        
-                    </ul>
-                </div>
-            </div>
+                <span>Esc</span>
+            </a>
         </div>
+
+                            </div>
