@@ -995,6 +995,7 @@ details[open] .summary-icon{
     position: fixed;
     top: 0px;
     background-color: rgba(28, 28, 28, 0.70);
+    width: 100%;
   }
 
   .popup-container{
