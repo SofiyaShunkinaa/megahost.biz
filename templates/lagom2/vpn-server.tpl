@@ -241,9 +241,9 @@
 </svg>
 {$LANG.Speedtest.Title}<div>
 
-                                        <div clss="popup-desc">
+                                        <div clss="popup-descs">
                                         
-                                            <div class="popup-desc-ping">
+                                            <div class="popup-desc-ping popup-desc">
 
                                                 <div class="p-desc--left">
                                                     <div class="p-desc__icon">
@@ -268,7 +268,7 @@
 
                                             </div>
 
-                                            <div class="popup-desc-download">
+                                            <div class="popup-desc-download popup-desc">
                                             
                                             <div class="p-desc--left">
                                                     <div class="p-desc__icon">
@@ -294,7 +294,7 @@
 
                                             </div>
 
-                                            <div class="popup-desc-speed">
+                                            <div class="popup-desc-speed popup-desc">
                                             
                                             <div class="p-desc--left">
                                                     <div class="p-desc__icon">
@@ -302,7 +302,6 @@
 <path d="M4.66732 14C4.66732 19.1547 8.84599 23.3333 14.0006 23.3333C19.1553 23.3333 23.334 19.1547 23.334 14" stroke="#B34DD0" stroke-width="1.5" stroke-linecap="round"/>
 <path d="M14 16.3327L14 4.66602M14 4.66602L17.5 8.16602M14 4.66602L10.5 8.16602" stroke="#B34DD0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
-
                                                     </div>
 
                                                     <div class="p-desc__text">
