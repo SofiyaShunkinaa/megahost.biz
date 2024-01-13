@@ -332,6 +332,7 @@
 
                                 </div>
                             </div>
+                            </div>
 
         <div class="popup-speedtest__exit">
             <a href="" >
@@ -346,4 +347,4 @@
 
                             </div>
                             </div>
-                            </div>
+                           
