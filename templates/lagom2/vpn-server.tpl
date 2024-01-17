@@ -239,7 +239,8 @@
 <path d="M12 4.00021L12 2.00021" stroke="#FDFDFD" stroke-width="1.5" stroke-linecap="round"/>
 <path d="M15 12.0009C15 13.6577 13.6569 15.0009 12 15.0009C10.3431 15.0009 9 13.6577 9 12.0009C9 11.3706 9.43408 10.4964 9.972 9.65497C10.7764 8.39671 11.1786 7.76758 12 7.76758C12.8214 7.76758 13.2236 8.39671 14.028 9.65497C14.5659 10.4964 15 11.3706 15 12.0009Z" stroke="#FDFDFD" stroke-width="1.5"/>
 </svg>
-{$LANG.Speedtest.Title}<div>
+{$LANG.Speedtest.Title}
+</div>
 
                                         <div clss="popup-descs">
                                         
@@ -331,8 +332,6 @@
                                     </div>
 
                                 </div>
-                            </div>
-                            </div>
 
         <div class="popup-speedtest__exit">
             <a href="" >
