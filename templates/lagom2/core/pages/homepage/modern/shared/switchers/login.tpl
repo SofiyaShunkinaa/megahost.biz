@@ -50,12 +50,11 @@
                 window.location.href = buttonsLink;
             });
             
-            //const currentPathWithQuery = window.location.pathname + window.location.search;
-            //if (buttonsLink === currentPathWithQuery) {
-                document.querySelector(currentPathWithQuery).classList.add('active-button');
-                //button.
-                //alert("blyat")
-            //}
+            const currentPathWithQuery = window.location.pathname + window.location.search;
+
+            if (buttonsLink === currentPathWithQuery) {
+                button.classList.add('active-button');
+            }
             
         });
         });
