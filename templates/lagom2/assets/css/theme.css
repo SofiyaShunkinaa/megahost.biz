@@ -141,7 +141,7 @@ details[open] .summary-icon{
   pointer-events: all;
 }
 
-.country:hover, .big-area-uae:hover .cntry-uae, .big-area-singapore:hover .cntry-singapore{
+.sm-country--hover{
   stroke: #FFF;
   filter: drop-shadow(0px 4px 24px rgba(205, 28, 208, 0.40));
 }
