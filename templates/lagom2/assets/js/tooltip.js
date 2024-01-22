@@ -4,6 +4,9 @@ const title = document.querySelector('.title-country');
 const tooltip = document.querySelector('.tooltip');
 const tooltipImg = document.querySelector('.flag-country');
 const countries = document.querySelectorAll('.country');
+const bigArea1 = document.querySelectorAll('.big-area-uae');
+const smArea1 = document.querySelectorAll('.cntry-uae');
+const bigArea2 = document.querySelectorAll('.big-area-singapore');
 
 
 countries.forEach(country =>{
@@ -23,6 +26,14 @@ countries.forEach(country =>{
     country.addEventListener('mouseleave', function(){
         tooltip.style.display = "none";
     });
+})
+
+bigArea1.addEventListener('mouseenter', function(){
+  smArea1.addClass('sm-country--hover')
+})
+
+bigArea2.addEventListener('mouseenter', function(){
+  smArea2.addClass('sm-country--hover')
 })
 
  // header
