@@ -132,11 +132,9 @@
 
                     <div class="switcher-wrapper">
                         <div class="switcher news-switcher sw-white">
-                            {foreach from=$BlogSwitcher item=sw}
-                                {if file_exists("templates/$template/core/pages/homepage/modern/shared/switcher.tpl")}
-                                        {include file="$template/core/pages/homepage/modern/shared/switcher.tpl"}
-                                    {/if}
-                            {/foreach}   
+                                {if file_exists("templates/$template/core/pages/homepage/modern/shared/switchers/announcements.tpl")}
+                                        {include file="$template/core/pages/homepage/modern/shared/switchers/announcements.tpl"}
+                                    {/if}   
                         </div>
                     </div>
                 </div>
