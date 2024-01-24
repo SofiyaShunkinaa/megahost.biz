@@ -148,6 +148,8 @@ details[open] .summary-icon{
 
 .big-area-uae, .big-area-singapore{
   fill: transparent;
+  cursor: pointer;
+  pointer-events: all;
 }
 
 .tooltip{
