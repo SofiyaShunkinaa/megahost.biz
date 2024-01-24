@@ -4,10 +4,13 @@ const title = document.querySelector('.title-country');
 const tooltip = document.querySelector('.tooltip');
 const tooltipImg = document.querySelector('.flag-country');
 const countries = document.querySelectorAll('.country');
-const bigArea1 = document.querySelectorAll('.big-area-uae');
-const smArea1 = document.querySelectorAll('.cntry-uae');
-const bigArea2 = document.querySelectorAll('.big-area-singapore');
+const bigArea1 = document.querySelector('.big-area-uae');
+const smArea1 = document.querySelector('.cntry-uae');
+const bigArea2 = document.querySelector('.big-area-singapore');
+const smArea2 = document.querySelector('.cntry-singapore');
 
+countries.push(bigArea1);
+countries.push(bigArea2);
 
 countries.forEach(country =>{
     country.addEventListener('mousemove', function(e){
@@ -28,11 +31,11 @@ countries.forEach(country =>{
     });
 })
 
-bigArea1.addEventListener('mouseenter', function(){
+bigArea1.addEventListener('mousemove', function(){
   smArea1.addClass('sm-country--hover')
 })
 
-bigArea2.addEventListener('mouseenter', function(){
+bigArea2.addEventListener('mousemove', function(){
   smArea2.addClass('sm-country--hover')
 })
 
@@ -132,6 +135,8 @@ bigArea2.addEventListener('mouseenter', function(){
 if (screenWidth<1440){
   const sliderCustom = document.querySelector('.slider-custom');
   const progress = document.querySelector('.slider-progress');
+  const secondaryFooterLogo = document.querySelector('.footer-nav-h');
+
   let isDragging = false;
   let startPosition = 0;
   let currentTranslate = 0;
