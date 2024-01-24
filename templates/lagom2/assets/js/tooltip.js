@@ -9,8 +9,8 @@ const smArea1 = document.querySelector('.cntry-uae');
 const bigArea2 = document.querySelector('.big-area-singapore');
 const smArea2 = document.querySelector('.cntry-singapore');
 
-countries.push(bigArea1);
-countries.push(bigArea2);
+//countries.push(bigArea1);
+//countries.push(bigArea2);
 
 countries.forEach(country =>{
     country.addEventListener('mousemove', function(e){
@@ -32,11 +32,11 @@ countries.forEach(country =>{
 })
 
 bigArea1.addEventListener('mousemove', function(){
-  smArea1.addClass('sm-country--hover')
+  smArea1.classList.add('sm-country--hover')
 })
 
 bigArea2.addEventListener('mousemove', function(){
-  smArea2.addClass('sm-country--hover')
+  smArea2.classList.add('sm-country--hover')
 })
 
  // header
