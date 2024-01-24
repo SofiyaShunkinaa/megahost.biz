@@ -147,7 +147,7 @@
 
             <h2 class="section-title">{$LANG.Blog.section.title}</h2>
 
-            <div class="ns-grid">
+            {*<div class="ns-grid">
                 {$num=1}
                 {foreach from=$BlogNews item=news}
                     <div class="ns-grid__item col-4 ">
@@ -174,8 +174,8 @@
                 {/foreach}
 
             </div>
-        </div>
-        {*<div class="announcements-list list-group list-group-lg">
+        </div>*}
+        <div class="announcements-list list-group list-group-lg">
         {foreach from=$announcements item=announcement}
             <div class="list-group-item list-group-item-link" data-lagom-href="{routePath('announcement-view', $announcement.id, $announcement.urlfriendlytitle)}">
                 <span class="announcement-date"><i class="ls ls-calendar"></i>{$carbon->createFromTimestamp($announcement.timestamp)->format('jS M Y')}</span>
@@ -215,7 +215,7 @@
                 </div>
             </div>
         {/foreach}
-        *}
+        
         <ul class="pagination">
             {foreach $pagination as $item}
             <li {if $item.active}class="active"{/if}>
@@ -236,3 +236,5 @@
     {/if}
     </div>
 {/if}    
+
+{debug}
