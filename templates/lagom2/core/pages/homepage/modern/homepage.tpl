@@ -749,6 +749,7 @@
                         {/if}
                     {/foreach}
                 </div>
+                <div class="product-pagination"></div>
             </div>
         </div>
     </div>
