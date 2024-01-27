@@ -31,12 +31,20 @@ countries.forEach(country =>{
     });
 })
 
-bigArea1.addEventListener('mousemove', function(){
+bigArea1.addEventListener('mouseenter', function(){
   smArea1.classList.add('sm-country--hover')
 })
 
-bigArea2.addEventListener('mousemove', function(){
+bigArea2.addEventListener('mouseleave', function(){
   smArea2.classList.add('sm-country--hover')
+})
+
+bigArea1.addEventListener('mouseenter', function(){
+  smArea1.classList.remove('sm-country--hover')
+})
+
+bigArea2.addEventListener('mouseleave', function(){
+  smArea2.classList.remove('sm-country--hover')
 })
 
  // header
