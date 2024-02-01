@@ -20,7 +20,7 @@
 {/if}
 
     {foreach $langsSwitcher as $sw}
-        <button class="switcher__item btn btn-switcher {if ($activeCurrency.id == $sw.id)}active{/if}" data-key="{$sw.key}">
+        <button class="switcher__item btn btn-switcher data-key="{$sw.key}">
             {$sw.name}
         </button>
     {/foreach}
