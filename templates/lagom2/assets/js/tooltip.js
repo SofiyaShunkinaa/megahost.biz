@@ -74,10 +74,6 @@ var bodyElement = document.body;
 
   liElement.appendChild(buttonElement);
 
-  var liElementSwitchers = document.getElementsByClassName('main-menu-switcher');
-
-
-
 
 //slider
 
@@ -199,3 +195,54 @@ if(window.location.pathname === "/index.php"){
   });
 }
 
+//header-switcher: currency
+
+document.addEventListener('DOMContentLoaded', function() {
+  const currencyButtons = document.querySelectorAll('.switcher__item-currency');
+  const currentPage = '';
+
+  currencyButtons.forEach(button => {
+      const key = button.getAttribute('data-key');
+      var buttonLink = '';
+
+      switch(key){
+        case "usd":
+          buttonLink = '/index.php?currency=1';
+          break;
+        case "rub":
+          buttonLink = '/index.php?currency=2';
+          break;
+        case "eur":
+          buttonLink = '/index.php?currency=3';
+          break;
+      }
+      
+      button.addEventListener('click', function() {
+          window.location.href = buttonLink;
+      });
+      
+      if (buttonLink === currentPage) {
+          button.classList.add('active-button'); 
+      }
+  });
+});
+
+
+// Получаем элементы
+var liElementSwitchers = document.getElementsByClassName('main-menu-switcher');
+
+// Проверяем наличие элемента
+if (liElementSwitchers) {
+    // Удаляем элемент с тегом <a>
+    // var aElementToRemove = liElementSwitchers.querySelector('a');
+    // if (aElementToRemove) {
+    //     aElementToRemove.remove();
+    // }
+
+    // Создаем новый элемент с расширением .tpl
+    var tplFileElement = document.createElement('file'); // или другой подходящий тег
+    tplFileElement.setAttribute('src', 'templates/lagom2/core/pages/homepage/modern/shared/switchers/currency-sidebar.tpl');
+
+    // Вставляем новый элемент внутрь элемента <li>
+    liElementSwitchers.appendChild(tplFileElement);
+}
