@@ -1085,6 +1085,15 @@ details[open] .summary-icon{
   .dropdown-menu-item.active span{
     color: #8292D5;
   }
+
+  .main-menu-switchers .switcher-wrapper{
+    justify-content: left;
+  }
+
+  .main-menu-switchers{
+    padding-top: 60px !important;
+    padding-left: 16px !important;
+  }
 @media (min-width:992px){
   .app-main{
     padding-top: 120px;
