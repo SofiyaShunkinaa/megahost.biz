@@ -229,20 +229,24 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 // Получаем элементы
-var liElementSwitchers = document.getElementsByClassName('main-menu-switcher');
+// Получаем элемент li с классом "main-menu-switcher"
+var liElement = document.querySelector('li.main-menu-switchers');
 
 // Проверяем наличие элемента
-if (liElementSwitchers) {
-    // Удаляем элемент с тегом <a>
-    // var aElementToRemove = liElementSwitchers.querySelector('a');
-    // if (aElementToRemove) {
-    //     aElementToRemove.remove();
-    // }
+if (liElement) {
+    // Создаем HTML-строку с содержимым из файла .tpl
+    var tplContent = `
+        <button class="switcher__item-currency btn btn-switcher {if ($activeCurrency.id == 1)}active{/if}" data-key="usd">
+            USD
+        </button>
+        <button class="switcher__item-currency btn btn-switcher {if ($activeCurrency.id == 2)}active{/if}" data-key="rub">
+            RUB
+        </button>
+        <button class="switcher__item-currency btn btn-switcher {if ($activeCurrency.id == 3)}active{/if}" data-key="eur">
+            EUR
+        </button>
+    `;
 
-    // Создаем новый элемент с расширением .tpl
-    var tplFileElement = document.createElement('file'); // или другой подходящий тег
-    tplFileElement.setAttribute('src', 'templates/lagom2/core/pages/homepage/modern/shared/switchers/currency-sidebar.tpl');
-
-    // Вставляем новый элемент внутрь элемента <li>
-    liElementSwitchers.appendChild(tplFileElement);
+    // Вставляем HTML-строку внутрь элемента li
+    liElement.innerHTML = tplContent;
 }
