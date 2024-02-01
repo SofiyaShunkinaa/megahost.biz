@@ -228,25 +228,33 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-// Получаем элементы
-// Получаем элемент li с классом "main-menu-switcher"
 var liElement = document.querySelector('li.main-menu-switchers');
 
-// Проверяем наличие элемента
-if (liElement) {
-    // Создаем HTML-строку с содержимым из файла .tpl
     var tplContent = `
-        <button class="switcher__item-currency btn btn-switcher {if ($activeCurrency.id == 1)}active{/if}" data-key="usd">
+    <div class="switcher-wrapper">
+      <div class="switcher sw-white switcher-sidebar">
+        <button class="switcher__item-currency switcher__item btn btn-switcher" data-key="usd">
             USD
         </button>
-        <button class="switcher__item-currency btn btn-switcher {if ($activeCurrency.id == 2)}active{/if}" data-key="rub">
+        <button class="switcher__item-currency switcher__item btn btn-switcher" data-key="rub">
             RUB
         </button>
-        <button class="switcher__item-currency btn btn-switcher {if ($activeCurrency.id == 3)}active{/if}" data-key="eur">
+        <button class="switcher__item-currency switcher__item btn btn-switcher" data-key="eur">
             EUR
         </button>
+        </div>
+    </div>
+    <div class="switcher-wrapper">
+      <div class="switcher sw-white switcher-sidebar">
+        <button class="switcher__item-languages switcher__item btn btn-switcher" data-key="ru">
+            RU
+        </button>
+        <button class="switcher__item-languages switcher__item btn btn-switcher" data-key="eng">
+            ENG
+        </button>
+        </div>
+    </div>
     `;
 
-    // Вставляем HTML-строку внутрь элемента li
     liElement.innerHTML = tplContent;
-}
+
