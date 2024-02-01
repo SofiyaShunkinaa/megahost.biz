@@ -1057,6 +1057,14 @@ details[open] .summary-icon{
     column-gap: 8px;
   }
 
+  .open-menu-sidebar{
+    display: none !important;
+  }
+
+  .menu-open .open-menu-sidebar{
+    display: block !important;
+  }
+
 @media (min-width:992px){
   .app-main{
     padding-top: 120px;
@@ -1305,6 +1313,10 @@ details[open] .summary-icon{
 
   .error-page-title{
     font-size: 100px;
+  }
+
+  .main-menu-desktop{
+    display: none;
   }
 }
 
