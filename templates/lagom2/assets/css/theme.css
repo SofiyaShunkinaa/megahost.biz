@@ -143,7 +143,7 @@ details[open] .summary-icon{
   pointer-events: all;
 }
 
-.sm-country--hover{
+.sm-country--hover, .country:hover{
   stroke: #FFF;
   filter: drop-shadow(0px 4px 24px rgba(205, 28, 208, 0.40));
 }
@@ -1068,7 +1068,11 @@ details[open] .summary-icon{
 
   .app-nav-menu{
     position: fixed !important;
-    width: 100%;
+    width: 100vw;
+  }
+
+  .lagom-layout-top .app-nav-menu .menu>li:nth-child(2){
+    margin-left: 0;
   }
 
   .header_fixed{
