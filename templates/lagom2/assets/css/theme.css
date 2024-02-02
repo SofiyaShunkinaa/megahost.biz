@@ -1103,6 +1103,10 @@ details[open] .summary-icon{
     border: 1px solid var(--main-border-color);
     padding: 23px 24px;
   }
+
+  .secondary-main-menu-sm .btn-xs span{
+    font-size: 16px;
+  }
 @media (min-width:992px){
   .app-main{
     padding-top: 120px;
@@ -1239,6 +1243,10 @@ details[open] .summary-icon{
   .error-title{
     margin-left: 210px;
     margin-top: 20px;
+  }
+
+  .page-products .pps-item:nth-of-type(3){
+    display: none;
   }
 }
 
