@@ -97,56 +97,79 @@ if (screenWidth<1440){
   sliderCustom.addEventListener('touchmove', drag, { passive: true });
 
   function startDragging(e) {
-    e.preventDefault();
-
     if (e.type === 'touchstart') {
-      startPosition = e.touches[0].clientX;
+      startPosition = e.touches[0].clientX - currentTranslate;
     } else {
-      startPosition = e.clientX;
+      startPosition = e.clientX - currentTranslate;
       sliderCustom.style.cursor = 'grabbing';
     }
-
+  
     isDragging = true;
     animationID = requestAnimationFrame(animation);
+  
+    // Добавляем слушателей для отслеживания движения
+    document.addEventListener('mousemove', drag);
+    document.addEventListener('touchmove', drag, { passive: true });
+  
+    // Добавляем слушателей для отслеживания окончания движения
+    document.addEventListener('mouseup', stopDragging);
+    document.addEventListener('touchend', stopDragging);
+    document.addEventListener('mouseleave', stopDragging);
   }
-
+  
+ 
+  
+  
+  
   function drag(e) {
     if (isDragging) {
       let currentPosition = 0;
-
+  
       if (e.type === 'touchmove') {
         currentPosition = e.touches[0].clientX;
       } else {
         currentPosition = e.clientX;
       }
-
-      currentTranslate = prevTranslate + currentPosition - startPosition;
-
+  
+      // Обновление currentTranslate, учтя изменение startPosition
+      currentTranslate = currentPosition-startPosition;
+  
       const slideWidth = sliderCustom.clientWidth / 5;
-      const maxTranslate = slideWidth * 2;
-      const minTranslate = -slideWidth * 2;
-
-      if (currentTranslate > maxTranslate) {
-        currentTranslate = maxTranslate;
-      } else if (currentTranslate < minTranslate) {
+      const containerProducts = document.querySelector('.container-products');
+      const containerProductsPadding = parseInt(getComputedStyle(containerProducts).paddingRight);
+      const maxTranslate = 1315 - window.innerWidth + containerProductsPadding;
+      const minTranslate = -maxTranslate;
+  
+      if (currentTranslate < minTranslate) {
         currentTranslate = minTranslate;
       }
-
+  
       if (currentTranslate > 0) {
         currentTranslate = 0;
       }
+  
+      // Обновление стиля слайдера
+      sliderCustom.style.transform = `translateX(${currentTranslate}px)`;
     }
   }
 
   function stopDragging() {
     cancelAnimationFrame(animationID);
     isDragging = false;
+  
+    // Удаляем слушателей, так как перетаскивание завершено
+    document.removeEventListener('mousemove', drag);
+    document.removeEventListener('touchmove', drag);
+    document.removeEventListener('mouseup', stopDragging);
+    document.removeEventListener('touchend', stopDragging);
+    document.removeEventListener('mouseleave', stopDragging);
+  
     const slideWidth = sliderCustom.clientWidth / 5;
     const slideIndex = Math.round(currentTranslate / slideWidth);
-
+  
     currentTranslate = slideIndex * slideWidth;
     prevTranslate = currentTranslate;
-
+  
     sliderCustom.style.transform = `translateX(${currentTranslate}px)`;
     sliderCustom.style.cursor = 'grab';
   }
@@ -162,6 +185,7 @@ if (screenWidth<1440){
 
 
 //buttons
+var currency = 'usd';
 if(window.location.pathname === "/index.php"){
   document.addEventListener('DOMContentLoaded', function() {
     const buttons = document.querySelectorAll('.switcher__item');
@@ -181,7 +205,6 @@ if(window.location.pathname === "/index.php"){
           case "eur":
             buttonLink = '/index.php?currency=3';
             break;
-          
         }
         
         button.addEventListener('click', function() {
@@ -190,6 +213,7 @@ if(window.location.pathname === "/index.php"){
         
         if (buttonLink === currentPage) {
             button.classList.add('active-button'); 
+            currency = key;
         }
     });
   });
@@ -221,7 +245,7 @@ document.addEventListener('DOMContentLoaded', function() {
           window.location.href = buttonLink;
       });
       
-      if (buttonLink === currentPage) {
+      if (key === currency) {
           button.classList.add('active-button'); 
       }
   });
