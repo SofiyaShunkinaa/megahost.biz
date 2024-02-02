@@ -1123,6 +1123,15 @@ details[open] .summary-icon{
     color: var(--a-white);
     font-size: 20px;
   }
+
+  .section.products em{
+    grid-column: 1/3;
+    color: #BECBFF;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+  }
+  
 @media (min-width:992px){
   .app-main{
     padding-top: 120px;
