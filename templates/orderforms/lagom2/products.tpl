@@ -195,12 +195,12 @@
                     </div>
                         {if $products}
                             <div class="section products" id="products">
-                                <div class="row row-eq-height row-eq-height-sm">
+                                <div class="row row-eq-height row-eq-height-sm slider-custom">
                                     {assign var=counter value=1}
                                     {assign var=productsCount value=$products|count}
                                     {foreach from=$products item=product}
                                         {$idPrefix = ($product.bid) ? ("bundle"|cat:$product.bid) : ("product"|cat:$product.pid)}
-                                        <div class="col-4{if $RSThemes['pages'][$templatefile]['config']['horizontalPackage'] == 1} col-12{/if}">
+                                        <div class="col-4{if $RSThemes['pages'][$templatefile]['config']['horizontalPackage'] == 1} col-12{/if} slide-custom">
                                             <div class="package{if $product.isFeatured} package-featured{/if}{if $RSThemes['pages'][$templatefile]['config']['horizontalPackage'] == 1} package-horizontal{/if}" id="{$idPrefix}">
                                                 <div class="package-side package-side-left">
                                                     <div class="package-header">   
