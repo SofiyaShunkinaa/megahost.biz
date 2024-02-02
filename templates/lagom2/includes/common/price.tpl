@@ -1,3 +1,11 @@
+{if ($language == 'english')}
+    {$LANG.Products.priceBenefits.0="More profitable by 6%"}
+    {$LANG.Products.priceBenefits.1="The price for one month is 4.5$"}
+{else}
+    {$LANG.Products.priceBenefits.0="More profitable by 6%"}
+    {$LANG.Products.priceBenefits.1="The price for one month is 4.5$"} 
+{/if}
+
 {if file_exists("templates/$template/includes/common/overwrites/price.tpl")}
      {include file="{$template}/includes/common/overwrites/price.tpl"}  
 {else}
@@ -11,7 +19,7 @@
         {/if}
     </div>
     {if isset($priceType) && $priceType !=="free" && $priceType !=="onetime"}
-        <div class="price-cycle {if $priceCycleShort}price-cycle-inline{/if}">
+        {*<div class="price-cycle {if $priceCycleShort}price-cycle-inline{/if}">
         {if $priceCycle eq "monthly"}
             {if $priceCycleShort}/{$LANG.pricingCycleShort.monthly}{else}{$LANG.orderpaymenttermmonthly}{/if}
         {elseif $priceCycle eq "quarterly"}
@@ -25,9 +33,14 @@
         {elseif $priceCycle eq "triennially"}
             {if $priceCycleShort}/{$LANG.pricingCycleShort.triennially}{else}{$LANG.orderpaymenttermtriennially}{/if}
         {/if}
+
+
         {if isset($priceSetupFee) && $priceSetupFee} + {$priceSetupFee->toPrefixed()} {$LANG.ordersetupfee}{/if}
         {if isset($priceSetupFeeLowest) && $priceSetupFeeLowest} + {$priceSetupFeeLowest|replace:$activeCurrency.suffix:""} {$LANG.ordersetupfee}{/if}
-        </div>
+        </div>*}
+
+        <div class="price-benefits">{$LANG.Products.priceBenefits.0}</div>
+        <div class="price-benefits">{$LANG.Products.priceBenefits.1}</div>
     {else if isset($priceSetupFee) && $priceSetupFee}
         <div class="price-cycle">+ {$priceSetupFee->toPrefixed()} {$LANG.ordersetupfee}</div>
     {else if isset($priceSetupFeeLowest) && $priceSetupFeeLowest}
