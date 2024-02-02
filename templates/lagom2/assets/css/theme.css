@@ -894,6 +894,7 @@ details[open] .summary-icon{
   .slider-custom{
     display: flex;
     width: 1315px;
+    flex-wrap: nowrap;
     /* transition: transform 0.5s ease-in-out; */
   }
 
@@ -1130,6 +1131,7 @@ details[open] .summary-icon{
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
+    justify-self: center;
   }
 
   .package-content__divider{
@@ -1137,6 +1139,21 @@ details[open] .summary-icon{
     height: 1px;
     background: var(--btn-package-bg);
   }
+
+  .price-benefits{
+    font-size: 16px;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  .price-benefits:last-of-type{
+    margin-bottom: 32px;
+  }
+
+  .price-benefits:first-of-type{
+    margin-top: 28px;
+  }
+
 @media (min-width:992px){
   .app-main{
     padding-top: 120px;
