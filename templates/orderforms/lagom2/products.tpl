@@ -175,22 +175,18 @@
 
                         <div class="main-controls--right">
                             <div class="switcher-wrapper">
-                                <div class="products-switcher switcher">
-                                    {foreach from=$ProductsCurrency item=sw}
-                                        {if file_exists("templates/$template/core/pages/homepage/modern/shared/switcher.tpl")}
-                                        {include file="$template/core/pages/homepage/modern/shared/switcher.tpl"}
-                                    {/if}
-                                    {/foreach}
+                                <div class="products-switcher switcher sw-black">
+                                        {if file_exists("templates/$template/core/pages/homepage/modern/shared/switchers/currency.tpl")}
+                                                {include file="$template/core/pages/homepage/modern/shared/switchers/currency.tpl"}
+                                            {/if}
                                 </div>
                             </div>
 
                             <div class="switcher-wrapper">
-                                <div class="kb-switcher switcher">
-                                    {foreach from=$VPSButtonsPeriod item=sw}
-                                        {if file_exists("templates/$template/core/pages/homepage/modern/shared/switcher.tpl")}
-                                        {include file="$template/core/pages/homepage/modern/shared/switcher.tpl"}
-                                    {/if}
-                                    {/foreach}
+                                <div class="products-switcher switcher sw-black">
+                                        {if file_exists("templates/$template/core/pages/homepage/modern/shared/switchers/period.tpl")}
+                                                {include file="$template/core/pages/homepage/modern/shared/switchers/period.tpl"}
+                                            {/if}
                                 </div>
                             </div>
                         </div>
