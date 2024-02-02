@@ -22,6 +22,7 @@
     {$LANG.Products.list2.3 = "Individual Approach to Each Client"}
     {$LANG.Products.list2.4 = "Discounts for Payments of 3 Months or More"}
     {$LANG.Products.list2.5 = "Free Trial Period Up to 3 Days"}
+    {$LANG.ordernowbutton = "Add to cart"}
 
     {assign var=VPSButtonsPeriod value=[
         [
@@ -64,6 +65,7 @@
     {$LANG.Products.list2.3 = "Индивидуальный подход к каждому"}
     {$LANG.Products.list2.4 = "Скидки при оплате от 3 месяцев"}
     {$LANG.Products.list2.5 = "Бесплатный тестовый период до 3 дней"}
+    {$LANG.ordernowbutton = "Добавить в корзину"}
 
     {$LANG.package_buy="Купить в один клик"}
 
@@ -221,6 +223,7 @@
                                                             {if $product.featuresdesc}
                                                                 <p>{$product.featuresdesc}</p>
                                                             {/if}
+                                                            <div class="package-content__divider"></div>
                                                         </div>
                                                     </div>
                                                 </div>    
@@ -247,7 +250,7 @@
                                                                     }
                                                                 {else}
                                                                     {include file="$template/includes/common/price.tpl" 
-                                                                        price=$product.pricing.minprice.price 
+                                                                        price=$product.pricing.minprice.price|replace:'$':''|replace:'€':''|replace:'₽':''|replace:'USD':'$'|replace:'RUB':'₽'|replace:'EUR':'€'|replace:'.00':''
                                                                         priceCycle=$product.pricing.minprice.cycle
                                                                         priceType=$product.pricing.type
                                                                         priceSetupFee=$product.pricing.minprice.setupFee
