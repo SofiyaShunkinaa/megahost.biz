@@ -1107,6 +1107,22 @@ details[open] .summary-icon{
   .secondary-main-menu-sm .btn-xs span{
     font-size: 16px;
   }
+
+  .section.products p{
+    display: grid;
+    grid-template-columns: 1fr 1fr;  
+    justify-items: flex-start;
+    color: var(--a-grey);
+    font-size: 20px;
+    font-weight: 400;
+  }
+
+  .section.products strong{
+    font-weight: 600;
+    justify-self: flex-end;
+    color: var(--a-white);
+    font-size: 20px;
+  }
 @media (min-width:992px){
   .app-main{
     padding-top: 120px;
