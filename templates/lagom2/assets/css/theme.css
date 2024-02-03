@@ -1165,6 +1165,11 @@ details[open] .summary-icon{
   .article-content h3{
     font-size: 28px;
     font-weight: 600;
+    margin-top: 30px;
+    margin-bottom: 16px;
+  }
+  
+  .article-content h3:first-of-type{
     margin-top: 32px;
     margin-bottom: 12px;
   }
@@ -1180,11 +1185,23 @@ details[open] .summary-icon{
 
   .art-statistics{
     font-size: 12px;
-
   }
 
   .art-list--links li span:hover{
     color: var(--a-purple);
+  }
+
+  .art-list--links{
+    margin-bottom: 12px;
+  }
+
+  .container-article{
+    max-width: 850px;
+    margin: 0 auto;
+  }
+
+  .page-viewannouncement .panel-body{
+    padding: 32px 110px;
   }
 
 @media (min-width:992px){
