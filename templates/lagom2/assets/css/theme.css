@@ -1154,6 +1154,10 @@ details[open] .summary-icon{
     margin-top: 28px;
   }
 
+  .article-content, .article-content h3{
+    color: var(--a-bg);
+  }
+
 @media (min-width:992px){
   .app-main{
     padding-top: 120px;
