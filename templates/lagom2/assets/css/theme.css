@@ -1178,7 +1178,11 @@ details[open] .summary-icon{
 
   .art-statistics{
     font-size: 12px;
-    
+
+  }
+
+  .art-list--links li span:hover{
+    color: var(--a-purple);
   }
 
 @media (min-width:992px){
