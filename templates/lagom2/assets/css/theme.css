@@ -1165,6 +1165,8 @@ details[open] .summary-icon{
   .article-content h3{
     font-size: 28px;
     font-weight: 600;
+    margin-top: 32px;
+    margin-bottom: 12px;
   }
 
   .article-content__heading, .art-statistics{
