@@ -1,14 +1,14 @@
 {if isset($RSThemes['pages'][$templatefile]) && file_exists($RSThemes['pages'][$templatefile]['fullPath'])}
     {include file=$RSThemes['pages'][$templatefile]['fullPath']}
 {else}	
-	<div class="article panel panel-default">
-        <div class="panel-body">
-            <ul class="article-details">
+	<div class="article panel panel-default container-article">
+        <div class="panel-body ">
+            {*<ul class="article-details">
                 <li>
                     <i class="ls ls-calendar"></i>
                     <span>{$carbon->createFromTimestamp($timestamp)->format('l, F j, Y')}</span>
                 </li>
-            </ul>
+            </ul>*}
             <div class="article-content">
                 {$text}
             </div>
