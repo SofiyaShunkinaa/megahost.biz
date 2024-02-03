@@ -1229,7 +1229,14 @@ details[open] .summary-icon{
   
 }
 @media (max-width:1440px){
-  
+  .container-article{
+    max-width: 782px;
+  }
+
+  .page-viewannouncement .panel-body{
+    padding-left: 76px;
+    padding-right: 76px;
+  }
 }
 
 @media (max-width:1276px){
@@ -1438,6 +1445,15 @@ details[open] .summary-icon{
       grid-column: 3/12;
       grid-row: 13/14;
     } 
+
+    .container-article{
+      max-width: 728px;
+    }
+
+    .page-viewannouncement .panel-body{
+      padding-left: 50px;
+      padding-right: 50px;
+    }
 }
 
 @media (max-width: 991.98px){
@@ -1572,6 +1588,14 @@ details[open] .summary-icon{
 
     .error-content h3{
       font-size: 20px;
+    }
+
+    .container-article{
+      
+    }
+
+    .page-viewannouncement .panel-body{
+      padding: 24px 11px;
     }
 }
 
