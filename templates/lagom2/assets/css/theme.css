@@ -1154,8 +1154,13 @@ details[open] .summary-icon{
     margin-top: 28px;
   }
 
-  .article-content, .article-content h3{
+  .article-content, .article-content h3, .article-content h1{
     color: var(--a-bg);
+  }
+
+  .article-content h3{
+    font-size: 28px;
+    font-weight: 600;
   }
 
 @media (min-width:992px){
