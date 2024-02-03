@@ -1154,6 +1154,10 @@ details[open] .summary-icon{
     margin-top: 28px;
   }
 
+  .article-content{
+    font-size: 20px;
+  }
+
   .article-content, .article-content h3, .article-content h1{
     color: var(--a-bg);
   }
@@ -1161,6 +1165,20 @@ details[open] .summary-icon{
   .article-content h3{
     font-size: 28px;
     font-weight: 600;
+  }
+
+  .article-content__heading, .art-statistics{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .art-hashtag{
+    color: var(--a-purple);
+  }
+
+  .art-statistics{
+    font-size: 12px;
+    
   }
 
 @media (min-width:992px){
