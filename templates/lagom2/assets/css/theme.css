@@ -1591,11 +1591,18 @@ details[open] .summary-icon{
     }
 
     .container-article{
-      
+      font-size:16px
     }
 
     .page-viewannouncement .panel-body{
       padding: 24px 11px;
+    }
+
+    h1{
+      font-size: 32px;
+    }
+    h3{
+      font-size: 20px;
     }
 }
 
