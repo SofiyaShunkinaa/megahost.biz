@@ -183,18 +183,25 @@
                 {if $announcement.text|strip_tags|strlen < 350}
                     <div class="list-group-item-text">{$announcement.text}</div>
                 {else}
-                    {$imgSrc = false}
+                    {$imgSrc = true}
                     {if isset($RSThemes['pages'][$templatefile]['config']['displayImages']) && $RSThemes['pages'][$templatefile]['config']['displayImages'] == '1'}
                         {$imgCheck = $announcement.text|truncate:"10"}
                         {if $imgCheck|strstr:"<img"}
                             {$imgArray = "<img"|explode:$announcement.text}
                             {$imgArray = "/>"|explode:$imgArray[1]}
-                            {$imgSrc = $imgArray[0]}
+                            {$imgSrc = 'vgfdv'}
+
+                            {*$imgSrc = $imgCheck|regex_replace:'.*<img\s+src=\"([^\"]+)\".*':'$1'*}
+                            {*$srcValue=".*<img\s+src=\"([^\"]+)\".*"}
+                            {regex_replace pattern=$srcValue replace="\1" subject=$imgSrc*}
                         {/if}
                     {/if}
+                            {$imgSrc = $announcement.text|regex_replace:'/.*<img\s+src=\"([^\"]+)\".*/':'$1'}
+                            
+
                     <div class="list-group-item-text">
                         {if $imgSrc}
-                            <img {$imgSrc} />
+                            <img src="{$imgSrc}" />
                         {/if}
                         {$announcement.summary}
                     </div>
