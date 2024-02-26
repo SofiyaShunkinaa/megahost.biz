@@ -36,12 +36,12 @@
     <div class="clientarea__menu">
         <div class="clientarea__menu-body">
         
-        <a class="btn" href="#">{$LANG.clientAreaHome.Sidebar.button.0}</a>
-        <a class="btn" href="#">{$LANG.clientAreaHome.Sidebar.button.1}</a>
-        <a class="btn" href="#">{$LANG.clientAreaHome.Sidebar.button.2}</a>
-        <a class="btn" href="#">{$LANG.clientAreaHome.Sidebar.button.3}</a>
-        <a class="btn" href="#">{$LANG.clientAreaHome.Sidebar.button.4}</a>
-        <a class="btn" href="#">{$LANG.clientAreaHome.Sidebar.button.5}</a>
+        <a class="btn" href="#"><div class="clientarea-btn-icon"></div><p>{$LANG.clientAreaHome.Sidebar.button.0}</p></a>
+        <a class="btn" href="#"><div class="clientarea-btn-icon"></div><p>{$LANG.clientAreaHome.Sidebar.button.1}</p></a>
+        <a class="btn" href="#"><div class="clientarea-btn-icon"></div><p>{$LANG.clientAreaHome.Sidebar.button.2}</p></a>
+        <a class="btn" href="#"><div class="clientarea-btn-icon"></div><p>{$LANG.clientAreaHome.Sidebar.button.3}</p></a>
+        <a class="btn" href="#"><div class="clientarea-btn-icon"></div><p>{$LANG.clientAreaHome.Sidebar.button.4}</p></a>
+        <a class="btn" href="#"><div class="clientarea-btn-icon"></div><p>{$LANG.clientAreaHome.Sidebar.button.5}</p></a>
 
         </div>
         <div class="clientarea__menu-footer"></div>
