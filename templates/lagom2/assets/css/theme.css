@@ -1246,12 +1246,28 @@ details[open] .summary-icon{
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 0 auto;
+    margin-bottom: 71px;
   }
 
   .clientarea__sidebar{
     padding-top: 64px;
     padding-left: 34px;
     padding-right: 34px;
+  }
+
+  .clientarea__menu-body{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+
+  .clientarea__menu a.btn{
+    border-radius: 8px;
+  }
+
+  .clientarea__menu a.btn:hover{
+    background-color: var(--dashboard-bg);
   }
 @media (min-width:992px){
   .app-main{
