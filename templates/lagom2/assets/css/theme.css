@@ -1264,11 +1264,28 @@ details[open] .summary-icon{
 
   .clientarea__menu a.btn{
     border-radius: 8px;
+    padding: 12px 24px;
   }
 
   .clientarea__menu a.btn:hover{
     background-color: var(--dashboard-bg);
   }
+
+  .clientarea__menu a.btn p{
+    font-weight: 400;
+    color: var(--a-bg);
+    margin: 0;
+  }
+
+  .clientarea__menu a.btn:hover p{
+    font-weight: 600;
+  }
+
+  .clientarea-btn-icon{
+    width: 20px;
+    height: 20px;
+  }
+
 @media (min-width:992px){
   .app-main{
     padding-top: 120px;
