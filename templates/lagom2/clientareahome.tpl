@@ -1,6 +1,13 @@
 {assign var=inClientAreaHome value=true}
 {$LANG.clientAreaHome.ActiveProducts.Title="Активные продукты"}
+{$LANG.clientAreaHome.Title="Личный кабинет"}
 
+<h2 class="container section-title">{$LANG.clientAreaHome.Title}</h2>
+<div class="container container-clientarea">
+<div class="clientarea__sidebar col-3">
+    <div class="client-avatar"></div>
+</div>
+<div class="clientarea__mainbar col-9">
 {if isset($RSThemes['pages'][$templatefile]) && file_exists($RSThemes['pages'][$templatefile]['fullPath'])}
     {include file=$RSThemes['pages'][$templatefile]['fullPath']}
 {else}
@@ -125,7 +132,7 @@
     {/foreach}
     
 
-    <h5>{$LANG.clientAreaHome.ActiveProducts.Title}</h5>
+    <h3>{$LANG.clientAreaHome.ActiveProducts.Title}</h3>
     <div class="client-home-panels row" data-panels-grid>
         {function name=outputHomePanels}
             <div menuItemName="{$item->getName()}"
@@ -259,3 +266,5 @@
         {/foreach}
     </div>
 {/if}
+</div>
+</div>
