@@ -5,7 +5,15 @@
 <h2 class="container section-title">{$LANG.clientAreaHome.Title}</h2>
 <div class="container container-clientarea">
 <div class="clientarea__sidebar col-3">
-    <div class="client-avatar"></div>
+    <div class="clientarea-avatar">
+        <div class="client-avatar"></div>
+        <div class="client-name">Name</div>
+    </div>
+
+    <div class="clientarea__menu">
+
+    </div>
+    
 </div>
 <div class="clientarea__mainbar col-9">
 {if isset($RSThemes['pages'][$templatefile]) && file_exists($RSThemes['pages'][$templatefile]['fullPath'])}
