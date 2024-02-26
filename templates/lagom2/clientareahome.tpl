@@ -9,7 +9,7 @@
     {$LANG.clientAreaHome.Sidebar.button.2="Messages"}
     {$LANG.clientAreaHome.Sidebar.button.3="Referral program"}
     {$LANG.clientAreaHome.Sidebar.button.4="Share your opinion"}
-    {$LANG.clientAreaHome.Sidebar.button.4="Logout"}
+    {$LANG.clientAreaHome.Sidebar.button.5="Logout"}
     
 {else}
 
@@ -20,7 +20,7 @@
     {$LANG.clientAreaHome.Sidebar.button.2="Сообщения"}
     {$LANG.clientAreaHome.Sidebar.button.3="Реферальная программа"}
     {$LANG.clientAreaHome.Sidebar.button.4="Оставить отзыв"}
-    {$LANG.clientAreaHome.Sidebar.button.4="Выход"}
+    {$LANG.clientAreaHome.Sidebar.button.5="Выход"}
 
 
 {/if}
@@ -34,7 +34,18 @@
     </div>
 
     <div class="clientarea__menu">
+        <div class="clientarea__menu-body">
+        
+        <a class="btn" href="#">{$LANG.clientAreaHome.Sidebar.button.0}</a>
+        <a class="btn" href="#">{$LANG.clientAreaHome.Sidebar.button.1}</a>
+        <a class="btn" href="#">{$LANG.clientAreaHome.Sidebar.button.2}</a>
+        <a class="btn" href="#">{$LANG.clientAreaHome.Sidebar.button.3}</a>
+        <a class="btn" href="#">{$LANG.clientAreaHome.Sidebar.button.4}</a>
+        <a class="btn" href="#">{$LANG.clientAreaHome.Sidebar.button.5}</a>
 
+        </div>
+        <div class="clientarea__menu-footer"></div>
+        <div class="clientarea__menu-theme"></div>
     </div>
     
 </div>
