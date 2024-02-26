@@ -1204,6 +1204,28 @@ details[open] .summary-icon{
     padding: 32px 110px;
   }
 
+  button.generate-password{
+    color: var(--a-white);
+    font-weight: 400;
+  }
+
+  .container-clientarea{
+    background-color: var(--a-white);
+    border-radius: 50px;
+    display: flex;
+    padding: 0;
+    max-width: calc(var(--layout-container-gutter) + var(--container-xl-max-width) - 59px*2);
+  }
+
+  .clientarea__mainbar{
+    background-color: var(--dashboard-bg);
+    border-radius: 50px 50px 50px 0px;
+  }
+
+  .page-clientareahome h2{
+    text-align: left;
+  }
+
 @media (min-width:992px){
   .app-main{
     padding-top: 120px;
