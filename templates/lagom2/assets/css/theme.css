@@ -1220,12 +1220,39 @@ details[open] .summary-icon{
   .clientarea__mainbar{
     background-color: var(--dashboard-bg);
     border-radius: 50px 50px 50px 0px;
+    padding: 32px 32px 24px 32px;
   }
 
   .page-clientareahome h2{
     text-align: left;
   }
 
+  .clientarea-avatar .client-avatar{
+    width: 80px;
+    height: 80px;
+    border-radius: 24px;
+    border: 1px solid var(--main-border-color);
+    margin-bottom: 8px;
+  }
+
+  .client-name{
+    color: var(--a-bg);
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  .clientarea-avatar{
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .clientarea__sidebar{
+    padding-top: 64px;
+    padding-left: 34px;
+    padding-right: 34px;
+  }
 @media (min-width:992px){
   .app-main{
     padding-top: 120px;
