@@ -1,6 +1,7 @@
 {if file_exists("templates/$template/includes/overwrites/captcha.tpl")}
     {include file="{$template}/includes/overwrites/captcha.tpl"}  
-{else}     
+{else}   
+{assign var=newSystemurl value="https://megahost.biz/" }
     {if $captcha->isEnabled() && $captcha->isEnabledForForm($captchaForm)}
         {if $templatefile == "viewcart" && !in_array($captcha, ['invisible'])}
             <div class="section">
@@ -27,7 +28,7 @@
                     {/if}
                     <div class="captchaimage input-group {if $templatefile == "login" || $templatefile == "password-reset-container"}w-100{/if}">
                         <div class="input-group-addon">
-                             <img id="inputCaptchaImage" data-src="{$systemurl}includes/verifyimage.php" src="{$systemurl}includes/verifyimage.php" align="middle" />
+                             <img id="inputCaptchaImage" data-src="{$newSystemurl}includes/verifyimage.php" src="{$newSystemurl}includes/verifyimage.php" align="middle" />
                         </div>
                         <input id="inputCaptcha" type="text" name="code" maxlength="6" class="form-control" data-toggle="tooltip" data-placement="top" data-trigger="manual" title="{lang key='orderForm.required'}"/>
                     </div>
