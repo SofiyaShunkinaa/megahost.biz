@@ -1,6 +1,29 @@
 {assign var=inClientAreaHome value=true}
-{$LANG.clientAreaHome.ActiveProducts.Title="Активные продукты"}
-{$LANG.clientAreaHome.Title="Личный кабинет"}
+
+{if ($language == 'english')} 
+
+    {$LANG.clientAreaHome.ActiveProducts.Title="Active products"}
+    {$LANG.clientAreaHome.Title="Personal account"}
+    {$LANG.clientAreaHome.Sidebar.button.0="Main"}
+    {$LANG.clientAreaHome.Sidebar.button.1="Personal data"}
+    {$LANG.clientAreaHome.Sidebar.button.2="Messages"}
+    {$LANG.clientAreaHome.Sidebar.button.3="Referral program"}
+    {$LANG.clientAreaHome.Sidebar.button.4="Share your opinion"}
+    {$LANG.clientAreaHome.Sidebar.button.4="Logout"}
+    
+{else}
+
+    {$LANG.clientAreaHome.ActiveProducts.Title="Активные продукты"}
+    {$LANG.clientAreaHome.Title="Личный кабинет"}
+    {$LANG.clientAreaHome.Sidebar.button.0="Главная"}
+    {$LANG.clientAreaHome.Sidebar.button.1="Личные данные"}
+    {$LANG.clientAreaHome.Sidebar.button.2="Сообщения"}
+    {$LANG.clientAreaHome.Sidebar.button.3="Реферальная программа"}
+    {$LANG.clientAreaHome.Sidebar.button.4="Оставить отзыв"}
+    {$LANG.clientAreaHome.Sidebar.button.4="Выход"}
+
+
+{/if}
 
 <h2 class="container section-title">{$LANG.clientAreaHome.Title}</h2>
 <div class="container container-clientarea">
