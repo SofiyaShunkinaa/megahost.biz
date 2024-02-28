@@ -251,15 +251,25 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-function getRandomInt(max) {
-    return Math.floor(Math.random() * max);
-    }
+
+// Client area functions
+function getRandomInt(min, max) {
+    const minCeiled = Math.ceil(min);
+    const maxFloored = Math.floor(max);
+    return Math.floor(Math.random() * (maxFloored - minCeiled) + minCeiled); 
+}
+  
+
     
-const profileImageNum = getRandomInt(5)
+const profileImageNum = getRandomInt(1, 6)
 
 const profileImagePath = document.querySelector('.client-avatar')
 profileImagePath.style.backgroundImage = "url('templates/lagom2/assets/img/profile-images/avatar" + profileImageNum + ".png')";
    
+// const clientName = $('input[name="firstname"]').val()
+// console.log(clientName)
+
+// let clientNameBlock = $('div.client-name').text(clientName)
 
 
 var liElement = document.querySelector('li.main-menu-switchers');
