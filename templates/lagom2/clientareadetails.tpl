@@ -35,7 +35,7 @@
 <div class="clientarea__sidebar col-3">
     <div class="clientarea-avatar">
         <div class="client-avatar"></div>
-        <div class="client-name">Name</div>
+        <div class="client-name">{$clientfirstname}</div>
     </div>
 
     <div class="clientarea__menu">
