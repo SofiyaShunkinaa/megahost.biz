@@ -35,7 +35,7 @@
 
 {/if}
 
-
+{debug}
 <h2 class="container section-title clientarea-title">{$LANG.clientAreaHome.Title}</h2>
 <div class="container container-clientarea">
 <div class="clientarea__sidebar col-3">
@@ -58,7 +58,7 @@
 
         <div class="clientarea__menu-footer">
             <a class="btn" href="#"><div class="clientarea-btn-icon"></div><p>{$LANG.clientAreaHome.Sidebar.button.4}</p></a>
-            <a class="btn" href="#"><div class="clientarea-btn-icon"></div><p>{$LANG.clientAreaHome.Sidebar.button.5}</p></a>
+            <a class="btn" href="/logout.php"><div class="clientarea-btn-icon"></div><p>{$LANG.clientAreaHome.Sidebar.button.5}</p></a>
         </div>
         <div class="clientarea__menu-theme"></div>
 

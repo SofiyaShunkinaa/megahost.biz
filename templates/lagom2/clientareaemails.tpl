@@ -1,4 +1,5 @@
 {assign var=inClientAreaHome value=true}
+{$emailPreferencesEnabled=true}
 
 {if ($language == 'english')} 
 
@@ -26,7 +27,7 @@
 
 
 {/if}
-
+{debug}
 
 <h2 class="container section-title clientarea-title">{$LANG.clientAreaHome.Title}</h2>
 <div class="container container-clientarea">
@@ -50,7 +51,7 @@
 
         <div class="clientarea__menu-footer">
             <a class="btn" href="#"><div class="clientarea-btn-icon"></div><p>{$LANG.clientAreaHome.Sidebar.button.4}</p></a>
-            <a class="btn" href="#"><div class="clientarea-btn-icon"></div><p>{$LANG.clientAreaHome.Sidebar.button.5}</p></a>
+            <a class="btn" href="/logout.php"><div class="clientarea-btn-icon"></div><p>{$LANG.clientAreaHome.Sidebar.button.5}</p></a>
         </div>
         <div class="clientarea__menu-theme"></div>
 
@@ -61,9 +62,12 @@
 </div>
 <div class="clientarea__mainbar col-9">
 
+
+
 {if isset($RSThemes['pages'][$templatefile]) && file_exists($RSThemes['pages'][$templatefile]['fullPath'])}
     {include file=$RSThemes['pages'][$templatefile]['fullPath']}
-{else}	     
+{else}	
+    
     {include file="$template/includes/tablelist.tpl" tableName="EmailsList" noSortColumns="-1"}
     <script type="text/javascript">
         jQuery(document).ready( function ()
@@ -81,6 +85,8 @@
         });
     </script>
 
+
+    
     <h3>{$LANG.clientAreaHome.Emails.Title}</h3>
 
     <div class="table-container loading clearfix table-emails">
@@ -104,6 +110,36 @@
             {include file="$template/includes/common/loader.tpl"}    
         </div>
     </div>
+
+     <form method="post" action="?action=emails" role="form">
+        {if $emailPreferencesEnabled}
+             <div class="section">
+                <div class="section-header">
+                    <h2 class="section-title">{$LANG.clientareacontactsemails}</h2>
+                </div>
+                <div class="section-body">
+                    <div class="panel panel-default panel-form">
+                        <div class="panel-body">    
+                            {foreach $emailPreferences as $emailType => $value}
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="hidden" name="email_preferences[{$emailType}]" value="0">
+                                        <input class="icheck-control" type="checkbox" name="email_preferences[{$emailType}]" id="{$emailType}Emails" value="1"{if $value} checked="checked"{/if} />
+                                        {lang key="emailPreferences."|cat:$emailType}
+                                    </label>
+                                </div>    
+                            {/foreach}
+                        </div>
+                    </div>        
+                </div>            
+            </div>
+        {/if}
+
+        <div class="form-actions">
+            <input class="btn btn-primary btn-package" type="submit" name="save" value="{$LANG.clientareasavechanges}" />
+            <input class="btn btn-default" type="reset" value="{$LANG.clientareacancel}" />
+        </div>
+     </form>
 {/if}    
 
 </div>
