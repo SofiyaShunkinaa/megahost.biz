@@ -1234,6 +1234,13 @@ details[open] .summary-icon{
     font-size: 16px;
   }
 
+  .clientarea__mainbar select.form-control{
+    background-image: url(../img/arrow-drop.svg);
+    background-position-y: 50%;
+    background-position-x: calc(100% - 11px);
+    background-repeat: no-repeat
+  }
+
   .clientarea__mainbar .form-control{
     color: var(--a-bg);
     border-color: var(--input-disabled-border-color);
