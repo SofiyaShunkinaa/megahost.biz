@@ -13,6 +13,9 @@
     {$LANG.clientAreaHome.Sidebar.button.3="Referral program"}
     {$LANG.clientAreaHome.Sidebar.button.4="Share your opinion"}
     {$LANG.clientAreaHome.Sidebar.button.5="Logout"}
+    {$LANG.clientAreaHome.Details.title.1="Personal data"}
+    {$LANG.clientAreaHome.Details.subtitle.1="Full Name"}
+    {$LANG.clientAreaHome.Details.subtitle.2="Extras"}
     
 {else}
 
@@ -24,11 +27,13 @@
     {$LANG.clientAreaHome.Sidebar.button.3="Реферальная программа"}
     {$LANG.clientAreaHome.Sidebar.button.4="Оставить отзыв"}
     {$LANG.clientAreaHome.Sidebar.button.5="Выход"}
+    {$LANG.clientAreaHome.Details.title.1="Личные данные"}
+    {$LANG.clientAreaHome.Details.subtitle.1="ФИО"}
+    {$LANG.clientAreaHome.Details.subtitle.2="Дополнительно"}
 
 
 {/if}
 
-{debug}
 
 <h2 class="container section-title clientarea-title">{$LANG.clientAreaHome.Title}</h2>
 <div class="container container-clientarea">
@@ -84,36 +89,46 @@
                 <h2 class="section-title">{$LANG.orderForm.personalInformation}</h2>
             </div>
             <div class="section-body">
+            <h3>{$LANG.clientAreaHome.Details.title.1}</h3>
+
                 <div class="panel panel-default panel-form">
-                    <div class="panel-body">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="inputFirstName" class="control-label">{$LANG.clientareafirstname}</label>
-                                    <input type="text" name="firstname" id="inputFirstName" value="{$clientfirstname}"{if in_array('firstname', $uneditablefields)} readonly="readonly"{/if} class="form-control" />
-                                </div>
+                    <div class="panel-body panel-personal">
+
+                        <div class="col-md-6">
+
+                            <div class="row row-title">
+                                <span class="subpanel-title">{$LANG.clientAreaHome.Details.subtitle.1}</span>
                             </div>
-                            <div class="col-md-6">
+
+                            <div class="row">
+                                <div class="form-group">
+                                        <label for="inputFirstName" class="control-label">{$LANG.clientareafirstname}</label>
+                                        <input type="text" name="firstname" id="inputFirstName" value="{$clientfirstname}"{if in_array('firstname', $uneditablefields)} readonly="readonly"{/if} class="form-control" />
+                                    </div>
+                            </div>
+                            
+                            <div class="row">
                                 <div class="form-group">
                                     <label for="inputLastName" class="control-label">{$LANG.clientarealastname}</label>
                                     <input type="text" name="lastname" id="inputLastName" value="{$clientlastname}"{if in_array('lastname', $uneditablefields)} readonly="readonly"{/if} class="form-control" />
                                 </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
+
+                            <div class="row">
                                 <div class="form-group">
                                     <label for="inputEmail" class="control-label">{$LANG.clientareaemail}</label>
                                     <input type="email" name="email" id="inputEmail" value="{$clientemail}"{if in_array('email', $uneditablefields)} readonly="readonly"{/if} class="form-control" />
                                 </div>
                             </div>
-                            <div class="col-md-6">
+
+                            <div class="row">
                                 <div class="form-group">
                                     <label for="inputPhone" class="control-label">{$LANG.clientareaphonenumber}</label>
                                     <input type="tel" name="phonenumber" id="inputPhone" value="{$clientphonenumber}"{if in_array('phonenumber',$uneditablefields)} readonly=""{/if} class="form-control" />
                                 </div>
                             </div>
-                            <div class="col-sm-6">
+
+                            <div class="row">
                                 <div class="form-group">
                                     <label for="inputLanguage" class="control-label">{$LANG.clientarealanguage}</label>
                                     <select name="accountLanguage" id="inputAccountLanguage" class="form-control"
@@ -128,8 +143,18 @@
                             </div>
 
                         </div>
+
+                        <div class="col-md-6">
+                            
+                            <div class="row row-title">
+                                <span class="subpanel-title">{$LANG.clientAreaHome.Details.subtitle.2}</span>
+                            </div>
+                            
+
+                        </div>
                     </div>
                 </div>
+
             </div>
         </div>
         <div class="section">
@@ -307,7 +332,7 @@
             </div>    
         {/if}
         <div class="form-actions">
-            <input class="btn btn-primary" type="submit" name="save" value="{$LANG.clientareasavechanges}" />
+            <input class="btn btn-primary btn-package" type="submit" name="save" value="{$LANG.clientareasavechanges}" />
             <input class="btn btn-default" type="reset" value="{$LANG.clientareacancel}" />
         </div>
     </form>
