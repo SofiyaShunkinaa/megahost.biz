@@ -251,6 +251,16 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+    }
+    
+const profileImageNum = getRandomInt(5)
+
+const profileImagePath = document.querySelector('.client-avatar')
+profileImagePath.style.backgroundImage = "url('templates/lagom2/assets/img/profile-images/avatar" + profileImageNum + ".png')";
+   
+
 
 var liElement = document.querySelector('li.main-menu-switchers');
 
