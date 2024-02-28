@@ -1380,6 +1380,25 @@ details[open] .summary-icon{
     border-color: var(--main-border-color);
   }
 
+  .panel-personal{
+    width: 724px;
+    display: flex;
+  }
+
+  .form-group{
+    width: 100%;
+  }
+
+  .subpanel-title{
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--a-bg);
+  }
+
+  .row-title{
+    margin-bottom: 16px;
+  }
+
 @media (min-width:992px){
   .app-main{
     padding-top: 120px;
