@@ -1404,6 +1404,34 @@ details[open] .summary-icon{
     margin-bottom: 16px;
   }
 
+  .table-emails{
+    border: none;
+    border-radius: 30px;
+    padding-top: 20px;
+    padding-bottom: 24px;
+  }
+
+  .table-emails th{
+    font-weight: 600 !important;
+    color: var(--a-grey) !important;
+  }
+
+  .table-emails .dataTables_wrapper label .form-control{
+    border-radius: 6px;
+    border: 1px solid var(--a-purple);
+  }
+
+  .table-emails .pagination>.active .page-link{
+    background: none;
+    border-radius: 6px;
+    border: 1px solid var(--a-purple);
+    color: var(--a-bg);
+  }
+
+  .table-emails .dataTables_length{
+    background: none;
+  }
+
 @media (min-width:992px){
   .app-main{
     padding-top: 120px;
