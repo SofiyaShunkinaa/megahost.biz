@@ -6,7 +6,7 @@
     {$LANG.clientAreaHome.Title="Personal account"}
     {$LANG.clientAreaHome.Sidebar.button.0="Main"}
     {$LANG.clientAreaHome.Sidebar.button.1="Personal data"}
-    {$LANG.clientAreaHome.Sidebar.button.2="Messages"}
+    {$LANG.clientAreaHome.Sidebar.button.2="Email History"}
     {$LANG.clientAreaHome.Sidebar.button.3="Referral program"}
     {$LANG.clientAreaHome.Sidebar.button.4="Share your opinion"}
     {$LANG.clientAreaHome.Sidebar.button.5="Logout"}
@@ -25,14 +25,13 @@
 
 {/if}
 
-{debug}
 
 <h2 class="container section-title clientarea-title">{$LANG.clientAreaHome.Title}</h2>
 <div class="container container-clientarea">
 <div class="clientarea__sidebar col-3">
     <div class="clientarea-avatar">
         <div class="client-avatar"></div>
-        <div class="client-name">Name</div>
+        <div class="client-name">{$clientsdetails.firstname}</div>
     </div>
 
     <div class="clientarea__menu">
