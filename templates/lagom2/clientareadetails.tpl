@@ -10,7 +10,7 @@
     {$LANG.clientAreaHome.Title="Personal account"}
     {$LANG.clientAreaHome.Sidebar.button.0="Main"}
     {$LANG.clientAreaHome.Sidebar.button.1="Personal data"}
-    {$LANG.clientAreaHome.Sidebar.button.2="Messages"}
+    {$LANG.clientAreaHome.Sidebar.button.2="Email History"}
     {$LANG.clientAreaHome.Sidebar.button.3="Referral program"}
     {$LANG.clientAreaHome.Sidebar.button.4="Share your opinion"}
     {$LANG.clientAreaHome.Sidebar.button.5="Logout"}
