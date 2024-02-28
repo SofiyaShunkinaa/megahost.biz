@@ -1234,6 +1234,10 @@ details[open] .summary-icon{
     font-size: 16px;
   }
 
+  .clientarea__mainbar .panel-switch .panel-body .switch-label{
+    color:var(--a-bg)
+  }
+
   .clientarea__mainbar select.form-control{
     background-image: url(../img/arrow-drop.svg);
     background-position-y: 50%;
@@ -1383,6 +1387,7 @@ details[open] .summary-icon{
   .panel-personal{
     width: 724px;
     display: flex;
+    gap: 32px;
   }
 
   .form-group{
