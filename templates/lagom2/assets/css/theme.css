@@ -1275,7 +1275,7 @@ details[open] .summary-icon{
     gap: 8px;
   }
 
-  .clientarea__menu a.btn:hover{
+  .clientarea__menu a.btn:hover, .clientarea__menu a.btn.current-page{
     background-color: var(--dashboard-bg);
   }
 
@@ -1285,7 +1285,7 @@ details[open] .summary-icon{
     margin: 0;
   }
 
-  .clientarea__menu a.btn:hover p{
+  .clientarea__menu a.btn:hover p, .clientarea__menu a.btn.current-page p{
     font-weight: 600;
   }
 
@@ -1294,35 +1294,35 @@ details[open] .summary-icon{
     height: 20px;
   }
 
-  .clientarea__menu a.btn:nth-of-type(1) .clientarea-btn-icon{
+  .clientarea__menu a.btn:nth-of-type(1) .clientarea-btn-icon, .clientarea__menu a.btn.current-page:nth-of-type(1) .clientarea-btn-icon{
     background-image: url('../img/icons/home.svg');
   }
 
-  .clientarea__menu a.btn:hover:nth-of-type(1) .clientarea-btn-icon{
+  .clientarea__menu a.btn:hover:nth-of-type(1) .clientarea-btn-icon, .clientarea__menu a.btn.current-page:nth-of-type(1) .clientarea-btn-icon{
     background-image: url('../img/icons/home-hover.svg');
   }
 
-  .clientarea__menu a.btn:nth-of-type(2) .clientarea-btn-icon{
+  .clientarea__menu a.btn:nth-of-type(2) .clientarea-btn-icon, .clientarea__menu a.btn.current-page:nth-of-type(2) .clientarea-btn-icon{
     background-image: url('../img/icons/personal.svg');
   }
 
-  .clientarea__menu a.btn:hover:nth-of-type(2) .clientarea-btn-icon{
+  .clientarea__menu a.btn:hover:nth-of-type(2) .clientarea-btn-icon, .clientarea__menu a.btn.current-page:nth-of-type(2) .clientarea-btn-icon{
     background-image: url('../img/icons/personal-hover.svg');
   }
 
-  .clientarea__menu a.btn:nth-of-type(3) .clientarea-btn-icon{
+  .clientarea__menu a.btn:nth-of-type(3) .clientarea-btn-icon, .clientarea__menu a.btn.current-page:nth-of-type(3) .clientarea-btn-icon{
     background-image: url('../img/icons/email.svg');
   }
 
-  .clientarea__menu a.btn:hover:nth-of-type(3) .clientarea-btn-icon{
+  .clientarea__menu a.btn:hover:nth-of-type(3) .clientarea-btn-icon, .clientarea__menu a.btn.current-page:nth-of-type(3) .clientarea-btn-icon{
     background-image: url('../img/icons/email-hover.svg');
   }
 
-  .clientarea__menu a.btn:nth-of-type(4) .clientarea-btn-icon{
+  .clientarea__menu a.btn:nth-of-type(4) .clientarea-btn-icon, .clientarea__menu a.btn.current-page:nth-of-type(4) .clientarea-btn-icon{
     background-image: url('../img/icons/referal.svg');
   }
 
-  .clientarea__menu a.btn:hover:nth-of-type(4) .clientarea-btn-icon{
+  .clientarea__menu a.btn:hover:nth-of-type(4) .clientarea-btn-icon, .clientarea__menu a.btn.current-page:nth-of-type(4) .clientarea-btn-icon{
     background-image: url('../img/icons/referal-hover.svg');
   }
 
