@@ -2,6 +2,7 @@
     {include file=$RSThemes['pages'][$templatefile]['fullPath']}
 {else} 	
 {assign var=inClientAreaHome value=true}
+{$LANG.clientareatelegram = "Telegram"}
 
 {if ($language == 'english')} 
 
@@ -150,6 +151,12 @@
                                 <span class="subpanel-title">{$LANG.clientAreaHome.Details.subtitle.2}</span>
                             </div>
                             
+                            <div class="row">
+                                <div class="form-group">
+                                        <label for="inputTelegram" class="control-label">{$LANG.clientareatelegram}</label>
+                                        <input type="text" name="telegram" id="inputTelegram" value="" class="form-control" />
+                                    </div>
+                            </div>
 
                         </div>
                     </div>
