@@ -10,6 +10,9 @@
     {$LANG.clientAreaHome.Sidebar.button.3="Referral program"}
     {$LANG.clientAreaHome.Sidebar.button.4="Share your opinion"}
     {$LANG.clientAreaHome.Sidebar.button.5="Logout"}
+    {$LANG.clientAreaHome.Tickets.Title = "Tickets"}
+    {$LANG.clientAreaHome.News.Title = "News"}
+
     
 {else}
 
@@ -21,10 +24,11 @@
     {$LANG.clientAreaHome.Sidebar.button.3="Реферальная программа"}
     {$LANG.clientAreaHome.Sidebar.button.4="Оставить отзыв"}
     {$LANG.clientAreaHome.Sidebar.button.5="Выход"}
-
+    {$LANG.clientAreaHome.Tickets.Title = "Tickets"}
+    {$LANG.clientAreaHome.News.Title = "News"}
 
 {/if}
-
+{debug}
 
 <h2 class="container section-title clientarea-title">{$LANG.clientAreaHome.Title}</h2>
 <div class="container container-clientarea">
