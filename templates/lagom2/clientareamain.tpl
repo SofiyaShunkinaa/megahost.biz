@@ -122,9 +122,19 @@
     {/foreach}
     
 
-    <h3>{$LANG.clientAreaHome.ActiveProducts.Title}</h3>
     <div class="client-home-panels row" data-panels-grid>
         {function name=outputHomePanels}
+        <h3>
+        {if $item->getName() == "Active Products/Services"}
+            {$LANG.clientAreaHome.ActiveProducts.Title}
+        {else if $item->getName() == "Recent Support Tickets"}
+            {$LANG.clientAreaHome.Tickets.Title}
+        {else if $item->getName() == "Recent News"}  
+            {$LANG.clientAreaHome.News.Title}
+        {/if}
+        </h3>
+
+            {if $item->getName() != "Register a New Domain"}
             <div menuItemName="{$item->getName()}"
                  class="panel panel-default panel-accent-{$item->getExtra('color')} {if $item->getName() == "Affiliate Program"}panel-affilaite-program panel-info{elseif $item->getName() == "Register a New Domain"}panel-domain-register{elseif $item->getName() == "Recent Support Tickets"}panel-support-tickets{elseif $item->getName() == "Active Products/Services"}panel-active-services{/if}  {if $item->getClass()} {$item->getClass()}{/if}"{if $item->getAttribute('id')} id="{$item->getAttribute('id')}"{/if}>
                          
@@ -177,7 +187,6 @@
                 {/if}    
                 
                 {if $item->hasBodyHtml()}
-                
                     <div class="panel-body">
                     
                         {if $item->getName() == "Recent News"}
@@ -239,6 +248,7 @@
                     </div>
                 {/if}
             </div>
+            {/if}
         {/function}
         <div class="col-md-6 column-sizer"></div>
         {foreach $panels as $item}
