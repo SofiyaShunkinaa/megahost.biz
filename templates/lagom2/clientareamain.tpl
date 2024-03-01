@@ -13,6 +13,21 @@
     {$LANG.clientAreaHome.home.head.unpaid="Неоплаченные"}
     {$LANG.clientAreaHome.home.head.tickets="Тикеты"}
 
+    {$LANG.clientAreaHome.home.body.tickets.1="Тикета"}
+    {$LANG.clientAreaHome.home.body.tickets.2="Тикет"}
+    {$LANG.clientAreaHome.home.body.tickets.3="Тикетов"}
+
+    {$LANG.clientAreaHome.home.body.unpaid.1="Счёт"}
+    {$LANG.clientAreaHome.home.body.unpaid.2="Счёта"}
+    {$LANG.clientAreaHome.home.body.unpaid.3="Счетов"}
+
+    {$LANG.clientAreaHome.home.body.domains.1="Домен"}
+    {$LANG.clientAreaHome.home.body.domains.2="Домена"}
+    {$LANG.clientAreaHome.home.body.domains.3="Доменов"}
+
+    {$LANG.clientAreaHome.home.body.Services.1="Домен"}
+    {$LANG.clientAreaHome.home.body.Services.2="Домена"}
+    {$LANG.clientAreaHome.home.body.Services.3="Доменов"}
 
 {/if}
 
