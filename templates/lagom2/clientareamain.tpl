@@ -144,7 +144,23 @@
 
                             <div class="tile-body">
                                 <div class="tile-stat">{$clientsstats.numactivedomains}</div>
-                                <div class="tile-title"> {$LANG.navdomains}</div>
+                                <div class="tile-title">
+                                {if ($language != 'english')}
+                                    {if ($clientsstats.numactivedomains % 10 == 1)&&($clientsstats.numactivedomains % 100 != 11)}
+                                        {$LANG.clientAreaHome.home.body.domains.1}
+                                    {else if (2 <= $clientsstats.numactivedomains % 10)&&($clientsstats.numactivedomains % 10 <= 4) && ($clientsstats.numactivedomains % 100 < 10 or $clientsstats.numactivedomains % 100 >= 20)}    
+                                        {$LANG.clientAreaHome.home.body.domains.2}
+                                    {else}
+                                        {$LANG.clientAreaHome.home.body.domains.3}
+                                    {/if}
+                                {else}
+                                    {if $clientsstats.numactivedomains > 1}   
+                                        {$LANG.clientAreaHome.home.body.domains.1}
+                                    {else}
+                                        {$LANG.clientAreaHome.home.body.domains.2}
+                                    {/if}
+                                {/if}         
+                                </div>
                             </div>
                         </a>
                     
@@ -177,7 +193,23 @@
 
                     <div class="tile-body">
                         <div class="tile-stat {if ($clientsstats.numunpaidinvoices > 0)}text-danger{/if}">{$clientsstats.numunpaidinvoices}</div>
-                        <div class="tile-title">{$LANG.clientHomePanels.unpaidInvoices}</div>
+                        <div class="tile-title">
+                            {if ($language != 'english')}
+                                {if ($clientsstats.numunpaidinvoices % 10 == 1)&&($clientsstats.numunpaidinvoices % 100 != 11)}
+                                    {$LANG.clientAreaHome.home.body.unpaid.1}
+                                {else if (2 <= $clientsstats.numunpaidinvoices % 10)&&($clientsstats.numunpaidinvoices % 10 <= 4) && ($clientsstats.numunpaidinvoices % 100 < 10 or $clientsstats.numunpaidinvoices % 100 >= 20)}    
+                                    {$LANG.clientAreaHome.home.body.unpaid.2}
+                                {else}
+                                    {$LANG.clientAreaHome.home.body.unpaid.3}
+                                {/if}
+                            {else}
+                                {if $clientsstats.numunpaidinvoices > 1}   
+                                    {$LANG.clientAreaHome.home.body.unpaid.1}
+                                {else}
+                                    {$LANG.clientAreaHome.home.body.unpaid.2}
+                                {/if}
+                            {/if}         
+                        </div>
                     </div>
                 </a>
                 
@@ -192,7 +224,23 @@
 
                     <div class="tile-body">
                         <div class="tile-stat">{if $supportPalactiveTicketsNum}{$supportPalactiveTicketsNum}{else}{$clientsstats.numactivetickets}{/if}</div>
-                        <div class="tile-title">{$LANG.navtickets}</div>
+                        <div class="tile-title">
+                            {if ($language != 'english')}
+                                {if ($clientsstats.numactivetickets % 10 == 1)&&($clientsstats.numactivetickets % 100 != 11)}
+                                    {$LANG.clientAreaHome.home.body.tickets.1}
+                                {else if (2 <= $clientsstats.numactivetickets % 10)&&($clientsstats.numactivetickets % 10 <= 4) && ($clientsstats.numactivetickets % 100 < 10 or $clientsstats.numactivetickets % 100 >= 20)}    
+                                    {$LANG.clientAreaHome.home.body.tickets.2}
+                                {else}
+                                    {$LANG.clientAreaHome.home.body.tickets.3}
+                                {/if}
+                            {else}
+                                {if $clientsstats.numactivetickets > 1}   
+                                    {$LANG.clientAreaHome.home.body.tickets.1}
+                                {else}
+                                    {$LANG.clientAreaHome.home.body.tickets.2}
+                                {/if}
+                            {/if}         
+                        </div>
                     </div>
                 </a>
                 
