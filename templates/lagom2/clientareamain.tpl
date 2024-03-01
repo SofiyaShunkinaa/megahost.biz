@@ -59,54 +59,42 @@
     {include file="$template/includes/flashmessage.tpl"}
     <div class="tiles swiper-container">
         <div class="row swiper-wrapper">
-            <div class="col-md-3 swiper-slide" onclick="window.location='clientarea.php?action=services'">
+            <div class="col-md-3 col-sm-4 swiper-slide" onclick="window.location='clientarea.php?action=services'">
                 <a class="tile" href="clientarea.php?action=services">
-                    <div class="tile-icon-absolute"><i class="ls ls-hosting"></i></div>
                     <div class="tile-stat">{$clientsstats.productsnumactive}</div>
                     <div class="tile-title">{$LANG.navservices}</div>
                 </a>
             </div>
             {if $registerdomainenabled || $transferdomainenabled}
-                <div class="col-md-3 swiper-slide" onclick="window.location='clientarea.php?action=domains'">
+                <div class="col-md-3 col-sm-4 swiper-slide" onclick="window.location='clientarea.php?action=domains'">
                     <a class="tile" href="clientarea.php?action=domains">
-                        <div class="tile-icon-absolute"><i class="ls ls-dns"></i></div>
                         <div class="tile-stat">{$clientsstats.numactivedomains}</div>
                         <div class="tile-title"> {$LANG.navdomains}</div>
                     </a>
                 </div>
             {elseif $condlinks.affiliates && $clientsstats.isAffiliate}
-                <div class="col-md-3 swiper-slide" onclick="window.location='affiliates.php'">
+                <div class="col-md-3 col-sm-4 swiper-slide" onclick="window.location='affiliates.php'">
                     <a class="tile" href="affiliates.php">
-                        <div class="tile-icon-absolute"><i class="ls ls-wallet"></i></div>
                         <div class="tile-stat">{$clientsstats.numaffiliatesignups}</div>
                         <div class="tile-title">{$LANG.affiliatessignups}</div>
                     </a>
                 </div>
             {else}
-                <div class="col-md-3 swiper-slide" onclick="window.location='clientarea.php?action=quotes'">
+                <div class="col-md-3 col-sm-4 swiper-slide" onclick="window.location='clientarea.php?action=quotes'">
                     <a class="tile" href="clientarea.php?action=quotes">
-                        <div class="tile-icon-absolute"><i class="ls ls-document"></i></div>
                         <div class="tile-stat">{$clientsstats.numquotes}</div>
                         <div class="tile-title">{$LANG.quotes}</div>
                     </a>
                 </div>
             {/if}
-            <div class="col-md-3 swiper-slide" onclick="window.location='clientarea.php?action=invoices'">
+            <div class="col-md-3 col-sm-4 swiper-slide" onclick="window.location='clientarea.php?action=invoices'">
                 <a class="tile" href="clientarea.php?action=invoices">
-                    <div class="tile-icon-absolute">
-                        {if ($clientsstats.numunpaidinvoices > 0)}
-                            <i class="icon-alert ls ls-exclamation-circle text-danger"></i>
-                        {else}
-                            <i class="icon-default ls ls-document"></i>    
-                        {/if}
-                    </div>
                     <div class="tile-stat {if ($clientsstats.numunpaidinvoices > 0)}text-danger{/if}">{$clientsstats.numunpaidinvoices}</div>
                     <div class="tile-title">{$LANG.clientHomePanels.unpaidInvoices}</div>
                 </a>
             </div>
             <div class="col-md-3 swiper-slide" onclick="window.location='supporttickets.php'">
                 <a class="tile" href="supporttickets.php">
-                    <div class="tile-icon-absolute"><i class="ls ls-ticket-tag"></i></div>
                     <div class="tile-stat">{if $supportPalactiveTicketsNum}{$supportPalactiveTicketsNum}{else}{$clientsstats.numactivetickets}{/if}</div>
                     <div class="tile-title">{$LANG.navtickets}</div>
                 </a>
