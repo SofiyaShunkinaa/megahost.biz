@@ -113,23 +113,25 @@
                 </div>
             {else}
                 <div class="col-md-3 col-sm-4 swiper-slide" onclick="window.location='clientarea.php?action=quotes'">
-                    <div class="tile-head">
-                        {$LANG.clientAreaHome.home.head.tickets}
-                    </div>
-
-                    <div>
+                    
                         <a class="tile" href="clientarea.php?action=quotes">
                             <div class="tile-stat">{$clientsstats.numquotes}</div>
                             <div class="tile-title">{$LANG.quotes}</div>
                         </a>
-                    </div>
+                    
                 </div>
             {/if}
             <div class="col-md-3 col-sm-4 swiper-slide" onclick="window.location='clientarea.php?action=invoices'">
+            <div class="tile-head">
+                        {$LANG.clientAreaHome.home.head.unpaid}
+                    </div>
+
+                    <div>
                 <a class="tile" href="clientarea.php?action=invoices">
                     <div class="tile-stat {if ($clientsstats.numunpaidinvoices > 0)}text-danger{/if}">{$clientsstats.numunpaidinvoices}</div>
                     <div class="tile-title">{$LANG.clientHomePanels.unpaidInvoices}</div>
                 </a>
+                </div>
             </div>
             <div class="col-md-3 swiper-slide" onclick="window.location='supporttickets.php'">
 
