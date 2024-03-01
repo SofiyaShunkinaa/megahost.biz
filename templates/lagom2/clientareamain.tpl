@@ -16,7 +16,6 @@
 
 {/if}
 
-
 {*if isset($RSThemes['pages'][$templatefile]) && file_exists($RSThemes['pages'][$templatefile]['fullPath'])}
     {include file=$RSThemes['pages'][$templatefile]['fullPath']}
 {else*}
@@ -92,16 +91,18 @@
             </div>
             {if $registerdomainenabled || $transferdomainenabled}
                 <div class="col-md-3 col-sm-4 swiper-slide" onclick="window.location='clientarea.php?action=domains'">
-                    <div class="tile-head">
-                        {$LANG.clientAreaHome.home.head.domains}
-                    </div>
-
-                    <div>
+                    
                         <a class="tile" href="clientarea.php?action=domains">
-                            <div class="tile-stat">{$clientsstats.numactivedomains}</div>
-                            <div class="tile-title"> {$LANG.navdomains}</div>
+                            <div class="tile-head">
+                                {$LANG.clientAreaHome.home.head.domains}
+                            </div>
+
+                            <div>
+                                <div class="tile-stat">{$clientsstats.numactivedomains}</div>
+                                <div class="tile-title"> {$LANG.navdomains}</div>
+                            </div>
                         </a>
-                    </div>
+                    
                 </div>
             {elseif $condlinks.affiliates && $clientsstats.isAffiliate}
                 <div class="col-md-3 col-sm-4 swiper-slide" onclick="window.location='affiliates.php'">
@@ -122,29 +123,34 @@
                 </div>
             {/if}
             <div class="col-md-3 col-sm-4 swiper-slide" onclick="window.location='clientarea.php?action=invoices'">
-            <div class="tile-head">
+           
+                    
+                <a class="tile" href="clientarea.php?action=invoices">
+                    <div class="tile-head">
                         {$LANG.clientAreaHome.home.head.unpaid}
                     </div>
 
                     <div>
-                <a class="tile" href="clientarea.php?action=invoices">
-                    <div class="tile-stat {if ($clientsstats.numunpaidinvoices > 0)}text-danger{/if}">{$clientsstats.numunpaidinvoices}</div>
-                    <div class="tile-title">{$LANG.clientHomePanels.unpaidInvoices}</div>
+                        <div class="tile-stat {if ($clientsstats.numunpaidinvoices > 0)}text-danger{/if}">{$clientsstats.numunpaidinvoices}</div>
+                        <div class="tile-title">{$LANG.clientHomePanels.unpaidInvoices}</div>
+                    </div>
                 </a>
-                </div>
+                
             </div>
             <div class="col-md-3 swiper-slide" onclick="window.location='supporttickets.php'">
 
-            <div class="tile-head">
+            
+                <a class="tile" href="supporttickets.php">
+                    <div class="tile-head">
                         {$LANG.clientAreaHome.home.head.tickets}
                     </div>
 
                     <div>
-                <a class="tile" href="supporttickets.php">
-                    <div class="tile-stat">{if $supportPalactiveTicketsNum}{$supportPalactiveTicketsNum}{else}{$clientsstats.numactivetickets}{/if}</div>
-                    <div class="tile-title">{$LANG.navtickets}</div>
+                        <div class="tile-stat">{if $supportPalactiveTicketsNum}{$supportPalactiveTicketsNum}{else}{$clientsstats.numactivetickets}{/if}</div>
+                        <div class="tile-title">{$LANG.navtickets}</div>
+                    </div>
                 </a>
-                </div>
+                
             </div>
         </div>
         <div class="swiper-pagination"></div>
