@@ -77,111 +77,113 @@ var bodyElement = document.body;
 
 //slider
 
-if (screenWidth<1440){
-  const sliderCustom = document.querySelector('.slider-custom');
-  const progress = document.querySelector('.slider-progress');
-  const secondaryFooterLogo = document.querySelector('.footer-nav-h');
+// if (screenWidth<1440){
+//   const sliderCustom = document.querySelector('.slider-custom');
+//   const progress = document.querySelector('.slider-progress');
+//   const secondaryFooterLogo = document.querySelector('.footer-nav-h');
 
-  let isDragging = false;
-  let startPosition = 0;
-  let currentTranslate = 0;
-  let prevTranslate = 0;
-  let animationID = 0;
+//   let isDragging = false;
+//   let startPosition = 0;
+//   let currentTranslate = 0;
+//   let prevTranslate = 0;
+//   let animationID = 0;
 
-  sliderCustom.addEventListener('mousedown', startDragging);
-  sliderCustom.addEventListener('touchstart', startDragging, { passive: true });
-  sliderCustom.addEventListener('mouseup', stopDragging);
-  sliderCustom.addEventListener('touchend', stopDragging);
-  sliderCustom.addEventListener('mouseleave', stopDragging);
-  sliderCustom.addEventListener('mousemove', drag);
-  sliderCustom.addEventListener('touchmove', drag, { passive: true });
+//   sliderCustom.addEventListener('mousedown', startDragging);
+//   sliderCustom.addEventListener('touchstart', startDragging, { passive: true });
+//   sliderCustom.addEventListener('mouseup', stopDragging);
+//   sliderCustom.addEventListener('touchend', stopDragging);
+//   sliderCustom.addEventListener('mouseleave', stopDragging);
+//   sliderCustom.addEventListener('mousemove', drag);
+//   sliderCustom.addEventListener('touchmove', drag, { passive: true });
 
-  function startDragging(e) {
-    if (e.type === 'touchstart') {
-      startPosition = e.touches[0].clientX - currentTranslate;
-    } else {
-      startPosition = e.clientX - currentTranslate;
-      sliderCustom.style.cursor = 'grabbing';
-    }
+//   function startDragging(e) {
+//     if (e.type === 'touchstart') {
+//       startPosition = e.touches[0].clientX - currentTranslate;
+//     } else {
+//       startPosition = e.clientX - currentTranslate;
+//       sliderCustom.style.cursor = 'grabbing';
+//     }
   
-    isDragging = true;
-    animationID = requestAnimationFrame(animation);
+//     isDragging = true;
+//     animationID = requestAnimationFrame(animation);
   
-    // Добавляем слушателей для отслеживания движения
-    document.addEventListener('mousemove', drag);
-    document.addEventListener('touchmove', drag, { passive: true });
+//     // Добавляем слушателей для отслеживания движения
+//     document.addEventListener('mousemove', drag);
+//     document.addEventListener('touchmove', drag, { passive: true });
   
-    // Добавляем слушателей для отслеживания окончания движения
-    document.addEventListener('mouseup', stopDragging);
-    document.addEventListener('touchend', stopDragging);
-    document.addEventListener('mouseleave', stopDragging);
-  }
+//     // Добавляем слушателей для отслеживания окончания движения
+//     document.addEventListener('mouseup', stopDragging);
+//     document.addEventListener('touchend', stopDragging);
+//     document.addEventListener('mouseleave', stopDragging);
+//   }
   
  
   
   
   
-  function drag(e) {
-    if (isDragging) {
-      let currentPosition = 0;
+//   function drag(e) {
+//     if (isDragging) {
+//       let currentPosition = 0;
   
-      if (e.type === 'touchmove') {
-        currentPosition = e.touches[0].clientX;
-      } else {
-        currentPosition = e.clientX;
-      }
+//       if (e.type === 'touchmove') {
+//         currentPosition = e.touches[0].clientX;
+//       } else {
+//         currentPosition = e.clientX;
+//       }
   
-      // Обновление currentTranslate, учтя изменение startPosition
-      currentTranslate = currentPosition-startPosition;
+//       // Обновление currentTranslate, учтя изменение startPosition
+//       currentTranslate = currentPosition-startPosition;
   
-      const slideWidth = sliderCustom.clientWidth / 5;
-      const containerProducts = document.querySelector('.container-products');
-      const containerProductsPadding = parseInt(getComputedStyle(containerProducts).paddingRight);
-      const maxTranslate = 1315 - window.innerWidth + containerProductsPadding;
-      const minTranslate = -maxTranslate;
+//       const slideWidth = sliderCustom.clientWidth / 5;
+//       const containerProducts = document.querySelector('.container-products');
+//       const containerProductsPadding = parseInt(getComputedStyle(containerProducts).paddingRight);
+//       const maxTranslate = 1315 - window.innerWidth + containerProductsPadding;
+//       const minTranslate = -maxTranslate;
   
-      if (currentTranslate < minTranslate) {
-        currentTranslate = minTranslate;
-      }
+//       if (currentTranslate < minTranslate) {
+//         currentTranslate = minTranslate;
+//       }
   
-      if (currentTranslate > 0) {
-        currentTranslate = 0;
-      }
+//       if (currentTranslate > 0) {
+//         currentTranslate = 0;
+//       }
   
-      // Обновление стиля слайдера
-      sliderCustom.style.transform = `translateX(${currentTranslate}px)`;
-    }
-  }
+//       // Обновление стиля слайдера
+//       sliderCustom.style.transform = `translateX(${currentTranslate}px)`;
+//     }
+//   }
 
-  function stopDragging() {
-    cancelAnimationFrame(animationID);
-    isDragging = false;
+//   function stopDragging() {
+//     cancelAnimationFrame(animationID);
+//     isDragging = false;
   
-    // Удаляем слушателей, так как перетаскивание завершено
-    document.removeEventListener('mousemove', drag);
-    document.removeEventListener('touchmove', drag);
-    document.removeEventListener('mouseup', stopDragging);
-    document.removeEventListener('touchend', stopDragging);
-    document.removeEventListener('mouseleave', stopDragging);
+//     // Удаляем слушателей, так как перетаскивание завершено
+//     document.removeEventListener('mousemove', drag);
+//     document.removeEventListener('touchmove', drag);
+//     document.removeEventListener('mouseup', stopDragging);
+//     document.removeEventListener('touchend', stopDragging);
+//     document.removeEventListener('mouseleave', stopDragging);
   
-    const slideWidth = sliderCustom.clientWidth / 5;
-    const slideIndex = Math.round(currentTranslate / slideWidth);
+//     const slideWidth = sliderCustom.clientWidth / 5;
+//     const slideIndex = Math.round(currentTranslate / slideWidth);
   
-    currentTranslate = slideIndex * slideWidth;
-    prevTranslate = currentTranslate;
+//     currentTranslate = slideIndex * slideWidth;
+//     prevTranslate = currentTranslate;
   
-    sliderCustom.style.transform = `translateX(${currentTranslate}px)`;
-    sliderCustom.style.cursor = 'grab';
-  }
+//     sliderCustom.style.transform = `translateX(${currentTranslate}px)`;
+//     sliderCustom.style.cursor = 'grab';
+//   }
 
-  function animation() {
-    sliderCustom.style.transform = `translateX(${currentTranslate}px)`;
+//   function animation() {
+//     sliderCustom.style.transform = `translateX(${currentTranslate}px)`;
 
-    if (isDragging) {
-      requestAnimationFrame(animation);
-    }
-  }
-}
+//     if (isDragging) {
+//       requestAnimationFrame(animation);
+//     }
+//   }
+// }
+
+
 
 
 //buttons
