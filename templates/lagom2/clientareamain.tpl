@@ -1,3 +1,22 @@
+{if ($language == 'english')} 
+
+    {$LANG.clientAreaHome.home.head.services="My services"}
+    {$LANG.clientAreaHome.home.head.domains="My domains"}
+    {$LANG.clientAreaHome.home.head.unpaid="Tickets"}
+    {$LANG.clientAreaHome.home.head.tickets="Unpaid "}
+
+    
+{else}
+
+    {$LANG.clientAreaHome.home.head.services="Мои услуги"}
+    {$LANG.clientAreaHome.home.head.domains="Мои домены"}
+    {$LANG.clientAreaHome.home.head.unpaid="Неоплаченные счета"}
+    {$LANG.clientAreaHome.home.head.tickets="Тикеты"}
+
+
+{/if}
+
+
 {*if isset($RSThemes['pages'][$templatefile]) && file_exists($RSThemes['pages'][$templatefile]['fullPath'])}
     {include file=$RSThemes['pages'][$templatefile]['fullPath']}
 {else*}
@@ -61,30 +80,49 @@
         <div class="row swiper-wrapper">
             <div class="col-md-3 col-sm-4 swiper-slide" onclick="window.location='clientarea.php?action=services'">
                 <a class="tile" href="clientarea.php?action=services">
-                    <div class="tile-stat">{$clientsstats.productsnumactive}</div>
-                    <div class="tile-title">{$LANG.navservices}</div>
+                    <div class="tile-head">
+                        {$LANG.clientAreaHome.home.head.services}
+                    </div>
+
+                    <div>
+                        <div class="tile-stat">{$clientsstats.productsnumactive}</div>
+                        <div class="tile-title">{$LANG.navservices}</div>
+                    </div>
                 </a>
             </div>
             {if $registerdomainenabled || $transferdomainenabled}
                 <div class="col-md-3 col-sm-4 swiper-slide" onclick="window.location='clientarea.php?action=domains'">
-                    <a class="tile" href="clientarea.php?action=domains">
-                        <div class="tile-stat">{$clientsstats.numactivedomains}</div>
-                        <div class="tile-title"> {$LANG.navdomains}</div>
-                    </a>
+                    <div class="tile-head">
+                        {$LANG.clientAreaHome.home.head.domains}
+                    </div>
+
+                    <div>
+                        <a class="tile" href="clientarea.php?action=domains">
+                            <div class="tile-stat">{$clientsstats.numactivedomains}</div>
+                            <div class="tile-title"> {$LANG.navdomains}</div>
+                        </a>
+                    </div>
                 </div>
             {elseif $condlinks.affiliates && $clientsstats.isAffiliate}
                 <div class="col-md-3 col-sm-4 swiper-slide" onclick="window.location='affiliates.php'">
-                    <a class="tile" href="affiliates.php">
-                        <div class="tile-stat">{$clientsstats.numaffiliatesignups}</div>
-                        <div class="tile-title">{$LANG.affiliatessignups}</div>
-                    </a>
+                    
+                        <a class="tile" href="affiliates.php">
+                            <div class="tile-stat">{$clientsstats.numaffiliatesignups}</div>
+                            <div class="tile-title">{$LANG.affiliatessignups}</div>
+                        </a>
                 </div>
             {else}
                 <div class="col-md-3 col-sm-4 swiper-slide" onclick="window.location='clientarea.php?action=quotes'">
-                    <a class="tile" href="clientarea.php?action=quotes">
-                        <div class="tile-stat">{$clientsstats.numquotes}</div>
-                        <div class="tile-title">{$LANG.quotes}</div>
-                    </a>
+                    <div class="tile-head">
+                        {$LANG.clientAreaHome.home.head.tickets}
+                    </div>
+
+                    <div>
+                        <a class="tile" href="clientarea.php?action=quotes">
+                            <div class="tile-stat">{$clientsstats.numquotes}</div>
+                            <div class="tile-title">{$LANG.quotes}</div>
+                        </a>
+                    </div>
                 </div>
             {/if}
             <div class="col-md-3 col-sm-4 swiper-slide" onclick="window.location='clientarea.php?action=invoices'">
@@ -94,10 +132,17 @@
                 </a>
             </div>
             <div class="col-md-3 swiper-slide" onclick="window.location='supporttickets.php'">
+
+            <div class="tile-head">
+                        {$LANG.clientAreaHome.home.head.tickets}
+                    </div>
+
+                    <div>
                 <a class="tile" href="supporttickets.php">
                     <div class="tile-stat">{if $supportPalactiveTicketsNum}{$supportPalactiveTicketsNum}{else}{$clientsstats.numactivetickets}{/if}</div>
                     <div class="tile-title">{$LANG.navtickets}</div>
                 </a>
+                </div>
             </div>
         </div>
         <div class="swiper-pagination"></div>
