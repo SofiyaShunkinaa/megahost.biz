@@ -114,6 +114,7 @@
 
                     <div class="tile-body">
                         <div class="tile-stat">{$clientsstats.productsnumactive}</div>
+                        <div class="tile-title">
                         {if ($language != 'english')}
                             {if ($clientsstats.productsnumactive % 10 == 1)&&($clientsstats.productsnumactive % 100 != 11)}
                                 {$LANG.clientAreaHome.home.body.Services.1}
@@ -123,8 +124,13 @@
                                 {$LANG.clientAreaHome.home.body.Services.3}
                             {/if}
                         {else}
-                            {}    
-                        <div class="tile-title">{$LANG.navservices}</div>
+                            {if $clientsstats.productsnumactive > 1}   
+                                 {$LANG.clientAreaHome.home.body.Services.1}
+                            {else}
+                                {$LANG.clientAreaHome.home.body.Services.2}
+                            {/if}
+                        {/if}         
+                        </div>
                     </div>
                 </a>
             </div>
