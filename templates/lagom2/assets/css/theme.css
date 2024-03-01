@@ -1282,6 +1282,7 @@ details[open] .summary-icon{
     padding-top: 64px;
     padding-left: 34px;
     padding-right: 34px;
+    width: fit-content;
   }
 
   .clientarea__menu-body, .clientarea__menu-footer{
