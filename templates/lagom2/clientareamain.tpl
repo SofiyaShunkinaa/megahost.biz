@@ -10,7 +10,7 @@
 
     {$LANG.clientAreaHome.home.head.services="Мои услуги"}
     {$LANG.clientAreaHome.home.head.domains="Мои домены"}
-    {$LANG.clientAreaHome.home.head.unpaid="Неоплаченные счета"}
+    {$LANG.clientAreaHome.home.head.unpaid="Неоплаченные"}
     {$LANG.clientAreaHome.home.head.tickets="Тикеты"}
 
 
@@ -83,7 +83,7 @@
                         {$LANG.clientAreaHome.home.head.services}
                     </div>
 
-                    <div>
+                    <div class="tile-body">
                         <div class="tile-stat">{$clientsstats.productsnumactive}</div>
                         <div class="tile-title">{$LANG.navservices}</div>
                     </div>
@@ -97,7 +97,7 @@
                                 {$LANG.clientAreaHome.home.head.domains}
                             </div>
 
-                            <div>
+                            <div class="tile-body">
                                 <div class="tile-stat">{$clientsstats.numactivedomains}</div>
                                 <div class="tile-title"> {$LANG.navdomains}</div>
                             </div>
@@ -130,7 +130,7 @@
                         {$LANG.clientAreaHome.home.head.unpaid}
                     </div>
 
-                    <div>
+                    <div class="tile-body">
                         <div class="tile-stat {if ($clientsstats.numunpaidinvoices > 0)}text-danger{/if}">{$clientsstats.numunpaidinvoices}</div>
                         <div class="tile-title">{$LANG.clientHomePanels.unpaidInvoices}</div>
                     </div>
@@ -145,7 +145,7 @@
                         {$LANG.clientAreaHome.home.head.tickets}
                     </div>
 
-                    <div>
+                    <div class="tile-body">
                         <div class="tile-stat">{if $supportPalactiveTicketsNum}{$supportPalactiveTicketsNum}{else}{$clientsstats.numactivetickets}{/if}</div>
                         <div class="tile-title">{$LANG.navtickets}</div>
                     </div>
