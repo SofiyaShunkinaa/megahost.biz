@@ -5,6 +5,20 @@
     {$LANG.clientAreaHome.home.head.unpaid="Tickets"}
     {$LANG.clientAreaHome.home.head.tickets="Unpaid "}
 
+    {$LANG.clientAreaHome.home.body.unpaid.1="invoice"}
+    {$LANG.clientAreaHome.home.body.unpaid.2="invoices"}
+
+    {$LANG.clientAreaHome.home.body.tickets.1="Ticket"}
+    {$LANG.clientAreaHome.home.body.tickets.2="Tickets"}
+
+    {$LANG.clientAreaHome.home.body.domains.1="domain"}
+    {$LANG.clientAreaHome.home.body.domains.2="domains"}
+
+    {$LANG.clientAreaHome.home.body.Services.1="service"}
+    {$LANG.clientAreaHome.home.body.Services.2="services"}
+
+
+
     
 {else}
 
@@ -25,9 +39,9 @@
     {$LANG.clientAreaHome.home.body.domains.2="Домена"}
     {$LANG.clientAreaHome.home.body.domains.3="Доменов"}
 
-    {$LANG.clientAreaHome.home.body.Services.1="Домен"}
-    {$LANG.clientAreaHome.home.body.Services.2="Домена"}
-    {$LANG.clientAreaHome.home.body.Services.3="Доменов"}
+    {$LANG.clientAreaHome.home.body.Services.1="Услуга"}
+    {$LANG.clientAreaHome.home.body.Services.2="Услуги"}
+    {$LANG.clientAreaHome.home.body.Services.3="Услуг"}
 
 {/if}
 
@@ -100,6 +114,16 @@
 
                     <div class="tile-body">
                         <div class="tile-stat">{$clientsstats.productsnumactive}</div>
+                        {if ($language != 'english')}
+                            {if ($clientsstats.productsnumactive % 10 == 1)&&($clientsstats.productsnumactive % 100 != 11)}
+                                {$LANG.clientAreaHome.home.body.Services.1}
+                            {else if (2 <= $clientsstats.productsnumactive % 10)&&($clientsstats.productsnumactive % 10 <= 4) && ($clientsstats.productsnumactive % 100 < 10 or $clientsstats.productsnumactive % 100 >= 20)}    
+                                {$LANG.clientAreaHome.home.body.Services.2}
+                            {else}
+                                {$LANG.clientAreaHome.home.body.Services.3}
+                            {/if}
+                        {else}
+                            {}    
                         <div class="tile-title">{$LANG.navservices}</div>
                     </div>
                 </a>
