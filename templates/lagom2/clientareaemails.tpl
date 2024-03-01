@@ -31,7 +31,7 @@
 
 <h2 class="container section-title clientarea-title">{$LANG.clientAreaHome.Title}</h2>
 <div class="container container-clientarea">
-<div class="clientarea__sidebar col-3">
+<div class="clientarea__sidebar">
     <div class="clientarea-avatar">
         <div class="client-avatar"></div>
         <div class="client-name">{$clientsdetails.firstname}</div>
@@ -60,7 +60,7 @@
     </div>
     
 </div>
-<div class="clientarea__mainbar col-9">
+<div class="clientarea__mainbar">
 
 
 
