@@ -1,0 +1,137 @@
+.app-nav-header{
+    background: var(--body-bg);
+}
+
+.section-questions b{ color: var(--a-blue) !important; font-weight: 600;}
+
+.section-questions > details{
+    margin-bottom: 16px;
+    border-radius: 30px;
+    border: 1px solid var(--main-border-color);
+}
+details[open] .summary-icon{
+    rotate: 180deg;
+}
+.section-map .section-title{
+ margin-bottom: 99px;   
+}
+
+.world-map{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.world-map > img{
+    max-width: 100%;
+    height: auto;
+}
+
+.world-map__wrapper{
+  position: relative;
+}
+
+.world-map__wrapper svg{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+}
+
+.country{
+  fill: none;
+  stroke-width: 2px;
+  cursor: pointer;
+  pointer-events: all;
+}
+
+.sm-country--hover, .country:hover{
+  stroke: #FFF;
+  filter: drop-shadow(0px 4px 24px rgba(205, 28, 208, 0.40));
+}
+
+.big-area-uae, .big-area-singapore{
+  fill: transparent;
+  cursor: pointer;
+  pointer-events: all;
+}
+
+.tooltip{
+  width: 266px;
+  height: auto;
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding: 30px 32px 0 32px;
+  position: absolute;
+  top:0;
+  left:0;
+  backdrop-filter: blur(33.5px); 
+  display: none;
+  border-radius: 30px;
+  border: 1px solid #B970CF;
+  z-index: 1000;
+}
+
+.tooltip__list{
+  padding-left:15px;
+  color: var(--a-white);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%; /* 22.4px */
+  list-style-image:url(../img/marker.svg);
+}
+
+.tooltip li{
+  padding: 0px 0px 10px 8px;
+}
+
+.tooltip__title{
+  color: var(--a-white);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  margin-bottom: 17px;
+  display: flex;
+  align-items: center;
+}
+
+.tooltip img{
+  width: 100%;
+  height: 100%;
+}
+
+.flag{
+  margin-right: 8px;
+}
+
+.grid__item{ 
+    border-radius: var(--advantages-border-radius); 
+    padding: var(--adv-padding); 
+    background-color: var(--advantages-bg); 
+    backdrop-filter: var(--advantages-backdrop-filter); 
+    border: 1px solid; 
+    border-color: var(--main-border-color); 
+    display: flex; 
+    flex-direction: column; height: 100%;
+} 
+
+.grid-item:hover{
+    background-color: var(--advantages-bg-hover);
+}
+
+.item__icon{ 
+    width: var(--advantages-icon-size-lg); 
+    height: var(--advantages-icon-size-lg); 
+    background: var(--btn-head-border); 
+    border-radius: 20px; display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    margin-bottom: 16px;
+} 
+
+.section-advantages{ 
+    background-image: url(../img/advElipses.svg); 
+    background-position-x: right; 
+    background-repeat: no-repeat;
+}
