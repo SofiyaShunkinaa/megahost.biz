@@ -11,3 +11,4 @@ All notable changes to this project will be documented in this file.
 - changed menu in manager: added Opportunities item with subitems as custom links
 - added directory with mainmenu.tpl to templates/lagom2/includes/menu to rewrite main menu navigation
 - fixed styles for main menu and top nav
+- added theme-custom.css with all custom styles
