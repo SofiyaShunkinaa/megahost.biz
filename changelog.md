@@ -12,3 +12,6 @@ All notable changes to this project will be documented in this file.
 - added directory with mainmenu.tpl to templates/lagom2/includes/menu to rewrite main menu navigation
 - fixed styles for main menu and top nav
 - added theme-custom.css with all custom styles
+
+### v1.0.2 (25.02.2024)
+- changed testimonial.tpl structure in templates/lagom2/core/pages/homepage/modern/shared dir
