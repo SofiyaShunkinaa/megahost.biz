@@ -15,3 +15,5 @@ All notable changes to this project will be documented in this file.
 
 ### v1.0.2 (25.02.2024)
 - changed testimonial.tpl structure in templates/lagom2/core/pages/homepage/modern/shared dir
+- added promo-section to homepage
+- fixed styles for testimonials
