@@ -1,4 +1,8 @@
 {if ($language == 'english')}
+    {assign var=home value=['title'=>'Fast <b>VPS</b> servers with NVMe SSD disks']}
+    {$LANG.home_subtitle="Free administration and trail period"}
+    {$LANG.home_action="Choose a Service"}
+
     {$Advantages.protection.title="Free DDoS Attacks Protection"}
     {$homeSubTitle="Free Administration and Trial Period"}
     {$Advantages.protection.subtitle="Protection against DDoS attacks is free for all clients; it automatically detects most types of DDoS attacks and filters incoming traffic to the server."}
@@ -252,6 +256,10 @@
 {$LANG.startingat="at"}
 
 {else}
+    {assign var=home value=['title'=>'Быстрые <b>VPS</b> сервера с NVMe SSD дисками']}
+    {$LANG.home_subtitle="Бесплатное администрирование и тестовый период"}
+    {$LANG.home_action="Выбрать услугу"}
+
     {$Advantages.protection.title="Бесплатная защита от DDos-атак"}
     {$homeSubTitle="Бесплатное администрирование и тестовый период"}
     {$Advantages.protection.subtitle="Защита от DDoS-атак бесплатна для всех клиентов, она автоматически обнаруживает большинство типов DDoS-атак и фильтрует входящий трафик на сервер."}
@@ -538,26 +546,8 @@
  ======================================= *}
 
  {if $RSThemes['pages'][$templatefile]['config']['showProducGroups'] == '1'}
-{assign var=productGroupId value=[
 
-    [
-        'gid' => 2,
-        'featured' => false
-    ],
-    [
-        'gid' => 1,
-        'featured' => true
-    ],
-    [
-        'gid' => 5,
-        'featured' => false
-    ],
-    [
-        'gid' => 6,
-        'featured' => false
-    ]
-]}
-
+{debug}
 {foreach from=$productGroupId key=k item=product}
     {if $homepage->productGroup($product.gid)->product}
         {assign var=showGroup value=true}
@@ -570,11 +560,21 @@
  
 
 <div class="site site-index">
-    {if $homepage->getPromotionExtensionStatus()}
-        {include file="$template/core/extensions/PromoBanners/promotion-home.tpl"}
-    {else}
-        {include file="$template/core/pages/homepage/$homepageTemplate/shared/banner-slider.tpl"}
-    {/if}
+     
+    <div class="site-section section-promo site-banner">
+        <div class="container">
+            <div class="banner-wrapper">
+                <div class="banner-content" data-animation-content>
+                    <h1 class="banner-title home-title">{$home.title}</h1>
+                    <div class="banner-desc"><p>{$LANG.home_subtitle}</p></div>
+                    <div class="banner-actions">
+                        <a href="{$systemurl}cart.php?gid={$homepage->productGroup($product.gid)->product->productGroup->id}" class="btn btn-lg btn-primary btn-package" data-target="incoming">{$LANG.home_action}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
     {if $registerdomainenabled && $RSThemes['pages'][$templatefile]['config']['showDomainSearch'] == '1'}
     <div class="site-section position-static">
         <div class="container">
