@@ -215,7 +215,8 @@
   }
   
   .page-login{
-      background-image: url(/templates/lagom2/assets/img/login-bg-lg.png);
+      background-image: url(/templates/lagom2/assets/img/login-bg-lg.png) !important;
+      background-color: var(--a-bg) !important;
       background-position-x: center;
       background-repeat: no-repeat;
   }
@@ -1514,7 +1515,24 @@
       font-weight: 400;
       color: var(--a-grey);
     }
+
+    .site .site-section .container-inverse .section-title{
+      color: var(--a-bg);
+    }
   
+    .lagom-layout-banner .main-header, .main-header-banner{
+      background: none;
+    }
+
+    .benefit-item{
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .page-opportunities .main-header{
+      max-width: 630px;
+    }
   @media (min-width:992px){
     .app-main{
       padding-top: 120px;
