@@ -17,3 +17,8 @@ All notable changes to this project will be documented in this file.
 - changed testimonial.tpl structure in templates/lagom2/core/pages/homepage/modern/shared dir
 - added promo-section to homepage
 - fixed styles for testimonials
+
+### v1.0.3 (26.02.2023)
+- rewrote footer: templates/lagom2/core/layouts/footer/default/default.tpl
+- fixed faq section on homepage
+- create custom pageheader block in templates/lagom2/includes/overwrites dir
