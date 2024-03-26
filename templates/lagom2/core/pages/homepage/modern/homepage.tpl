@@ -1468,15 +1468,22 @@ z"/>
     </div>
 
      <div class="site-section overflow-hidden">
-        <div class="container-fluid container-faq">
+        <div class="container-fluid container-faq container-inverse">
             <div class="container">
                 <h2 class="section-title">{$LANG.faq_title}</h2>
                 
                 <div class="section-content section-questions">
                     {foreach from=$Questions item=question}
-                            {if file_exists("templates/$template/core/pages/homepage/$homepageTemplate/shared/questions.tpl")}
-                                    {include file="$template/core/pages/homepage/$homepageTemplate/shared/questions.tpl"}
-                                {/if}
+                            <details class="qst-item">
+                                <summary><div class="summary__title">{$question.title}</div> 
+                                <div class="summary-icon"><img src="templates/{$template}/assets/img/marker.png"</div>
+                                </summary>
+                                <ol>
+                                    <li>{$question.text_p1}</li>
+                                    <li>{$question.text_p2}</li>
+                                    <li>{$question.text_p3}</li>
+                                </ol>
+                            </details>
                     {/foreach}    
                 </div>
             </div>    
