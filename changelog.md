@@ -22,3 +22,7 @@ All notable changes to this project will be documented in this file.
 - rewrote footer: templates/lagom2/core/layouts/footer/default/default.tpl
 - fixed faq section on homepage
 - create custom pageheader block in templates/lagom2/includes/overwrites dir
+
+### v1.0.4 (28.02.2024)
+- added overwrites login in templates/lagom2/includes/login dir
+- added overwrites register-form in templates/lagom2/includes/login dir
