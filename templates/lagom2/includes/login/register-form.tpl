@@ -1,21 +1,3 @@
-{assign var=currencies value=[
-    [
-        'code' => 'USD',
-        'id' => 'usd',
-        'default' => true
-    ],
-    [
-        'code' => 'RUB',
-        'id' => 'rub',
-        'default' => false
-    ],
-    [
-        'code' => 'EUR',
-        'id' => 'eur',
-        'default' => false
-    ]
-]}
-
 {if file_exists("templates/$template/includes/login/overwrites/register-form.tpl")}
      {include file="{$template}/includes/login/overwrites/register-form.tpl"}  
 {else}
@@ -40,32 +22,6 @@
     {if $errormessage}
         {include file="$template/includes/alert.tpl" type="error" errorshtml=$errormessage}
     {/if}
-
-    
-    <div class="form-switcher">
-        <div class="switcher-wrapper">
-            <div class="switcher kb-switcher sw-white">
-
-                    {if file_exists("templates/$template/core/pages/homepage/modern/shared/switchers/login.tpl")}
-                        {include file="$template/core/pages/homepage/modern/shared/switchers/login.tpl"}
-                    {/if}
-
-            </div>
-        </div>
-    </div>
-
-    <div class="separator">
-        <svg xmlns="http://www.w3.org/2000/svg" width="1292" height="2" viewBox="0 0 1292 2" fill="none">
-            <path d="M1 1L1291 0.999887" stroke="url(#paint0_linear_379_27252)" stroke-linecap="round"/>
-            <defs>
-                <linearGradient id="paint0_linear_379_27252" x1="1" y1="1.49912" x2="1291" y2="1.49418" gradientUnits="userSpaceOnUse">
-                <stop stop-color="#B871CF"/>
-                <stop offset="1" stop-color="#8392D5"/>
-                </linearGradient>
-            </defs>
-        </svg>
-    </div>            
-
     <form method="post" class="loginForm" action="{$smarty.server.PHP_SELF}" role="form" name="orderfrm" id="frmCheckout">
         <input type="hidden" name="register" value="true"/>
         <div class="section section-sm" id="containerNewUserSignup">
@@ -97,10 +53,26 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group ">
+                                <label for="inputLastName" {if !in_array('lastname', $optionalFields)} class="label-required" {/if}>
+                                    {$LANG.orderForm.lastName} {if in_array('lastname', $optionalFields)} ({$LANG.orderForm.optional}){/if}
+                                </label>
+                                <input type="text" name="lastname" id="inputLastName" class="form-control" placeholder="" value="{$clientlastname}" {if !in_array('lastname', $optionalFields)}required{/if}>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group ">
                                 <label for="inputEmail" class="label-required">
                                     {$LANG.orderForm.emailAddress}
                                 </label>
                                 <input type="email" name="email" id="inputEmail" class="form-control" placeholder="" value="{$clientemail}">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group ">
+                                <label for="inputPhone" {if !in_array('phonenumber', $optionalFields)} class="label-required" {/if}>
+                                    {$LANG.orderForm.phoneNumber} {if in_array('phonenumber', $optionalFields)} ({$LANG.orderForm.optional}){/if}
+                                </label>
+                                <input type="tel" name="phonenumber" id="inputPhone" class="form-control" placeholder="" value="{$clientphonenumber}">
                             </div>
                         </div>
                     </div>
@@ -112,6 +84,48 @@
                 </div>
                 <div class="section-body">
                     <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group ">
+                                <label for="inputCompanyName">
+                                    {$LANG.orderForm.companyName} ({$LANG.orderForm.optional})
+                                </label>
+                                <input type="text" name="companyname" id="inputCompanyName" class="form-control" placeholder="" value="{$clientcompanyname}">
+                            </div>
+                        </div>
+                        {if $showTaxIdField}
+                            <div class="col-md-6">  
+                                <div class="form-group">
+                                    <label for="inputTaxId">
+                                        {lang key=\WHMCS\Billing\Tax\Vat::getLabel()} ({$LANG.orderForm.optional})
+                                    </label>
+                                    <input type="text" name="tax_id" id="inputTaxId" class="form-control" placeholder="{lang key=\WHMCS\Billing\Tax\Vat::getLabel()}" value="{$clientsdetails.tax_id}">
+                                </div>
+                            </div>
+                        {/if}
+                        <div class="col-md-6">    
+                            <div class="form-group ">
+                                <label for="inputAddress1" {if !in_array('address1', $optionalFields)} class="label-required" {/if}> 
+                                    {$LANG.orderForm.streetAddress} {if in_array('address1', $optionalFields)} ({$LANG.orderForm.optional}){/if}
+                                </label>
+                                <input type="text" name="address1" id="inputAddress1" class="form-control" placeholder="" value="{$clientaddress1}"  {if !in_array('address1', $optionalFields)}required{/if}>
+                            </div>
+                        </div>
+                        <div class="col-md-6">        
+                            <div class="form-group ">
+                                <label for="inputAddress2">
+                                    {$LANG.orderForm.streetAddress2} ({$LANG.orderForm.optional})
+                                </label>
+                                <input type="text" name="address2" id="inputAddress2" class="form-control" placeholder="" value="{$clientaddress2}">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group ">
+                                <label for="inputCity" {if !in_array('city', $optionalFields)} class="label-required" {/if}>
+                                    {$LANG.orderForm.city} {if in_array('city', $optionalFields)} ({$LANG.orderForm.optional}){/if}
+                                </label>
+                                <input type="text" name="city" id="inputCity" class="form-control" placeholder="" value="{$clientcity}"  {if !in_array('city', $optionalFields)}required{/if}>
+                            </div>
+                        </div>
                         <div class="col-md-6">        
                             <div class="form-group ">
                                 <label for="inputCountry"  id="inputCountryIcon" class="label-required">
@@ -126,6 +140,66 @@
                                 </select>
                             </div>
                         </div>
+                        <div class="col-md-6">        
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="stateinput" {if !in_array('state', $optionalFields)} class="label-required" {/if}>
+                                            {$LANG.orderForm.state} {if in_array('state', $optionalFields)} ({$LANG.orderForm.optional}){/if}
+                                        </label>
+                                        <input type="text" name="state" id="state" class="form-control" placeholder="" value="{$clientstate}"  {if !in_array('state', $optionalFields)}required{/if}>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="inputPostcode" {if !in_array('postcode', $optionalFields)} class="label-required" {/if}> 
+                                            {$LANG.orderForm.postcode} {if in_array('postcode', $optionalFields)} ({$LANG.orderForm.optional}){/if}
+                                        </label>
+                                        <input type="text" name="postcode" id="inputPostcode" class="form-control" placeholder="" value="{$clientpostcode}" {if !in_array('postcode', $optionalFields)}required{/if}>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>  
+                </div>  
+            </div>
+            {if $customfields || $currencies}
+            <div class="section section-sm">    
+                <div class="section-header">
+                    <h2 class="section-title">{$LANG.orderadditionalrequiredinfo}<br><i><small class="text-lighter">{lang key='orderForm.requiredField'}</small></i></h2>
+                </div>
+                <div class="section-body">
+                    <div class="row">
+                        {if $customfields}
+
+                            {foreach from=$customfields key=num item=customfield }
+                                <div class="col-md-6">
+                                    <div class="form-group"> 
+                                        {if $customfield.type eq 'tickbox'}            
+                                            <label class="checkbox" for="customfield{$customfield.id}">
+                                                {$customfield.input|replace:'type="checkbox"':'class="form-checkbox icheck-control" type="checkbox"'}
+                                                <span {if $customfield.required} class="label-required"{/if}>{$customfield.name} {if !$customfield.required} ({$LANG.orderForm.optional}){/if}</span>
+                                            </label>
+                                            {if $customfield.description}<span class="help-block">{$customfield.description}</span>{/if}
+                                        {else}
+                                            <label class="control-label {if $customfield.required} label-required{/if}" for="customfield{$customfield.id}">{$customfield.name}{if !$customfield.required} ({$LANG.orderForm.optional}){/if}</label>
+                                            {if $customfield.type == "link"}
+                                            <div class="input-group">
+                                                {$customfield.input|replace:"<a":"<a class='input-group-addon'"|replace:"www":"<i class='ls ls-chain'></i>"}
+                                            </div>
+                                            {else}
+                                                {$customfield.input} 
+                                            {/if}
+                                            {if $customfield.description}<span class="help-block">{$customfield.description}</span>{/if}
+                                        {/if}
+                                    </div>
+                                </div>
+                                {if $customfield@iteration % 2 == 0}
+                                    </div>
+                                    <div class="row">
+                                {/if}
+                            {/foreach}
+                        {/if}
                         {if $currencies}
                             <div class="col-md-6">
                                 <div class="form-group ">
@@ -134,15 +208,16 @@
                                     </label>
                                     <select id="inputCurrency" name="currency" class="form-control">
                                         {foreach from=$currencies item=curr}
-                                            <option value="{$curr.id}"{if $curr.default } selected="selected"{/if}>{$curr.code}</option>
+                                            <option value="{$curr.id}"{if !$smarty.post.currency && $curr.default || $smarty.post.currency eq $curr.id } selected{/if}>{$curr.code}</option>
                                         {/foreach}
                                     </select>
                                 </div>
                             </div>
                         {/if}
-                    </div>  
-                </div>  
+                    </div>
+                </div>
             </div>
+            {/if}
         </div>
         <div class="section section-sm{if $remote_auth_prelinked && !$securityquestions } hidden{/if}" id="containerNewUserSecurity">
             <h5 class="section-title">{$LANG.orderForm.accountSecurity}</h5>
@@ -235,7 +310,7 @@
         {include file="$template/includes/captcha.tpl"}
         <div class="form-actions">
             {* <input class="btn btn-lg btn-primary btn-block {$captcha->getButtonClass($captchaForm)}" type="submit" value="{$LANG.clientregistertitle}"/> *}
-            <button type="submit" class="btn btn-lg btn-primary btn-block btn-package {$captcha->getButtonClass($captchaForm)}">
+            <button type="submit" class="btn btn-lg btn-primary btn-block {$captcha->getButtonClass($captchaForm)}">
                 <span class="btn-text">
                     {$LANG.clientregistertitle}
                 </span>
@@ -245,6 +320,5 @@
             </button>
         </div>
     </form>
-    {/if}
-    
-{/if}
+    {/if}    
+{/if}    
