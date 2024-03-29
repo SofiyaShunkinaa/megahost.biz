@@ -26,3 +26,10 @@ All notable changes to this project will be documented in this file.
 ### v1.0.4 (28.02.2024)
 - added overwrites login in templates/lagom2/includes/login dir
 - added overwrites register-form in templates/lagom2/includes/login dir
+- added extra custom variables to templates/lagom2/core/styles/default/assets/css/vars/colors/default.css
+
+### v1.0.5 (29.02.2024)
+- copied custom variables to templates/lagom2/core/styles/default/assets/css/vars/minified.css
+- added categories and articles in manager to knowledge base
+- changed knowledge base page: deleted icons
+- added styles for knowledge base page
