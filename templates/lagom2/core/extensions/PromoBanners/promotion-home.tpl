@@ -1,13 +1,5 @@
-{if ($language == 'english')}
-    {assign var=home value=['title'=>'Fast <b>VPS</b> servers with NVMe SSD disks']}
-    {$LANG.home_subtitle="Free administration and trail period"}
-    {$LANG.home_action="Choose a Service"}
-{else}
-    {assign var=home value=['title'=>'Быстрые <b>VPS</b> сервера с NVMe SSD дисками']}
-    {$LANG.home_subtitle="Бесплатное администрирование и тестовый период"}
-    {$LANG.home_action="Выбрать услугу"}
-{/if}
 {assign var=sliderCounter value=false}
+
 {foreach from=$homepage->getPromotionBanner() item=slide key=k name=slideLoop}
     {if ($slide->slide_begin_time <= $smarty.now && $slide->slide_end_time >= $smarty.now) || ($slide->slide_begin_time eq 0 && $slide->slide_end_time eq 0) || ($slide->slide_begin_time <= $smarty.now && !$slide->slide_end_time)}
         {if $slide->slide_options.promotion['homepage'] eq '1' && $slide->slide_show eq '1'}
@@ -41,7 +33,7 @@
     </style>
     <div data-promo-slider {if $autoslideBannerDisable} class="autoPromoDisable"{/if}>
         <div class="site-banner site-slider site-slider-custom banner banner-sides">
-            <div class="container container-top--hompage">
+            <div class="container">
                 <div class="slider-wrapper">
                     <div class="slider-slides" data-promo-slider-wrapper>
                         {foreach from=$homepage->getPromotionBanner() item=slide key=key_slide}
@@ -51,26 +43,24 @@
                                     
                                     <div class="banner-content" data-animation-content>
                                         {if strlen($slide->getField('slide_title_home',$activeLocale.language)) > 0}
-                                            <h1 class="banner-title home-title" {if $slide->slide_options['config']['banner_style_active'] && $slide->slide_options['config']['color_title']}style="color: {$slide->slide_options['config']['color_title']};"{/if}>
-                                                {$home.title}
+                                            <h1 class="banner-title" {if $slide->slide_options['config']['banner_style_active'] && $slide->slide_options['config']['color_title']}style="color: {$slide->slide_options['config']['color_title']};"{/if}>
+                                                {$slide->getField('slide_title_home',$activeLocale.language)|unescape:'html'}
                                             </h1>
                                         {/if}
                                         {if strlen($slide->getField('slide_description_home' , $activeLocale.language)) > 0}
                                             <div class="banner-desc" {if $slide->slide_options['config']['banner_style_active'] && $slide->slide_options['config']['color_desc']}style="color: {$slide->slide_options['config']['color_desc']};"{/if}>
-                                                <p>{$LANG.home_subtitle}</p>
+                                                <p>{$slide->getField('slide_description_home' , $activeLocale.language)|unescape:'html'}</p>
                                             </div>
                                         {/if}
                                         <div class="banner-actions">
-                                            {*if strlen($slide->getField('slide_text_btn_home' , $activeLocale.language)) > 0}
+                                            {if strlen($slide->getField('slide_text_btn_home' , $activeLocale.language)) > 0}
                                                 <a href="{$slide->slide_product_url_home}"
                                                     class="btn btn-lg btn-primary">{$slide->getField('slide_text_btn_home' , $activeLocale.language)}</a>
                                             {/if}
                                             {if strlen($slide->getField('slide_secondary_button_text' , $activeLocale.language)) > 0}
                                                 <a href="{$slide->slide_secondary_button_url}"
                                                     class="btn btn-lg btn-outline btn-outline-light {if $slide->slide_options['config']['banner_style_active']}btn-light{/if}">{$slide->getField('slide_secondary_button_text' , $activeLocale.language)}</a>
-                                            {/if*}
-                                        <a href="{$systemurl}cart.php?gid={$homepage->productGroup($product.gid)->product->productGroup->id}" class="btn btn-lg btn-primary btn-package" data-target="incoming">{$LANG.home_action}</a>
-
+                                            {/if}
                                         </div>
                                     </div>
                                     {if $slide->slide_options['config']['graphic_type'] neq "background"}
@@ -78,13 +68,19 @@
                                             <div class="banner-graphics {if $slide->slide_options['config']['graphic_type'] eq "custom_icon"} graphics-custom{/if}"">
                                                 <div>
                                                     <div class="banner-graphic {if $slide->slide_options['config']['graphic_type'] eq "custom_icon"} graphic-custom{/if}" style="justify-content: center!important;" data-animation-icons>
-                                                            {if strlen($slide->slide_icon_custom) < 1}
-                                                            {if file_exists("templates/$template/assets/svg-illustrations/products/{$slide->slide_icon}.tpl")}
-                                                                {include file="$template/assets/svg-illustrations/products/{$slide->slide_icon}.tpl"}
+                                                        {if strlen($slide->slide_icon_custom) < 1}
+                                                            {if $RSThemes.styles.name == "modern"}
+                                                                {if file_exists("templates/$template/assets/svg-illustrations/products/modern/{$slide->slide_icon}.tpl")}
+                                                                    {include file="$template/assets/svg-illustrations/products/modern/{$slide->slide_icon}.tpl"}
+                                                                {/if}
+                                                            {else}
+                                                                {if file_exists("templates/$template/assets/svg-illustrations/products/{$slide->slide_icon}.tpl")}
+                                                                    {include file="$template/assets/svg-illustrations/products/{$slide->slide_icon}.tpl"}
+                                                                {/if}
                                                             {/if}
                                                         {else}
                                                             <img style="opacity:0;" class="banner-custom-icon"
-                                                                    src="{$systemurl}/templates/{$template}/core/extensions/PromoBanners/uploads/{$slide->slide_icon_custom}"
+                                                                    src="{$systemurl}templates/{$template}/core/extensions/PromoBanners/uploads/{$slide->slide_icon_custom}"
                                                                     alt="">
                                                         {/if}
                                                     </div>
@@ -117,7 +113,7 @@
                             {/if}
                             {if $slide->slide_icon_custom && $slide->slide_options['config']['graphic_type'] eq "background"}
                                 <img id="slider-slide-{$slide->id}-bg-image"
-                                    src="{$systemurl}/templates/{$template}/core/extensions/PromoBanners/uploads/{$slide->slide_icon_custom}">
+                                    src="{$systemurl}templates/{$template}/core/extensions/PromoBanners/uploads/{$slide->slide_icon_custom}">
                             {/if}
                         </div>
                     {/if}
@@ -139,7 +135,7 @@
                                                 {if strpos($slide->slide_options.config['paginationIcon'], '.') != false}
                                                     <div class="tile-container">
                                                         <img width="64" height="64" class="img-responsive"
-                                                             src="{$systemurl}/templates/{$template}/core/extensions/PromoBanners/uploads/{$slide->slide_options.config['paginationIcon']}"
+                                                             src="{$systemurl}templates/{$template}/core/extensions/PromoBanners/uploads/{$slide->slide_options.config['paginationIcon']}"
                                                              alt="">
                                                     </div>
                                                 {else}
