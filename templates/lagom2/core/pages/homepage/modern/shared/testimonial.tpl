@@ -11,7 +11,6 @@
 
     <div class="testimonials-avatar">
         <img src="templates/{$template}/assets/img/stars/{$testimonial.avatar}" alt="{$testimonial.author}">
-        <span>”</span>
     </div>
 
     <div class="testimonials-desc">
