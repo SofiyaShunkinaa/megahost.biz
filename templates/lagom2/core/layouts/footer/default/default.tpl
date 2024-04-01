@@ -1,30 +1,4 @@
-{assign var=Icons value=[
-    [
-        'alt' => "mc"
-    ],
-    [
-        'alt' => "visa"
-    ],
-    [
-        'alt' => "mir"
-    ],
-    [
-        'alt' => "io"
-    ],
-    [
-        'alt' => "bitcoin"
-    ],
-    [
-        'alt' => "lava"
-    ],
-    [
-        'alt' => "payeer"
-    ],
-    [
-        'alt' => "prime"
-    ]
-]}
-
+    
     {include file="$template/includes/common/layouts-vars.tpl"}
     {if (
             !isset($skipMainBody) || !$skipMainBody
@@ -55,33 +29,10 @@
     {/if}
     {if !isset($skipMainFooter) || (isset($skipMainFooter) && !$skipMainFooter)}
         <div class="main-footer{if $RSThemes['footer-layouts']['vars']['type'] == 'extended'} main-footer-extended main-footer-extended-{$extendedFooterStyle} {/if}{if $RSThemes['footer-layouts']['vars']['footerClass']} {$RSThemes['footer-layouts']['vars']['footerClass']}{/if}{if $hasOverlay} has-overlay{elseif $isCombined} is-combined{/if}">
-            {if $RSThemes['footer-layouts']['vars']['type'] == 'extended'}
+         
             <div class="footer-top">
                 <div class="container">
-                    <div class="footer-company">
-                        <div class="footer-company-intro">
-                            {include file="$template/includes/common/logo.tpl" customClass="footer-company-logo" ignoreMobileVersion="true" footerLogo=true}  
-                            <p class="footer-company-desc">{$rslang->trans('footer_extended.footer_desc')}</p>
-                        </div>
-                        {if $rsFooter.social}
-                            <ul class="footer-company-socials footer-nav footer-nav-h">
-                                {foreach from=$rsFooter.social item=$footerLink}
-                                    <li class="{if $footerLink.style != "icon"}footer-social-wide{/if}">
-                                        <a class="{$footerLink.custom_classes}" href="{$footerLink.url}" {if isset($footerLink.target_blank) && $footerLink.target_blank}target="_blank"{/if}>
-                                            {if isset($footerLink.icon) && $footerLink.icon}
-                                                <i class="{$footerLink.icon}"></i>
-                                            {elseif isset($footerLink.predefined_icon) && $footerLink.predefined_icon}
-                                                {$footerLink.predefined_icon}
-                                            {/if}
-                                            {if isset($footerLink.name) && $footerLink.name}
-                                                <span>{$footerLink.name}</span>
-                                            {/if}
-                                        </a>
-                                    </li>
-                                {/foreach}
-                            </ul>
-                        {/if}
-                    </div>
+                    
                     {if $rsFooter.primary}
                         <div class="footer-site-map">
                             <div class="row">
@@ -135,7 +86,7 @@
             {/if}
             <div class="footer-bottom">
                 <div class="container">
-                    <div class="footer-copyright">{lang key="copyrightFooterNotice" year=$date_year company=$companyname}</div>
+                   
                     {if $rsFooter.secondary}
                         <ul class="footer-nav footer-nav-h">
                             {foreach from=$rsFooter.secondary item=$footerLink}
@@ -168,21 +119,7 @@
                 </div>
             </div>
         </div>
-
-        <div class="footer-icons">
-                        <div class="icons-wrapper">
-                            {foreach from=$Icons item=icon}
-                                <div class="ficon-item">
-                                    <img src="templates/lagom2/assets/img/footer/{$icon.alt}.png" alt={$icon.alt}>
-                                </div>
-                            {/foreach}
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    {/if}
-    
+   
 </div> {* close app main *}    
     {if $RSThemes.addonSettings.show_cookie_box == 'displayed'} 
         <div class="cookie-bar cookie-bar--{$RSThemes.addonSettings.cookie_box_position} {if $RSThemes.addonSettings.cookie_box_position == 'bottom'}container{/if}" data-cookie data-cookie-name="cookie_bar" data-cookie-exp-time="365" data-delay="2000">
