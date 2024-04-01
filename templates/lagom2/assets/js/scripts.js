@@ -20949,16 +20949,14 @@ jQuery(document).ready(function() {
             url = window.location.href;
         }
 
-        var button = jQuery('#login');
-		button.find('.loading').show().end();
         button.attr('disabled', 'disabled').addClass('disabled');
-        //jQuery('.loading', button).show().end();
+        jQuery('.loading', button).show().end();
         jQuery('.login-feedback', form).slideUp();
         WHMCS.http.jqClient.post(
             url,
             form.serialize(),
             function (data) {
-                button.hide().end().removeAttr('disabled');
+                jQuery('.loading', button).hide().end().removeAttr('disabled');
                 jQuery('.login-feedback', form).html('');
                 if (data.error) {
                     jQuery('.login-feedback', form).hide().html(data.error).slideDown();
@@ -21531,7 +21529,7 @@ jQuery(document).ready(function() {
     })
 
 	jQuery('div[menuitemname="Service Details Actions"] a[data-identifier][data-serviceid][data-active="1"]').on('click', function(event) {
-        return customActionAjaxCall(event, jQuery(event.target))
+        return customActionAjaxCall(event, jQuery(event.target)).closest('a');
     });
 
 
@@ -21869,9 +21867,13 @@ function getTicketSuggestions() {
  * Smooth scroll to named element.
  */
 function smoothScroll(element) {
+	$('html').addClass('scroll-smooth-block');
     $('html, body').animate({
         scrollTop: $(element).offset().top
     }, 500);
+	setTimeout(function(){
+		$('html').removeClass('scroll-smooth-block');
+	}, 1000);
 }
 var allowSubmit = false;
 function irtpSubmit() {
@@ -22030,12 +22032,14 @@ var autoCollapse = function (menu, maxHeight) {
  * @returns {boolean}
  */
  function customActionAjaxCall(event, element) {
+    var loadingIcon = jQuery('.loading', element);
+
     event.stopPropagation();
     if (!element.data('active')) {
         return false;
     }
     element.attr('disabled', 'disabled').addClass('disabled');
-    jQuery('.loading', element).show();
+	loadingIcon.show();
     WHMCS.http.jqClient.jsonPost({
         url: WHMCS.utils.getRouteUrl(
             '/clientarea/service/' + element.data('serviceid') + '/custom-action/' + element.data('identifier')
@@ -22054,7 +22058,7 @@ var autoCollapse = function (menu, maxHeight) {
             window.open('clientarea.php?action=productdetails&id=' + element.data('serviceid') + '&customaction_ajax_error=1');
         },
         always: function() {
-            jQuery('.loading', element).hide();
+            loadingIcon.hide();
             element.removeAttr('disabled').removeClass('disabled');
             if (element.hasClass('dropdown-item')) {
                 element.closest('.dropdown-menu').removeClass('show');
@@ -40507,8 +40511,21 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 	}
 	else if ( typeof exports === 'object' ) {
 		// CommonJS
-		var jq = require('jquery');
-		var cjsRequires = function (root, $) {
+
+		module.exports = function (root, $) {
+			if ( ! root ) {
+				// CommonJS environments without a window global must pass a
+				// root. This will give an error otherwise
+				root = window;
+			}
+
+			if ( ! $ ) {
+				$ = typeof window !== 'undefined' ? // jQuery's factory checks for a global window
+					require('jquery') :
+					require('jquery')( root );
+			}
+
+
 
 			if ( ! $ || ! $.fn.dataTable ) {
 				// Require DataTables, which attaches to jQuery, including
@@ -40516,29 +40533,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 				// jQuery object that is used
 				$ = require('datatables.net')(root, $).$;
 			}
-
+			return factory( $, root, root.document );
 		};
-
-		if (typeof window !== 'undefined') {
-			module.exports = function (root, $) {
-				if ( ! root ) {
-					// CommonJS environments without a window global must pass a
-					// root. This will give an error otherwise
-					root = window;
-				}
-
-				if ( ! $ ) {
-					$ = jq( root );
-				}
-
-				cjsRequires( root, $ );
-				return factory( $, root, root.document );
-			};
-		}
-		else {
-			cjsRequires( window, jq );
-			module.exports = factory( jq, window, window.document );
-		}
 	}
 	else {
 		// Browser
@@ -40634,7 +40630,6 @@ DataTable.ext.renderer.pageButton.bootstrap = function ( settings, host, idx, bu
 				}
 
 				if ( btnDisplay ) {
-					var disabled = btnClass.indexOf('disabled') !== -1;
 					
 					node = $('<li>', {
 							'class': classes.sPageButton+' '+btnClass,
@@ -40643,12 +40638,9 @@ DataTable.ext.renderer.pageButton.bootstrap = function ( settings, host, idx, bu
 								null
 						} )
 						.append( $('<a>', {
-								'href': disabled ? null : '#',
+								'href': '#',
 								'aria-controls': settings.sTableId,
-								'aria-disabled': disabled ? 'true' : null,
 								'aria-label': aria[ button ],
-								'aria-role': 'link',
-								'aria-current': btnClass === 'active' ? 'page' : null,
 								'data-dt-idx': counter,
 								'tabindex': settings.iTabIndex,
 								'class': 'page-link'
