@@ -1602,6 +1602,31 @@
     a.list-group-item .list-group-item-heading{
       font-size: 16px;
     }
+
+    .page-viewcart h6.message-title{
+      color: var(--a-bg);
+    }
+
+    .panel-summary-primary{
+      background: var(--a-white);
+      border-radius: 30px;
+    }
+
+    .panel-summary-primary .panel-heading .panel-title{
+      color: var(--a-bg);
+      font-size: 28px;
+      font-weight: 600;
+    }
+
+    .panel-summary-primary .summary-list, .panel-summary-primary .price .price-title, .panel-summary-primary .price .price-total, .panel-summary-primary .price{
+      color: var(--a-bg);
+    }
+
+    .panel-summary-primary .summary-list .list-item.faded{
+      color: var(--a-bg);
+      font-size: 16px;
+      font-weight: 600;
+    }
     
 
   @media (min-width:992px){
