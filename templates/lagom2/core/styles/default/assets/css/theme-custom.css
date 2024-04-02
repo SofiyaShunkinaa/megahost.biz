@@ -235,8 +235,8 @@
   .page-login{
       background-image: url(/templates/lagom2/assets/img/login-bg-lg.png) !important;
       background-color: var(--a-bg) !important;
-      background-position-x: center;
-      background-repeat: no-repeat;
+      background-position-x: center !important;
+      background-repeat: no-repeat !important;
   }
 
   .btn-login, .btn-registeration{
@@ -1627,7 +1627,37 @@
       font-size: 16px;
       font-weight: 600;
     }
+
+    .page-referal-program .main-header-bottom{
+      margin-bottom: 50px;
+    }
+
+    .page-referal-program .banner-content{
+      max-width: 700px;
+    }
+
+    .page-referal-program .main-header__top-banner p{
+      margin-bottom: 60px;
+      color: var(--a-white);
+      font-size: 20px;
+    }
     
+    .lagom-layout-banner .main-header .main-header-bottom .breadcrumb>.active, .main-header-banner .main-header-bottom .breadcrumb>.active{
+      color: var(--a-grey);
+      font-size: 20px;
+    }
+
+    .has-success .form-control{
+      color: var(--brand-success);
+    }
+
+    .page-clientregister .login-footer{
+      display: none;
+    }
+
+    .error-page{
+      background: none;
+    }
 
   @media (min-width:992px){
     .app-main{
