@@ -198,7 +198,7 @@
         'title'=>"VPS сервера с macOS",
         'desc'=>"Пользуйтесь Xcode, и другим ПО от Apple, без ограничений. Устанавливайте любое програмное обеспечение для MacOS и работайте как на обычном Mac.<br>Разрабатывайте ПО под MacOS, iOS, компилируйте ваш код используя <b>Xcode, Xamarin, Visual Studio</b> и другие приложения для macOS.",
         'img'=>"op-card1.png",
-        'key' => 'macOS'
+        'value' => 'macOS'
     ],
     [
         'title'=>"VPS сервера с Windows",
@@ -227,10 +227,10 @@
 ]}
 
 {/if}
+{debug}
 
-
-<div class="main-header">
-    <div class="container">
+<div class="container">
+    <div class="main-header">
         <div class="banner-content">
             {include file="$template/includes/pageheader.tpl" title="$displayTitle {if $product}$product{/if}" desc=$tagline showbreadcrumb=true}
 
@@ -265,6 +265,7 @@
 
     <div class="container-fluid">
         <div class="container-op-cards">
+        
         {foreach from=$OpportunitiesCard item=card}
         {if $card.value==$smarty.get.selected}
             <div class="op-card-item">
