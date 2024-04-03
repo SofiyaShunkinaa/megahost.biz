@@ -44,71 +44,7 @@
                                 <input type="email" name="email" id="inputEmail" value="{$email}" class="form-control{if $loggedin} disabled{/if}"{if $loggedin} disabled="disabled"{/if} />
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="form-group {if $relatedservices}col-md-4{else}col-md-6{/if}">
-                                <label for="inputDepartment">{$LANG.supportticketsdepartment}</label>
-                                <select name="deptid" id="inputDepartment" class="form-control" onchange="refreshCustomFields(this)">
-                                    {foreach from=$departments item=department}
-                                        <option value="{$department.id}"{if $department.id eq $deptid} selected="selected"{/if}>
-                                            {$department.name}
-                                        </option>
-                                    {/foreach}
-                                </select>
-                            </div>
-                            {if $relatedservices}
-                                <div class="form-group col-md-4">
-                                    <label for="inputRelatedService">{$LANG.relatedservice}</label>
-                                    <select name="relatedservice" id="inputRelatedService" class="form-control">
-                                        <option value="">{$LANG.none}</option>
-                                        {foreach from=$relatedservices item=relatedservice}
-                                            {if isset($RSThemes['pages'][$templatefile]) && $RSThemes['pages'][$templatefile]['config']['hideInactiveServices'] == "1" && !empty($RSThemes['pages'][$templatefile]['config']['hideInactiveServicesStatus'])}
-                                                {include file="$template/includes/tickets/hide-inactive-services.tpl" type="related-services"}           
-                                            {/if}
-                                            {if !$hiddeStatus}
-                                                <option value="{$relatedservice.id}" {if $relatedservice.id eq $selectedservice} selected="selected"{/if}>
-                                                    {$relatedservice.name} ({$relatedservice.status})
-                                                </option>
-                                            {/if}
-                                        {/foreach}
-                                    </select>
-                                </div>
-                            {/if}                            
-                            <div class="form-group {if $relatedservices}col-md-4{else}col-md-6{/if}">
-                                {* 
-                                    -- Start of integration code --
-                                    - Integration code for: Premium Support Tickets For WHMCS from ModulesGarden
-                                    - Module URL: https://www.modulesgarden.com/products/whmcs/premium-support-tickets
-                                *}
-                                {if $PremiumSupportTicketsAddonIsActive}
-                                    <label for="inputPriority">{$LANG.supportticketspriority}</label>
-                                    <select name="urgency" id="inputPriority" class="form-control">
-                                        <option value="High"{if $urgency eq "High"} selected="selected"{/if}>
-                                            {$LANG.supportticketsticketurgencyhigh} - {$PremiumSupportTickets.requiredPlusHigh} SCP
-                                        </option>
-                                        <option value="Medium"{if $urgency eq "Medium" || !$urgency} selected="selected"{/if}>
-                                            {$LANG.supportticketsticketurgencymedium} - {$PremiumSupportTickets.requiredPlusNormal} SCP
-                                        </option>
-                                        <option value="Low"{if $urgency eq "Low"} selected="selected"{/if}>
-                                            {$LANG.supportticketsticketurgencylow} - {$PremiumSupportTickets.requiredPlusLow} SCP
-                                        </option>
-                                    </select>                            
-                                {* -- End of integration code -- *}
-                                {else}
-                                    <label for="inputPriority">{$LANG.supportticketspriority}</label>
-                                    <select name="urgency" id="inputPriority" class="form-control">
-                                        <option value="High"{if $urgency eq "High"} selected="selected"{/if}>
-                                            {$LANG.supportticketsticketurgencyhigh}
-                                        </option>
-                                        <option value="Medium"{if $urgency eq "Medium" || !$urgency} selected="selected"{/if}>
-                                            {$LANG.supportticketsticketurgencymedium}
-                                        </option>
-                                        <option value="Low"{if $urgency eq "Low"} selected="selected"{/if}>
-                                            {$LANG.supportticketsticketurgencylow}
-                                        </option>
-                                    </select>
-                                {/if}
-                            </div>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
