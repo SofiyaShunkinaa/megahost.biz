@@ -36,4 +36,7 @@ All notable changes to this project will be documented in this file.
 
 ### v1.0.6 (02.04.2024)
 - added overwrote 404 page: templates/lagom2/error/overwrites/page-not-found.tpl
-- 
+
+### v1.0.7 (03.04.2024)
+- rewrote knowledgebase and knowledgebasecat pages at templates/lagom2 dir
+- rewrote contact page at templates/lagom2 dir
