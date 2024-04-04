@@ -40,3 +40,7 @@ All notable changes to this project will be documented in this file.
 ### v1.0.7 (03.04.2024)
 - rewrote knowledgebase and knowledgebasecat pages at templates/lagom2 dir
 - rewrote contact page at templates/lagom2 dir
+
+### v1.0.8 (04.04.2024)
+- added product groups in manager 
+- rewrote create ticket page
