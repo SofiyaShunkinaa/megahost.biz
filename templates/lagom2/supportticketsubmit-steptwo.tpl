@@ -3,11 +3,13 @@
     {$LANG.Ticket.placeholder="Your message..."}
     {$LANG.Ticket.submit="Send message"}
     {$LANG.Ticket.available_formats="(.jpg, .gif, .jpeg, .png up to 8 Mb)"}
+    {$LANG.Ticket.attach_files="Attach files"}
 {else}
     {$LANG.Ticket.title="Тикет"}
     {$LANG.Ticket.placeholder="Ваше сообщение..."}
     {$LANG.Ticket.submit="Отправить сообщение"}
     {$LANG.Ticket.available_formats="(.jpg, .gif, .jpeg, .png до 8 МБ)"}
+    {$LANG.Ticket.attach_files="Прикрепить файлы"}
 {/if}
 
 {if isset($RSThemes['pages'][$templatefile]) && file_exists($RSThemes['pages'][$templatefile]['fullPath'])}
@@ -58,6 +60,17 @@
                                 <label for="inputEmail">{$LANG.supportticketsclientemail}</label>
                                 <input type="email" name="email" id="inputEmail" value="{$email}" class="form-control{if $loggedin} disabled{/if}"{if $loggedin} disabled="disabled"{/if} />
                             </div>
+
+                            <div class="form-group col-md-12">
+                                <label for="inputDepartment">{$LANG.supportticketsdepartment}</label>
+                                <select name="deptid" id="inputDepartment" class="form-control" onchange="refreshCustomFields(this)">
+                                    {foreach from=$departments item=department}
+                                        <option value="{$department.id}"{if $department.id eq $deptid} selected="selected"{/if}>
+                                            {$department.name}
+                                        </option>
+                                    {/foreach}
+                                </select>
+                            </div>
                         </div>
                     
                         <div class="row">
@@ -71,26 +84,23 @@
                             </div>
                         </div>
 
-                        <div class="row">
-                            <div class="col-md-9">
+                        <div class="row row-files">
+                            <div class="col-md-12">
                                 <div class="file-input form-control form-files">
                                     <input type="file" name="attachments[]" id="inputAttachments" class="form-control" />
                                     <span class="file-input-button btn">
                                         <img src="templates/{$template}/assets/img/clip.png">
-                                        {$rslang->trans('support.select_file')}
+                                        {$LANG.Ticket.attach_files}
                                     </span>
-                                    <span class="file-input-text text-light">{$rslang->trans('support.no_file_selected')}</span>
+                                  
+                                    <span class="file-input-text text-light">
+                            {$LANG.Ticket.available_formats}
+                        </span>
                                 </div>
                                 <div id="fileUploadsContainer"></div>
                             </div>
-                            <div class="col-md-3">
-                                <button type="button" class="btn btn-primary-faded btn-block add-extra-attachement mob-m-t-2x" data-nofiletext="{$rslang->trans('support.no_file_selected')}" data-selectfiletext="{$rslang->trans('support.select_file')}" data-removetext="{$LANG.orderForm.remove}">
-                                    <i class="ls ls-plus"></i>{$LANG.addmore}
-                                </button>
-                            </div>
-                            <p class="ticket-attachments-message">
-                            {$LANG.supportticketsallowedextensions}: {$allowedfiletypes} ({lang key="maxFileSize" fileSize="$uploadMaxFileSize"})
-                        </p>
+                           
+                            
                         </div>
 
                         <div class="row">
@@ -123,3 +133,4 @@
         </script>
     {/if}
 {/if}
+{debug}
