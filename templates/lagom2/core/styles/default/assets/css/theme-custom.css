@@ -1576,9 +1576,12 @@
       max-width: 450px;
     }
 
-    .login-wrapper{
+    .login-wrapper, .panel-ticket{
       background: var(--login-bg-custom);
       border-radius: var(--login-border-radius-custom);
+      border-color: var(--main-border-color);
+      box-shadow: 0px 7px 29px 0px rgba(100, 100, 111, 0.20);
+      backdrop-filter: blur(40px);
     }
 
     .search-box-secondary .form-control, .search-box-secondary .form-control{
@@ -1709,6 +1712,87 @@
 
     .page-contact textarea.form-control{
       border-radius: 16px;
+    }
+
+    label{
+      color: var(--a-white);
+      font-size:12px;
+      line-height: normal;
+      margin-bottom: 8px;
+    }
+
+    .section-ticket{
+      max-width: 450px;
+      margin: 0 auto;
+    }
+
+    .page-supportticketsubmit-steptwo .panel-body{
+      padding: 32px;
+    }
+
+    .page-supportticketsubmit-steptwo .form-control{
+      border-color: var(--a-white);
+      align-items: center;
+    }
+
+    .page-supportticketsubmit-steptwo .file-input input[type=file], .page-supportticketsubmit-steptwo .file-input-button{
+      padding: 0;
+    }
+
+    .page-supportticketsubmit-steptwo{
+      background-image: url(/templates/lagom2/assets/img/ticket-bg.png);
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .page-supportticketsubmit-steptwo .row-title{
+      justify-content: center;
+      margin-bottom: 0;
+    }
+
+    .page-supportticketsubmit-steptwo .row-title h2{
+      margin-bottom: 32px;
+    }
+
+    .md-editor>.md-header, .md-editor .md-footer{
+      display: none;
+    }
+
+    .md-editor>textarea.markdown-editor{
+      border: none !important;
+    }
+
+    .md-editor{
+      border-radius: 16px;
+      border-color: var(--a-white);
+    }
+
+    .md-editor>textarea.markdown-editor{
+      padding: 16px;
+    }
+
+    .form-files{
+      border: none;
+      width: fit-content;
+    }
+
+    .file-input:hover{
+      border: none;
+    }
+
+    .file-input:hover .file-input-button{
+      border-color: transparent;
+      color: var(--a-white);
+      background: none;
+    }
+
+    .file-input-button{
+      gap: 8px;
+    }
+
+    .ticket-attachments-message{
+      font-size: 12px;
+      color: var(--a-grey);
     }
 
   @media (min-width:992px){
