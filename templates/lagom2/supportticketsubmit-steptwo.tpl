@@ -1,3 +1,15 @@
+{if ($language == 'english')} 
+    {$LANG.Ticket.title="Ticket"}
+    {$LANG.Ticket.placeholder="Your message..."}
+    {$LANG.Ticket.submit="Send message"}
+    {$LANG.Ticket.available_formats="(.jpg, .gif, .jpeg, .png up to 8 Mb)"}
+{else}
+    {$LANG.Ticket.title="Тикет"}
+    {$LANG.Ticket.placeholder="Ваше сообщение..."}
+    {$LANG.Ticket.submit="Отправить сообщение"}
+    {$LANG.Ticket.available_formats="(.jpg, .gif, .jpeg, .png до 8 МБ)"}
+{/if}
+
 {if isset($RSThemes['pages'][$templatefile]) && file_exists($RSThemes['pages'][$templatefile]['fullPath'])}
     {include file=$RSThemes['pages'][$templatefile]['fullPath']}
 {else}
@@ -27,35 +39,27 @@
     {/if}
     {* -- End of integration code -- *}
     <form method="post" action="{$smarty.server.PHP_SELF}?step=3" enctype="multipart/form-data" role="form">
-        <div class="section">
+        <div class="section section-ticket">
             <div class="section-header">
                 <h2 class="section-title">{$LANG.ticketinfo}</h2>
             </div>
             <div class="section-body">
-                <div class="panel panel-default panel-form">
+                <div class="panel panel-default panel-form panel-ticket">
                     <div class="panel-body">
+                        <div class="row row-title">
+                        <h2>{$LANG.Ticket.title}</h2>
+                        </div>
                         <div class="row">
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-md-12">
                                 <label for="inputName">{$LANG.supportticketsclientname}</label>
                                 <input type="text" name="name" id="inputName" value="{if $loggedin}{$clientsdetails.fullname}{else}{$name}{/if}" class="form-control{if $loggedin} disabled{/if}"{if $loggedin} disabled="disabled"{/if} />
                             </div>
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-md-12">
                                 <label for="inputEmail">{$LANG.supportticketsclientemail}</label>
                                 <input type="email" name="email" id="inputEmail" value="{$email}" class="form-control{if $loggedin} disabled{/if}"{if $loggedin} disabled="disabled"{/if} />
                             </div>
                         </div>
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="section">
-            <div class="section-header">
-                <h2 class="section-title">{$LANG.contactmessage}</h2>
-            </div>
-            <div class="section-body">
-                <div class="panel panel-default panel-form">
-                    <div class="panel-body">
+                    
                         <div class="row">
                             <div class="form-group col-md-12">
                                 <label for="inputSubject">{$LANG.supportticketsticketsubject}</label>
@@ -63,25 +67,16 @@
                             </div>
                             <div class="form-group col-md-12">
                                 <label for="inputMessage">{$LANG.contactmessage}</label>
-                                <textarea name="message" id="inputMessage" rows="12" class="form-control markdown-editor" data-auto-save-name="client_ticket_open">{$message}</textarea>
+                                <textarea name="message" id="inputMessage" rows="12" class="form-control markdown-editor" data-auto-save-name="client_ticket_open" placeholder="{$LANG.Ticket.placeholder}">{$message}</textarea>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="section">
-            <div class="section-header">
-                <h2 class="section-title">{$LANG.supportticketsticketattachments}</h2>
-            </div>
-            <div class="section-body">
-                <div class="panel panel-default panel-form">
-                    <div class="panel-body">
+
                         <div class="row">
                             <div class="col-md-9">
-                                <div class="file-input form-control">
+                                <div class="file-input form-control form-files">
                                     <input type="file" name="attachments[]" id="inputAttachments" class="form-control" />
-                                    <span class="file-input-button btn btn-default">
+                                    <span class="file-input-button btn">
+                                        <img src="templates/{$template}/assets/img/clip.png">
                                         {$rslang->trans('support.select_file')}
                                     </span>
                                     <span class="file-input-text text-light">{$rslang->trans('support.no_file_selected')}</span>
@@ -93,14 +88,23 @@
                                     <i class="ls ls-plus"></i>{$LANG.addmore}
                                 </button>
                             </div>
-                        </div>
-                        <p class="ticket-attachments-message">
+                            <p class="ticket-attachments-message">
                             {$LANG.supportticketsallowedextensions}: {$allowedfiletypes} ({lang key="maxFileSize" fileSize="$uploadMaxFileSize"})
                         </p>
+                        </div>
+
+                        <div class="row">
+                        <div class="form-actions">
+            <input type="submit" id="openTicketSubmit" value="{$LANG.Ticket.submit}" class="btn btn-lg btn-primary disable-on-click{$captcha->getButtonClass($captchaForm)}" />
+            
+        </div>
+                        
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+        
         {if isset($sensitiveDataEnabled) && $sensitiveDataEnabled}
             {include file="$template/core/extensions/SensitiveDataManager/sensitive_data_ticket_open.tpl"}
         {/if}
@@ -108,15 +112,8 @@
             {include file="$template/supportticketsubmit-customfields.tpl"}
         </div>
         <div id="autoAnswerSuggestions" class="m-t-4x"></div>
-         {if $captcha->isEnabled()}    
-            <div class="login-captcha">
-                {include file="$template/includes/captcha.tpl"}
-            </div>
-        {/if}
-        <div class="form-actions">
-            <input type="submit" id="openTicketSubmit" value="{$LANG.supportticketsticketsubmit}" class="btn btn-lg btn-primary disable-on-click{$captcha->getButtonClass($captchaForm)}" />
-            <a href="supporttickets.php" class="btn btn-lg btn-default">{$LANG.cancel}</a>
-        </div>
+         
+        
     </form>
     {if $kbsuggestions}
         <script>
