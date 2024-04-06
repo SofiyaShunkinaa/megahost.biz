@@ -51,3 +51,4 @@ All notable changes to this project will be documented in this file.
 
 ### v1.0.10 (06.04.2024)
 - added styles for mobile main menu
+- fixed secondary footer icons
