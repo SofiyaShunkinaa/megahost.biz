@@ -44,3 +44,10 @@ All notable changes to this project will be documented in this file.
 ### v1.0.8 (04.04.2024)
 - added product groups in manager 
 - rewrote create ticket page
+
+### v1.0.9 (05.04.2024)
+- added custom classes in manager to adaptive secondary menu items
+- added extra items to main menu to adaptive it
+
+### v1.0.10 (06.04.2024)
+- added styles for mobile main menu
