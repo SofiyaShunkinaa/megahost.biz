@@ -1809,6 +1809,10 @@
       margin-bottom: 32px;
     }
 
+    .btn-xs{
+      border-radius: 80px;
+    }
+
   @media (min-width:992px){
     .app-main{
       padding-top: 120px;
@@ -2237,6 +2241,11 @@
       color: white;
       font-weight: 400;
     }
+
+    .app-nav-header .logo img{
+      display: none;
+    }
+
   }
   
   @media (max-width:768px) {
@@ -2312,6 +2321,10 @@
       h3{
         font-size: 20px;
       }
+      
+    .banner-actions .btn{
+      flex: 1;
+    }
   }
   
   @media (max-width:480px) {
