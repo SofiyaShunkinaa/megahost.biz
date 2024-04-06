@@ -1859,6 +1859,79 @@
       background: transparent;
     }    
 
+    .footer-secondary-icon{
+      height: 32px;
+    }
+
+    .footer-icon-logo{
+      background-image: url(/templates/lagom2/assets/img/logo/logo_big.1682930290.svg);
+      height: 40px;
+      width: 100%;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+    .main-footer .footer-nav-h{
+      width: 100%;
+      gap: 32px;
+    }
+
+    .main-footer .footer-nav-h li:first-of-type{
+      flex: 1;
+    }
+
+    .icon-mc{
+      background-image: url(/templates/lagom2/assets/img/footer/mc.png);
+      width: 41.143px;
+    }
+
+    .icon-visa{
+      background-image: url(/templates/lagom2/assets/img/footer/visa.png);
+      width: 80.342px;
+    }
+
+    .icon-bitcoin{
+      background-image: url(/templates/lagom2/assets/img/footer/bitcoin.png);
+      width: 108.368px;
+    }
+
+    .icon-io{
+      background-image: url(/templates/lagom2/assets/img/footer/io.png);
+      width: 34px;
+    }
+
+    .icon-lava{
+      background-image: url(/templates/lagom2/assets/img/footer/lava.png);
+      width: 24px;
+    }
+
+    .icon-mir{
+      background-image: url(/templates/lagom2/assets/img/footer/mir.png);
+      width: 84.711px;
+    }
+
+    .icon-payeer{
+      background-image: url(/templates/lagom2/assets/img/footer/payeer.png);
+      width: 97.894px
+    }
+
+    .icon-prime{
+      background-image: url(/templates/lagom2/assets/img/footer/prime.png);
+      width: 103.285px;
+    }
+
+    .main-footer .footer-nav-h>li>a.footer-secondary-icon{
+      height: 24px;
+      background-repeat: no-repeat;
+      padding: 0;
+      filter: grayscale(100%);
+      background-size: contain;
+    }
+
+    .main-footer .footer-nav-h>li>a.footer-secondary-icon:hover{
+      filter: grayscale(0%);
+    }
+
   @media (min-width:992px){
     .app-main{
       padding-top: 120px;
@@ -1877,7 +1950,7 @@
       max-width: 1290px;
     }
   
-    .lagom-layout-top .app-nav-menu .menu>li:nth-child(7){
+    .lagom-layout-top .app-nav-menu .menu>li:nth-child(9){
       justify-self: flex-end;
     }
   
@@ -1886,7 +1959,7 @@
       margin-left: 0;
     }
 
-    .app-nav-menu ul.menu-primary li:nth-of-type(7){
+    .app-nav-menu ul.menu-primary li:nth-of-type(9){
       flex-grow: 2;
     }
 
