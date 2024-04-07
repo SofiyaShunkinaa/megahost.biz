@@ -1932,6 +1932,34 @@
       filter: grayscale(0%);
     }
 
+    .main-footer .footer-nav>li>a{
+      font-size: 20px;
+      font-weight: 400;
+      padding: 10px 0;
+      color: #adadad;
+    }
+
+    .main-footer .footer-bottom{
+      border: none;
+    }
+
+    .main-footer .footer-bottom>.container{
+      justify-content: center;
+    }
+
+    .footer-site-map{
+      padding-bottom: 50px;
+      border-bottom: 1px solid #575757;
+    }
+
+    .main-footer .footer-nav>li>a>i.fa-telegram-plane{
+      font-size: 27px;
+    }
+
+    .main-footer .footer-nav>li>a:hover>i.fa-telegram-plane{
+      color: #039BE5;
+    }
+
   @media (min-width:992px){
     .app-main{
       padding-top: 120px;
