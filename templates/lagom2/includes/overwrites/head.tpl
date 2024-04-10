@@ -1,6 +1,3 @@
-{if file_exists("templates/$template/includes/overwrites/head.tpl")}
-    {include file="{$template}/includes/overwrites/head.tpl"}
-{else}
     {* Favicon *}
     {if isset($RSThemes.faviconDir) && $RSThemes.faviconDir}
         <link rel="shortcut icon" href="{$WEB_ROOT}{$RSThemes.faviconDir}/favicon.ico">
@@ -89,6 +86,8 @@
     <script {if isset($activeDisplay) && $activeDisplay == 'CMS' && $pageType == "website"}defer{/if} src="{$WEB_ROOT}/templates/{$template}/assets/js/scripts.min.js?v={$RSThemes['templateVersion']}"></script>
     <script {if isset($activeDisplay) && $activeDisplay == 'CMS' && $pageType == "website"}defer{/if} src="{$WEB_ROOT}/templates/{$template}/assets/js/core.min.js?v={$RSThemes['templateVersion']}"></script>
 
+    
+    
     {* Custom Head *}
     {if file_exists("templates/$template/core/layouts/{$RSThemes.layouts.name}/head.tpl")}
         {include file="{$template}/core/layouts/{$RSThemes.layouts.name}/head.tpl"}
@@ -98,4 +97,3 @@
     {if $templatefile == "viewticket" && !$loggedin}
         <meta name="robots" content="noindex" />
     {/if}
-{/if}
