@@ -98,7 +98,7 @@
       margin: 0 16px;
       width: auto;
   }
-  .container-faq h2{ color: var(--a-bg); margin-left: 0px; text-align: left;}
+  .container-faq h2{ color: var(--a-bg); margin-left: 0px !important; text-align: left !important;}
   .container-products{background-image: url(/templates/lagom2/assets/img/package-bg.svg); background-position-x: right; background-repeat: no-repeat;}
   .pck-price__item--secondary{
       color: var(--a-white);
@@ -127,7 +127,7 @@
       list-style: none;
       display: flex;
       justify-content: space-between;
-      line-height: 40px;
+      line-height: normal;
   }
   .section-questions b{ color: var(--a-blue) !important; font-weight: 600;}
   
@@ -642,6 +642,7 @@
   
     .summary__title{
       margin-left: 8px;
+      width: fit-content;
     }
   
     .art-item{
@@ -1960,6 +1961,29 @@
       color: #039BE5;
     }
 
+    .package{
+      border-radius: 50px;
+      border: 1px solid #B96FCE;
+      background: rgba(0, 0, 0, 0.70);
+      box-shadow: 0px 7px 29px 0px rgba(100, 100, 111, 0.20);
+      backdrop-filter: blur(12px);
+    }
+
+    .page-homepage .container-faq{
+      margin: 0;
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    .summary-icon{
+      height: 48px;
+      width: 48px;
+    }
+
+    .summary-icon img{
+      width: 100%;
+    }
+
   @media (min-width:992px){
     .app-main{
       padding-top: 120px;
@@ -2313,6 +2337,12 @@
         padding-left: 50px;
         padding-right: 50px;
       }
+
+      .summary-icon{
+        height: 40px;
+        width: 40px;
+      }
+  
   }
   
   @media (max-width: 991.98px){
@@ -2505,6 +2535,10 @@
     .banner-actions .btn{
       flex: 1;
     }
+
+    .section-questions summary{
+      padding: 16px;
+    }
   }
   
   @media (max-width:480px) {
@@ -2544,6 +2578,30 @@
         flex: 1;
         width: 100%;
       }
+
+      .site .site-section .container-faq .section-title{
+        font-size: 28px;
+      }
+
+      .section-questions summary{
+        font-size: 16px;
+      }
+
+      .summary-icon{
+        height: 28px;
+        width: 28px;
+      }
+  
+  }
+
+  @media (max-width:360px){
+    .site .site-section .container-faq .section-title{
+      font-size: 22px;
+    }
+
+    .section-questions summary{
+      font-size: 14px;
+    }
   }
   
   @media (min-width:1680px) {
