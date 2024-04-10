@@ -56,3 +56,7 @@ All notable changes to this project will be documented in this file.
 ### v1.0.11 (08.04.2024)
 - added all items to primary footer
 - added typography styles for primary footer
+
+### v1.0.12 (10.04.2024)
+- added overwrote head
+- added tooltip script custom file
