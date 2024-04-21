@@ -28,7 +28,6 @@
     {$LANG.clientAreaHome.News.Title = "News"}
 
 {/if}
-{debug}
 
 <h2 class="container section-title clientarea-title">{$LANG.clientAreaHome.Title}</h2>
 <div class="container container-clientarea">
@@ -63,12 +62,12 @@
 </div>
 <div class="clientarea__mainbar">
 
-{if $currentUrl == "/clientarea.php"}
+
 
     {include file="templates/$template/clientareamain.tpl"}
 
-{/if}    
+  
 
 
 </div>
-</div>
+</div>      
