@@ -189,5 +189,11 @@
     {else}
         <script src="{$WEB_ROOT}/templates/{$template}/assets/js/whmcs-custom.min.js?v={$RSThemes['templateVersion']}"></script>
     {/if}
+
+    {* Custom scrpts *}
+    {if file_exists("templates/$template/assets/js/tooltip-custom.js")}
+        <script src="/templates/{$template}/assets/js/tooltip-custom.js"></script>
+    {/if}
+    
 </body>
 </html>
