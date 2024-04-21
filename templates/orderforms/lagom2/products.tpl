@@ -1,4 +1,5 @@
 {if ($language == 'english')}
+    {*-------------VPS variables-----------------*}
     {$LANG.Products.title = "Cloud VPS on NVMe Drives"}
     {$LANG.Products.statistics.desc1 = "Data Centers in"}
     {$LANG.Products.statistics.desc2 = "Over"}
@@ -24,26 +25,95 @@
     {$LANG.Products.list2.5 = "Free Trial Period Up to 3 Days"}
     {$LANG.ordernowbutton = "Add to cart"}
 
-    {assign var=VPSButtonsPeriod value=[
-        [
-            'name' => '1 mo.',
-            'key' => '1mnth'
-        ],
-        [
-            'name' => '3 mo.',
-            'key' => '3mnth'
-        ],
-        [
-            'name' => '6 mo.',
-            'key' => '6mnth'
-        ],
-        [
-            'name' => '1 year',
-            'key' => '1year'
-        ]
-    ]}
+    {*-------------VPN Server variables-----------------*}
+    {$LANG.VPNServer.title = "VPN Server"}
+    {$LANG.VPNServer.statistics.desc1 = "Data Centers in"}
+    {$LANG.VPNServer.statistics.desc2 = "Protocols"}
+    {$LANG.VPNServer.statistics.sub1 = "  countries"}
+    {$LANG.VPNServer.statistics.sub2 = "OpenVPN, PPTP, L2TP/IPsec, WireGuard, Socks 5 Proxy"}
+    {$LANG.VPNServer.grid.title = "Tariff Plans"}
+    {$LANG.VPNServer.list.title = "Included in Each Plan"}
+
+    {$LANG.VPNServer.list1.1 = "Compatibility with Windows, Linux, macOS, iOS, Android, routers, smart TVs, and other devices"}
+    {$LANG.VPNServer.list1.2 = "No Logs"}
+
+    {$LANG.VPNServer.list2.1 = "Protocols: OpenVPN, PPTP, L2TP/IPsec, WireGuard, Socks 5 Proxy"}
+    {$LANG.VPNServer.list2.2 = "Dedicated IPv4 addresses, option to add IPv6 addresses for free"}
+
+    {$LANG.package_buy="Buy in One Click"}
+    {$LANG.speedtest="Speed test"}
+
+    {$LANG.Speedtest.Title="VPN speed test"}
+    {$LANG.Speedtest.Button="Stop test"}
+
+    {*-------------Dedicated servers-----------------*}
+    {$LANG.DServer.title = "Dedicated Servers"}
+    {$LANG.DServer.statistics.desc1 = "Data Centers in"}
+    {$LANG.DServer.statistics.desc2 = "Protocols"}
+    {$LANG.DServer.statistics.desc3 = "Traffic"}
+    {$LANG.DServer.statistics.sub1 = "  countries"}
+    {$LANG.DServer.statistics.sub2 = " tariff plans"}
+    {$LANG.DServer.statistics.sub3 = " Unlimited"}
+    {$LANG.DServer.grid.title = "Tariff Plans"}
+    {$LANG.DServer.list.title = "Included in Each Plan"}
+
+    {$LANG.DServer.list1.1 = "Compatibility with Windows, Linux, macOS, iOS, Android, routers, smart TVs, and other devices"}
+    {$LANG.DServer.list1.2 = "No Logs"}
+
+    {$LANG.DServer.list2.1 = "Protocols: OpenVPN, PPTP, L2TP/IPsec, WireGuard, Socks 5 Proxy"}
+    {$LANG.DServer.list2.2 = "Dedicated IPv4 addresses, option to add IPv6 addresses for free"}
+
+    {$LANG.package_buy="Buy in One Click"}
+
+    {*-------------Virtual hosting-----------------*}
+    {$LANG.VHosting.title = "Virtual Hosting"}
+    {$LANG.VHosting.statistics.desc1 = "Support for Popular CMS"}
+
+    {$LANG.VHosting.statistics.sub1 = "Wordpress, Joomla, Drupal, Bitrix, Tilda, OpenCart"}
+
+    {$LANG.VHosting.grid.title = "Tariff Plans"}
+    {$LANG.VHosting.list.title = "Included in Each Plan"}
+
+    {$LANG.VHosting.list1.1 = "Free SSL Certificate"}
+    {$LANG.VHosting.list1.2 = "PHP 5.6–8.1, Perl 5.3, Cron"}
+    {$LANG.VHosting.list1.3 = "NVMe SSD Drives"}
+    {$LANG.VHosting.list1.4 = "Ioncube Loader"}
+    {$LANG.VHosting.list1.5 = "POP3, IMAP, SMTP"}
+
+    {$LANG.VHosting.list2.1 = "Option to Add IPv6 Addresses for Free"}
+    {$LANG.VHosting.list2.2 = "ImageMagick"}
+    {$LANG.VHosting.list2.3 = "FTP, SFTP Access"}
+    {$LANG.VHosting.list2.4 = "phpMyAdmin, Webmail"}
+    {$LANG.VHosting.list2.5 = "7 Days Trial Mode"}
+    {$LANG.VHosting.list2.6 = "Free Assistance with Migration of Your Projects"}
+
+    {*-------------Budget IPv6 VPS-----------------*}
+    {$LANG.BudgetIpv.title = "Budget IPv6 VPS"}
+    {$LANG.BudgetIpv.statistics.desc1 = "Locations"}
+    {$LANG.BudgetIpv.statistics.desc2 = "Protection"}
+
+    {$LANG.BudgetIpv.statistics.sub1 = " countries"}
+    {$LANG.BudgetIpv.statistics.sub2 = "from DDoS attacks"}
+
+    {$LANG.BudgetIpv.grid.title = "Tariff Plans"}
+    {$LANG.BudgetIpv.list.title = "Included in Each Plan"}
+
+    {$LANG.BudgetIpv.list1.1 = "Free SSL Certificate"}
+    {$LANG.BudgetIpv.list1.2 = "PHP 5.6–8.1, Perl 5.3, Cron"}
+    {$LANG.BudgetIpv.list1.3 = "NVMe SSD Drives"}
+    {$LANG.BudgetIpv.list1.4 = "Ioncube Loader"}
+    {$LANG.BudgetIpv.list1.5 = "POP3, IMAP, SMTP"}
+
+    {$LANG.BudgetIpv.list2.1 = "Support for Popular CMS: Wordpress, Joomla, Drupal, Bitrix, Tilda, OpenCart, etc."}
+    {$LANG.BudgetIpv.list2.2 = "Free Trial Period Up to 7 Days"}
+    {$LANG.BudgetIpv.list2.3 = "Discounts for Payments of 3 Months or More"}
+    {$LANG.BudgetIpv.list2.4 = "phpMyAdmin, Webmail"}
+    {$LANG.BudgetIpv.list2.5 = "ImageMagick"}
+    {$LANG.BudgetIpv.list2.6 = "FTP, SFTP Access"}
+
 
 {else}
+    {*-------------VPS variables RU-----------------*}
     {$LANG.Products.title = "Облачные VPS на NVME дисках"}
     {$LANG.Products.statistics.desc1 = "Дата-центры в"}
     {$LANG.Products.statistics.desc2 = "Более"}
@@ -69,50 +139,103 @@
 
     {$LANG.package_buy="Купить в один клик"}
 
-    {assign var=VPSButtonsPeriod value=[
-    [
-        'name' => '1 мес.',
-        'key' => '1mnth'
-    ],
-    [
-        'name' => '3 мес.',
-        'key' => '3mnth'
-    ],
-    [
-        'name' => '6 мес.',
-        'key' => '6mnth'
-    ],
-    [
-        'name' => '1 год',
-        'key' => '1year'
-    ]
-]}
+    {*-------------VPN server variables RU-----------------*}
+    {$LANG.VPNServer.title = "Сервер VPN"}
+    {$LANG.VPNServer.statistics.desc1 = "Дата-центры в"}
+    {$LANG.VPNServer.statistics.desc2 = "Протоколы"}
+    {$LANG.VPNServer.statistics.sub1 = "  странах"}
+    {$LANG.VPNServer.statistics.sub2 = "OpenVPN, PPTP, L2TP/IPsec, WireGuard, Socks 5 прокси"}
+    {$LANG.VPNServer.grid.title = "Тарифные планы"}
+    {$LANG.VPNServer.list.title = "В каждый план включено"}
+
+    {$LANG.VPNServer.list1.1 = "Совместимость с Windows, Linux, macOS, iOS, Android, роутерами, smart TV и другим устройствами "}
+    {$LANG.VPNServer.list1.2 = "Отсутствие логов"}
+
+    {$LANG.VPNServer.list2.1 = "Протоколы OpenVPN, PPTP, L2TP/IPsec, WireGuard, Socks 5 прокси"}
+    {$LANG.VPNServer.list2.2 = "Выделенные IPv4 адреса, возможность бесплатно добавить IPv6 адреса"}
+
+    {$LANG.package_buy="Купить в один клик"}
+    {$LANG.speedtest="Проверить скорость"}
+
+    {$LANG.Speedtest.Title="Тест скорости VPN"}
+    {$LANG.Speedtest.Button="Завершить тест"}
+
+    {*-------------Dedicated servers-----------------*}
+    {$LANG.DServer.title = "Выделенные сервера"}
+    {$LANG.DServer.statistics.desc1 = "Дата-центры в"}
+    {$LANG.DServer.statistics.desc2 = "Протоколы"}
+    {$LANG.DServer.statistics.desc3 = "Трафик"}
+    {$LANG.DServer.statistics.sub1 = "  странах"}
+    {$LANG.DServer.statistics.sub2 = " тарифных планов"}
+    {$LANG.DServer.statistics.sub3 = " Безлимитный"}
+    {$LANG.DServer.grid.title = "Тарифные планы"}
+    {$LANG.DServer.list.title = "В каждый план включено"}
+
+    {$LANG.DServer.list1.1 = "Совместимость с Windows, Linux, macOS, iOS, Android, роутерами, smart TV и другим устройствами "}
+    {$LANG.DServer.list1.2 = "Отсутствие логов"}
+
+    {$LANG.DServer.list2.1 = "Протоколы OpenVPN, PPTP, L2TP/IPsec, WireGuard, Socks 5 прокси"}
+    {$LANG.DServer.list2.2 = "Выделенные IPv4 адреса, возможность бесплатно добавить IPv6 адреса"}
+
+    {$LANG.package_buy="Купить в один клик"}
+
+    {*-------------Virtual hosting RU-----------------*}
+    {$LANG.VHosting.title = "Виртуальный хостинг"}
+    {$LANG.VHosting.statistics.desc1 = "Поддержка популярных CMS"}
+
+    {$LANG.VHosting.statistics.sub1 = "Wordpress, Joomla, Drupal, Битрикс, Tilda, OpenCart"}
+
+    {$LANG.VHosting.grid.title = "Тарифные планы"}
+    {$LANG.VHosting.list.title = "В каждый план включено"}
+
+    {$LANG.VHosting.list1.1 = "Бесплатный SSL Сертификат"}
+    {$LANG.VHosting.list1.2 = "PHP 5.6–8.1, Perl 5.3, Cron"}
+    {$LANG.VHosting.list1.3 = "NVMe SSD-диски"}
+    {$LANG.VHosting.list1.4 = "Ioncube loader"}
+    {$LANG.VHosting.list1.5 = "POP3, IMAP, SMTP"}
+
+    {$LANG.VHosting.list2.1 = "Возможность бесплатно добавить IPv6-адреса"}
+    {$LANG.VHosting.list2.2 = "ImageMagick"}
+    {$LANG.VHosting.list2.3 = "FTP, SFTP доступ"}
+    {$LANG.VHosting.list2.4 = "phpMyAdmin, Webmail"}
+    {$LANG.VHosting.list2.5 = "7 дней тестовый режим"}
+    {$LANG.VHosting.list2.6 = "Бесплатно поможем с миграцией ваших проектов"}
+
+    {*-------------Budget IPv6 VPS RU-----------------*}
+    {$LANG.BudgetIpv.title = "Бюджетные IPv6 VPS"}
+    {$LANG.BudgetIpv.statistics.desc1 = "Локации"}
+    {$LANG.BudgetIpv.statistics.desc2 = "Защита"}
+
+    {$LANG.BudgetIpv.statistics.sub1 = " страны"}
+    {$LANG.BudgetIpv.statistics.sub2 = "от DDoS атак"}
+
+    {$LANG.BudgetIpv.grid.title = "Тарифные планы"}
+    {$LANG.BudgetIpv.list.title = "В каждый план включено"}
+
+    {$LANG.BudgetIpv.list1.1 = "Бесплатный SSL Сертификат"}
+    {$LANG.BudgetIpv.list1.2 = "PHP 5.6–8.1, Perl 5.3, Cron"}
+    {$LANG.BudgetIpv.list1.3 = "NVMe SSD-диски"}
+    {$LANG.BudgetIpv.list1.4 = "Ioncube loader"}
+    {$LANG.BudgetIpv.list1.5 = "POP3, IMAP, SMTP"}
+
+    {$LANG.BudgetIpv.list2.1 = "Поддержка популярных CMS: Wordpress, Joomla, Drupal, Битрикс, Tilda, OpenCart и др"}
+    {$LANG.BudgetIpv.list2.2 = "Бесплатный тестовый период до 7 дней"}
+    {$LANG.BudgetIpv.list2.3 = "Скидки при оплате от 3 месяцев"}
+    {$LANG.BudgetIpv.list2.4 = "phpMyAdmin, Webmail"}
+    {$LANG.BudgetIpv.list2.5 = "ImageMagick"}
+    {$LANG.BudgetIpv.list2.6 = "FTP, SFTP доступ"}
+
 
 {/if}
-
-{assign var=ProductsCurrency value=[
-    [
-        'name' => 'USD',
-        'key' => 'usd'
-    ],
-    [
-        'name' => 'RUB',
-        'key' => 'rub'
-    ]
-]}
-
-
-
-
+{debug}
 {if isset($RSThemes['pages'][$templatefile]) && file_exists($RSThemes['pages'][$templatefile]['fullPath'])}
     {include file=$RSThemes['pages'][$templatefile]['fullPath']}
 {else}
     {include file="orderforms/$carttpl/common.tpl"}
+
     <div class="container">
         <div class="main-products-header">
-            <div>
-                {include file="$template/includes/breadcrumb.tpl"}
-            </div>
+        {if $groupname == "VPS в Германии" || $groupname == "VPS в России" || $groupname == "VPS в Канаде" || $groupname == "VPS во Франции"}
             <div class="products-page-title">
                 <h1>{$LANG.Products.title}</h1>
             </div>
@@ -150,16 +273,129 @@
                     </div>
                 </div>
             </div>
+            {elseif $groupname == "VPN в Германии" || $groupname == "VPN в Канаде" || $groupname == "VPN в Нидерландах" || $groupname == "VPN в России" || $groupname == "VPN в США" || $groupname == "VPN во Франции"}
+            <div class="products-page-title">
+                <h1>{$LANG.VPNServer.title}</h1>
+            </div>
+            <div class="products-page-statistics">
+                <div class="pps-item">
+                    <div class="statistics-desc">
+                        <span>{$LANG.VPNServer.statistics.desc1}</span>
+                    </div>
+
+                    <div class="statistics-sub">
+                        <span class="number">6</span>
+                        <span>{$LANG.VPNServer.statistics.sub1}</span>
+                    </div>
+                </div>
+                <div class="pps-item">
+                    <div class="statistics-desc">
+                        <span>{$LANG.VPNServer.statistics.desc2}</span>
+                    </div>
+
+                    <div class="statistics-sub">
+                        <span>{$LANG.VPNServer.statistics.sub2}</span>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+            {elseif $groupname == "Выделенные серверы "}
+            <div class="products-page-title">
+                <h1>{$LANG.DServer.title}</h1>
+            </div>
+            <div class="products-page-statistics">
+                <div class="pps-item">
+                    <div class="statistics-desc">
+                        <span>{$LANG.DServer.statistics.desc1}</span>
+                    </div>
+
+                    <div class="statistics-sub">
+                        <span class="number">6</span>
+                        <span>{$LANG.DServer.statistics.sub1}</span>
+                    </div>
+                </div>
+                <div class="pps-item">
+                    <div class="statistics-desc">
+                        <span>{$LANG.DServer.statistics.desc2}</span>
+                    </div>
+
+                    <div class="statistics-sub">
+                        <span class="number">25</span>
+                        <span>{$LANG.DServer.statistics.sub2}</span>
+                    </div>
+                </div>
+                <div class="pps-item">
+                    <div class="statistics-desc">
+                        <span>{$LANG.DServer.statistics.desc3}</span>
+                    </div>
+
+                    <div class="statistics-sub">
+                        <span>{$LANG.DServer.statistics.sub3}</span>
+                    </div>
+                </div>
+            </div>
+            {elseif $groupname == "Виртуальный хостинг"}
+            <div class="products-page-title">
+                <h1>{$LANG.VHosting.title}</h1>
+            </div>
+            <div class="products-page-statistics">
+                <div class="pps-item">
+                    <div class="statistics-desc">
+                        <span>{$LANG.VHosting.statistics.desc1}</span>
+                    </div>
+
+                    <div class="statistics-sub">
+                        <span>{$LANG.VHosting.statistics.sub1}</span>
+                    </div>
+                </div>
+                               
+            </div>
+            {elseif $groupname == "Бюджетные IPv6 VPS"}
+            <div class="products-page-title">
+                <h1>{$LANG.BudgetIpv.title}</h1>
+            </div>
+            <div class="products-page-statistics">
+                <div class="pps-item">
+                    <div class="statistics-desc">
+                        <span>{$LANG.BudgetIpv.statistics.desc1}</span>
+                    </div>
+
+                    <div class="statistics-sub">
+                        <span class="number">3</span>
+                        <span>{$LANG.BudgetIpv.statistics.sub1}</span>
+                    </div>
+                </div>
+
+                <div class="pps-item">
+                    <div class="statistics-desc">
+                        <span>{$LANG.BudgetIpv.statistics.desc2}</span>
+                    </div>
+
+                    <div class="statistics-sub">
+                        <span>{$LANG.BudgetIpv.statistics.sub2}</span>
+                    </div>
+                </div>           
+            </div>
+            {/if}
         </div>
     </div>
 
-        <div class="container-fluid container-faq">
+<div class="container-fluid container-faq">
             <div class="container">
                 <h2 class="section-title">{$LANG.Products.grid.title}</h2>
                 <div class="main-grid{if $mainGrid} {$mainGrid}{/if}">
-                    
-                    <div class="main-content{if $mainContentClasses} {$mainContentClasses}{/if}">
-                    <div class="main-controls">
+                    {if $RSThemes['pages'][$templatefile]['config']['hideSidebar'] != '1'}
+                        <div class="main-sidebar hidden-xs hidden-sm hidden-md {if $sidebarOnRight || $RSThemes['layouts']['name'] == 'left-nav-wide'} main-sidebar-right {/if}">
+                            {if $RSThemes['addonSettings']['sticky_sidebars'] == "true"}<div class="sidebar-sticky" {if $RSThemes.addonSettings.show_affixed_navigation == 'enabled'}data-sidebar-sticky{/if}>{/if}
+                                {include file="orderforms/$carttpl/sidebar-categories.tpl"}
+                            {if $RSThemes['addonSettings']['sticky_sidebars'] == "true"}</div>{/if}
+                        </div>
+                    {/if}
+        
+            <div class="main-content{if $mainContentClasses} {$mainContentClasses}{/if}">
+            <div class="main-controls">
                         <div class="main-controls--left">
                             {if $RSThemes['pages'][$templatefile]['config']['hideSidebar'] != '1'}
                                 {include file="orderforms/$carttpl/sidebar-categories-collapsed.tpl"}
@@ -193,8 +429,18 @@
                             </div>
                         </div>
                     </div>
-                        {if $products}
-                            <div class="section products" id="products">
+            
+            {if $errormessage}
+                <div class="alert alert-lagom alert-danger">
+                    {$errormessage}
+                </div>
+            {elseif !$productGroup}
+                <div class="alert alert-lagom alert-info">
+                    {lang key='orderForm.selectCategory'}
+                </div>
+            {/if}
+            {if is_array($products)}
+                <div class="section products" id="products">
                                 <div class="row row-eq-height row-eq-height-sm slider-custom">
                                     {assign var=counter value=1}
                                     {assign var=productsCount value=$products|count}
