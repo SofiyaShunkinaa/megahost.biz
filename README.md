@@ -23,10 +23,9 @@ minified.css : lagom2\core\styles\default\assets\css\vars\minified.css
 
 
 STRUCTURE FILES:
-
-homepage.tpl : lagom2\core\pages\homepage\modern\homepage.tpl    //index
-login.tpl : lagom2\login.tpl 
-promotion-home.tpl : lagom2\core\extensions\PromoBanners\promotion-home.tpl   //first banner in homepage
+- homepage.tpl : lagom2\core\pages\homepage\modern\homepage.tpl    //index
+- login.tpl : lagom2\login.tpl 
+- promotion-home.tpl : lagom2\core\extensions\PromoBanners\promotion-home.tpl   //first banner in homepage
 questions.tpl : lagom2\core\pages\homepage\modern\shared\questions.tpl   //pattern for block in homepage
 testimonial.tpl : lagom2\core\pages\homepage\modern\shared\testimonial.tpl   /pattern for block in homepage
 login.tpl : lagom2\includes\login\login.tpl
