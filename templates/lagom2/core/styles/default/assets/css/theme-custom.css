@@ -1,4 +1,4 @@
-.btn-package {background: var(--btn-package-bg); margin-bottom: 8px;} .separator{width: 100%; display: flex; justify-content: center;} .package-price{ display: flex; align-items: end; justify-content: center;} .package h3{color: var(--a-white); width:150px; margin: 0 auto;} .section-garantees h2{ margin: 0 auto; text-align: center;} .page-homepage{background-image: url(/templates/lagom2/assets/img/elipses.svg); background-repeat: no-repeat; background-position-x: 890px; background-position-y: 50px;} .grid-section{ display: grid; grid-template-columns: 37px 70px 327px 30px 100px 33px 30px 440px 66px 22px; grid-template-rows: 227px 270px 30px 242px 26px 271px 55px; margin:0 auto;} .section-garantees .section-title{margin: 0 auto;} .container-products .section-title{color: var(--body-bg); margin-left: 0px; text-align:left;} .section-grid{ display:flex; justify-content: center;} .container-products .package{
+.btn-package {background: var(--btn-package-bg); margin-bottom: 8px;} .separator{width: 100%; display: flex; justify-content: center;} .package-price{ display: flex; align-items: end; justify-content: center; gap: 8px;} .package h3{color: var(--a-white); width:150px; margin: 0 auto;} .section-garantees h2{ margin: 0 auto; text-align: center;} .page-homepage{background-image: url(/templates/lagom2/assets/img/elipses.svg); background-repeat: no-repeat; background-position-x: 890px; background-position-y: 50px;} .grid-section{ display: grid; grid-template-columns: 37px 70px 327px 30px 100px 33px 30px 440px 66px 22px; grid-template-rows: 227px 270px 30px 242px 26px 271px 55px; margin:0 auto;} .section-garantees .section-title{margin: 0 auto;} .container-products .section-title{color: var(--body-bg); margin-left: 0px; text-align:left;} .section-grid{ display:flex; justify-content: center;} .container-products .package{
     margin-bottom: 0px;
   } 
   .grid__item{ border-radius: var(--advantages-border-radius); padding: var(--adv-padding); background-color: var(--advantages-bg); backdrop-filter: var(--advantages-backdrop-filter); border: 1px solid; border-color: var(--main-border-color); display: flex; flex-direction: column; height: 100%;} 
@@ -8,7 +8,14 @@
   
   .menu-primary .btn-primary{ position:relative; background: rgba(9, 9, 9, 0.30);} .item-protection{grid-column: 2 / 7; grid-row: 1 / 3;} .item-support{ grid-column: 8 / 10; grid-row: 2 / 3;} .item-admin{ grid-column: 1 / 6; grid-row: 4 / 5;} .item-transfer{ grid-column: 7 / 11; grid-row: 4 / 5;} .item-test{ grid-column: 3 / 4; grid-row: 6 / 8;} .item-server{ grid-column: 5 / 9; grid-row: 6 / 7;} .item-title{ font-size: 28px; font-weight: 600;} .item-txt{ font-size: 20px; font-weight: 400;} .adv-title{ font-size: var(--adv-title-font-size); color: var(--a-white); font-weight: var(--adv-title-font-weight); margin:0px; width: 550px; margin-bottom: 8px;}
   .section-advantages{ background-image: url(/templates/lagom2/assets/img/advElipses.svg) !important; background-position-x: right; background-repeat: no-repeat;}
-  .grid-section{ display: grid; grid-template-columns: 37px 70px 327px 30px 100px 33px 30px 440px 66px 22px; grid-template-rows: 27px 270px 30px 242px 26px 271px 55px; margin:0 auto;} .section-garantees .section-title{margin: 0 auto;} .container-products .section-title{color: var(--body-bg); margin-left: 0px; text-align:left;} .section-grid{ display:flex; justify-content: center;} .container-products .package{
+  .grid-section{ display: grid; grid-template-columns: 37px 70px 327px 30px 100px 33px 30px 440px 66px 22px; grid-template-rows: 27px 270px 30px 242px 26px 271px 55px; margin:0 auto;} .section-garantees .section-title{margin: 0 auto;} 
+.site .container-products .section-title{
+  color: var(--body-bg); 
+  margin: 0px; 
+  text-align:left;
+} 
+  .section-grid{ display:flex; justify-content: center;} 
+  .container-products .package{
   margin-bottom: 0px;
 } 
 
@@ -99,7 +106,17 @@
       width: auto;
   }
   .container-faq h2{ color: var(--a-bg); margin-left: 0px !important; text-align: left !important;}
-  .container-products{background-image: url(/templates/lagom2/assets/img/package-bg.svg); background-position-x: right; background-repeat: no-repeat;}
+  .container-products{
+    background-image: url(/templates/lagom2/assets/img/package-bg.svg); 
+    background-position-x: right; 
+    background-repeat: no-repeat;
+    background-color: var(--a-white);
+    width: auto;
+    margin: 0 16px;
+    border-radius: 50px;
+    padding-top: 80px;
+    padding-bottom: 100px;
+  }
   .pck-price__item--secondary{
       color: var(--a-white);
       font-size: 16px;
@@ -127,8 +144,13 @@
       list-style: none;
       display: flex;
       justify-content: space-between;
-      line-height: normal;
+      line-height:48px;
   }
+
+  details > summary{
+    list-style-type:none;
+  }
+
   .section-questions b{ color: var(--a-blue) !important; font-weight: 600;}
   
   .section-questions > details{
@@ -266,7 +288,7 @@
     }
   
     .package:hover{
-      background-color: var(--package-bg-hover);
+      background-color: rgba(3, 3, 31, 0.70);
     }
     .grid__item:hover{
       background-color: var(--grid-item-hover);
@@ -927,7 +949,6 @@
   
     .slider-custom{
       display: flex;
-      width: 1315px;
       flex-wrap: nowrap;
       /* transition: transform 0.5s ease-in-out; */
     }
@@ -1257,12 +1278,19 @@
       display: flex;
       padding: 0;
       max-width: calc(var(--layout-container-gutter) + var(--container-xl-max-width) - 59px*2);
+      margin: 0;
     }
   
     .clientarea__mainbar{
       background-color: var(--dashboard-bg);
       border-radius: 50px 50px 50px 0px;
       padding: 32px 32px 24px 32px;
+      width: 100%;
+    }
+
+    .clientarea__mainbar .swiper-wrapper .swiper-slide{
+      padding-left: 8px;
+      padding-right: 8px;
     }
   
     .clientarea__mainbar h3{
@@ -1294,6 +1322,7 @@
   
     .clientarea-title{
       text-align: left;
+      padding: 0;
     }
   
     .clientarea-avatar .client-avatar{
@@ -1390,6 +1419,22 @@
     .clientarea__menu a.btn:hover:nth-of-type(4) .clientarea-btn-icon, .clientarea__menu a.btn.current-page:nth-of-type(4) .clientarea-btn-icon{
       background-image: url('/templates/lagom2/assets/img/icons/referal-hover.svg');
     }
+
+    .clientarea__menu-footer a.btn:nth-of-type(1) .clientarea-btn-icon, .clientarea__menu-footer a.btn.current-page:nth-of-type(1) .clientarea-btn-icon{
+      background-image: url('/templates/lagom2/assets/img/icons/star-border.svg');
+    }
+  
+    .clientarea__menu-footer a.btn:hover:nth-of-type(1) .clientarea-btn-icon, .clientarea__menu-footer a.btn.current-page:nth-of-type(1) .clientarea-btn-icon{
+      background-image: url('/templates/lagom2/assets/img/icons/star-fill.svg');
+    }
+  
+    .clientarea__menu-footer a.btn:nth-of-type(2) .clientarea-btn-icon, .clientarea__menu-footer a.btn.current-page:nth-of-type(2) .clientarea-btn-icon{
+      background-image: url('/templates/lagom2/assets/img/icons/logout.svg');
+    }
+  
+    .clientarea__menu-footer a.btn:hover:nth-of-type(2) .clientarea-btn-icon, .clientarea__menu-footer a.btn.current-page:nth-of-type(2) .clientarea-btn-icon{
+      background-image: url('/templates/lagom2/assets/img/icons/logout.svg');
+    }
   
     .sidebar-divider{
       width: 100%;
@@ -1431,6 +1476,10 @@
       width: 724px;
       display: flex;
       gap: 32px;
+    }
+
+    .panel{
+      border-radius: 30px;
     }
   
     .form-group{
@@ -1484,12 +1533,19 @@
     .page-clientareahome .tile{
       flex-direction: column;
       align-items: start;
+      padding: 32px;
+      border-radius: 30px;
+      min-height: auto;
+    }
+
+    .panel-default>.panel-body{
+      color: var(--a-bg);
     }
   
     .tile-body{
       display: flex;
       align-items: baseline;
-      gap:15px;
+      gap:5px;
       font-size: 44px;
       font-weight: 600;
     }
@@ -1592,12 +1648,12 @@
       color: #090909;
     }
 
-    .page-knowledgebase .main-sidebar, .page-knowledgebasecat .main-sidebar, .page-supportticketsubmit-steptwo .main-sidebar{
+    .page-knowledgebase .main-sidebar, .page-knowledgebasecat .main-sidebar, .page-supportticketsubmit-steptwo .main-sidebar, .page-products .main-sidebar, .page-user-logged .main-sidebar{
       display: none;
     }
 
-    .page-knowledgebase .main-content, .page-knowledgebasecat .main-content{
-      max-width: 100% !important;
+    body.page-knowledgebase:not(.lagom-layout-left-wide) .main-sidebar+.main-content{
+      max-width: fit-content;
     }
 
     .list-group{
@@ -1984,6 +2040,111 @@
       width: 100%;
     }
 
+    .site .site-section+.site-section:not(.section-secondary):not(.section-primary){
+      border-top: none;
+    }
+
+    .page-products .main-header{
+      padding: 0;
+    }
+
+    .page-products .main-grid{
+      background: var(--a-white);
+    }
+
+    body:not(.lagom-layout-left-wide) .main-sidebar+.main-content{
+      max-width: 100%;
+    }
+
+    .main-controls--left a[data-toggle="dropdown"]{
+      border-color: var(--main-border-color);
+      font-weight: 600;
+    }
+
+    .package-title{
+      font-weight: 600;
+    }
+
+    .package-content .option-name{
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 400;
+      color: var(--a-grey);
+      width: 50%;
+      display: flex;
+      justify-content: flex-start;
+    }
+
+    .package-content .row{
+      justify-content: space-between;
+    }
+
+    .package-content .option-value{
+      color: var(--a-white);
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 600;
+      width: 50%;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .package-footer.package-side .package-price{
+      display: block;
+    }
+
+    .price{
+      font-size: 44px;
+      font-style: normal;
+      font-weight: 600;
+    }
+
+    .package-footer{
+      margin-top: 32px !important;
+      padding-top: 0;
+    }
+
+    .page-products .actions__buy{
+      color: var(--a-purple-dark) !important;
+    }
+
+    .tile-stat{
+      font-size: 44px;
+      font-weight: 600;
+      color: var(--a-bg);
+    }
+
+    .tile-title{
+      color: var(--a-bg);
+      font-size: 20px;
+      font-weight:600;
+    }
+    
+    .btn-create{
+      border-color:var(--main-border-color);
+      color: var(--a-purple)
+    }
+
+    .client-home-panels .panel-body .no-data{
+      gap: 8px;
+    }
+
+    .page-clientareahome .main-body{
+      padding-top: 0;
+      padding-bottom:100px;
+    }
+
+    .client-home-panels .list-group .list-group-item{
+      color: var(--a-bg);
+    }
+
+    .page-knowledgebase h2, .page-knowledgebase .search-group, .page-knowledgebase .kb-categories, .page-knowledgebase .main-content, .page-knowledgebase .search-bar, .page-knowledgebase .main-content{
+      max-width: fit-content;
+    }
+
+    #inputKnowledgebaseSearch{
+      width: 720px;
+    }
   @media (min-width:992px){
     .app-main{
       padding-top: 120px;
@@ -2134,6 +2295,14 @@
       .tooltip{
         display: none !important;
       }
+
+      .page-opportunities {
+        background-image: url(/templates/lagom2/assets/img/opportunities.png);
+        background-position-y: 170px;
+        background-position-x: 700px;
+        background-repeat: no-repeat;
+        background-size: 300px;
+    }
   } 
   
   @media (max-width:1200px){
@@ -2235,6 +2404,14 @@
     .page-products .pps-item:nth-of-type(3){
       display: none;
     }
+
+    .page-homepage {
+      background-image: url(/templates/lagom2/assets/img/elipses.svg);
+      background-repeat: no-repeat;
+      background-position-x: 690px;
+      background-position-y: 200px;
+      background-size: 350px;
+  }
   }
   
   @media (max-width:1000px) {
@@ -2343,6 +2520,9 @@
         width: 40px;
       }
   
+      .page-opportunities{
+        background-image: none;
+      }
   }
   
   @media (max-width: 991.98px){
@@ -2539,6 +2719,10 @@
     .section-questions summary{
       padding: 16px;
     }
+
+    .section-questions summary{
+      line-height: normal;
+    }
   }
   
   @media (max-width:480px) {
@@ -2590,6 +2774,14 @@
       .summary-icon{
         height: 28px;
         width: 28px;
+      }
+
+      .site .site-section .section-title{
+        font-size: 28px;
+      }
+
+      .site .slider .testimonials-item{
+        font-size: 16px;
       }
   
   }
