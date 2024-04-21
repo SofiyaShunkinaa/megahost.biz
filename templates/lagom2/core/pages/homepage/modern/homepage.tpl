@@ -546,8 +546,26 @@
  ======================================= *}
 
  {if $RSThemes['pages'][$templatefile]['config']['showProducGroups'] == '1'}
+{assign var=productGroupId value=[
 
-{debug}
+    [
+        'gid' => 6,
+        'featured' => false
+    ],
+    [
+        'gid' => 1,
+        'featured' => true
+    ],
+    [
+        'gid' => 7,
+        'featured' => false
+    ],
+    [
+        'gid' => 8,
+        'featured' => false
+    ]
+]}
+
 {foreach from=$productGroupId key=k item=product}
     {if $homepage->productGroup($product.gid)->product}
         {assign var=showGroup value=true}
@@ -555,7 +573,7 @@
 {/foreach}
 
 {/if}
-
+{debug}
 
  
 
@@ -614,17 +632,16 @@
     {/if}   
     {if $productGroupId && $showGroup && $RSThemes['pages'][$templatefile]['config']['showProducGroups'] == '1'}
     <div class="site-section">
-        <div class="container container-products">
+        <div class="container-fluid container-products">
+        <div class="container">
             <h2 class="section-title">{$LANG.products_title}</h2>
-            
             
             <div class="switcher-wrapper">
                 <div class="products-switcher switcher sw-black">
                     
                         {if file_exists("templates/$template/core/pages/homepage/modern/shared/switchers/currency.tpl")}
-                                        {include file="$template/core/pages/homepage/modern/shared/switchers/currency.tpl"}
-                                    {/if}
-                    
+                            {include file="$template/core/pages/homepage/modern/shared/switchers/currency.tpl"}
+                        {/if}
 
                 </div>
             </div>
@@ -751,6 +768,7 @@
                 </div>
                 <div class="product-pagination"></div>
             </div>
+        </div>
         </div>
     </div>
     {/if}        
