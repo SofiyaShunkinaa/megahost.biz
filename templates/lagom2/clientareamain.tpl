@@ -1,50 +1,59 @@
 {if ($language == 'english')} 
 
-    {$LANG.clientAreaHome.home.head.services="My services"}
+    {$LANG.clientAreaHome.home.head.servers="My servers"}
     {$LANG.clientAreaHome.home.head.domains="My domains"}
     {$LANG.clientAreaHome.home.head.unpaid="Tickets"}
     {$LANG.clientAreaHome.home.head.tickets="Unpaid "}
+    {$LANG.clientAreaHome.home.head.quotes="Quotes"}
 
     {$LANG.clientAreaHome.home.body.unpaid.1="invoice"}
     {$LANG.clientAreaHome.home.body.unpaid.2="invoices"}
 
-    {$LANG.clientAreaHome.home.body.tickets.1="Ticket"}
-    {$LANG.clientAreaHome.home.body.tickets.2="Tickets"}
+    {$LANG.clientAreaHome.home.body.tickets.1="ticket"}
+    {$LANG.clientAreaHome.home.body.tickets.2="tickets"}
 
     {$LANG.clientAreaHome.home.body.domains.1="domain"}
     {$LANG.clientAreaHome.home.body.domains.2="domains"}
 
-    {$LANG.clientAreaHome.home.body.Services.1="service"}
-    {$LANG.clientAreaHome.home.body.Services.2="services"}
+    {$LANG.clientAreaHome.home.body.quotes.1="quote"}
+    {$LANG.clientAreaHome.home.body.quotes.2="quotes"}
+
+    {$LANG.clientAreaHome.home.body.Servers.1="service"}
+    {$LANG.clientAreaHome.home.body.Servers.2="services"}
 
 
 
     
 {else}
 
-    {$LANG.clientAreaHome.home.head.services="Мои услуги"}
+    {$LANG.clientAreaHome.home.head.servers="Мои сервера"}
     {$LANG.clientAreaHome.home.head.domains="Мои домены"}
     {$LANG.clientAreaHome.home.head.unpaid="Неоплаченные"}
     {$LANG.clientAreaHome.home.head.tickets="Тикеты"}
+    {$LANG.clientAreaHome.home.head.quotes="Предложения"}
 
-    {$LANG.clientAreaHome.home.body.tickets.1="Тикета"}
-    {$LANG.clientAreaHome.home.body.tickets.2="Тикет"}
-    {$LANG.clientAreaHome.home.body.tickets.3="Тикетов"}
+    {$LANG.clientAreaHome.home.body.tickets.1="тикета"}
+    {$LANG.clientAreaHome.home.body.tickets.2="тикет"}
+    {$LANG.clientAreaHome.home.body.tickets.3="тикетов"}
 
-    {$LANG.clientAreaHome.home.body.unpaid.1="Счёт"}
-    {$LANG.clientAreaHome.home.body.unpaid.2="Счёта"}
-    {$LANG.clientAreaHome.home.body.unpaid.3="Счетов"}
+    {$LANG.clientAreaHome.home.body.unpaid.1="счёт"}
+    {$LANG.clientAreaHome.home.body.unpaid.2="счёта"}
+    {$LANG.clientAreaHome.home.body.unpaid.3="счетов"}
 
     {$LANG.clientAreaHome.home.body.domains.1="Домен"}
     {$LANG.clientAreaHome.home.body.domains.2="Домена"}
     {$LANG.clientAreaHome.home.body.domains.3="Доменов"}
 
-    {$LANG.clientAreaHome.home.body.Services.1="Услуга"}
-    {$LANG.clientAreaHome.home.body.Services.2="Услуги"}
-    {$LANG.clientAreaHome.home.body.Services.3="Услуг"}
+    {$LANG.clientAreaHome.home.body.qoutes.1="оценка"}
+    {$LANG.clientAreaHome.home.body.qoutes.2="оценки"}
+    {$LANG.clientAreaHome.home.body.qoutes.3="оценок"}
+
+    {$LANG.clientAreaHome.home.body.Servers.1="сервер"}
+    {$LANG.clientAreaHome.home.body.Servers.2="сервера"}
+    {$LANG.clientAreaHome.home.body.Servers.3="серверов"}
 
 {/if}
-
+{debug}
 {*if isset($RSThemes['pages'][$templatefile]) && file_exists($RSThemes['pages'][$templatefile]['fullPath'])}
     {include file=$RSThemes['pages'][$templatefile]['fullPath']}
 {else*}
@@ -109,25 +118,25 @@
             <div class="col-md-3 col-sm-4 swiper-slide" onclick="window.location='clientarea.php?action=services'">
                 <a class="tile" href="clientarea.php?action=services">
                     <div class="tile-head">
-                        {$LANG.clientAreaHome.home.head.services}
+                        {$LANG.clientAreaHome.home.head.servers}
                     </div>
 
                     <div class="tile-body">
-                        <div class="tile-stat">{$clientsstats.productsnumactive}</div>
+                        <div class="tile-stat">{$clientsstats.productsnumservers}</div>
                         <div class="tile-title">
                         {if ($language != 'english')}
                             {if ($clientsstats.productsnumactive % 10 == 1)&&($clientsstats.productsnumactive % 100 != 11)}
-                                {$LANG.clientAreaHome.home.body.Services.1}
+                                {$LANG.clientAreaHome.home.body.Servers.1}
                             {else if (2 <= $clientsstats.productsnumactive % 10)&&($clientsstats.productsnumactive % 10 <= 4) && ($clientsstats.productsnumactive % 100 < 10 or $clientsstats.productsnumactive % 100 >= 20)}    
-                                {$LANG.clientAreaHome.home.body.Services.2}
+                                {$LANG.clientAreaHome.home.body.Servers.2}
                             {else}
-                                {$LANG.clientAreaHome.home.body.Services.3}
+                                {$LANG.clientAreaHome.home.body.Servers.3}
                             {/if}
                         {else}
                             {if $clientsstats.productsnumactive > 1}   
-                                 {$LANG.clientAreaHome.home.body.Services.1}
+                                 {$LANG.clientAreaHome.home.body.Servers.1}
                             {else}
-                                {$LANG.clientAreaHome.home.body.Services.2}
+                                {$LANG.clientAreaHome.home.body.Servers.2}
                             {/if}
                         {/if}         
                         </div>
@@ -175,10 +184,32 @@
                 </div>
             {else}
                 <div class="col-md-3 col-sm-4 swiper-slide" onclick="window.location='clientarea.php?action=quotes'">
-                    
                         <a class="tile" href="clientarea.php?action=quotes">
-                            <div class="tile-stat">{$clientsstats.numquotes}</div>
-                            <div class="tile-title">{$LANG.quotes}</div>
+
+                            <div class="tile-head">
+                                {$LANG.clientAreaHome.home.head.quotes}
+                            </div>
+
+                            <div class="tile-body">
+                                <div class="tile-stat">{$clientsstats.numquotes}</div>
+                                <div class="tile-title">
+                                {if ($language != 'english')}
+                                        {if ($clientsstats.numquotes % 10 == 1)&&($clientsstats.numquotes % 100 != 11)}
+                                            {$LANG.clientAreaHome.home.body.qoutes.1}
+                                        {else if (2 <= $clientsstats.numquotes % 10)&&($clientsstats.numquotes % 10 <= 4) && ($clientsstats.numquotes % 100 < 10 or $clientsstats.numquotes % 100 >= 20)}    
+                                            {$LANG.clientAreaHome.home.body.qoutes.2}
+                                        {else}
+                                            {$LANG.clientAreaHome.home.body.qoutes.3}
+                                        {/if}
+                                    {else}
+                                        {if $clientsstats.numquotes > 1}   
+                                            {$LANG.clientAreaHome.home.body.qoutes.1}
+                                        {else}
+                                            {$LANG.clientAreaHome.home.body.qoutes.2}
+                                        {/if}
+                                    {/if} 
+                                </div>
+                            </div>
                         </a>
                     
                 </div>
@@ -326,35 +357,23 @@
                         {if $item->getName() == "Recent News"}
                             <div class="panel-body">
                                 <div class="no-data">
-                                    <div class="no-data-icon">
-                                        {include file="$template/includes/common/svg-icon.tpl" icon="article"} 
-                                    </div>
                                     <div class="text-light">{$rslang->trans('nodata.no_recent_news')}</div>
                                 </div>
                             </div>
                         {/if}
                         {if $item->getName() == "Recent Support Tickets"}
                             <div class="no-data">
-                                <div class="no-data-icon">
-                                    {include file="$template/includes/common/svg-icon.tpl" icon="ticket"} 
-                                </div>
                                 <div class="text-light">{$rslang->trans('nodata.no_recent_tickets')}</div>
-                                <a href="submitticket.php">{$LANG.navopenticket}</a>
+                                <a href="submitticket.php" class="btn btn-default btn-create">{$LANG.navopenticket}</a>
                             </div>
                         {elseif $item->getName() == "Active Products/Services"}
                             <div class="no-data">
-                                <div class="no-data-icon">
-                                    {include file="$template/includes/common/svg-icon.tpl" icon="service"}                                    
-                                </div>
                                 <div class="text-light">{$rslang->trans('nodata.no_active_services')}</div>
-                                <a href="cart.php">{$LANG.navservicesorder}</a>
+                                <a href="cart.php" class="btn btn-default btn-create">{$LANG.navservicesorder}</a>
                             </div>
                         {elseif $item->getName() == "Unpaid Invoices" && $clientsstats.numunpaidinvoices == "0"}
                             <div class="no-data">
-                                <div class="no-data-icon">
-                                    {include file="$template/includes/common/svg-icon.tpl" icon="invoice"}                                     
-                                </div>
-                                <div class="text-light">{$rslang->trans('nodata.no_unpaid_invoices')}</div>
+                                <div class="text-light" class="btn btn-default btn-create">{$rslang->trans('nodata.no_unpaid_invoices')}</div>
                             </div>
                         {else}
                             {$item->getBodyHtml()|replace:'name="domain"':'name="domain" placeholder="domain name"'|replace:'domain name':{$LANG.findyourdomain}}
@@ -369,9 +388,6 @@
                     <div class="panel-body">
                     
                         <div class="no-data">
-                            <div class="no-data-icon">
-                                {include file="$template/includes/common/svg-icon.tpl" icon="article"} 
-                            </div>
                             <div class="text-light">{$rslang->trans('nodata.no_recent_news')}</div>
                         </div>
                     </div>
@@ -395,7 +411,6 @@
             {if $item->getName() != "Overdue Invoices" && $item->getName() != "Unpaid Invoices" && $item->getName() != "Domains Expiring Soon"}
             
                 <div class="{if $item->getName() == "Active Products/Services"} col-md-12{else}col-md-6 {/if}" data-panels-grid-item>
-                {*<h3>spflpd</h3>*}
                     {outputHomePanels}
                 </div>
             {/if}
