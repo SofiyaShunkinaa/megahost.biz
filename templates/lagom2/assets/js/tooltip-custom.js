@@ -18,10 +18,10 @@ countries.forEach(country =>{
     });
 
     country.addEventListener('mouseenter', function(){
-        tooltip.style.display = "block";
+        tooltip.style.opacity = 1;
     });
 
     country.addEventListener('mouseleave', function(){
-        tooltip.style.display = "none";
+        tooltip.style.opacity = 0;
     });
 })
