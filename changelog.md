@@ -60,3 +60,14 @@ All notable changes to this project will be documented in this file.
 ### v1.0.12 (10.04.2024)
 - added overwrote head
 - added tooltip script custom file
+
+### v1.0.13 (11.04.2024-23.04.2024)
+- created overwrote navbar in templates/lagom2/includes/overwrites/navbar.tpl
+- created overwrote pageheader in templates/lagom2/includes/overwrites/pageheader.tpl
+- added link to custom js scripts
+- rewrote client area:
+  - rewrote clientareamain
+  - added file templates/lagom2/clientareahome.tpl included to clientareamain.tpl
+  - rewrote clientareamails.tpl
+  - rewrote clientareadetails.tpl
+  - ? about ca opinions page
