@@ -71,3 +71,4 @@ All notable changes to this project will be documented in this file.
   - rewrote clientareamails.tpl
   - rewrote clientareadetails.tpl
   - ? about ca opinions page
+- added overwrote sidebar in templates/lagom2/includes/overwrites/sidebar.tpl
