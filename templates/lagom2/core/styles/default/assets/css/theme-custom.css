@@ -215,10 +215,11 @@
     top:0;
     left:0;
     backdrop-filter: blur(33.5px); 
-    display: none;
+    opacity: 0;
     border-radius: 30px;
     border: 1px solid #B970CF;
     z-index: 1000;
+    transition: opacity 0.2s ease-in;
   }
   
   .tooltip__list{
@@ -2173,11 +2174,11 @@
     }
 
     .app-nav-menu ul.menu-primary li:nth-of-type(9){
-      flex-grow: 2;
+      flex-grow: 5;
     }
 
     .app-nav-menu ul.menu-primary li:nth-of-type(1){
-      flex-grow: 1;
+      flex-grow: 3;
       justify-content: flex-end;
     }
 
@@ -2195,7 +2196,7 @@
 
     .lagom-layout-condensed .app-nav-menu .menu>li .dropdown-menu{
       padding: 16px;
-      width: auto;
+      width: 300px;
     }
 
     .dropdown-menu>li>a{
@@ -2237,6 +2238,10 @@
       border-radius: 80px;
       border: 1px solid #5E5E5E;
       background: rgba(9, 9, 9, 0.20);
+    }
+
+    .lagom-layout-top .app-nav-menu .menu>li.active>a:not(.btn):after, #lagom-one-step-order .ls-caret:before, .lagom .ls-caret:before, .mg-wrapper .ls-caret:before{
+      display: none;
     }
     
   }
