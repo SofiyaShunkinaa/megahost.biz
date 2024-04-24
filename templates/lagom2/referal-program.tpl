@@ -20,8 +20,8 @@
     ]
 ]}
 
-{$LANG.Referal.main.title="Opportunities of Our Products"}
-{$LANG.Referal.main.subtitle="Explore additional features of our products"}
+{$LANG.Referal.main.title="Получайте выплаты по реферальной программе"}
+{$LANG.Referal.main.subtitle="Recommend us to your friends and receive up to 25% of all payments"}
 {$LANG.Referal.main.action="Activate Program"}
 {$LANG.Referal.content.title="How It Works?"}
 
@@ -47,8 +47,8 @@
     ]
 ]}
 
-{$LANG.Referal.main.title="Возможности наших продуктов"}
-{$LANG.Referal.main.subtitle="Ознакомитесь c дополнительными возможностями наших продуктов"}
+{$LANG.Referal.main.title="Получайте выплаты по реферальной программе"}
+{$LANG.Referal.main.subtitle="Рекомедуйте нас друзьям и получайте до 25% от всех платежей"}
 {$LANG.Referal.main.action="Активировать программу"}
 {$LANG.Referal.content.title="Как это работает?"}
 
