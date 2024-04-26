@@ -227,7 +227,7 @@
 ]}
 
 {/if}
-{debug}
+
 
 <div class="container">
     <div class="main-header">
@@ -296,7 +296,7 @@
         </div>
     </div>
 
-    <div class="container container-trail">
+    <div class="container container-trail" id='test-period'>
 
         <div class="content--general">
             <div class="content-info">
@@ -344,7 +344,7 @@
 
     </div>
 
-    <div class="container-fluid container-faq container-unix">
+    <div class="container-fluid container-faq container-unix" id='free-administration'>
         <div class="container">
         
             <h2 class="section-title">{$LANG.Opportunities.unix.title}</h2>
