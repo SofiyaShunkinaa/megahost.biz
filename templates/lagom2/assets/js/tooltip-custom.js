@@ -10,9 +10,14 @@ const smArea2 = document.querySelector('.cntry-singapore');
 countries.forEach(country =>{
     country.addEventListener('mousemove', function(e){
       
-      title.innerText = this.dataset.title;
-      tooltip.style.top = (e.pageY - 3220) + 'px';
-      tooltip.style.left = (e.pageX - 40) + 'px';
+        let Y = (e.pageY - 3220)
+        let X = (e.pageX - 40)
+
+
+        
+      title.classList.add(this.dataset.title);
+      tooltip.style.top = Y + 'px';
+      tooltip.style.left = X + 'px';
       tooltipImg.src=this.dataset.flag;
 
     });
@@ -23,5 +28,10 @@ countries.forEach(country =>{
 
     country.addEventListener('mouseleave', function(){
         tooltip.style.opacity = 0;
+        title.classList.remove(this.dataset.title)
     });
 })
+
+
+
+  
