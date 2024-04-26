@@ -50,6 +50,8 @@
     {elseif file_exists("templates/{$template}/core/styles/{$RSThemes['styles']['name']}/assets/css/custom.css")}
         <link href="{$WEB_ROOT}/templates/{$template}/core/styles/{$RSThemes['styles']['name']}/assets/css/custom.css?v={$RSThemes['templateVersion']}" rel="stylesheet">
     {/if}
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
     {* Theme Custom *}
     {if ($language == 'arabic' || $language == 'hebrew' || $language == 'farsi') && file_exists("templates/{$template}/core/styles/{$RSThemes['styles']['name']}/assets/css/theme-custom-rtl.css")} 
@@ -61,6 +63,7 @@
     {if isset($isOnePageOrder) && $isOnePageOrder}
         <link href="{$WEB_ROOT}/modules/addons/LagomOrderForm/app/UI/Client/Templates/assets/css/order/lagom2/index.css?v={$RSThemes['templateVersion']}" rel="stylesheet">
     {/if}
+    
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -86,7 +89,7 @@
     <script {if isset($activeDisplay) && $activeDisplay == 'CMS' && $pageType == "website"}defer{/if} src="{$WEB_ROOT}/templates/{$template}/assets/js/scripts.min.js?v={$RSThemes['templateVersion']}"></script>
     <script {if isset($activeDisplay) && $activeDisplay == 'CMS' && $pageType == "website"}defer{/if} src="{$WEB_ROOT}/templates/{$template}/assets/js/core.min.js?v={$RSThemes['templateVersion']}"></script>
 
-    
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     
     {* Custom Head *}
     {if file_exists("templates/$template/core/layouts/{$RSThemes.layouts.name}/head.tpl")}
