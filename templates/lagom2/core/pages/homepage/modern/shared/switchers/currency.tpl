@@ -32,4 +32,40 @@
         </button>
     {/foreach}
 
+<script>
+var currency = 'usd';
 
+  document.addEventListener('DOMContentLoaded', function() {
+    const buttons = document.querySelectorAll('.switcher__item');
+    const currentPage = '';
+
+    buttons.forEach(button => {
+        const key = button.getAttribute('data-key');
+        var buttonLink = '';
+
+        switch(key){
+          case "usd":
+            buttonLink = '/index.php?currency=1';
+            break;
+          case "rub":
+            buttonLink = '/index.php?currency=2';
+            break;
+          case "eur":
+            buttonLink = '/index.php?currency=3';
+            break;
+        }
+        
+        button.addEventListener('click', function() {
+            window.location.href = buttonLink;
+        });
+        
+        if (buttonLink === currentPage) {
+            button.classList.add('active-button'); 
+            currency = key;
+        }
+    });
+  });
+
+
+
+</script>
