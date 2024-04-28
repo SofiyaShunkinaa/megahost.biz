@@ -191,8 +191,13 @@
     {/if}
 
     {* Custom scrpts *}
-    {if file_exists("templates/$template/assets/js/tooltip-custom.js")}
-        <script src="/templates/{$template}/assets/js/tooltip-custom.js"></script>
+    {if file_exists("templates/$template/assets/js/custom/scripts.js")}
+        <script src="/templates/{$template}/assets/js/custom/scripts.js"></script>
+    {/if}
+    {if file_exists("templates/$template/assets/js/custom/scripts-homepage.js") && $templatefile == 'homepage'}
+        <script src="/templates/{$template}/assets/js/custom/scripts-homepage.js"></script>
+    {elseif file_exists("templates/$template/assets/js/custom/slider-products.js") && $templatefile == 'products'}
+        <script src="/templates/{$template}/assets/js/custom/slider-products.js"></script>
     {/if}
     
 </body>
