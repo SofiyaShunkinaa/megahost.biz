@@ -55,6 +55,13 @@
         </div>
         <div class="clientarea__menu-theme"></div>
 
+        <div class="switcher-wrapper switcher-wrapper-theme">
+            <div class="switcher sw-white">
+                <button id="darkBtn" class="switcher__item btn btn-switcher " onclick="switchTheme('light')"><img src='{$WEB_ROOT}/templates/{$template}/assets/img/icons/moon.svg' ></button>
+                <button id="lightBtn" class="switcher__item btn btn-switcher " onclick="switchTheme('dark')"><img src='{$WEB_ROOT}/templates/{$template}/assets/img/icons/sun.svg' ></button>
+            </div>
+        </div>
+        
         <div class="sidebar-divider"></div>
 
     </div>
