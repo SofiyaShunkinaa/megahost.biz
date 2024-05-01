@@ -227,7 +227,7 @@
 
 
 {/if}
-{debug}
+
 {if isset($RSThemes['pages'][$templatefile]) && file_exists($RSThemes['pages'][$templatefile]['fullPath'])}
     {include file=$RSThemes['pages'][$templatefile]['fullPath']}
 {else}
@@ -440,13 +440,13 @@
                 </div>
             {/if}
             {if is_array($products)}
-                <div class="section products" id="products">
-                                <div class="row row-eq-height row-eq-height-sm slider-custom">
+                <div class="section products swiper swiper-products {if $currentUrl|strpos:'vpn-' > 0}swiper-vpn{else if $currentUrl|strpos:'virtual-hosting' > 0}swiper-vhosting{else if $currentUrl|strpos:'low-cost-ipv6-vps' > 0}swiper-ip{/if}" id="products">
+                                <div class="row row-eq-height row-eq-height-sm slider-custom swiper-wrapper">
                                     {assign var=counter value=1}
                                     {assign var=productsCount value=$products|count}
                                     {foreach from=$products item=product}
                                         {$idPrefix = ($product.bid) ? ("bundle"|cat:$product.bid) : ("product"|cat:$product.pid)}
-                                        <div class="col-4{if $RSThemes['pages'][$templatefile]['config']['horizontalPackage'] == 1} col-12{/if} slide-custom">
+                                        <div class="slide-product swiper-slide{if $RSThemes['pages'][$templatefile]['config']['horizontalPackage'] == 1} col-12{/if} slide-custom">
                                             <div class="package{if $product.isFeatured} package-featured{/if}{if $RSThemes['pages'][$templatefile]['config']['horizontalPackage'] == 1} package-horizontal{/if}" id="{$idPrefix}">
                                                 <div class="package-side package-side-left">
                                                     <div class="package-header">   
@@ -496,7 +496,7 @@
                                                                     }
                                                                 {else}
                                                                     {include file="$template/includes/common/price.tpl" 
-                                                                        price=$product.pricing.minprice.price|replace:'$':''|replace:'€':''|replace:'₽':''|replace:'USD':'$'|replace:'RUB':'₽'|replace:'EUR':'€'|replace:'.00':''
+                                                                        price=$product.pricing.minprice.price|replace:'$':''|replace:'USD':'$'|replace:'RUB':'₽'|replace:'EUR':'€'|replace:'.00':''
                                                                         priceCycle=$product.pricing.minprice.cycle
                                                                         priceType=$product.pricing.type
                                                                         priceSetupFee=$product.pricing.minprice.setupFee
@@ -554,20 +554,11 @@
                                             </div>
                                         </div>
                                         
-                                        {if $RSThemes['pages'][$templatefile]['config']['productColumns'] == '2'}
-                                            {if $counter % 2 == 0}</div><div class="row row-eq-height row-eq-height-sm">{/if}
-                                        {elseif $RSThemes['pages']['products']['config']['productColumns'] == '3'}
-                                            {if $counter % 3 == 0}</div><div class="row row-eq-height row-eq-height-sm">{/if}
-                                        {elseif $RSThemes['pages']['products']['config']['productColumns'] == '4'}
-                                            {if $counter % 4 == 0}</div><div class="row row-eq-height row-eq-height-sm">{/if}
-                                        {else}
-                                            {if $productsCount == '4'}
-                                                {if $counter % 2 == 0}</div><div class="row row-eq-height row-eq-height-sm">{/if}
-                                            {/if}
-                                        {/if}
-                                        {$counter = $counter +1}
+                                        
                                     {/foreach}
-                                </div>
+                                </div><div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-scrollbar"></div>
                             </div>
                         {/if}  
                         {if $productGroup}  
@@ -594,6 +585,7 @@
                 </div>
                 
             </div>
+            
             </div>
 
         <div class="container container-products-list">
