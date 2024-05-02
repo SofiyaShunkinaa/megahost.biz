@@ -20,9 +20,6 @@
 
     {$LANG.clientAreaHome.home.body.Servers.1="service"}
     {$LANG.clientAreaHome.home.body.Servers.2="services"}
-
-
-
     
 {else}
 
@@ -32,8 +29,8 @@
     {$LANG.clientAreaHome.home.head.tickets="Тикеты"}
     {$LANG.clientAreaHome.home.head.quotes="Предложения"}
 
-    {$LANG.clientAreaHome.home.body.tickets.1="тикета"}
-    {$LANG.clientAreaHome.home.body.tickets.2="тикет"}
+    {$LANG.clientAreaHome.home.body.tickets.1="тикет"}
+    {$LANG.clientAreaHome.home.body.tickets.2="тикета"}
     {$LANG.clientAreaHome.home.body.tickets.3="тикетов"}
 
     {$LANG.clientAreaHome.home.body.unpaid.1="счёт"}
@@ -53,7 +50,7 @@
     {$LANG.clientAreaHome.home.body.Servers.3="серверов"}
 
 {/if}
-{debug}
+
 {*if isset($RSThemes['pages'][$templatefile]) && file_exists($RSThemes['pages'][$templatefile]['fullPath'])}
     {include file=$RSThemes['pages'][$templatefile]['fullPath']}
 {else*}
@@ -174,14 +171,7 @@
                         </a>
                     
                 </div>
-            {elseif $condlinks.affiliates && $clientsstats.isAffiliate}
-                <div class="col-md-3 col-sm-4 swiper-slide" onclick="window.location='affiliates.php'">
-                    
-                        <a class="tile" href="affiliates.php">
-                            <div class="tile-stat">{$clientsstats.numaffiliatesignups}</div>
-                            <div class="tile-title">{$LANG.affiliatessignups}</div>
-                        </a>
-                </div>
+           
             {else}
                 <div class="col-md-3 col-sm-4 swiper-slide" onclick="window.location='clientarea.php?action=quotes'">
                         <a class="tile" href="clientarea.php?action=quotes">
