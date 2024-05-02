@@ -1598,7 +1598,7 @@
       text-align: left;
     }
   
-    .page-clientareahome .tile{
+    .tile{
       flex-direction: column;
       align-items: start;
       padding: 32px;
@@ -1716,7 +1716,7 @@
       color: #090909;
     }
 
-    .page-knowledgebase .main-sidebar, .page-knowledgebasecat .main-sidebar, .page-supportticketsubmit-steptwo .main-sidebar, .page-products .main-sidebar, .page-user-logged .main-sidebar{
+    .page-knowledgebase .main-sidebar, .page-knowledgebasecat .main-sidebar, .page-supportticketsubmit-steptwo .main-sidebar, .page-products .main-sidebar, .page-user-logged .main-sidebar, .page-announcements .main-sidebar{
       display: none;
     }
 
@@ -2387,6 +2387,18 @@
 
     .categories-sidebar .dropdown-menu .dropdown-item, .categories-sidebar .dropdown-menu .dropdown-menu-item>a, .categories-sidebar .dropdown-menu>li>a, .categories-sidebar .dropdown-menu li{
       color: var(--a-bg) !important;
+    }
+
+    .page-announcements .list-group{
+      flex-direction: column;
+    }
+
+    .page-knowledgebase .main-header-bottom, .page-announcements .main-header-bottom{
+      margin-bottom: 50px;
+    }
+
+    .page-knowledgebase .banner-title{
+      margin-bottom: 4px;
     }
     
   @media (min-width: 1440px) {
