@@ -22,22 +22,29 @@
     {assign var=DSButtonsPeriod value=[
         [
             'name' => '1 мес.',
-            'key' => '1mnth'
+            'key' => "monthly"
         ],
         [
             'name' => '3 мес.',
-            'key' => '3mnth'
+            'key' => "quarterly"
         ],
         [
             'name' => '6 мес.',
-            'key' => '6mnth'
+            'key' => "semiannually"
         ],
         [
             'name' => '1 год',
-            'key' => '1year'
+            'key' => "annually"
         ]
     ]}
 {/if}
+{*foreach from=$products item=product}
+{$products.pricing.minprice.cycle = "quarterly"}
+{/foreach}
+
+{foreach $productsPricing as $pr}
+{$pr.cycle = "quarterly"}
+{/foreach*}
 
 {if $currentUrl|strstr:"?"}
     {$currentpagelinkback = rtrim($currentpagelinkback, '&amp;')}
@@ -48,8 +55,7 @@
 {/if}
 
     {foreach $DSButtonsPeriod as $sw}
-        <button class="switcher__item btn btn-switcher" data-key="{$sw.key}">
+        <button class="switcher__item btn btn-switcher {if $priceCycle == $sw.key}active{/if}" data-key="{$sw.key}">
             {$sw.name}
         </button>
     {/foreach}
-
