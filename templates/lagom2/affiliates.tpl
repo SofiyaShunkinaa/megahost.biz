@@ -20,6 +20,17 @@
     {$LANG.clientAreaHome.Tickets.Title = "Tickets"}
     {$LANG.clientAreaHome.News.Title = "News"}
 
+    {$LANG.clientArea.referral.balance="Balance"}
+    {$LANG.clientArea.referral.referral_link="Referral link"}
+    {$LANG.clientArea.referral.request="Request Withdrawal"}
+    {$LANG.clientArea.referral.link_desc="Use the link to receive <b>25%</b> from each payment of the attracted client"}
+
+    {$LANG.clientArea.tile.2 = "Signups"}
+    {$LANG.clientAreaHome.affilaites.Clicks.1="click"}
+    {$LANG.clientAreaHome.affilaites.Clicks.2="clicks"}
+    {$LANG.clientAreaHome.affilaites.Clients.1="client"}
+    {$LANG.clientAreaHome.affilaites.Clients.2="clients"}
+
     
 {else}
 
@@ -33,6 +44,20 @@
     {$LANG.clientAreaHome.Sidebar.button.5="Выход"}
     {$LANG.clientAreaHome.Tickets.Title = "Tickets"}
     {$LANG.clientAreaHome.News.Title = "News"}
+
+    {$LANG.clientArea.referral.balance="Баланс"}
+    {$LANG.clientArea.referral.referral_link="Реферальная ссылка"}
+    {$LANG.clientArea.referral.request="Вывод средств"}
+    {$LANG.clientArea.referral.link_desc="Используйте ссылку чтобы получать <b>25%</b> с каждого платежа привлеченного клиента"}
+
+    {$LANG.clientArea.tile.2 = "Привлеченных клиентов"}
+    {$LANG.clientAreaHome.affilaites.Clicks.1="клик"}
+    {$LANG.clientAreaHome.affilaites.Clicks.2="клика"}
+    {$LANG.clientAreaHome.affilaites.Clicks.3="кликов"}
+    {$LANG.clientAreaHome.affilaites.Clients.1="клиент"}
+    {$LANG.clientAreaHome.affilaites.Clients.2="клиента"}
+    {$LANG.clientAreaHome.affilaites.Clients.3="клиентов"}
+
 
 {/if}
 {debug}
@@ -82,14 +107,49 @@
                 <div class="row swiper-wrapper">
                     <div class="col-md-4 swiper-slide">
                         <div class="tile">
-                            <div class="tile-stat">{$visitors}</div>
+                            <div class="tile-stat">{$visitors}
+                            <span class="tile-stat__ending">
+                            {if ($language != 'english')}
+                            {if ($visitors % 10 == 1)&&($visitors % 100 != 11)}
+                                {$LANG.clientAreaHome.affilaites.Clicks.1}
+                            {else if (2 <= $visitors % 10)&&($visitors % 10 <= 4) && ($visitors % 100 < 10 or $visitors % 100 >= 20)}    
+                                {$LANG.clientAreaHome.affilaites.Clicks.2}
+                            {else}
+                                {$LANG.clientAreaHome.affilaites.Clicks.3}
+                            {/if}
+                        {else}
+                            {if $visitors == 1}   
+                                 {$LANG.clientAreaHome.affilaites.Clicks.1}
+                            {else}
+                                {$LANG.clientAreaHome.affilaites.Clicks.2}
+                            {/if}
+                            {/if}
+                            </span>
+                            </div>
                             <div class="tile-title">{$LANG.affiliatesclicks}</div>
                         </div>
                     </div>
                     <div class="col-md-4 swiper-slide">
                         <div class="tile">
-                            <div class="tile-stat">{$signups}</div>
-                            <div class="tile-title">{$LANG.affiliatessignups}</div>
+                            <div class="tile-stat">{$signups}
+                            <span class="tile-stat__ending">
+                            {if ($language != 'english')}
+                            {if ($signups % 10 == 1)&&($signups % 100 != 11)}
+                                {$LANG.clientAreaHome.affilaites.Clients.1}
+                            {else if (2 <= $signups % 10)&&($signups % 10 <= 4) && ($signups % 100 < 10 or $signups % 100 >= 20)}    
+                                {$LANG.clientAreaHome.affilaites.Clients.2}
+                            {else}
+                                {$LANG.clientAreaHome.affilaites.Clients.3}
+                            {/if}
+                        {else}
+                            {if $signups == 1}   
+                                 {$LANG.clientAreaHome.affilaites.Clients.1}
+                            {else}
+                                {$LANG.clientAreaHome.affilaites.Clients.2}
+                            {/if}
+                            {/if}
+                             </span></div>
+                            <div class="tile-title">{$LANG.clientArea.tile.2}</div>
                         </div>
                     </div>
                     <div class="col-md-4 swiper-slide">
@@ -102,25 +162,27 @@
                 <div class="swiper-pagination"></div>
             </div>
         </div>
-        <div class="section">
-        <div>
+        <div class="section row section-referral">
+        <div class="col-6">
+        <h3>{$LANG.clientArea.referral.balance}</h3>
         <div class="panel panel-summary panel-summary-{$sidebarBoxStyle} panel-add-funds">
             <div class="panel-body">
                 <div class="summary-total">
                     <div class="price price-sm price-left-h">
                         <span class="price-total">{$LANG.affiliatescommissionsavailable}</span>
-                        <span class="price-amount">{$balance}</span>
+                        <span class="price-amount">{$balance|replace:'.00':''|replace:'USD':''|replace:'RUB':'₽'|replace:'EUR':'€'}</span>
                     </div>
                 </div>
+                <div class="sidebar-divider panel-divider"></div>
                 <div class="summary-content">
                     <ul class="summary-list">
                         <li class="list-item faded">
                             <span class="item-name">{$LANG.affiliatescommissionspending}</span>
-                            <span class="item-value">{$pendingcommissions}</span>
+                            <span class="item-value">{$pendingcommissions|replace:'.00':''|replace:'USD':''|replace:'RUB':'₽'|replace:'EUR':'€'}</span>
                         </li>
                         <li class="list-item faded">
                             <span class="item-name">{$LANG.affiliateswithdrawn}</span>
-                            <span class="item-value">{$withdrawn}</span>
+                            <span class="item-value">{$withdrawn|replace:'.00':''|replace:'USD':''|replace:'RUB':'₽'|replace:'EUR':'€'}</span>
                         </li>
                     </ul>
                 </div>
@@ -128,11 +190,11 @@
             <div class="panel-footer">            
                 {if !$withdrawlevel || $withdrawrequestsent}
                 <button href="{$smarty.server.PHP_SELF}?action=withdrawrequest" class="btn btn-primary-faded btn-block"{if !$withdrawlevel || $withdrawrequestsent} disabled{/if}>
-                    <i class="ls ls-bank-note"></i> {$LANG.affiliatesrequestwithdrawal}
+                    {$LANG.clientArea.referral.request}
                 </button>            
                 {else}
                 <a href="{$smarty.server.PHP_SELF}?action=withdrawrequest" class="btn btn-primary-faded btn-block {if !$withdrawlevel || $withdrawrequestsent}disabled" disabled="disabled"{/if}>
-                    <i class="ls ls-bank-note"></i> {$LANG.affiliatesrequestwithdrawal}
+                    {$LANG.clientArea.referral.request}
                 </a>
                 {/if}
             </div>
@@ -149,16 +211,18 @@
         {/if}
         </div>
 
-            <div>
+            <div class="col-6">
+            <h3>{$LANG.clientArea.referral.referral_link}</h3>
             <div class="search-box search-box-{$searchBoxStyle}">
                 <div class="input-group input-group-lg flex-column-sm">
-                    <div class="input-group-addon">{$LANG.affiliatesreferallink}</div>
                     <input class="form-control m-0" type="text" readonly value="{$referrallink}"> 
                 </div>
+                <div class="sidebar-divider panel-divider"></div>
+                <div class="referral-desc">{$LANG.clientArea.referral.link_desc}</div>
             </div>
             </div>
         </div>
-        <div class="section">
+        {*<div class="section">
             <div class="section-header d-flex space-between align-center m-b-2x">
                 <h5 class="section-title m-b-0">{$LANG.affiliatesreferals}</h5>
                 {if $referrals}
@@ -242,7 +306,7 @@
                     </div>
                 {/if}        
             </div>    
-        </div>                             
+        </div> *}                            
         {if $affiliatelinkscode}
             <div class="section">
                  <div class="section-header">
