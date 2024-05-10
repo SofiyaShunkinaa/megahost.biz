@@ -7,6 +7,10 @@
 {if isset($RSThemes['pages'][$templatefile]) && file_exists($RSThemes['pages'][$templatefile]['fullPath'])}
     {include file=$RSThemes['pages'][$templatefile]['fullPath']}
 {else}
+{debug}
+<div class="container-fluid">
+<div class="container">
+<div class="section-kb">
     <h2 class="section-title black">{$LANG.KB.main.title}</h2>
     
         <form class="search-bar" role="form" method="post" action="{routePath('knowledgebase-search')}">
@@ -79,6 +83,9 @@
             </div>
         </div>
     {/if}
+    </div>
+    </div>
+    </div>
     {literal}
     <script>
         document.addEventListener("DOMContentLoaded", function() {
