@@ -1,6 +1,7 @@
 {if isset($RSThemes['pages'][$templatefile]) && file_exists($RSThemes['pages'][$templatefile]['fullPath'])}
     {include file=$RSThemes['pages'][$templatefile]['fullPath']}
 {else}
+
 <div class="login login-lg m-a">
     <div class="login-wrapper">
         <div class="login-body">
@@ -56,4 +57,8 @@
         </div>    
     </div>
 </div>   
+
+<div class="page-divider">
+    <div class="divider"></div>
+</div>
 {/if}
