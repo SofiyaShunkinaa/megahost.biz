@@ -269,7 +269,7 @@
         {foreach from=$OpportunitiesCard item=card}
         {if $card.value==$smarty.get.selected}
             <div class="op-card-item">
-                <div class="content--general">
+                <div class="content--general container">
                 
                     <div class="content-info">
                         <div class="content-info__title">
