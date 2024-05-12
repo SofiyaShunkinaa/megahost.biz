@@ -33,7 +33,7 @@
 <div class="container container-clientarea">
 <div class="clientarea__sidebar">
     <div class="clientarea-avatar">
-        <div class="client-avatar"></div>
+        <div class="client-avatar panel-image"><img alt="Avatar-panel"></div>
         <div class="client-name">{$clientsdetails.firstname}</div>
     </div>
 
