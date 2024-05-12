@@ -20,6 +20,8 @@
 
     {$LANG.clientAreaHome.home.body.Servers.1="service"}
     {$LANG.clientAreaHome.home.body.Servers.2="services"}
+
+    {$LANG.clientAreaHome.main.news="News"}
     
 {else}
 
@@ -48,6 +50,8 @@
     {$LANG.clientAreaHome.home.body.Servers.1="сервер"}
     {$LANG.clientAreaHome.home.body.Servers.2="сервера"}
     {$LANG.clientAreaHome.home.body.Servers.3="серверов"}
+
+    {$LANG.clientAreaHome.main.news="Новости"}
 
 {/if}
 
@@ -283,15 +287,15 @@
         {if $item->getName() == "Active Products/Services"}
             {$LANG.clientAreaHome.ActiveProducts.Title}
         {else if $item->getName() == "Recent Support Tickets"}
-            {$LANG.clientAreaHome.Tickets.Title}
+            {$LANG.clientAreaHome.home.head.tickets}
         {else if $item->getName() == "Recent News"}  
-            {$LANG.clientAreaHome.News.Title}
+            {$LANG.clientAreaHome.main.news}
         {/if}
         </h3>
 
             {if $item->getName() != "Register a New Domain"}
             <div menuItemName="{$item->getName()}"
-                 class="panel panel-default panel-accent-{$item->getExtra('color')} {if $item->getName() == "Affiliate Program"}panel-affilaite-program panel-info{elseif $item->getName() == "Register a New Domain"}panel-domain-register{elseif $item->getName() == "Recent Support Tickets"}panel-support-tickets{elseif $item->getName() == "Active Products/Services"}panel-active-services{/if}  {if $item->getClass()} {$item->getClass()}{/if}"{if $item->getAttribute('id')} id="{$item->getAttribute('id')}"{/if}>
+                 class="panel panel-default panel-accent-{$item->getExtra('color')} {if $item->getName() == "Register a New Domain"}panel-domain-register{elseif $item->getName() == "Recent Support Tickets"}panel-support-tickets{elseif $item->getName() == "Active Products/Services"}panel-active-services{/if}  {if $item->getClass()} {$item->getClass()}{/if}"{if $item->getAttribute('id')} id="{$item->getAttribute('id')}"{/if}>
                          
                 {if $item->hasChildren()}
                     <div class="list-group has-scroll {if $item->getChildrenAttribute('class')} {$item->getChildrenAttribute('class')}{/if}">
@@ -398,7 +402,7 @@
             {/if}
         {/foreach}
         {foreach $panels as $item}
-            {if $item->getName() != "Overdue Invoices" && $item->getName() != "Unpaid Invoices" && $item->getName() != "Domains Expiring Soon"}
+            {if $item->getName() != "Overdue Invoices" && $item->getName() != "Unpaid Invoices" && $item->getName() != "Domains Expiring Soon" && $item->getName() != "Affiliate Program"}
             
                 <div class="{if $item->getName() == "Active Products/Services"} col-md-12{else}col-md-6 {/if}" data-panels-grid-item>
                     {outputHomePanels}
