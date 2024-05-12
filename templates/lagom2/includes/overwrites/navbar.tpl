@@ -61,13 +61,13 @@
                             {if $loggedin}
                                 {if $RSThemes.addonSettings.show_gravatar_image == 'displayed'}
                                     <div class="client-avatar client-avatar-sm">
-                                        <img class="lazyload" data-src="https://www.gravatar.com/avatar/{$loggedinuser->email|md5}{if $RSThemes.addonSettings.gravatar_placeholder && $RSThemes.addonSettings.gravatar_placeholder != "default"}?d={$RSThemes.addonSettings.gravatar_placeholder}{/if}" alt="Avatar">
+                                        <img class="lazyload" data-src="https://megahost.biz/templates/lagom2/assets/img/profile-images/avatar1.png" alt="Avatar">
                                     </div>
                                 {/if}
                                 {if $item->getLabel() && $item->getLabel() != ""}
                                     {if $loggedinuser && !empty($loggedinuser->first_name)}
                                         <div class="active-client">
-                                            <span class="item-text">{$loggedinuser->first_name} {$loggedinuser->last_name}</span>
+                                            <span class="item-text">{$loggedinuser->first_name}</span>
                                             {if $clientsdetails.userid == $clientsdetails.client_id}
                                                 <span>{$clientsdetails.companyname}</span>
                                             {/if}
@@ -120,7 +120,7 @@
                                                         <li class="dropdown-menu-item dropdown-header dropdown-header--account">
                                                             {if $RSThemes.addonSettings.show_gravatar_image == 'displayed'}
                                                                 <div class="client-avatar client-avatar-sm">
-                                                                    <img class="lazyload hidden" data-src="https://www.gravatar.com/avatar/{$loggedinuser->email|md5}{if $RSThemes.addonSettings.gravatar_placeholder && $RSThemes.addonSettings.gravatar_placeholder != "default"}?d={$RSThemes.addonSettings.gravatar_placeholder}{/if}" alt="Avatar">
+                                                                    <img class="lazyload hidden" data-src="https://megahost.biz/templates/lagom2/assets/img/profile-images/avatar1.png" alt="Avatar">
                                                                 </div>
                                                             {/if}
                                                             <div class="dropdown-header-info">
