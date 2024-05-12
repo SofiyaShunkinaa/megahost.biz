@@ -1350,8 +1350,6 @@
     .clientarea-avatar .client-avatar{
       width: 80px;
       height: 80px;
-      border-radius: 24px;
-      border: 1px solid var(--main-border-color);
       margin-bottom: 8px;
       background-size: contain;
     }
@@ -2343,7 +2341,7 @@
       color: var(--a-white);
     }
 
-    .dark-theme .slider-navigation .tile:hover, a.tile:hover{
+    .dark-theme .slider-navigation .tile:hover, .dark-theme a.tile:hover{
       background-color: #575757;
     }
 
@@ -2541,6 +2539,39 @@
 
     .list-group-item{
       padding: 8px 16px;
+    }
+
+    .client-avatar-sm img{
+      height: 44px;
+      width: 44px;
+      border-radius: 8px;
+      border: 1px solid var(--main-border-color);
+    }
+
+    .client-avatar.panel-image img{
+      width: 100%;
+      height: 100%;
+      border-radius: 24px;
+      border: 1px solid var(--main-border-color);
+    }
+
+    .dark-theme .container-clientarea .btn-default.btn-create{
+      color: var(--a-purple-dark);
+    }
+
+    .dark-theme .container-clientarea .btn-default.btn-create:hover{
+      background: rgba(179, 77, 208, 0.12);
+      border-color: var(--main-border-color);
+    }
+
+    .dark-theme .container-clientarea .btn-create.btn-default:not(:disabled):not(.disabled):active:focus, .dark-theme .container-clientarea .btn-create.btn-default:not(:disabled):not(.disabled):active:hover, .dark-theme .container-clientarea .btn-create.btn-default:not(:disabled):not(.disabled):active, .dark-theme .container-clientarea .btn-create.btn-default:focus{
+      background: rgba(179, 77, 208, 0.39);
+      color: var(--a-purple-dark);
+      border: 1px solid var(--main-border-color);
+    }
+
+    .intl-tel-input .country-list .country-name{
+      color: var(--a-bg);
     }
     
   @media (min-width: 1440px) {
