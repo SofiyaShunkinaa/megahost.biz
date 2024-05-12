@@ -198,6 +198,8 @@
         <script src="/templates/{$template}/assets/js/custom/scripts-homepage.js"></script>
     {elseif file_exists("templates/$template/assets/js/custom/slider-products.js") && $templatefile == 'products'}
         <script src="/templates/{$template}/assets/js/custom/slider-products.js"></script>
+    {elseif file_exists("templates/$template/assets/js/custom/client-area-scripts.js") && $SCRIPT_NAME == '/clientarea.php'}
+        <script src="/templates/{$template}/assets/js/custom/client-area-scripts.js"></script>
     {/if}
     
 </body>
