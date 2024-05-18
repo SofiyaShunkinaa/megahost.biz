@@ -27,13 +27,22 @@
 
 
 {/if}
+
+{assign var="emailPreferences" value=[
+    'general' => '1',
+    'invoice' => '1',
+    'support' => '1',
+    'product' => '1',
+    'domain' => '1',
+    'affiliate' => '1'
+]}
 {debug}
 
 <h2 class="container section-title clientarea-title">{$LANG.clientAreaHome.Title}</h2>
 <div class="container container-clientarea">
 <div class="clientarea__sidebar">
     <div class="clientarea-avatar">
-        <div class="client-avatar"></div>
+        <div class="client-avatar panel-image"><img alt="Avatar-panel"></div>
         <div class="client-name">{$clientsdetails.firstname}</div>
     </div>
 
@@ -43,7 +52,7 @@
             <a class="btn" href="/clientarea.php"><div class="clientarea-btn-icon"></div><p>{$LANG.clientAreaHome.Sidebar.button.0}</p></a>
             <a class="btn" href="/clientarea.php?action=details"><div class="clientarea-btn-icon"></div><p>{$LANG.clientAreaHome.Sidebar.button.1}</p></a>
             <a class="btn current-page" href="/clientarea.php?action=emails"><div class="clientarea-btn-icon"></div><p>{$LANG.clientAreaHome.Sidebar.button.2}</p></a>
-            <a class="btn" href="#"><div class="clientarea-btn-icon"></div><p>{$LANG.clientAreaHome.Sidebar.button.3}</p></a>
+            <a class="btn" href="/affiliates.php"><div class="clientarea-btn-icon"></div><p>{$LANG.clientAreaHome.Sidebar.button.3}</p></a>
 
         </div>
 
@@ -55,6 +64,13 @@
         </div>
         <div class="clientarea__menu-theme"></div>
 
+        <div class="switcher-wrapper switcher-wrapper-theme">
+            <div class="switcher sw-white">
+                <button id="darkBtn" class="switcher__item btn btn-switcher " onclick="switchTheme('light')"><img src='{$WEB_ROOT}/templates/{$template}/assets/img/icons/moon.svg' ></button>
+                <button id="lightBtn" class="switcher__item btn btn-switcher " onclick="switchTheme('dark')"><img src='{$WEB_ROOT}/templates/{$template}/assets/img/icons/sun.svg' ></button>
+            </div>
+        </div>
+        
         <div class="sidebar-divider"></div>
 
     </div>
@@ -111,35 +127,36 @@
         </div>
     </div>
 
-     <form method="post" action="?action=emails" role="form">
-        {if $emailPreferencesEnabled}
-             <div class="section">
-                <div class="section-header">
-                    <h2 class="section-title">{$LANG.clientareacontactsemails}</h2>
-                </div>
-                <div class="section-body">
-                    <div class="panel panel-default panel-form">
-                        <div class="panel-body">    
-                            {foreach $emailPreferences as $emailType => $value}
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="hidden" name="email_preferences[{$emailType}]" value="0">
-                                        <input class="icheck-control" type="checkbox" name="email_preferences[{$emailType}]" id="{$emailType}Emails" value="1"{if $value} checked="checked"{/if} />
-                                        {lang key="emailPreferences."|cat:$emailType}
-                                    </label>
-                                </div>    
-                            {/foreach}
-                        </div>
-                    </div>        
-                </div>            
-            </div>
-        {/if}
+    
+        {*<div class="section">
+            <div class="section-body">
+                <h3>{$LANG.orderForm.billingAddress}</h3>
 
-        <div class="form-actions">
+                {if $emailPreferencesEnabled}
+                   
+                        <form method="post" action="?action=details" role="form">
+                            <div class="panel panel-default panel-form">
+                                <div class="panel-body">    
+                                    {foreach $emailPreferences as $emailType => $value}
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="hidden" name="email_preferences[{$emailType}]" value="0">
+                                                <input class="icheck-control" type="checkbox" name="email_preferences[{$emailType}]" id="{$emailType}Emails" value="1"{if $value} checked="checked"{/if} />
+                                                {lang key="emailPreferences."|cat:$emailType}
+                                            </label>
+                                        </div>    
+                                    {/foreach}
+                                </div>
+                            </div>        
+                              <div class="form-actions">
             <input class="btn btn-primary btn-package" type="submit" name="save" value="{$LANG.clientareasavechanges}" />
             <input class="btn btn-default" type="reset" value="{$LANG.clientareacancel}" />
         </div>
-     </form>
+                    </form>
+                {/if}
+            </div>
+        </div>*}
+    
 {/if}    
 
 </div>
