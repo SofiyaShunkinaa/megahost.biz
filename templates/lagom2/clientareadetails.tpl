@@ -17,6 +17,10 @@
     {$LANG.clientAreaHome.Details.title.1="Personal data"}
     {$LANG.clientAreaHome.Details.subtitle.1="Full Name"}
     {$LANG.clientAreaHome.Details.subtitle.2="Extras"}
+
+    {$LANG.clientArea.EmailForm.Title="Email Preferences"}
+    {$LANG.clientArea.EmailForm.SubTitle="Receive emails:"}
+
     
 {else}
 
@@ -32,16 +36,17 @@
     {$LANG.clientAreaHome.Details.subtitle.1="ФИО"}
     {$LANG.clientAreaHome.Details.subtitle.2="Дополнительно"}
 
+    {$LANG.clientArea.EmailForm.Title="Настройки почты"}
+    {$LANG.clientArea.EmailForm.SubTitle="Получать письма:"}
 
 {/if}
-
 {debug}
 <h2 class="container section-title clientarea-title">{$LANG.clientAreaHome.Title}</h2>
 <div class="container container-clientarea">
 <div class="clientarea__sidebar">
     <div class="clientarea-avatar">
-        <div class="client-avatar"></div>
-        <div class="client-name">{$clientfirstname}</div>
+        <div class="client-avatar panel-image"><img alt="Avatar-panel"></div>
+        <div class="client-name">{$clientsdetails.firstname}</div>
     </div>
 
     <div class="clientarea__menu">
@@ -50,7 +55,7 @@
             <a class="btn" href="/clientarea.php"><div class="clientarea-btn-icon"></div><p>{$LANG.clientAreaHome.Sidebar.button.0}</p></a>
             <a class="btn current-page" href="/clientarea.php?action=details"><div class="clientarea-btn-icon"></div><p>{$LANG.clientAreaHome.Sidebar.button.1}</p></a>
             <a class="btn" href="/clientarea.php?action=emails"><div class="clientarea-btn-icon"></div><p>{$LANG.clientAreaHome.Sidebar.button.2}</p></a>
-            <a class="btn" href="#"><div class="clientarea-btn-icon"></div><p>{$LANG.clientAreaHome.Sidebar.button.3}</p></a>
+            <a class="btn" href="/affiliates.php"><div class="clientarea-btn-icon"></div><p>{$LANG.clientAreaHome.Sidebar.button.3}</p></a>
 
         </div>
 
@@ -62,6 +67,13 @@
         </div>
         <div class="clientarea__menu-theme"></div>
 
+        <div class="switcher-wrapper switcher-wrapper-theme">
+            <div class="switcher sw-white">
+                <button id="darkBtn" class="switcher__item btn btn-switcher " onclick="switchTheme('light')"><img src='{$WEB_ROOT}/templates/{$template}/assets/img/icons/moon.svg' ></button>
+                <button id="lightBtn" class="switcher__item btn btn-switcher " onclick="switchTheme('dark')"><img src='{$WEB_ROOT}/templates/{$template}/assets/img/icons/sun.svg' ></button>
+            </div>
+        </div>
+        
         <div class="sidebar-divider"></div>
 
     </div>
@@ -166,9 +178,10 @@
         </div>
         <div class="section">
             <div class="section-header">
-                <h2 class="section-title">{$LANG.orderForm.billingAddress}</h2>
+                
             </div>
             <div class="section-body">
+            <h3>{$LANG.orderForm.billingAddress}</h3>
                 <div class="panel panel-default panel-form">
                     <div class="panel-body">
                         <div class="row">
@@ -294,13 +307,16 @@
             </div>    
         {/if}
         {if $emailPreferencesEnabled}
-             <div class="section">
+             <div class="section section-emails">
                 <div class="section-header">
                     <h2 class="section-title">{$LANG.clientareacontactsemails}</h2>
                 </div>
                 <div class="section-body">
+                <h3>{$LANG.clientArea.EmailForm.Title}</h3>
+
                     <div class="panel panel-default panel-form">
-                        <div class="panel-body">    
+                        <div class="panel-body">
+                        <h4>{$LANG.clientArea.EmailForm.SubTitle}</h4>    
                             {foreach $emailPreferences as $emailType => $value}
                                 <div class="checkbox">
                                     <label>
@@ -315,7 +331,7 @@
                 </div>            
             </div>
         {/if}
-        {if $showMarketingEmailOptIn}
+        {*if $showMarketingEmailOptIn}
             <div class="section">
                 <div class="section-header">
                     <h2 class="section-title">{lang key='emailMarketing.joinOurMailingList'}</h2>
@@ -337,7 +353,7 @@
                     </div>
                 </div>
             </div>    
-        {/if}
+        {/if*}
         <div class="form-actions">
             <input class="btn btn-primary btn-package" type="submit" name="save" value="{$LANG.clientareasavechanges}" />
             <input class="btn btn-default" type="reset" value="{$LANG.clientareacancel}" />
