@@ -16,11 +16,14 @@
 
 var avatarImg = document.querySelector('img[alt="Avatar"]');
 var panelImg = document.querySelector('img[alt="Avatar-panel"]');
-
-if (avatarImg && panelImg) {
-    var src = avatarImg.getAttribute('src');
+panelImg.setAttribute('src', "https://megahost.biz/templates/lagom2/assets/img/profile-images/avatar1.png");
+var src = avatarImg.getAttribute('src');
+if (avatarImg && panelImg && src) {
+    console.log(avatarImg.getAttribute('src'))
     panelImg.setAttribute('src', src);
 }
+
+    
   
   // switching themes
 if (window.innerWidth < 1200) {
@@ -39,4 +42,50 @@ function switchTheme(theme) {
 
     localStorage.setItem("theme", theme);
 }
+
+// slider
+let swiper;
+
+function initializeSwiper() {
+    const screenWidth = window.innerWidth;
+
+    if (screenWidth <= 1024) {
+        swiper = new Swiper('.swiper', {
+            direction: 'horizontal', 
+            loop: false,
+            slidesPerView: 3,
+        });
+    } else if (screenWidth <= 768) {
+        swiper = new Swiper('.swiper', {
+            direction: 'horizontal', 
+            loop: false,
+            slidesPerView: 2,
+        }); 
+    } else if (screenWidth <= 480){
+        swiper = new Swiper('.swiper', {
+            direction: 'horizontal', 
+            loop: false,
+            slidesPerView: 1,
+        });
+    }
+}
+
+initializeSwiper();
+
+function handleScreenSize(event) {
+    if (swiper) {
+        const screenWidth = window.innerWidth;
+        if (screenWidth <= 1440) {
+            swiper.params.slidesPerView = 3;
+        } else if (screenWidth <= 768) {
+            swiper.params.slidesPerView = 2;
+        } else if (screenWidth <= 480){
+            swiper.params.slidesPerView = 1;
+        }
+        swiper.update();
+    }
+}
+
+window.addEventListener('resize', handleScreenSize);
+  
   
