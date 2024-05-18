@@ -114,6 +114,7 @@
     {/foreach}
     
     {include file="$template/includes/flashmessage.tpl"}
+    <div class="swiper">
     <div class="tiles swiper-container">
         <div class="row swiper-wrapper">
             <div class="col-md-3 col-sm-4 swiper-slide" onclick="window.location='clientarea.php?action=services'">
@@ -272,6 +273,7 @@
             </div>
         </div>
         <div class="swiper-pagination"></div>
+    </div>
     </div>
     
     {foreach from=$addons_html item=addon_html key=k}
